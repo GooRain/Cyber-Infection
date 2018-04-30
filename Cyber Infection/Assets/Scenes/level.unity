@@ -122,19 +122,19 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4494891620691054, guid: 9f2530a7db67b5c488117b0f7bef1bfd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.48
       objectReference: {fileID: 0}
     - target: {fileID: 4494891620691054, guid: 9f2530a7db67b5c488117b0f7bef1bfd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 4494891620691054, guid: 9f2530a7db67b5c488117b0f7bef1bfd, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -3.33
       objectReference: {fileID: 0}
     - target: {fileID: 4494891620691054, guid: 9f2530a7db67b5c488117b0f7bef1bfd, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.10711049
       objectReference: {fileID: 0}
     - target: {fileID: 4494891620691054, guid: 9f2530a7db67b5c488117b0f7bef1bfd, type: 2}
       propertyPath: m_LocalRotation.y
@@ -146,11 +146,25 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4494891620691054, guid: 9f2530a7db67b5c488117b0f7bef1bfd, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99424714
       objectReference: {fileID: 0}
     - target: {fileID: 4494891620691054, guid: 9f2530a7db67b5c488117b0f7bef1bfd, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20356170628762434, guid: 9f2530a7db67b5c488117b0f7bef1bfd,
+        type: 2}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20356170628762434, guid: 9f2530a7db67b5c488117b0f7bef1bfd,
+        type: 2}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4494891620691054, guid: 9f2530a7db67b5c488117b0f7bef1bfd, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 12.298
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f2530a7db67b5c488117b0f7bef1bfd, type: 2}
