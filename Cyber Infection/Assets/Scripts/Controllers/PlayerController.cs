@@ -17,28 +17,52 @@ public class PlayerController : MonoBehaviour
 
 	private SpriteRenderer sprite;
 	private Animator animator;
-	private CharState State
-	{
-		get { return (CharState)animator.GetInteger("State"); }
-		set { animator.SetInteger("State", (int)value); }
-	}
-
-
+	//private CharState State
+	//{
+	//	get { return (CharState)animator.GetInteger("State"); }
+	//	set { animator.SetInteger("State", (int)value); }
+	//}
+	
 	private float waitTime;
 	private bool attacking;
+
+	private Vector3 movement;                   // The vector to store the direction of the player's movement.
+	private Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
+	private int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
+	private float camRayLength = 100f;          // The length of the ray from the camera into the scene.
 
 	private void Awake()
 	{
 		animator = GetComponent<Animator>();
 		sprite = GetComponentInChildren<SpriteRenderer>();
+		playerRigidbody = GetComponent<Rigidbody>();
+		floorMask = LayerMask.GetMask("Floor");
+
+	}
+
+	private void Start()
+	{
+		
 	}
 
 	private void Update()
 	{
-		if(!attacking) State = CharState.idle;
+		//if(!attacking) State = CharState.idle;
 		Movement();
 		Shoot();
 	}
+	
+	private void FixedUpdate()
+	{
+		//float h = Input.GetAxisRaw("Horizontal");
+		//float v = Input.GetAxisRaw("Vertical");
+
+		//Move(h, v);
+
+		//Turning();
+	}
+	
+
 
 	private void Movement()
 	{
@@ -152,5 +176,30 @@ public class PlayerController : MonoBehaviour
 		//if(Input.GetKeyUp(KeyCode.LeftArrow)) attacking = false;
 		//if(Input.GetKeyUp(KeyCode.DownArrow)) attacking = false;
 		//if(Input.GetKeyUp(KeyCode.RightArrow)) attacking = false;
+	}
+
+	private void Turning()
+	{
+		// Create a ray from the mouse cursor on screen in the direction of the camera.
+		Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+		// Create a RaycastHit variable to store information about what was hit by the ray.
+		RaycastHit floorHit;
+
+		// Perform the raycast and if it hits something on the floor layer...
+		if(Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
+		{
+			// Create a vector from the player to the point on the floor the raycast from the mouse hit.
+			Vector3 playerToMouse = floorHit.point - transform.position;
+
+			// Ensure the vector is entirely along the floor plane.
+			playerToMouse.y = 0f;
+
+			// Create a quaternion (rotation) based on looking down the vector from the player to the mouse.
+			Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
+
+			// Set the player's rotation to this new rotation.
+			playerRigidbody.MoveRotation(newRotation);
+		}
 	}
 }
