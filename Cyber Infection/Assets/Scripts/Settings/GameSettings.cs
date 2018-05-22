@@ -2,21 +2,27 @@
 
 public class GameSettings : MonoBehaviour
 {
+	
+	public static GameSettings Ins { get; private set; }
+	private void Singleton()
+	{
+		if(Ins != null)
+		{
+			Destroy(gameObject);
+		}
+		else
+		{
+			Ins = this;
+			DontDestroyOnLoad(gameObject);
+		}
+	}
 
-	//_______________SINGLETON________________
-	public static GameSettings ins;
 
 	private void Awake()
 	{
-		if(ins != null)
-			Destroy(gameObject);
-		else
-		{
-			ins = this;
-		}
-	}
-	//________________________________________
+		Singleton();
 
-	public Vector2 startPosition;
+		DontDestroyOnLoad(gameObject);
+	}
 
 }
