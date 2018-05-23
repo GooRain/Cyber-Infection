@@ -44,12 +44,11 @@ public class MapGenerator : MonoBehaviour
 
 	private IEnumerator Generate()
 	{
-		root = new Leaf((int)transform.position.x - MapSettings.Ins.mapSize.width / 2, (int)transform.position.y - MapSettings.Ins.mapSize.height / 2, MapSettings.Ins.mapSize.width, MapSettings.Ins.mapSize.height);
+		root = new Leaf((int)transform.position.x, (int)transform.position.y, MapSettings.Ins.mapSize.width, MapSettings.Ins.mapSize.height);
 		leafs = new List<Leaf>();
 		roomsSettings = new List<RoomSettings>();
 
 		Debug.Log("Leafs initialization Is Done!");
-
 		generationCoroutine = Split();
 		yield return StartCoroutine(generationCoroutine);
 
@@ -66,8 +65,12 @@ public class MapGenerator : MonoBehaviour
 
 		generationCoroutine = PlaceWalls();
 		yield return StartCoroutine(generationCoroutine);
-
 		Debug.Log("Walls placing is Done!");
+	}
+
+	private bool CheckInput(KeyCode key)
+	{
+		return Input.GetKeyDown(key);
 	}
 
 	private IEnumerator Split()
@@ -75,8 +78,10 @@ public class MapGenerator : MonoBehaviour
 		leafs.Add(root);
 
 		bool did_split = true;
+		int index = 0;
 		while(did_split)
 		{
+			yield return new WaitUntil(() => CheckInput(KeyCode.N));
 			did_split = false;
 			foreach(Leaf item in leafs)
 			{
@@ -86,14 +91,29 @@ public class MapGenerator : MonoBehaviour
 					{
 						if(item.Split())
 						{
+							index++;
 							leafs.Add(item.leftChild);
 							leafs.Add(item.rightChild);
+
+							string left = "(" + item.leftChild.pos.X + ", " + item.leftChild.pos.Y + ") | (" + item.leftChild.rect.width + ", " + item.leftChild.rect.height + ")";
+							string right = "(" + item.rightChild.pos.X + ", " + item.rightChild.pos.Y + ") | (" + item.rightChild.rect.width + ", " + item.rightChild.rect.height + ")";
+							Debug.Log("Split #" + index + ": " + left + "   " + right);
+
 							did_split = true;
 							break;
 						}
 					}
 				}
 			}
+
+			foreach(var item in map.rooms)
+			{
+				Destroy(item.gameObject);
+			}
+			map.rooms.Clear();
+			roomsSettings.Clear();
+			root.CreateRooms();
+			yield return StartCoroutine(PlaceRooms());
 			yield return new WaitForEndOfFrame();
 		}
 
@@ -117,20 +137,36 @@ public class MapGenerator : MonoBehaviour
 	{
 		foreach(var item in map.rooms)
 		{
+			float _Z = 3f;
 			Vector3 pos = new Vector3(item.Settings.Pos.X - item.Settings.Size.width / 2,
-				item.Settings.Pos.X - item.Settings.Size.height / 2, 5f);
-			Wall _wall = Instantiate(wallPrefab, pos, Quaternion.identity, map.transform);
-			pos = new Vector3(item.Settings.Pos.X - item.Settings.Size.width / 2,
-				item.Settings.Pos.X - item.Settings.Size.height / 2, 5f);
-			_wall = Instantiate(wallPrefab, pos, Quaternion.identity, map.transform);
-			pos = new Vector3(item.Settings.Pos.X - item.Settings.Size.width / 2,
-				item.Settings.Pos.X - item.Settings.Size.height / 2, 5f);
-			_wall = Instantiate(wallPrefab, pos, Quaternion.identity, map.transform);
-			pos = new Vector3(item.Settings.Pos.X - item.Settings.Size.width / 2,
-				item.Settings.Pos.X - item.Settings.Size.height / 2, 5f);
-			_wall = Instantiate(wallPrefab, pos, Quaternion.identity, map.transform);
+				_Z, item.Settings.Pos.Y);
+			Vector3 scale = new Vector3(1, 1, item.Settings.Size.height);
+			PlaceWall(item, pos, scale);
+
+			pos = new Vector3(item.Settings.Pos.X + item.Settings.Size.width / 2,
+				_Z, item.Settings.Pos.Y);
+			scale = new Vector3(1, 1, item.Settings.Size.height);
+			PlaceWall(item, pos, scale);
+
+			pos = new Vector3(item.Settings.Pos.X,
+				_Z, item.Settings.Pos.Y - item.Settings.Size.height / 2);
+			scale = new Vector3(item.Settings.Size.width, 1, 1);
+			PlaceWall(item, pos, scale);
+
+			pos = new Vector3(item.Settings.Pos.X,
+				_Z, item.Settings.Pos.Y + item.Settings.Size.height / 2);
+			scale = new Vector3(item.Settings.Size.width, 1, 1);
+			PlaceWall(item, pos, scale);
 		}
 		yield return true;
+	}
+
+	private void PlaceWall(Room _room, Vector3 _pos, Vector3 _scale)
+	{
+		Wall _wall = Instantiate(wallPrefab, _pos, Quaternion.identity, map.transform);
+		_wall.transform.localScale = _scale;
+		_room.Walls.Add(_wall);
+		_wall.transform.SetParent(_room.transform);
 	}
 
 	public void AddRoom(Leaf sender)

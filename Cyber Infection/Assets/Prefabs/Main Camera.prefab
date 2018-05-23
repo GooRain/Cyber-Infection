@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Target: {fileID: 0}
   m_AutoTargetPlayer: 1
   m_UpdateType: 0
-  m_RotationRange: {x: 0, y: 0}
+  m_RotationRange: {x: 15, y: 15}
   m_FollowSpeed: 1
 --- !u!114 &114580931252558660
 MonoBehaviour:
