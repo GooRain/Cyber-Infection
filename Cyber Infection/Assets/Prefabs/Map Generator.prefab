@@ -96,3 +96,5 @@ MonoBehaviour:
   map: {fileID: 114636558812152544}
   roomPrefab: {fileID: 114923276149133340, guid: 01fc60f724089ec40910538cb116639d,
     type: 2}
+  wallPrefab: {fileID: 114424951085832998, guid: 620701b0e9ab87c4a935d5152cbc413d,
+    type: 2}

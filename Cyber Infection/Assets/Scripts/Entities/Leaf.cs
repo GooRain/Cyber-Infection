@@ -12,7 +12,7 @@ public class Leaf
 	public RoomSettings room; // the room that is inside this Leaf
 	public List<Rectangle> halls; // hallways to connect this Leaf to other Leafs
 
-	public Leaf(float _x, float _y, float _width, float _height)
+	public Leaf(float _x, float _y, int _width, int _height)
 	{
 		pos = new Point(_x, _y);
 		rect = new Rectangle(_width, _height);
@@ -34,11 +34,11 @@ public class Leaf
 		else if(rect.height > rect.width && rect.height / rect.width >= 1.25f)
 			splitH = true;
 
-		float max = (splitH ? rect.height : rect.width) - MapSettings.Ins.MinLeafSize; // determine the maximum height or width
+		int max = (splitH ? rect.height : rect.width) - MapSettings.Ins.MinLeafSize; // determine the maximum height or width
 		if(max <= MapSettings.Ins.MinLeafSize)
 			return false; // the area is too small to split any more...
 
-		float split = Random.Range(MapSettings.Ins.MinLeafSize, max); // determine where we're going to split
+		int split = Random.Range(MapSettings.Ins.MinLeafSize, max); // determine where we're going to split
 
 		// create our left and right children based on the direction of the split
 		if(splitH)
@@ -71,16 +71,16 @@ public class Leaf
 		}
 		else
 		{
-			// this Leaf is the ready to make a room
-			Rectangle roomSize;
-			Point roomPos;
-			float minSize = Mathf.Sqrt(MapSettings.Ins.MinLeafSize);
-			// the room can be between 3 x 3 tiles to the size of the leaf - 2.
-			roomSize = new Rectangle(Random.Range(minSize, rect.width), Random.Range(minSize, rect.height));
-			// place the room within the Leaf, but don't put it right 
-			// against the side of the Leaf (that would merge rooms together)
-			roomPos = new Point(Random.Range(1f, rect.width - roomSize.width - 1f), Random.Range(1f, rect.height - roomSize.height - 1f));
-			room = new RoomSettings(pos + roomPos, roomSize);
+			//// this Leaf is the ready to make a room
+			//Rectangle roomSize;
+			//Point roomPos;
+			//float minSize = Mathf.Sqrt(MapSettings.Ins.MinLeafSize);
+			//// the room can be between 3 x 3 tiles to the size of the leaf - 2.
+			//roomSize = new Rectangle(Random.Range(minSize, rect.width), Random.Range(minSize, rect.height));
+			//// place the room within the Leaf, but don't put it right 
+			//// against the side of the Leaf (that would merge rooms together)
+			//roomPos = new Point(Random.Range(1f, rect.width - roomSize.width - 1f), Random.Range(1f, rect.height - roomSize.height - 1f));
+			room = new RoomSettings(pos, rect);
 			MapGenerator.Ins.AddRoom(this);
 		}
 

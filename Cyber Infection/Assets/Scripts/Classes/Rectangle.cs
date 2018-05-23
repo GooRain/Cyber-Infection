@@ -4,10 +4,10 @@
 public class Rectangle
 {
 
-	public float width;
-	public float height;
+	public int width;
+	public int height;
 
-	public Rectangle(float _width, float _height)
+	public Rectangle(int _width, int _height)
 	{
 		width = _width;
 		height = _height;

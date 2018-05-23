@@ -22,6 +22,7 @@ public class MapGenerator : MonoBehaviour
 	public Map map;
 	[Header("Prefabs")]
 	public Room roomPrefab;
+	public Wall wallPrefab;
 
 	private Leaf root;
 	private List<Leaf> leafs;
@@ -43,7 +44,7 @@ public class MapGenerator : MonoBehaviour
 
 	private IEnumerator Generate()
 	{
-		root = new Leaf(transform.position.x, transform.position.y, MapSettings.Ins.mapSize.width, MapSettings.Ins.mapSize.height);
+		root = new Leaf((int)transform.position.x - MapSettings.Ins.mapSize.width / 2, (int)transform.position.y - MapSettings.Ins.mapSize.height / 2, MapSettings.Ins.mapSize.width, MapSettings.Ins.mapSize.height);
 		leafs = new List<Leaf>();
 		roomsSettings = new List<RoomSettings>();
 
@@ -62,6 +63,11 @@ public class MapGenerator : MonoBehaviour
 		yield return StartCoroutine(generationCoroutine);
 
 		Debug.Log("Rooms placing Is Done!");
+
+		generationCoroutine = PlaceWalls();
+		yield return StartCoroutine(generationCoroutine);
+
+		Debug.Log("Walls placing is Done!");
 	}
 
 	private IEnumerator Split()
@@ -69,29 +75,25 @@ public class MapGenerator : MonoBehaviour
 		leafs.Add(root);
 
 		bool did_split = true;
-		// we loop through every Leaf in our Vector over and over again, until no more Leafs can be split.
 		while(did_split)
 		{
 			did_split = false;
-			foreach(Leaf l in leafs)
+			foreach(Leaf item in leafs)
 			{
-				if(l.leftChild == null && l.rightChild == null) // if this Leaf is not already split...
+				if(item.leftChild == null && item.rightChild == null)
 				{
-					// if this Leaf is too big, or 75% chance...
-					if(l.rect.width > MapSettings.Ins.MaxLeafSize || l.rect.height > MapSettings.Ins.MaxLeafSize || Random.Range(0f, 1f) > 0.25)
+					if(item.rect.width > MapSettings.Ins.MaxLeafSize || item.rect.height > MapSettings.Ins.MaxLeafSize || Random.Range(0f, 1f) > 0.25f)
 					{
-						if(l.Split()) // split the Leaf!
+						if(item.Split())
 						{
-							// if we did split, push the child leafs to the Vector so we can loop into them next
-							leafs.Add(l.leftChild);
-							leafs.Add(l.rightChild);
+							leafs.Add(item.leftChild);
+							leafs.Add(item.rightChild);
 							did_split = true;
 							break;
 						}
 					}
 				}
 			}
-
 			yield return new WaitForEndOfFrame();
 		}
 
@@ -103,9 +105,30 @@ public class MapGenerator : MonoBehaviour
 		foreach(var item in roomsSettings)
 		{
 			Room _room = Instantiate(roomPrefab, item.Pos.GetVector3(item.Z), Quaternion.identity, map.transform);
+			_room.Settings = item;
 			_room.transform.localScale = item.Size.GetVector3();
 			_room.SetRandomColor();
 			map.rooms.Add(_room);
+		}
+		yield return true;
+	}
+
+	private IEnumerator PlaceWalls()
+	{
+		foreach(var item in map.rooms)
+		{
+			Vector3 pos = new Vector3(item.Settings.Pos.X - item.Settings.Size.width / 2,
+				item.Settings.Pos.X - item.Settings.Size.height / 2, 5f);
+			Wall _wall = Instantiate(wallPrefab, pos, Quaternion.identity, map.transform);
+			pos = new Vector3(item.Settings.Pos.X - item.Settings.Size.width / 2,
+				item.Settings.Pos.X - item.Settings.Size.height / 2, 5f);
+			_wall = Instantiate(wallPrefab, pos, Quaternion.identity, map.transform);
+			pos = new Vector3(item.Settings.Pos.X - item.Settings.Size.width / 2,
+				item.Settings.Pos.X - item.Settings.Size.height / 2, 5f);
+			_wall = Instantiate(wallPrefab, pos, Quaternion.identity, map.transform);
+			pos = new Vector3(item.Settings.Pos.X - item.Settings.Size.width / 2,
+				item.Settings.Pos.X - item.Settings.Size.height / 2, 5f);
+			_wall = Instantiate(wallPrefab, pos, Quaternion.identity, map.transform);
 		}
 		yield return true;
 	}
