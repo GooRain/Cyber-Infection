@@ -81,11 +81,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cfa96798c5975a4b90876e4ddb87822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinLeafSize: 6
-  MaxLeafSize: 20
+  MinLeafSize: 15
+  MaxLeafSize: 30
   mapSize:
-    width: 24
-    length: 24
+    width: 60
+    height: 60
 --- !u!114 &114621500027602794
 MonoBehaviour:
   m_ObjectHideFlags: 1

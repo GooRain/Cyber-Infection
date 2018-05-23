@@ -4,9 +4,8 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
 
-
 	public MeshRenderer meshRenderer;
-
+	public RoomSettings Settings { get; set; }
 
 	public void SetRandomColor()
 	{
