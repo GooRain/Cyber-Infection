@@ -23,7 +23,7 @@ public class PixelBoy : MonoBehaviour
 	void Update()
 	{
 
-		float ratio = ((float)cam.pixelHeight / (float)cam.pixelWidth);
+		float ratio = ((float)cam.pixelHeight / cam.pixelWidth);
 		h = Mathf.RoundToInt(w * ratio);
 
 	}

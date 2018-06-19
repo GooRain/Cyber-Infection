@@ -21,9 +21,9 @@ public class MapSettings : MonoBehaviour
 		Singleton();
 	}
 
-	public int MinLeafSize = 6;
-	public int MaxLeafSize = 20;
+	public int MinAreaSize = 6;
+	public int MaxAreaSize = 20;
 	public Rectangle mapSize;
 
-	
+
 }
