@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.IO;
+using Scriptable;
 
 public static class ScriptableObjectUtility
 {
@@ -34,9 +35,9 @@ public static class ScriptableObjectUtility
 
 public class ClassAsset
 {
-	[MenuItem("Assets/Create/CustomDataAsset/BlocksAsset")]
+	[MenuItem("Assets/Create/CustomDataAsset/BlockData")]
 	public static void CreateAsset()
 	{
-		ScriptableObjectUtility.CreateAsset<BlocksAsset>();
+		ScriptableObjectUtility.CreateAsset<BlockData>();
 	}
 }
