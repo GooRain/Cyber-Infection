@@ -1,8 +1,10 @@
-﻿namespace Interfaces
+﻿using UnityEngine;
+
+namespace Interfaces
 {
 	public interface IControllable
 	{
-		void Move();
-		void Rotate();
+		void Move(Vector3 direction);
+		void Rotate(Vector3 direction);
 	}
 }

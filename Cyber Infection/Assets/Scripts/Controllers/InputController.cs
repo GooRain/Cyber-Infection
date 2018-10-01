@@ -1,4 +1,5 @@
 ﻿using Data;
+using Data.Settings;
 using Interfaces;
 using UnityEngine;
 
@@ -6,8 +7,8 @@ namespace Controllers
 {
 	public class InputController
 	{
-		private InputSettings _settings;
-		
+		private InputSettingsData _settings;
+
 		private IControllable _controllable;
 
 		public void SetControllable(IControllable newControllable)
@@ -15,22 +16,27 @@ namespace Controllers
 			_controllable = newControllable;
 		}
 
+		private void Awake()
+		{
+			_settings = (InputSettingsData) InputSettingsData.instance;
+		}
+
 		private void Update()
 		{
 			HandleInput();
 		}
 
-		public void HandleInput()
+		private void HandleInput()
 		{
-			if (Input.GetKey(_settings["Move"]))
+			if (Input.GetKeyDown(_settings.GetKeyCode("Left")))
 			{
-				_controllable.Move();	
+				Move(Vector3.left);
 			}
-			
-			if (Input.GetKey(_settings["Rotate"]))
-			{
-				_controllable.Rotate();	
-			}
+		}
+
+		private void Move(Vector3 motion)
+		{
+			_controllable.Move(motion);
 		}
 	}
 }

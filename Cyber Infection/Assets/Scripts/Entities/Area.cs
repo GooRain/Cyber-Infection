@@ -1,68 +1,71 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Generators;
+using Persistent.Settings;
 using UnityEngine;
 
-public class Area
+namespace Entities
 {
-	public Point pos;
-	public Rectangle rect;
-
-	public Area leftChild;
-	public Area rightChild;
-	public RoomSettings room;
-
-	public Area(float _x, float _y, int _width, int _height)
+	public class Area
 	{
-		pos = new Point(_x, _y);
-		rect = new Rectangle(_width, _height);
-	}
+		public Point pos;
+		public Rectangle rect;
 
-	public bool Split()
-	{
-		if(leftChild != null || rightChild != null)
-			return false;
+		public Area leftChild;
+		public Area rightChild;
+		public RoomSettings room;
 
-		bool splitH = Random.Range(0f, 1f) > 0.5f;
-		if(rect.width > rect.height && (float)rect.width / rect.height >= 1.25f)
-			splitH = false;
-		else if(rect.height > rect.width && (float)rect.height / rect.width >= 1.25f)
-			splitH = true;
-
-		int max = (splitH ? rect.height : rect.width) - MapSettings.Ins.MinAreaSize;
-		if(max <= MapSettings.Ins.MinAreaSize)
-			return false;
-
-		int split = Random.Range(MapSettings.Ins.MinAreaSize, max);
-
-		if(splitH)
+		public Area(float _x, float _y, int _width, int _height)
 		{
-			leftChild = new Area(pos.X, pos.Y - (rect.height - split) / 2f, rect.width, split);
-			rightChild = new Area(pos.X, pos.Y + split / 2f, rect.width, rect.height - split);
+			pos = new Point(_x, _y);
+			rect = new Rectangle(_width, _height);
 		}
-		else
-		{
-			leftChild = new Area(pos.X - (rect.width - split) / 2f, pos.Y, split, rect.height);
-			rightChild = new Area(pos.X + split / 2f, pos.Y, rect.width - split, rect.height);
-		}
-		return true;
-	}
 
-	public void CreateRooms()
-	{
-		if(leftChild != null || rightChild != null)
+		public bool Split()
 		{
-			if(leftChild != null)
+			if(leftChild != null || rightChild != null)
+				return false;
+
+			bool splitH = Random.Range(0f, 1f) > 0.5f;
+			if(rect.width > rect.height && (float)rect.width / rect.height >= 1.25f)
+				splitH = false;
+			else if(rect.height > rect.width && (float)rect.height / rect.width >= 1.25f)
+				splitH = true;
+
+			int max = (splitH ? rect.height : rect.width) - MapSettings.instance.MinAreaSize;
+			if(max <= MapSettings.instance.MinAreaSize)
+				return false;
+
+			int split = Random.Range(MapSettings.instance.MinAreaSize, max);
+
+			if(splitH)
 			{
-				leftChild.CreateRooms();
+				leftChild = new Area(pos.X, pos.Y - (rect.height - split) / 2f, rect.width, split);
+				rightChild = new Area(pos.X, pos.Y + split / 2f, rect.width, rect.height - split);
 			}
-			if(rightChild != null)
+			else
 			{
-				rightChild.CreateRooms();
+				leftChild = new Area(pos.X - (rect.width - split) / 2f, pos.Y, split, rect.height);
+				rightChild = new Area(pos.X + split / 2f, pos.Y, rect.width - split, rect.height);
 			}
+			return true;
 		}
-		else
-		{room = new RoomSettings(pos, rect);
-			MapGenerator.Ins.AddRoom(this);
+
+		public void CreateRooms()
+		{
+			if(leftChild != null || rightChild != null)
+			{
+				if(leftChild != null)
+				{
+					leftChild.CreateRooms();
+				}
+				if(rightChild != null)
+				{
+					rightChild.CreateRooms();
+				}
+			}
+			else
+			{room = new RoomSettings(pos, rect);
+				MapGenerator.Ins.AddRoom(this);
+			}
 		}
 	}
 }

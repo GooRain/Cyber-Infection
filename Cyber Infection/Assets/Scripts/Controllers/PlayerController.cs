@@ -80,8 +80,8 @@ public class PlayerController : MonoBehaviour
 
 		transform.Translate(transform.forward * speed * Time.deltaTime, Space.World);
 
-		float animationSpeedPercent = ((running) ? 1 : .5f) * inputDir.magnitude;
-		animator.SetFloat("speedPercent", animationSpeedPercent);
+//		float animationSpeedPercent = ((running) ? 1 : .5f) * inputDir.magnitude;
+//		animator.SetFloat("speedPercent", animationSpeedPercent);
 
 		//if(Input.GetKey(KeyCode.W))
 		//{

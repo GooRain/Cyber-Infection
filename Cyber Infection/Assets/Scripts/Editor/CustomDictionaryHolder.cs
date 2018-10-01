@@ -1,10 +1,10 @@
-﻿using Data;
+﻿using Data.Settings;
 using UnityEditor;
 using UnityEngine;
 
 namespace Editor
 {
-	[CustomPropertyDrawer(typeof(InputSettings.KeyCodesDictionary))]
+	[CustomPropertyDrawer(typeof(InputSettingsData.KeyCodesDictionary))]
 	public class KeyCodesDictionaryDrawer : DictionaryDrawer<string, KeyCode>
 	{
 	}

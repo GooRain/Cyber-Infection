@@ -32,13 +32,22 @@
             <e p="PlayerController.cs" t="Include" />
           </e>
           <e p="Data" t="Include">
-            <e p="InputSettings.cs" t="Include" />
+            <e p="LoadingData.cs" t="Include" />
+            <e p="Objects" t="Include">
+              <e p="BlockData.cs" t="Include" />
+              <e p="WeaponData.cs" t="Include" />
+            </e>
             <e p="SerializableDictionary.cs" t="Include" />
+            <e p="Settings" t="Include">
+              <e p="GameSettingsData.cs" t="Include" />
+              <e p="InputSettingsData.cs" t="Include" />
+              <e p="MapSettingsData.cs" t="Include" />
+              <e p="SettingsDataBase.cs" t="Include" />
+            </e>
           </e>
           <e p="Editor" t="Include">
             <e p="CustomDictionaryHolder.cs" t="Include" />
             <e p="DictionaryDrawer.cs" t="Include" />
-            <e p="ScriptableObjectUtility.cs" t="Include" />
           </e>
           <e p="Entities" t="Include">
             <e p="Area.cs" t="Include" />
@@ -56,21 +65,23 @@
             <e p="IWeapon.cs" t="Include" />
           </e>
           <e p="Map.cs" t="Include" />
+          <e p="Persistent" t="Include">
+            <e p="IInitializable.cs" t="Include" />
+            <e p="Settings" t="Include">
+              <e p="GameSettings.cs" t="Include" />
+              <e p="LevelSettings.cs" t="Include" />
+              <e p="MapSettings.cs" t="Include" />
+              <e p="SettingsBase.cs" t="Include" />
+              <e p="SettingsInitializer.cs" t="Include" />
+            </e>
+            <e p="Singleton.cs" t="Include" />
+          </e>
           <e p="PixelBoy.cs" t="Include" />
           <e p="PlayerScripts" t="Include">
             <e p="Player.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
           </e>
           <e p="Room.cs" t="Include" />
-          <e p="Scriptable" t="Include">
-            <e p="BlockData.cs" t="Include" />
-            <e p="WeaponData.cs" t="Include" />
-          </e>
-          <e p="Settings" t="Include">
-            <e p="GameSettings.cs" t="Include" />
-            <e p="LevelSettings.cs" t="Include" />
-            <e p="MapSettings.cs" t="Include" />
-          </e>
           <e p="Utility" t="Include">
             <e p="Enums.cs" t="Include" />
           </e>
