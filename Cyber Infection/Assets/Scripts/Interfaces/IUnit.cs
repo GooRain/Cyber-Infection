@@ -1,9 +1,7 @@
 ﻿namespace Interfaces
 {
-	public interface IUnit
+	public interface IUnit : IAlive
 	{
-		void Move();
-		void Rotate();
 		
 	}
 }

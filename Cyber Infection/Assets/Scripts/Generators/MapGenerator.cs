@@ -30,13 +30,13 @@ public class MapGenerator : MonoBehaviour
 	public Wall wallPrefab;
 
 	// Начальная область
-	private Area root;
+	private Area _root;
 	// Список областей
-	private List<Area> areas;
+	private List<Area> _areas;
 	// Список настроек каждой комнаты
-	private List<RoomSettings> roomsSettings;
+	private List<RoomSettings> _roomsSettings;
 	// Ссылка на IEnumerator генерации
-	private IEnumerator generationCoroutine;
+	private IEnumerator _generationCoroutine;
 
 	// Метод Awake вызывается при загрузке сцены
 	private void Awake()
@@ -47,38 +47,38 @@ public class MapGenerator : MonoBehaviour
 	// Метод Start вызывается в начале после метода Awake, до метода Update
 	private void Start()
 	{
-		generationCoroutine = Generate();
-		StartCoroutine(generationCoroutine);
+		_generationCoroutine = Generate();
+		StartCoroutine(_generationCoroutine);
 	}
 	
 	// Генерация карты
 	private IEnumerator Generate()
 	{
 		// Инициализируем начальную область
-		root = new Area((int)transform.position.x, (int)transform.position.y, MapSettings.Ins.mapSize.width, MapSettings.Ins.mapSize.height);
+		_root = new Area((int)transform.position.x, (int)transform.position.y, MapSettings.Ins.mapSize.width, MapSettings.Ins.mapSize.height);
 		// Инициализируем список областей
-		areas = new List<Area>();
+		_areas = new List<Area>();
 		// Инициализируем список настроек комнат
-		roomsSettings = new List<RoomSettings>();
+		_roomsSettings = new List<RoomSettings>();
 
 		Debug.Log("Areas initialization Is Done!");
 		// Вызываем короутин разделения областей
-		generationCoroutine = Split();
-		yield return StartCoroutine(generationCoroutine);
+		_generationCoroutine = Split();
+		yield return StartCoroutine(_generationCoroutine);
 
 		Debug.Log("Areas splitting Is Done!");
 		// Создаем настройки комнат
-		root.CreateRooms();
+		_root.CreateRooms();
 
 		Debug.Log("Rooms has been initialized!");
 		// Расстановка комнат
-		generationCoroutine = PlaceRooms();
-		yield return StartCoroutine(generationCoroutine);
+		_generationCoroutine = PlaceRooms();
+		yield return StartCoroutine(_generationCoroutine);
 
 		Debug.Log("Rooms placing Is Done!");
 		// Расстановка стен
-		generationCoroutine = PlaceWalls();
-		yield return StartCoroutine(generationCoroutine);
+		_generationCoroutine = PlaceWalls();
+		yield return StartCoroutine(_generationCoroutine);
 		Debug.Log("Walls placing is Done!");
 	}
 
@@ -92,7 +92,7 @@ public class MapGenerator : MonoBehaviour
 	private IEnumerator Split()
 	{
 		// Добавляем начальную область
-		areas.Add(root);
+		_areas.Add(_root);
 
 		// Булеан проверки было ли произведено деление
 		bool did_split = true;
@@ -103,7 +103,7 @@ public class MapGenerator : MonoBehaviour
 		{
 			yield return new WaitUntil(() => CheckInput(KeyCode.N));
 			did_split = false;
-			foreach(Area item in areas)
+			foreach(Area item in _areas)
 			{
 				if(item.leftChild == null && item.rightChild == null)
 				{
@@ -114,9 +114,9 @@ public class MapGenerator : MonoBehaviour
 						{
 							index++;
 							// Добавляем в список левого область
-							areas.Add(item.leftChild);
+							_areas.Add(item.leftChild);
 							// Добавляем в список правую область
-							areas.Add(item.rightChild);
+							_areas.Add(item.rightChild);
 
 							string left = "(" + item.leftChild.pos.X + ", " + item.leftChild.pos.Y + ") | (" + item.leftChild.rect.width + ", " + item.leftChild.rect.height + ")";
 							string right = "(" + item.rightChild.pos.X + ", " + item.rightChild.pos.Y + ") | (" + item.rightChild.rect.width + ", " + item.rightChild.rect.height + ")";
@@ -135,8 +135,8 @@ public class MapGenerator : MonoBehaviour
 				Destroy(item.gameObject);
 			}
 			map.rooms.Clear();
-			roomsSettings.Clear();
-			root.CreateRooms();
+			_roomsSettings.Clear();
+			_root.CreateRooms();
 			yield return StartCoroutine(PlaceRooms());
 			yield return new WaitForEndOfFrame();
 		}
@@ -147,7 +147,7 @@ public class MapGenerator : MonoBehaviour
 	// Расстановка комнат
 	private IEnumerator PlaceRooms()
 	{
-		foreach(var item in roomsSettings)
+		foreach(var item in _roomsSettings)
 		{
 			Room _room = Instantiate(roomPrefab, item.Pos.GetVector3(item.Z), Quaternion.identity, map.transform);
 			_room.Settings = item;
@@ -164,23 +164,23 @@ public class MapGenerator : MonoBehaviour
 		foreach(var item in map.rooms)
 		{
 			float _Z = 3f;
-			Vector3 pos = new Vector3(item.Settings.Pos.X - item.Settings.Size.width / 2,
+			Vector3 pos = new Vector3(item.Settings.Pos.X - item.Settings.Size.width / 2f,
 				_Z, item.Settings.Pos.Y);
 			Vector3 scale = new Vector3(1, 1, item.Settings.Size.height);
 			PlaceWall(item, pos, scale);
 
-			pos = new Vector3(item.Settings.Pos.X + item.Settings.Size.width / 2,
+			pos = new Vector3(item.Settings.Pos.X + item.Settings.Size.width / 2f,
 				_Z, item.Settings.Pos.Y);
 			scale = new Vector3(1, 1, item.Settings.Size.height);
 			PlaceWall(item, pos, scale);
 
 			pos = new Vector3(item.Settings.Pos.X,
-				_Z, item.Settings.Pos.Y - item.Settings.Size.height / 2);
+				_Z, item.Settings.Pos.Y - item.Settings.Size.height / 2f);
 			scale = new Vector3(item.Settings.Size.width, 1, 1);
 			PlaceWall(item, pos, scale);
 
 			pos = new Vector3(item.Settings.Pos.X,
-				_Z, item.Settings.Pos.Y + item.Settings.Size.height / 2);
+				_Z, item.Settings.Pos.Y + item.Settings.Size.height / 2f);
 			scale = new Vector3(item.Settings.Size.width, 1, 1);
 			PlaceWall(item, pos, scale);
 		}
@@ -188,19 +188,19 @@ public class MapGenerator : MonoBehaviour
 	}
 
 	// Метод ставит стену
-	private void PlaceWall(Room _room, Vector3 _pos, Vector3 _scale)
+	private void PlaceWall(Room room, Vector3 pos, Vector3 scale)
 	{
-		Wall _wall = Instantiate(wallPrefab, _pos, Quaternion.identity, map.transform);
-		_wall.transform.LookAt(new Vector3(_room.transform.position.x, _wall.transform.position.y, _room.transform.position.z));
-		_room.Walls.Add(_wall);
-		_wall.transform.SetParent(_room.transform);
+		Wall _wall = Instantiate(wallPrefab, pos, Quaternion.identity, map.transform);
+		_wall.transform.LookAt(new Vector3(room.transform.position.x, _wall.transform.position.y, room.transform.position.z));
+		room.Walls.Add(_wall);
+		_wall.transform.SetParent(room.transform);
 		_wall.transform.localScale = new Vector3(1f, _wall.transform.localScale.y, _wall.transform.localScale.z);
 	}
 
 	// Добавить комнату области
 	public void AddRoom(Area sender)
 	{
-		roomsSettings.Add(sender.room);
+		_roomsSettings.Add(sender.room);
 	}
 
 }
