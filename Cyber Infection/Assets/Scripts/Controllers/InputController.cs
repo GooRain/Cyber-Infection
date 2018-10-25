@@ -1,15 +1,19 @@
 ﻿using Data;
 using Data.Settings;
 using Interfaces;
+using PlayerScripts.Controllers;
 using UnityEngine;
 
 namespace Controllers
 {
-	public class InputController
+	public class InputController : MonoBehaviour
 	{
 		private InputSettingsData _settings;
 
 		private IControllable _controllable;
+
+		private Vector3 _moveDirection;
+		private Vector3 _lookDirection;
 
 		public void SetControllable(IControllable newControllable)
 		{
@@ -18,7 +22,12 @@ namespace Controllers
 
 		private void Awake()
 		{
-			_settings = (InputSettingsData) InputSettingsData.instance;
+			_settings = InputSettingsData.instance;
+		}
+
+		private void Start()
+		{
+			SetControllable(FindObjectOfType<UnitController>());
 		}
 
 		private void Update()
@@ -28,15 +37,64 @@ namespace Controllers
 
 		private void HandleInput()
 		{
-			if (Input.GetKeyDown(_settings.GetKeyCode("Left")))
+			Move(_moveDirection);
+			Rotate(_lookDirection);
+		}
+
+		private void GetMotion(string value)
+		{
+			switch (value)
 			{
-				Move(Vector3.left);
+				case "Left":
+					_moveDirection.x = -1;
+					break;
+				case "Right":
+					_moveDirection.x = 1;
+					break;
+				case "Up":
+					_moveDirection.y = 1;
+					break;
+				case "Down":
+					_moveDirection.y = -1;
+					break;
+				default:
+					_moveDirection = Vector3.zero;
+					break;
+			}
+		}
+
+		private void GetDirection(string value)
+		{
+			switch (value)
+			{
+				case "Left":
+					_lookDirection.y = 180;
+					break;
+				case "Right":
+					_lookDirection.y = 0;
+					break;
+				case "Up":
+					_lookDirection.y = 270;
+					break;
+				case "Down":
+					_lookDirection.y = 90;
+					break;
+				default:
+					_lookDirection.y = 0;
+					break;
 			}
 		}
 
 		private void Move(Vector3 motion)
 		{
-			_controllable.Move(motion);
+			if (_controllable != null)
+				_controllable.Move(motion);
+		}
+
+		private void Rotate(Vector3 direction)
+		{
+			if (_controllable != null)
+				_controllable.Rotate(direction);
 		}
 	}
 }

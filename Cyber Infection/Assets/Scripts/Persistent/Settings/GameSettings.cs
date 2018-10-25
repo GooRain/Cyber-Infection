@@ -9,7 +9,7 @@ namespace Persistent.Settings
 
 		private void Awake()
 		{
-			_data = (GameSettingsData) GameSettingsData.instance;
+			_data = GameSettingsData.instance;
 		}
 	}
 }

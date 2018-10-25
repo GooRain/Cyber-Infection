@@ -1,9 +1,8 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Data.Settings
 {
-	public class SettingsDataBase : ScriptableObject
+	public abstract class SettingsDataBase<T> : ScriptableSingleton<T> where T : ScriptableObject
 	{
 	}
 }

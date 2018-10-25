@@ -5,10 +5,8 @@ using UnityEngine;
 namespace Data
 {
 	[CreateAssetMenu(menuName = "Cyber Infection/Data/Loading Data", order = -1)]
-	public class LoadingData : SettingsDataBase
+	public class LoadingData : SettingsDataBase<LoadingData>
 	{
-		public new static string path;
-
-		public List<SettingsDataBase> objects;
+		public List<SettingsDataBase<LoadingData>> objects;
 	}
 }

@@ -13,9 +13,21 @@ namespace PlayerScripts
 			set
 			{
 				_health = value;
-				if(_health <= 0)
+				if (_health <= 0)
 					Die();
 			}
+		}
+
+		public Transform refTransform { get; private set; }
+
+		private void Awake()
+		{
+			CacheReferences();
+		}
+
+		private void CacheReferences()
+		{
+			refTransform = transform;
 		}
 
 		public void GetDamage(int damageAmount)
@@ -27,16 +39,5 @@ namespace PlayerScripts
 		{
 			Destroy(gameObject);
 		}
-
-		public void Move()
-		{
-			
-		}
-
-		public void Rotate()
-		{
-			
-		}
-
 	}
 }

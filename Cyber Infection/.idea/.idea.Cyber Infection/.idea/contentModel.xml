@@ -37,6 +37,7 @@
               <e p="BlockData.cs" t="Include" />
               <e p="WeaponData.cs" t="Include" />
             </e>
+            <e p="ScriptableSingleton.cs" t="Include" />
             <e p="SerializableDictionary.cs" t="Include" />
             <e p="Settings" t="Include">
               <e p="GameSettingsData.cs" t="Include" />
@@ -78,6 +79,9 @@
           </e>
           <e p="PixelBoy.cs" t="Include" />
           <e p="PlayerScripts" t="Include">
+            <e p="Controllers" t="Include">
+              <e p="UnitController.cs" t="Include" />
+            </e>
             <e p="Player.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
           </e>
