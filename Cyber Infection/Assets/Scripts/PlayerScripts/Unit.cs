@@ -1,4 +1,4 @@
-﻿using Interfaces;
+﻿using Entities;
 using UnityEngine;
 
 namespace PlayerScripts

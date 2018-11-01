@@ -1,4 +1,4 @@
-﻿namespace Interfaces
+﻿namespace Entities
 {
 	public interface IAlive
 	{

@@ -4,13 +4,14 @@ using UnityEngine.SceneManagement;
 
 namespace Data.Generating
 {
+	[CreateAssetMenu(menuName = "Cyber Infection/Data/Generating Scenes Data")]
 	public class GeneratingScenesData : SingletonScriptableObject<GeneratingScenesData>
 	{
-		[SerializeField] private Scene[] _generateOnScenes;
+		[SerializeField] private string[] _generateOnScenes;
 
-		public bool DoGenerate(Scene loadedScene)
+		public bool DoGenerate(string loadedScene)
 		{
-			return _generateOnScenes.Any(scene => loadedScene.name.Equals(scene.name));
+			return _generateOnScenes.Any(scene => scene.ToLower().Equals(loadedScene.ToLower()));
 		}
 	}
 }

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Projects\Cyber-Infection\Cyber Infection" t="IncludeRecursive">
+    <e p="C:\Users\G\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\G\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_Cyber Infection.-2068686969.00" t="ExcludeRecursive" />
+    <e p="C:\Users\G\Documents\Cyber-Infection\Cyber Infection" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -30,6 +32,10 @@
             <e p="PlayerController.cs" t="Include" />
           </e>
           <e p="Data" t="Include">
+            <e p="Generating" t="Include">
+              <e p="GeneratingScenesData.cs" t="Include" />
+              <e p="MapSettingsData.cs" t="Include" />
+            </e>
             <e p="LoadingData.cs" t="Include" />
             <e p="Objects" t="Include">
               <e p="BlockData.cs" t="Include" />
@@ -39,7 +45,6 @@
             <e p="Settings" t="Include">
               <e p="GameSettingsData.cs" t="Include" />
               <e p="InputSettingsData.cs" t="Include" />
-              <e p="MapSettingsData.cs" t="Include" />
               <e p="SettingsDataBase.cs" t="Include" />
             </e>
             <e p="SingletonScriptableObject.cs" t="Include" />
@@ -52,16 +57,14 @@
             <e p="Area.cs" t="Include" />
             <e p="Block.cs" t="Include" />
             <e p="Hall.cs" t="Include" />
-          </e>
-          <e p="Generators" t="Include">
-            <e p="MapGenerator.cs" t="Include" />
-            <e p="RoomGenerator.cs" t="Include" />
-          </e>
-          <e p="Interfaces" t="Include">
             <e p="IAlive.cs" t="Include" />
             <e p="IControllable.cs" t="Include" />
             <e p="IUnit.cs" t="Include" />
             <e p="IWeapon.cs" t="Include" />
+          </e>
+          <e p="Generators" t="Include">
+            <e p="MapGenerator.cs" t="Include" />
+            <e p="RoomGenerator.cs" t="Include" />
           </e>
           <e p="Map.cs" t="Include" />
           <e p="Persistent" t="Include">
@@ -71,7 +74,6 @@
               <e p="LevelSettings.cs" t="Include" />
               <e p="MapSettings.cs" t="Include" />
               <e p="SettingsBase.cs" t="Include" />
-              <e p="SettingsInitializer.cs" t="Include" />
             </e>
             <e p="SingletonMonobehaviour.cs" t="Include" />
           </e>
@@ -84,6 +86,11 @@
             <e p="Unit.cs" t="Include" />
           </e>
           <e p="Room.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="Menu" t="Include">
+              <e p="MenuCanvas.cs" t="Include" />
+            </e>
+          </e>
           <e p="Utility" t="Include">
             <e p="Enums.cs" t="Include" />
           </e>
@@ -97,6 +104,5 @@
         <e p="bin" t="ExcludeRecursive" />
       </e>
     </e>
-    <e p="C:\Users\VICTOR\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_Cyber Infection.437327030.00" t="ExcludeRecursive" />
   </component>
 </project>

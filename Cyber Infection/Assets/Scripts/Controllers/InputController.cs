@@ -1,6 +1,6 @@
 ﻿using Data;
 using Data.Settings;
-using Interfaces;
+using Entities;
 using PlayerScripts.Controllers;
 using UnityEngine;
 
@@ -41,48 +41,14 @@ namespace Controllers
 			Rotate(_lookDirection);
 		}
 
-		private void GetMotion(string value)
+		private void GetMotion(string value) //	Какой-нибудь GetButtonDown или GetAxis
 		{
-			switch (value)
-			{
-				case "Left":
-					_moveDirection.x = -1;
-					break;
-				case "Right":
-					_moveDirection.x = 1;
-					break;
-				case "Up":
-					_moveDirection.y = 1;
-					break;
-				case "Down":
-					_moveDirection.y = -1;
-					break;
-				default:
-					_moveDirection = Vector3.zero;
-					break;
-			}
+			//	Задать направление движения
 		}
 
-		private void GetDirection(string value)
+		private void GetDirection(string value) //	Какой-нибудь GetButtonDown или GetAxis
 		{
-			switch (value)
-			{
-				case "Left":
-					_lookDirection.y = 180;
-					break;
-				case "Right":
-					_lookDirection.y = 0;
-					break;
-				case "Up":
-					_lookDirection.y = 270;
-					break;
-				case "Down":
-					_lookDirection.y = 90;
-					break;
-				default:
-					_lookDirection.y = 0;
-					break;
-			}
+			//	Задать направление просмотра
 		}
 
 		private void Move(Vector3 motion)

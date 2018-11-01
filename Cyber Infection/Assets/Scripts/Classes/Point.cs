@@ -1,25 +1,26 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public class Point
 {
 
-	public float X;
-	public float Y;
+	public float x;
+	public float y;
 
 	public Point(float _X, float _Y)
 	{
-		X = _X;
-		Y = _Y;
+		x = _X;
+		y = _Y;
 	}
 
 	public static Point operator +(Point p1, Point p2)
 	{
-		return new Point(p1.X + p2.X, p1.Y + p2.Y);
+		return new Point(p1.x + p2.x, p1.y + p2.y);
 	}
 
-	public Vector3 GetVector3(float _Z = 0f)
+	public Vector3 GetVector3(float z = 0f)
 	{
-		return new Vector3(X, _Z, Y);
+		return new Vector3(x, y, z);
 	}
 }

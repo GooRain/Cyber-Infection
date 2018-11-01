@@ -19,7 +19,7 @@ namespace Data
 
 		private void DebugInstance()
 		{
-			Debug.Log("Path updated for " + name + " = <color=red>" + instance + "</color>");
+			//Debug.Log("Path updated for " + name + " = <color=red>" + instance + "</color>");
 		}
 	}
 }

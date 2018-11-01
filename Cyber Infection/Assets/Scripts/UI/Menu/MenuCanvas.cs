@@ -5,13 +5,9 @@ namespace UI.Menu
 {
 	public class MenuCanvas : MonoBehaviour
 	{
-
-		[SerializeField]
-		private Scene _nextScene;
-
-		public void OnNextSceneButtonClick()
+		public void OnNextSceneButtonClick(string sceneName)
 		{
-			SceneManager.LoadScene(_nextScene.name);
+			SceneManager.LoadScene(sceneName);
 		}
 		
 	}

@@ -1,4 +1,7 @@
-﻿using Data.Generating;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Data.Generating;
+using Data.Settings;
 using Persistent;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,26 +13,122 @@ namespace Generators
 {
 	public class MapGenerator : SingletonMonobehaviour<MapGenerator>
 	{
-		private GeneratingScenesData _data;
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+		private static void InitializeBeforeLoad()
+		{
+			InstantiateSingleton();
+		}
 
+		private MapSettingsData _mapSettingsData;
+		
+		private GeneratingScenesData _generatingScenesData;
+
+		private Map _map;
+		
 		private void Awake()
 		{
 			SceneManager.activeSceneChanged += OnSceneLoaded;
+			_mapSettingsData = MapSettingsData.instance;
+		}
+
+		private void Update()
+		{
+			if (Input.GetKey(KeyCode.G))
+			{
+				Clear();
+				Generate();
+			}
 		}
 
 		private void OnSceneLoaded(Scene from, Scene to)
 		{
-			_data = GeneratingScenesData.instance;
+			_generatingScenesData = GeneratingScenesData.instance;
 
-			if (_data.DoGenerate(to))
+			if (_generatingScenesData.DoGenerate(to.name))
 			{
 				Generate();
 			}
 		}
 
+		private void Clear()
+		{
+			foreach (var room in _map.roomsList)
+			{
+				Destroy(room.gameObject);
+			}
+			_map.Clear();
+		}
+		
 		private void Generate()
 		{
 			Debug.Log("Generating...");
+			_map = new Map();
+			var mapSize = _mapSettingsData.mapSize;
+			var roomsAmount = Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
+			var previousRoomSettings = new RoomSettings(new Point(0, 0), new Rectangle(0, 0), 0);
+			var previousOffset = new Point(Random.Range(0, 1) > 0 ? 1 : -1, Random.Range(0, 1) > 0 ? 1 : -1);
+			for (var i = 0; i < roomsAmount; i++)
+			{
+				var roomSize = new Rectangle
+				(
+					Random.Range(_mapSettingsData.roomSizeInfo.minRoomWidth,
+						_mapSettingsData.roomSizeInfo.maxRoomWidth),
+					Random.Range(_mapSettingsData.roomSizeInfo.minRoomHeight,
+						_mapSettingsData.roomSizeInfo.maxRoomHeight)
+				);
+				
+				var newRoom = new GameObject("Room#" + i).AddComponent<Room>();
+				var currentOffset = new Point(previousOffset.x > 0 ? 1 : -1, previousOffset.y > 0 ? 1 : -1);
+				newRoom.Settings =
+					new RoomSettings(
+						new Point(
+							previousRoomSettings.Pos.x +
+							currentOffset.x * (previousRoomSettings.Size.width + roomSize.width) / 2f,
+							previousRoomSettings.Pos.y +
+							currentOffset.y * (previousRoomSettings.Size.height + roomSize.height) / 2f),
+						new Rectangle(roomSize.width, roomSize.height));
+				newRoom.meshRenderer = newRoom.gameObject.AddComponent<MeshRenderer>();
+				var roomMesh = newRoom.gameObject.AddComponent<MeshFilter>().mesh = new Mesh();
+
+				previousOffset = currentOffset;
+				
+				var newVertices = new List<Vector3>();
+				var newUVs = new List<Vector2>();
+				var newTriangles = new List<int>();
+				
+				for (var j = -1; j <= 1; j +=2)
+				{
+					newVertices.Add(new Vector3( roomSize.width * .5f, j * roomSize.height * .5f, 0f));
+					newVertices.Add(new Vector3(-roomSize.width * .5f, j * roomSize.height * .5f, 0f));
+				}
+
+				for (var j = 0; j < newVertices.Count; j++)
+				{
+					newUVs.Add(new Vector2(j, j + 1));
+				}
+				
+				for (var j = 0; j < newVertices.Count / 4; j++)
+				{
+					for (var t = j; t < 3; t++)
+					{
+						newTriangles.Add(t);
+					}
+
+					for (var t = j + 3; t > j; t--)
+					{
+						newTriangles.Add(t);
+					}
+				}
+
+				roomMesh.vertices = newVertices.ToArray();
+				roomMesh.uv = newUVs.ToArray();
+				roomMesh.triangles = newTriangles.ToArray();
+				newRoom.meshRenderer.material = _mapSettingsData.GetFloorMaterial();
+				newRoom.meshRenderer.material.color = _mapSettingsData.GetColor(Random.Range(0f, 1f));
+				
+				_map.Add(newRoom);
+				previousRoomSettings = newRoom.Settings;
+			}
 		}
 		
 		#region DEPRECATED
