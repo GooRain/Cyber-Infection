@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Projects\Cyber-Infection\Cyber Infection" t="IncludeRecursive">
-      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
-      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Fonts" t="Include">
@@ -37,7 +35,6 @@
               <e p="BlockData.cs" t="Include" />
               <e p="WeaponData.cs" t="Include" />
             </e>
-            <e p="ScriptableSingleton.cs" t="Include" />
             <e p="SerializableDictionary.cs" t="Include" />
             <e p="Settings" t="Include">
               <e p="GameSettingsData.cs" t="Include" />
@@ -45,6 +42,7 @@
               <e p="MapSettingsData.cs" t="Include" />
               <e p="SettingsDataBase.cs" t="Include" />
             </e>
+            <e p="SingletonScriptableObject.cs" t="Include" />
           </e>
           <e p="Editor" t="Include">
             <e p="CustomDictionaryHolder.cs" t="Include" />
@@ -75,7 +73,7 @@
               <e p="SettingsBase.cs" t="Include" />
               <e p="SettingsInitializer.cs" t="Include" />
             </e>
-            <e p="Singleton.cs" t="Include" />
+            <e p="SingletonMonobehaviour.cs" t="Include" />
           </e>
           <e p="PixelBoy.cs" t="Include" />
           <e p="PlayerScripts" t="Include">
@@ -88,49 +86,6 @@
           <e p="Room.cs" t="Include" />
           <e p="Utility" t="Include">
             <e p="Enums.cs" t="Include" />
-          </e>
-        </e>
-        <e p="Standard Assets" t="Include">
-          <e p="Cameras" t="Include">
-            <e p="CameraGuidelines.txt" t="Include" />
-            <e p="Scripts" t="Include">
-              <e p="AbstractTargetFollower.cs" t="Include" />
-              <e p="AutoCam.cs" t="Include" />
-              <e p="FreeLookCam.cs" t="Include" />
-              <e p="HandHeldCam.cs" t="Include" />
-              <e p="LookatTarget.cs" t="Include" />
-              <e p="PivotBasedCameraRig.cs" t="Include" />
-              <e p="ProtectCameraFromWallClip.cs" t="Include" />
-              <e p="TargetFieldOfView.cs" t="Include" />
-            </e>
-          </e>
-          <e p="CrossPlatformInput" t="Include">
-            <e p="CrossPlatformInputGuidelines.txt" t="Include" />
-            <e p="Scripts" t="Include">
-              <e p="AxisTouchButton.cs" t="Include" />
-              <e p="ButtonHandler.cs" t="Include" />
-              <e p="CrossPlatformInputManager.cs" t="Include" />
-              <e p="InputAxisScrollbar.cs" t="Include" />
-              <e p="Joystick.cs" t="Include" />
-              <e p="MobileControlRig.cs" t="Include" />
-              <e p="PlatformSpecific" t="Include">
-                <e p="MobileInput.cs" t="Include" />
-                <e p="StandaloneInput.cs" t="Include" />
-              </e>
-              <e p="TiltInput.cs" t="Include" />
-              <e p="TouchPad.cs" t="Include" />
-              <e p="VirtualInput.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Editor" t="Include">
-            <e p="CrossPlatformInput" t="Include">
-              <e p="CrossPlatformInputInitialize.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Prototyping" t="Include">
-            <e p="Shaders" t="Include">
-              <e p="WorldCoordDiffuse.shader" t="Include" />
-            </e>
           </e>
         </e>
       </e>

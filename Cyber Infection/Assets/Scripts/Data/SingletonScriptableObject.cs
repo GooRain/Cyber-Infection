@@ -2,7 +2,7 @@
 
 namespace Data
 {
-	public class ScriptableSingleton<T> : ScriptableObject where T : ScriptableObject
+	public class SingletonScriptableObject<T> : ScriptableObject where T : ScriptableObject
 	{
 		public static T instance;
 

@@ -2,7 +2,7 @@
 
 namespace Data.Settings
 {
-	public abstract class SettingsDataBase<T> : ScriptableSingleton<T> where T : ScriptableObject
+	public abstract class SettingsDataBase<T> : SingletonScriptableObject<T> where T : ScriptableObject
 	{
 	}
 }
