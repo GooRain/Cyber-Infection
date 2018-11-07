@@ -12,7 +12,7 @@ namespace Persistent
 	/// </summary>
 	public class SingletonMonobehaviour<T> : MonoBehaviour where T : MonoBehaviour
 	{
-		private static T _instance;
+		protected static T _instance;
 
 		public static T instance
 		{
@@ -42,6 +42,13 @@ namespace Persistent
 			singleton.name = "(singleton) " + typeof(T);
 
 			DontDestroyOnLoad(singleton);
+		}
+		
+		protected static void InstantiateFromPrefab(string path)
+		{
+			_instance = Resources.Load<T>(path);
+
+			DontDestroyOnLoad(_instance.gameObject);
 		}
 		
 		// ReSharper disable once StaticMemberInGenericType

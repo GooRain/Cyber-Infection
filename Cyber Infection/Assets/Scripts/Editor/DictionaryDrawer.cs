@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Data;
+using Data.Base;
 using UnityEditor;
 using UnityEngine;
 using UnityObject = UnityEngine.Object;
@@ -122,7 +122,7 @@ namespace Editor
             }
         }
  
-        private static readonly Dictionary<Type, Func<Rect, object, object>> _Fields =
+        private static readonly Dictionary<Type, Func<Rect, object, object>> Fields =
             new Dictionary<Type,Func<Rect,object,object>>()
             {
                 { typeof(int), (rect, value) => EditorGUI.IntField(rect, (int)value) },
@@ -138,7 +138,7 @@ namespace Editor
         private static T DoField<T>(Rect rect, Type type, T value)
         {
             Func<Rect, object, object> field;
-            if (_Fields.TryGetValue(type, out field))
+            if (Fields.TryGetValue(type, out field))
                 return (T)field(rect, value);
  
             if (type.IsEnum)

@@ -6,10 +6,23 @@ namespace Persistent.Settings
 	public class GameSettings : SettingsBase<GameSettings>
 	{
 		[SerializeField] private GameSettingsData _data;
+		
+		public GameSettingsData data { get; private set; }
 
-		private void Awake()
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+		private static void InitializeGameSettings()
 		{
-			_data = GameSettingsData.instance;
+			InstantiateFromPrefab("Prefabs/InstantiateBeforeScene/GameSettings");
+			_instance.InitializeLoadData();
+		}
+		
+		private void InitializeLoadData()
+		{
+			data = _data.LoadAsset();
+			//data.generatingScenesData = null;
+			//data.generatingScenesData = _data.generatingScenesData.LoadAsset();
+			//data.inputSettingsData = _data.inputSettingsData.LoadAsset();
+			//data.mapSettingsData = _data.mapSettingsData.LoadAsset();
 		}
 	}
 }

@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Persistent.Settings
+﻿namespace Persistent.Settings
 {
 	public class LevelSettings : SettingsBase<LevelSettings>
 	{

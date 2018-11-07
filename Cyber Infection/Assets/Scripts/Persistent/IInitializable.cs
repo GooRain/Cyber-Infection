@@ -4,6 +4,6 @@ namespace Persistent
 {
 	public interface IInitializable
 	{
-		GameObject InitializeParameters();
+		bool Initialize();
 	}
 }
