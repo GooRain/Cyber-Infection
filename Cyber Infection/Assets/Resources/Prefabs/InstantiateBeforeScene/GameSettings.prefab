@@ -52,3 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: d63dd0336e194be429a8d758baed34de, type: 2}
+  _doCopyOfData: 1
+  _loadedData: {fileID: 0}

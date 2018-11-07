@@ -4,7 +4,7 @@ namespace Data.Settings.Base
 {
 	public abstract class SettingsDataBase<T> : ScriptableObject, ILoadableAsset<T> where T : SettingsDataBase<T>
 	{
-		public abstract T LoadAsset();
+		public abstract T GetCopy();
 
 		protected static T TryToLoad(string path)
 		{

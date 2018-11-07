@@ -8,7 +8,7 @@ namespace Data.Settings.Generation
 	public class MapSettingsData : SettingsDataBase<MapSettingsData>
 	{
 		private const string AssetPath = "Data/Settings/MapSettingsData";
-		public override MapSettingsData LoadAsset()
+		public override MapSettingsData GetCopy()
 		{
 			return Instantiate(TryToLoad(AssetPath));
 		}

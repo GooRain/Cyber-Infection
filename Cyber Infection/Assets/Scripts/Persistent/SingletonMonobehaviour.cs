@@ -46,7 +46,7 @@ namespace Persistent
 		
 		protected static void InstantiateFromPrefab(string path)
 		{
-			_instance = Resources.Load<T>(path);
+			_instance = Instantiate(Resources.Load<T>(path));
 
 			DontDestroyOnLoad(_instance.gameObject);
 		}

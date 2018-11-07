@@ -1,28 +1,45 @@
 ﻿using Data.Settings;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Persistent.Settings
 {
 	public class GameSettings : SettingsBase<GameSettings>
 	{
+		[Header("Game Data")]
 		[SerializeField] private GameSettingsData _data;
+
+		[Space(10)]
+		[Header("Runtime Game Data")] 
+		[SerializeField, FormerlySerializedAs("Do Copy Of Every Data")]
+		private bool _doCopyOfData;
+		[SerializeField] private GameSettingsData _loadedData;
 		
-		public GameSettingsData data { get; private set; }
+		public GameSettingsData data => _loadedData;
 
 		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 		private static void InitializeGameSettings()
 		{
 			InstantiateFromPrefab("Prefabs/InstantiateBeforeScene/GameSettings");
+			_instance.name = "### GAME_SETTINGS ###";
+			
 			_instance.InitializeLoadData();
 		}
-		
+
 		private void InitializeLoadData()
 		{
-			data = _data.LoadAsset();
-			//data.generatingScenesData = null;
-			//data.generatingScenesData = _data.generatingScenesData.LoadAsset();
-			//data.inputSettingsData = _data.inputSettingsData.LoadAsset();
-			//data.mapSettingsData = _data.mapSettingsData.LoadAsset();
+			if (_doCopyOfData)
+			{
+				_loadedData = _data.GetCopy();
+				_loadedData.generatingScenesData = _data.generatingScenesData.GetCopy();
+				_loadedData.inputSettingsData = _data.inputSettingsData.GetCopy();
+				_loadedData.mapSettingsData = _data.mapSettingsData.GetCopy();
+			}
+			else
+			{
+				_loadedData = _data;
+			}
+			
 		}
 	}
 }

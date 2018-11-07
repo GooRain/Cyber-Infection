@@ -8,10 +8,10 @@ namespace Data.Settings
 	[CreateAssetMenu(menuName = "Cyber Infection/Data/Input Settings", order = 2)]
 	public class InputSettingsData : SettingsDataBase<InputSettingsData>
 	{
-		private const string AssetPath = "Data/Settings/inputSettingsData";
-		public override InputSettingsData LoadAsset()
+		private const string AssetPath = "Data/Settings/InputSettingsData";
+		public override InputSettingsData GetCopy()
 		{
-			return TryToLoad(AssetPath);
+			return Instantiate(TryToLoad(AssetPath));
 		}
 		
 		[System.Serializable]

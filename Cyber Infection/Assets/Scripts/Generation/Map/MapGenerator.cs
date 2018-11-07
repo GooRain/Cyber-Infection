@@ -31,7 +31,7 @@ namespace Generation.Map
 
 		private void Update()
 		{
-			if (Input.GetKey(KeyCode.G))
+			if (Input.GetKeyDown(KeyCode.G))
 			{
 				Clear();
 				TryToGenerate(SceneManager.GetActiveScene().name);
@@ -67,20 +67,20 @@ namespace Generation.Map
 		
 		private void Generate()
 		{
-			var _mapSettingsData = GameSettings.instance.data.mapSettingsData;
+			var mapSettingsData = GameSettings.instance.data.mapSettingsData;
 			Debug.Log("Generating...");
 			_map = new Map();
-			var roomsAmount = Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
+			var roomsAmount = Random.Range(mapSettingsData.roomsRange.x, mapSettingsData.roomsRange.y);
 			var previousRoomSettings = new RoomSettings(new Point(0, 0), new Rectangle(0, 0), 0);
 			var previousOffset = new Point(Random.Range(0, 1) > 0 ? 1 : -1, Random.Range(0, 1) > 0 ? 1 : -1);
 			for (var i = 0; i < roomsAmount; i++)
 			{
 				var roomSize = new Rectangle
 				(
-					Random.Range(_mapSettingsData.roomSizeInfo.minRoomWidth,
-						_mapSettingsData.roomSizeInfo.maxRoomWidth),
-					Random.Range(_mapSettingsData.roomSizeInfo.minRoomHeight,
-						_mapSettingsData.roomSizeInfo.maxRoomHeight)
+					Random.Range(mapSettingsData.roomSizeInfo.minRoomWidth,
+						mapSettingsData.roomSizeInfo.maxRoomWidth),
+					Random.Range(mapSettingsData.roomSizeInfo.minRoomHeight,
+						mapSettingsData.roomSizeInfo.maxRoomHeight)
 				);
 				
 				var newRoom = new GameObject("Room#" + i).AddComponent<Room.Room>();
@@ -129,8 +129,8 @@ namespace Generation.Map
 				roomMesh.vertices = newVertices.ToArray();
 				roomMesh.uv = newUVs.ToArray();
 				roomMesh.triangles = newTriangles.ToArray();
-				newRoom.meshRenderer.material = _mapSettingsData.GetFloorMaterial();
-				newRoom.meshRenderer.material.color = _mapSettingsData.GetColor(Random.Range(0f, 1f));
+				newRoom.meshRenderer.material = mapSettingsData.GetFloorMaterial();
+				newRoom.meshRenderer.material.color = mapSettingsData.GetColor(Random.Range(0f, 1f));
 				
 				_map.Add(newRoom);
 				previousRoomSettings = newRoom.Settings;

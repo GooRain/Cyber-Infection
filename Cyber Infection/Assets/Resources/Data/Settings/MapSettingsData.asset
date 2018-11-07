@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: MapSettingsData
   m_EditorClassIdentifier: 
   roomsRange:
-    x: 100
-    y: 100
+    x: 5
+    y: 5
   roomSizeInfo:
     minRoomWidth: 1
     minRoomHeight: 1

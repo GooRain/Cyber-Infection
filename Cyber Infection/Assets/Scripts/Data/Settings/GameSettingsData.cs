@@ -11,7 +11,7 @@ namespace Data.Settings
 	{
 		private const string AssetPath = "Data/Base/GameSettingsData";
 
-		public override GameSettingsData LoadAsset()
+		public override GameSettingsData GetCopy()
 		{
 			return Instantiate(TryToLoad(AssetPath));
 		}
@@ -36,6 +36,7 @@ namespace Data.Settings
 				if (_generatingScenesData == null)
 				{
 					_generatingScenesData = CreateInstance<GeneratingScenesData>();
+					Debug.Log("_generatingScenesData == null");
 				}
 
 				return _generatingScenesData;
@@ -50,6 +51,7 @@ namespace Data.Settings
 				if (_mapSettingsData == null)
 				{
 					_mapSettingsData = CreateInstance<MapSettingsData>();
+					Debug.Log("_mapSettingsData == null");
 				}
 
 				return _mapSettingsData;
@@ -64,6 +66,7 @@ namespace Data.Settings
 				if (_inputSettingsData == null)
 				{
 					_inputSettingsData = CreateInstance<InputSettingsData>();
+					Debug.Log("_inputSettingsData == null");
 				}
 
 				return _inputSettingsData;
