@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using GameMechanic.Unit.Base;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace GameMechanic.Unit.Player
 {
-	public class PlayerController : MonoBehaviour
+	public class PlayerController : UnitController
 	{
 		[FormerlySerializedAs("walkSpeed")] [SerializeField]
 		private float _walkSpeed;
@@ -71,15 +72,15 @@ namespace GameMechanic.Unit.Player
 			Vector2 input = new Vector2(UnityEngine.Input.GetAxisRaw("Horizontal"), UnityEngine.Input.GetAxisRaw("Vertical"));
 			Vector2 inputDir = input.normalized;
 
-			if(inputDir != Vector2.zero)
-			{
-				transform.eulerAngles = Vector3.up * Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg;
-			}
+//			if(inputDir != Vector2.zero)
+//			{
+//				transform.eulerAngles = Vector3.up * Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg;
+//			}
 
-			bool running = UnityEngine.Input.GetKey(KeyCode.LeftShift);
-			float speed = ((running) ? _runSpeed : _walkSpeed) * inputDir.magnitude;
+			var running = UnityEngine.Input.GetKey(KeyCode.LeftShift);
+			var speed = (running ? _runSpeed : _walkSpeed) * inputDir.magnitude;
 
-			transform.Translate(transform.forward * speed * Time.deltaTime, Space.World);
+			transform.Translate(input * speed * Time.deltaTime, Space.World);
 
 //		float animationSpeedPercent = ((running) ? 1 : .5f) * inputDir.magnitude;
 //		animator.SetFloat("speedPercent", animationSpeedPercent);
