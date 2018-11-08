@@ -1,5 +1,4 @@
-﻿using Data.Settings;
-using GameMechanic.Base;
+﻿using GameMechanic.Base;
 using GameMechanic.Unit.Base;
 using UnityEngine;
 

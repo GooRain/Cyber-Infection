@@ -1,5 +1,4 @@
-﻿using Data.Settings.Base;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Data.Base
 {

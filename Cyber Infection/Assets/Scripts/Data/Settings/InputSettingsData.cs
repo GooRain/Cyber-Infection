@@ -1,6 +1,5 @@
 ﻿using Data.Base;
 using Data.Settings.Base;
-using Persistent;
 using UnityEngine;
 
 namespace Data.Settings

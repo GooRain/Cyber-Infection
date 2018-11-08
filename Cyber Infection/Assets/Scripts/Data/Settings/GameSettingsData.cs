@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Data.Loading;
-using Data.Settings.Base;
+﻿using Data.Settings.Base;
 using Data.Settings.Generation;
 using UnityEngine;
 

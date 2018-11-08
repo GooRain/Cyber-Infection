@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Persistent
+﻿namespace Persistent
 {
 	public interface IInitializable
 	{

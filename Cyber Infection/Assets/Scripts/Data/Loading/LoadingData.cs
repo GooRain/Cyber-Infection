@@ -1,7 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Data.Settings;
-using Data.Settings.Base;
 using Persistent;
 using UnityEngine;
 
