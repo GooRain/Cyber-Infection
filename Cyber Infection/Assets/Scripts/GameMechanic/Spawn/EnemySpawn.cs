@@ -14,12 +14,11 @@ public class EnemySpawn : MonoBehaviour {
     private void Awake()
     {
         Pool = GetComponent<EnemysPool>();
-
     }
 
     private IEnumerator SpawnControl()
     {
-        int monsterIndex = Random.Range(0, 4);
+        int enemyIndex = Random.Range(0, 4);
         string type = string.Empty;
         switch (monsterIndex)
         {
