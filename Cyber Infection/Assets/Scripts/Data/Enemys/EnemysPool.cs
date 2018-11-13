@@ -2,23 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemysPool : MonoBehaviour {
-    [SerializeField]
-    private GameObject[] objectPrefabs;
-
-    public GameObject GetObject(string type)
+namespace Data.Enemys
+{
+    public class EnemysPool : MonoBehaviour
     {
-        for (int i = 0; i < objectPrefabs.Length; i++)
+        [SerializeField]
+        private GameObject[] objectPrefabs;
+
+        public GameObject GetObject(string type)
         {
-            if (objectPrefabs[i].name == type)
+            for (int i = 0; i < objectPrefabs.Length; i++)
             {
-                GameObject newObject = Instantiate(objectPrefabs[i]);
-                newObject.name = type;
-                return newObject;
+                if (objectPrefabs[i].name == type)
+                {
+                    GameObject newObject = Instantiate(objectPrefabs[i]);
+                    newObject.name = type;
+                    return newObject;
+                }
             }
+            return null;
         }
-        return null;
+
     }
-
-
 }

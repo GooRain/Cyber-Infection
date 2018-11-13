@@ -1,42 +1,46 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Data.Enemys;
+using GameMechanic.Unit.Enemy;
+using System.Collections;
 using UnityEngine;
 
-public class EnemySpawn : MonoBehaviour {
-
-    public EnemysPool Pool { get; set; }
-
-    void Start ()
+namespace GameMechanic.Spawn
+{
+    public class EnemySpawn : MonoBehaviour
     {
-        StartCoroutine(SpawnControl());
-    }
+        public EnemysPool Pool { get; set; }
 
-    private void Awake()
-    {
-        Pool = GetComponent<EnemysPool>();
-    }
-
-    private IEnumerator SpawnControl()
-    {
-        int enemyIndex = Random.Range(0, 4);
-        string type = string.Empty;
-        switch (enemyIndex)
+        void Start()
         {
-            case 0:
-                type = "blue_enemy";
-                break;
-            case 1:
-                type = "orange_enemy";
-                break;
-            case 2:
-                type = "purple_enemy";
-                break;
-            case 3:
-                type = "red_enemy";
-                break;
+            StartCoroutine(SpawnControl());
         }
 
-        Pool.GetObject(type);
-        yield return new WaitForSeconds(1.0f);
+        private void Awake()
+        {
+            Pool = GetComponent<EnemysPool>();
+        }
+
+        private IEnumerator SpawnControl()
+        {
+            int enemyIndex = Random.Range(0, 4);
+            string type = string.Empty;
+            switch (enemyIndex)
+            {
+                case 0:
+                    type = "blue_enemy";
+                    break;
+                case 1:
+                    type = "orange_enemy";
+                    break;
+                case 2:
+                    type = "purple_enemy";
+                    break;
+                case 3:
+                    type = "red_enemy";
+                    break;
+            }
+
+            Pool.GetObject(type);
+            yield return new WaitForSeconds(1.0f);
+        }
     }
 }
