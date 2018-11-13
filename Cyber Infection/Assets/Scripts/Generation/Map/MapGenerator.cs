@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using Data.Settings.Generation;
 using Extension;
-using Persistent;
-using Persistent.Settings;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
+using Zenject;
 
 #if UNITY_EDITOR
 
@@ -12,17 +12,23 @@ using UnityEngine.SceneManagement;
 
 namespace Generation.Map
 {
-	public class MapGenerator : SingletonMonobehaviour<MapGenerator>
+	public class MapGenerator : MonoBehaviour
 	{
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-		private static void InitializeBeforeLoad()
-		{
-			InstantiateSingleton();
-		}
-		
+		private Tilemap _tilemap;
+			
+		private MapSettingsData _mapSettingsData;
 		private GeneratingScenesData _generatingScenesData;
-
 		private Map _map;
+
+		[Inject]
+		private void Construct(Map map, GeneratingScenesData generatingScenesData, MapSettingsData mapSettingsData,
+			Tilemap tilemap)
+		{
+			_map = map;
+			_generatingScenesData = generatingScenesData;
+			_mapSettingsData = mapSettingsData;
+			_tilemap = tilemap;
+		}
 		
 		private void Awake()
 		{
@@ -54,8 +60,6 @@ namespace Generation.Map
 
 		private bool TryToGenerate(string sceneName)
 		{
-			_generatingScenesData = GameSettings.instance.data.generatingScenesData;
-			
 			if (_generatingScenesData.DoGenerate(sceneName))
 			{
 				Generate();
@@ -67,20 +71,19 @@ namespace Generation.Map
 		
 		private void Generate()
 		{
-			var mapSettingsData = GameSettings.instance.data.mapSettingsData;
 			Debug.Log("Generating...");
 			_map = new Map();
-			var roomsAmount = Random.Range(mapSettingsData.roomsRange.x, mapSettingsData.roomsRange.y);
+			var roomsAmount = Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
 			var previousRoomSettings = new RoomSettings(new Point(0, 0), new Rectangle(0, 0), 0);
 			var previousOffset = new Point(Random.Range(0, 1) > 0 ? 1 : -1, Random.Range(0, 1) > 0 ? 1 : -1);
 			for (var i = 0; i < roomsAmount; i++)
 			{
 				var roomSize = new Rectangle
 				(
-					Random.Range(mapSettingsData.roomSizeInfo.minRoomWidth,
-						mapSettingsData.roomSizeInfo.maxRoomWidth),
-					Random.Range(mapSettingsData.roomSizeInfo.minRoomHeight,
-						mapSettingsData.roomSizeInfo.maxRoomHeight)
+					Random.Range(_mapSettingsData.roomSizeInfo.minRoomWidth,
+						_mapSettingsData.roomSizeInfo.maxRoomWidth),
+					Random.Range(_mapSettingsData.roomSizeInfo.minRoomHeight,
+						_mapSettingsData.roomSizeInfo.maxRoomHeight)
 				);
 				
 				var newRoom = new GameObject("Room#" + i).AddComponent<Room.Room>();
@@ -129,8 +132,8 @@ namespace Generation.Map
 				roomMesh.vertices = newVertices.ToArray();
 				roomMesh.uv = newUVs.ToArray();
 				roomMesh.triangles = newTriangles.ToArray();
-				newRoom.meshRenderer.material = mapSettingsData.GetFloorMaterial();
-				newRoom.meshRenderer.material.color = mapSettingsData.GetColor(Random.Range(0f, 1f));
+				newRoom.meshRenderer.material = _mapSettingsData.GetFloorMaterial();
+				newRoom.meshRenderer.material.color = _mapSettingsData.GetColor(Random.Range(0f, 1f));
 				
 				_map.Add(newRoom);
 				previousRoomSettings = newRoom.Settings;
@@ -165,7 +168,7 @@ namespace Generation.Map
 //		public Room roomPrefab;
 //
 //		// Ссылка на префаб стены
-//		public Wall wallPrefab;
+//		public MapWall wallPrefab;
 //
 //		// Начальная область
 //		private Area _root;

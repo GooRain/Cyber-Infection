@@ -7,7 +7,7 @@ namespace Data.Settings.Generation
 	[CreateAssetMenu(menuName = "Cyber Infection/Data/Generating Scenes Data")]
 	public class GeneratingScenesData : SettingsDataBase<GeneratingScenesData>
 	{
-		private const string AssetPath = "Data/Settings/GeneratingScenesData";
+		public const string AssetPath = "Data/Settings/GeneratingScenesData";
 		public override GeneratingScenesData GetCopy()
 		{
 			return Instantiate(TryToLoad(AssetPath));

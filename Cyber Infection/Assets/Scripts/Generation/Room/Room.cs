@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Extension;
-using Generation.Tile;
+using Generation.Tiles;
 using UnityEngine;
 
 namespace Generation.Room
@@ -10,11 +10,11 @@ namespace Generation.Room
 
 		public MeshRenderer meshRenderer;
 		public RoomSettings Settings { get; set; }
-		public List<Wall> Walls { get; set; }
+		public List<MapWall> Walls { get; set; }
 
 		private void Awake()
 		{
-			Walls = new List<Wall>();
+			Walls = new List<MapWall>();
 		}
 
 		public void SetRandomColor()

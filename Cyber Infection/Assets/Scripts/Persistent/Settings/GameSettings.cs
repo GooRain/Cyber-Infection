@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 
 namespace Persistent.Settings
 {
-	public class GameSettings : SettingsBase<GameSettings>
+	public class GameSettings : SettingsBase
 	{
 		[Header("Game Data")]
 		[SerializeField] private GameSettingsData _data;
@@ -20,10 +20,7 @@ namespace Persistent.Settings
 		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 		private static void InitializeGameSettings()
 		{
-			InstantiateFromPrefab("Prefabs/InstantiateBeforeScene/GameSettings");
-			_instance.name = "### GAME_SETTINGS ###";
 			
-			_instance.InitializeLoadData();
 		}
 
 		private void InitializeLoadData()

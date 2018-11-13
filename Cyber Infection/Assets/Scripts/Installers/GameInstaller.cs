@@ -1,14 +1,15 @@
-using UnityEngine;
+using Data.Settings.Generation;
+using Persistent.Settings;
 using Zenject;
 
 namespace Installers
 {
-    [CreateAssetMenu(fileName = "GameInstaller", menuName = "Installers/GameInstaller")]
-    public class GameInstaller : ScriptableObjectInstaller<GameInstaller>
+    public class GameInstaller : MonoInstaller
     {
         public override void InstallBindings()
         {
-           
+            Container.Bind<GameSettings>().AsSingle();
+            Container.Bind<GeneratingScenesData>().FromResources(GeneratingScenesData.AssetPath).AsSingle();
         }
     }
 }

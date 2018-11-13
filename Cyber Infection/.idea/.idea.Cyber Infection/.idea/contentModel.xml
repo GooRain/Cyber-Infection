@@ -602,13 +602,14 @@
               <e p="Room.cs" t="Include" />
               <e p="RoomGenerator.cs" t="Include" />
             </e>
-            <e p="Tile" t="Include">
-              <e p="Tile.cs" t="Include" />
-              <e p="Wall.cs" t="Include" />
+            <e p="Tiles" t="Include">
+              <e p="MapTile.cs" t="Include" />
+              <e p="MapWall.cs" t="Include" />
             </e>
           </e>
           <e p="Installers" t="Include">
             <e p="GameInstaller.cs" t="Include" />
+            <e p="MapGenerationInstaller.cs" t="Include" />
           </e>
           <e p="Persistent" t="Include">
             <e p="IInitializable.cs" t="Include" />
