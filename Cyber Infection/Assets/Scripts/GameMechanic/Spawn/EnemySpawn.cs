@@ -20,7 +20,7 @@ public class EnemySpawn : MonoBehaviour {
     {
         int enemyIndex = Random.Range(0, 4);
         string type = string.Empty;
-        switch (monsterIndex)
+        switch (enemyIndex)
         {
             case 0:
                 type = "blue_enemy";
