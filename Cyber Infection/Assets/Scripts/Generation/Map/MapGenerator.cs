@@ -14,24 +14,32 @@ namespace Generation.Map
 {
 	public class MapGenerator : MonoBehaviour
 	{
-		private Tilemap _tilemap;
-			
+		[SerializeField] private Tilemap _tilemap;
+		[SerializeField] private Tilemap _collisionTileMap;
+
+		/* 0000000
+		 * 0001100
+		 * 0002100
+		 * 0001000
+		 * 0031000
+		 */
+
 		private MapSettingsData _mapSettingsData;
-		private GeneratingScenesData _generatingScenesData;
 		private Map _map;
 
 		[Inject]
-		private void Construct(Map map, GeneratingScenesData generatingScenesData, MapSettingsData mapSettingsData,
-			Tilemap tilemap)
+		private void Construct(Map map, MapSettingsData mapSettingsData)
 		{
 			_map = map;
-			_generatingScenesData = generatingScenesData;
 			_mapSettingsData = mapSettingsData;
-			_tilemap = tilemap;
 		}
-		
+
 		private void Awake()
 		{
+			var seed = SystemInfo.deviceModel + SystemInfo.deviceName;
+			Random.InitState(seed.GetHashCode());
+			Debug.Log(seed + " => " + seed.GetHashCode());
+
 			SceneManager.activeSceneChanged += OnSceneLoaded;
 		}
 
@@ -55,91 +63,70 @@ namespace Generation.Map
 			{
 				Destroy(room.gameObject);
 			}
+
 			_map.Clear();
 		}
 
 		private bool TryToGenerate(string sceneName)
 		{
-			if (_generatingScenesData.DoGenerate(sceneName))
-			{
-				Generate();
-				return true;
-			}
-			
-			return false;
+			Generate();
+			return true;
 		}
-		
+
 		private void Generate()
 		{
 			Debug.Log("Generating...");
 			_map = new Map();
 			var roomsAmount = Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
-			var previousRoomSettings = new RoomSettings(new Point(0, 0), new Rectangle(0, 0), 0);
-			var previousOffset = new Point(Random.Range(0, 1) > 0 ? 1 : -1, Random.Range(0, 1) > 0 ? 1 : -1);
-			for (var i = 0; i < roomsAmount; i++)
+			var roomSizeInfo = _mapSettingsData.roomSizeInfo;
+			Debug.Log("RoomSizeInfo: " + roomSizeInfo.roomHeight + " / " + roomSizeInfo.roomWidth);
+			var currentPosition = new Vector3Int(0, 0, 0);
+
+			_tilemap.size = new Vector3Int(128, 128, 0);
+			_collisionTileMap.size = new Vector3Int(128, 128, 0);
+
+			for (var i = 0; i < _mapSettingsData.roomsRange.x; i++)
 			{
-				var roomSize = new Rectangle
-				(
-					Random.Range(_mapSettingsData.roomSizeInfo.minRoomWidth,
-						_mapSettingsData.roomSizeInfo.maxRoomWidth),
-					Random.Range(_mapSettingsData.roomSizeInfo.minRoomHeight,
-						_mapSettingsData.roomSizeInfo.maxRoomHeight)
-				);
-				
-				var newRoom = new GameObject("Room#" + i).AddComponent<Room.Room>();
-				var currentOffset = new Point(previousOffset.x > 0 ? 1 : -1, previousOffset.y > 0 ? 1 : -1);
-				newRoom.Settings =
-					new RoomSettings(
-						new Point(
-							previousRoomSettings.Pos.x +
-							currentOffset.x * (previousRoomSettings.Size.width + roomSize.width) / 2f,
-							previousRoomSettings.Pos.y +
-							currentOffset.y * (previousRoomSettings.Size.height + roomSize.height) / 2f),
-						new Rectangle(roomSize.width, roomSize.height));
-				newRoom.meshRenderer = newRoom.gameObject.AddComponent<MeshRenderer>();
-				var roomMesh = newRoom.gameObject.AddComponent<MeshFilter>().mesh = new Mesh();
+				SetFloor(currentPosition, roomSizeInfo);
+				SetWall(currentPosition, roomSizeInfo);
 
-				previousOffset = currentOffset;
-				
-				var newVertices = new List<Vector3>();
-				var newUVs = new List<Vector2>();
-				var newTriangles = new List<int>();
-				
-				for (var j = -1; j <= 1; j +=2)
-				{
-					newVertices.Add(new Vector3( roomSize.width * .5f, j * roomSize.height * .5f, 0f));
-					newVertices.Add(new Vector3(-roomSize.width * .5f, j * roomSize.height * .5f, 0f));
-				}
+				currentPosition.x += roomSizeInfo.roomWidth;
+			}
+			
+			_tilemap.RefreshAllTiles();
+			_collisionTileMap.RefreshAllTiles();
+		}
 
-				for (var j = 0; j < newVertices.Count; j++)
-				{
-					newUVs.Add(new Vector2(j, j + 1));
-				}
-				
-				for (var j = 0; j < newVertices.Count / 4; j++)
-				{
-					for (var t = j; t < 3; t++)
-					{
-						newTriangles.Add(t);
-					}
-
-					for (var t = j + 3; t > j; t--)
-					{
-						newTriangles.Add(t);
-					}
-				}
-
-				roomMesh.vertices = newVertices.ToArray();
-				roomMesh.uv = newUVs.ToArray();
-				roomMesh.triangles = newTriangles.ToArray();
-				newRoom.meshRenderer.material = _mapSettingsData.GetFloorMaterial();
-				newRoom.meshRenderer.material.color = _mapSettingsData.GetColor(Random.Range(0f, 1f));
-				
-				_map.Add(newRoom);
-				previousRoomSettings = newRoom.Settings;
+		private void SetWall(Vector3Int center, RoomSizeInfo roomSizeInfo)
+		{
+			var start = new Vector3Int(center.x - roomSizeInfo.roomWidth / 2, center.z - roomSizeInfo.roomHeight / 2,
+				center.z);
+			for (var x = 0; x < roomSizeInfo.roomWidth; x++)
+			{
+				_collisionTileMap.SetTile(start + new Vector3Int(x, 0, 0), _mapSettingsData.GetWallTile());
+				_collisionTileMap.SetTile(start + new Vector3Int(x, roomSizeInfo.roomHeight - 1, 0), _mapSettingsData.GetWallTile());
+			}
+			for (var y = 0; y < roomSizeInfo.roomHeight; y++)
+			{
+				_collisionTileMap.SetTile(start + new Vector3Int(0, y, 0), _mapSettingsData.GetWallTile());
+				_collisionTileMap.SetTile(start + new Vector3Int(roomSizeInfo.roomWidth - 1, y, 0), _mapSettingsData.GetWallTile());
 			}
 		}
-		
+
+		private void SetFloor(Vector3Int center, RoomSizeInfo roomSizeInfo)
+		{
+			var start = new Vector3Int(center.x - roomSizeInfo.roomWidth / 2, center.z - roomSizeInfo.roomHeight / 2,
+				center.z);
+			for (var x = 1; x < roomSizeInfo.roomWidth - 1; x++)
+			{
+				for (var y = 1; y < roomSizeInfo.roomHeight - 1; y++)
+				{
+					Debug.Log("Set floor tile at: " + (start + new Vector3Int(x, y, 0)));
+					_tilemap.SetTile(start + new Vector3Int(x, y, 0), _mapSettingsData.GetFloorTile());
+				}
+			}
+		}
+
 		#region DEPRECATED
 
 		//		// Статическая ссылка на этот объект

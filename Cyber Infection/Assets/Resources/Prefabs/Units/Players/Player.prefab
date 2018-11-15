@@ -64,9 +64,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc8653da975aa75449e99e156e20ba27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _walkSpeed: 1
-  _runSpeed: 2
+  _walkSpeed: 3
+  _runSpeed: 5
   _reloadSpeed: 1
+  differentRotation:
+  - {fileID: 21300000, guid: 876bef917517bef45bcddd74adbe1928, type: 3}
+  - {fileID: 21300000, guid: fdccade6a620f404dbc7f43bfd2956f2, type: 3}
+  - {fileID: 21300000, guid: b0df700d94572064a8c881da62d38ede, type: 3}
+  - {fileID: 21300000, guid: 40ef4d5b954a15a4bba4712db3098ddb, type: 3}
+  - {fileID: 21300000, guid: 0da058276c8efe6479748acfd72b5b28, type: 3}
+  - {fileID: 21300000, guid: 29dfc663e99657b45898498630889b9f, type: 3}
+  - {fileID: 21300000, guid: bbe962479f821754596ca9322cdfab8c, type: 3}
+  - {fileID: 21300000, guid: eeea1379040c18141b31c0a4e46309ed, type: 3}
 --- !u!212 &212329926796049168
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -102,7 +111,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 86536aed86b39154f80894957fc0c548, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bbe962479f821754596ca9322cdfab8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

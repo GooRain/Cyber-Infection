@@ -12,17 +12,16 @@ MonoBehaviour:
   m_Name: MapSettingsData
   m_EditorClassIdentifier: 
   roomsRange:
-    x: 5
+    x: 10
     y: 10
   roomSizeInfo:
-    minRoomWidth: 3
-    minRoomHeight: 3
-    maxRoomWidth: 5
-    maxRoomHeight: 5
+    roomWidth: 15
+    roomHeight: 9
   mapSize:
-    width: 15
-    height: 15
-  _floorMaterial: {fileID: 2100000, guid: d83d5e2c1ee185a4a891754968942e9a, type: 2}
+    width: 10
+    height: 6
+  _floorTile: {fileID: 11400000, guid: 5cc4bfa05b809594183ba750c90c086e, type: 2}
+  _wallTile: {fileID: 11400000, guid: b3de9a4941c5799488510402e2cb4c64, type: 2}
   _colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}

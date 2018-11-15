@@ -1,6 +1,9 @@
 ﻿using Data.Settings.Base;
 using Extension;
+using Generation.Tiles;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.Tilemaps;
 
 namespace Data.Settings.Generation
 {
@@ -17,14 +20,22 @@ namespace Data.Settings.Generation
 		public RoomSizeInfo roomSizeInfo;
 		public Rectangle mapSize;
 
-		[Space(10), Header("Visual Settings")] [SerializeField]
-		private Material _floorMaterial;
+		[Space(10), Header("Visual Settings")] 
+		[SerializeField]
+		private Tile _floorTile;
+		[SerializeField]
+		private Tile _wallTile;
 		[SerializeField]
 		private Gradient _colorGradient;
 		
-		public Material GetFloorMaterial()
+		public Tile GetFloorTile()
 		{
-			return _floorMaterial;
+			return _floorTile;
+		}
+
+		public Tile GetWallTile()
+		{
+			return _wallTile;
 		}
 
 		public Color GetColor(float value = .5f)
@@ -36,9 +47,7 @@ namespace Data.Settings.Generation
 	[System.Serializable]
 	public struct RoomSizeInfo
 	{
-		public float minRoomWidth;
-		public float minRoomHeight;
-		public float maxRoomWidth;
-		public float maxRoomHeight;
+		[FormerlySerializedAs("minRoomWidth")] public int roomWidth;
+		[FormerlySerializedAs("minRoomHeight")] public int roomHeight;
 	}
 }

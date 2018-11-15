@@ -1,8 +1,0 @@
-<set>
-  <tiles>
-<tile name="Prefabs/Generation/TileBrickX" symmetry="X" weight="1.0"/>
-	</tiles>
-<neighbors>  <neighbor left="Prefabs/Generation/TileBrickX 0" right="Prefabs/Generation/TileBrickX 0"/>
-  <neighbor left="Prefabs/Generation/TileBrickX 1" right="Prefabs/Generation/TileBrickX 1"/>
-	</neighbors>
-</set>

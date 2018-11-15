@@ -1,4 +1,5 @@
-﻿using GameMechanic.Unit.Base;
+﻿using System;
+using GameMechanic.Unit.Base;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -8,32 +9,38 @@ namespace GameMechanic.Unit.Player
 	{
 		[FormerlySerializedAs("walkSpeed")] [SerializeField]
 		private float _walkSpeed;
+
 		[FormerlySerializedAs("runSpeed")] [SerializeField]
 		private float _runSpeed;
+
 		[FormerlySerializedAs("reloadSpeed")] [SerializeField]
 		private float _reloadSpeed;
-        [SerializeField]
-        private Sprite[] differentRotation;
-        //[SerializeField]
-        //private GameObject bulletSpawnPoint;
-        //[SerializeField]
-        //private GameObject bullet;            // пуля которая будет стрелять
 
-        private SpriteRenderer _sprite;
+		[SerializeField] private Sprite[] differentRotation;
+		//[SerializeField]
+		//private GameObject bulletSpawnPoint;
+		//[SerializeField]
+		//private GameObject bullet;            // пуля которая будет стрелять
+
+		private SpriteRenderer _sprite;
+
 		private Animator _animator;
 		//private CharState State
 		//{
 		//	get { return (CharState)animator.GetInteger("State"); }
 		//	set { animator.SetInteger("State", (int)value); }
 		//}
-	
+
 		private float _waitTime;
 		private bool _attacking;
 
-		private Vector3 _movement;                   // The vector to store the direction of the player's movement.
-		private Rigidbody _playerRigidbody;          // Reference to the player's rigidbody.
-		private int _floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
-		private float _camRayLength = 100f;          // The length of the ray from the camera into the scene.
+		private Vector3 _movement; // The vector to store the direction of the player's movement.
+		private Rigidbody _playerRigidbody; // Reference to the player's rigidbody.
+		private int _floorMask; // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
+		private float _camRayLength = 100f; // The length of the ray from the camera into the scene.
+		private SpriteRenderer _spriteRenderer;
+		private Camera _camera;
+		private Transform _transform;
 
 		private void Awake()
 		{
@@ -41,12 +48,13 @@ namespace GameMechanic.Unit.Player
 			_sprite = GetComponentInChildren<SpriteRenderer>();
 			_playerRigidbody = GetComponent<Rigidbody>();
 			_floorMask = LayerMask.GetMask("Floor");
-
+			_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+			_camera = Camera.main;
+			_transform = transform;
 		}
 
 		private void Start()
 		{
-		
 		}
 
 		private void Update()
@@ -54,9 +62,9 @@ namespace GameMechanic.Unit.Player
 			//if(!attacking) State = CharState.idle;
 			Movement();
 			Shoot();
-            RotationMouse();
+			RotationMouse();
 		}
-	
+
 		private void FixedUpdate()
 		{
 			//float h = Input.GetAxisRaw("Horizontal");
@@ -68,24 +76,25 @@ namespace GameMechanic.Unit.Player
 		}
 
 
-        private void RotationMouse()
-        {
-            Vector3 difference = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition) - transform.position;
-            difference.Normalize();
-            float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            if (rotation_z > 0 && rotation_z < 45) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[0];
-            if (rotation_z >=45 && rotation_z < 90) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[1];
-            if (rotation_z >= 90 && rotation_z < 135) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[2];
-            if (rotation_z >= 135 && rotation_z < 180) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[3];
-            if (rotation_z == 180 || (rotation_z < 0 && rotation_z > -45)) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[4];
-            if (rotation_z <= -45 && rotation_z > -90) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[5];
-            if (rotation_z <= -90 && rotation_z > -135) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[6];
-            if (rotation_z <= -135 && rotation_z >= -180) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[7];
-        }
+		private void RotationMouse()
+		{
+			var difference = (_camera.ScreenToWorldPoint(UnityEngine.Input.mousePosition) - _transform.position)
+				.normalized;
+			var rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+			if (rotationZ >= -22.5f && rotationZ < 22.5f) _spriteRenderer.sprite = differentRotation[0];				// r
+			else if (rotationZ >= 22.5f && rotationZ < 47.5f) _spriteRenderer.sprite = differentRotation[1];		// ru
+			else if (rotationZ >= 47.5f && rotationZ < 112.5f) _spriteRenderer.sprite = differentRotation[2];		// u
+			else if (rotationZ >= 112.5f && rotationZ < 157.5f) _spriteRenderer.sprite = differentRotation[3];		// lu
+			else if (rotationZ >= 157.5f || rotationZ < -157.5f) _spriteRenderer.sprite = differentRotation[4];		// l
+			else if (rotationZ >= -157.5f && rotationZ < -112.5f) _spriteRenderer.sprite = differentRotation[5];		// ld
+			else if (rotationZ >= -112.5f && rotationZ < -62.5f) _spriteRenderer.sprite = differentRotation[6];		// d
+			else if (rotationZ >= -62.5f && rotationZ < -22.5f) _spriteRenderer.sprite = differentRotation[7];	// dr
+		}
+
 		private void Movement()
 		{
-
-			Vector2 input = new Vector2(UnityEngine.Input.GetAxisRaw("Horizontal"), UnityEngine.Input.GetAxisRaw("Vertical"));
+			Vector2 input = new Vector2(UnityEngine.Input.GetAxisRaw("Horizontal"),
+				UnityEngine.Input.GetAxisRaw("Vertical"));
 			Vector2 inputDir = input.normalized;
 
 //			if(inputDir != Vector2.zero)
@@ -205,7 +214,7 @@ namespace GameMechanic.Unit.Player
 			RaycastHit floorHit;
 
 			// Perform the raycast and if it hits something on the floor layer...
-			if(Physics.Raycast(camRay, out floorHit, _camRayLength, _floorMask))
+			if (Physics.Raycast(camRay, out floorHit, _camRayLength, _floorMask))
 			{
 				// Create a vector from the player to the point on the floor the raycast from the mouse hit.
 				Vector3 playerToMouse = floorHit.point - transform.position;

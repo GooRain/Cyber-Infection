@@ -11,3 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab49d4b8a02a24419cf7979e729fb8e, type: 3}
   m_Name: MapGenerationInstaller
   m_EditorClassIdentifier: 
+  _mapSettingsData: {fileID: 11400000, guid: b4176329e0b39a24288c8f160d303165, type: 2}
