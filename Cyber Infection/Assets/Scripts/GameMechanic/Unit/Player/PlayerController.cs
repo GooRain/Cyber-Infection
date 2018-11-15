@@ -12,12 +12,14 @@ namespace GameMechanic.Unit.Player
 		private float _runSpeed;
 		[FormerlySerializedAs("reloadSpeed")] [SerializeField]
 		private float _reloadSpeed;
-		//[SerializeField]
-		//private GameObject bulletSpawnPoint;
-		//[SerializeField]
-		//private GameObject bullet;            // пуля которая будет стрелять
+        [SerializeField]
+        private Sprite[] differentRotation;
+        //[SerializeField]
+        //private GameObject bulletSpawnPoint;
+        //[SerializeField]
+        //private GameObject bullet;            // пуля которая будет стрелять
 
-		private SpriteRenderer _sprite;
+        private SpriteRenderer _sprite;
 		private Animator _animator;
 		//private CharState State
 		//{
@@ -52,6 +54,7 @@ namespace GameMechanic.Unit.Player
 			//if(!attacking) State = CharState.idle;
 			Movement();
 			Shoot();
+            RotationMouse();
 		}
 	
 		private void FixedUpdate()
@@ -63,9 +66,22 @@ namespace GameMechanic.Unit.Player
 
 			//Turning();
 		}
-	
 
 
+        private void RotationMouse()
+        {
+            Vector3 difference = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition) - transform.position;
+            difference.Normalize();
+            float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            if (rotation_z > 0 && rotation_z < 45) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[0];
+            if (rotation_z >=45 && rotation_z < 90) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[1];
+            if (rotation_z >= 90 && rotation_z < 135) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[2];
+            if (rotation_z >= 135 && rotation_z < 180) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[3];
+            if (rotation_z == 180 || (rotation_z < 0 && rotation_z > -45)) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[4];
+            if (rotation_z <= -45 && rotation_z > -90) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[5];
+            if (rotation_z <= -90 && rotation_z > -135) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[6];
+            if (rotation_z <= -135 && rotation_z >= -180) this.gameObject.GetComponent<SpriteRenderer>().sprite = differentRotation[7];
+        }
 		private void Movement()
 		{
 
