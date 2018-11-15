@@ -534,6 +534,9 @@
               <e p="SerializableDictionary.cs" t="Include" />
               <e p="SingletonScriptableObject.cs" t="Include" />
             </e>
+            <e p="Enemys" t="Include">
+              <e p="EnemysPool.cs" t="Include" />
+            </e>
             <e p="Loading" t="Include">
               <e p="LoadingData.cs" t="Include" />
             </e>
@@ -578,11 +581,17 @@
             <e p="Input" t="Include">
               <e p="InputController.cs" t="Include" />
             </e>
+            <e p="Spawn" t="Include">
+              <e p="EnemySpawn.cs" t="Include" />
+            </e>
             <e p="Unit" t="Include">
               <e p="Base" t="Include">
                 <e p="IUnit.cs" t="Include" />
                 <e p="Unit.cs" t="Include" />
                 <e p="UnitController.cs" t="Include" />
+              </e>
+              <e p="Enemy" t="Include">
+                <e p="Enemy.cs" t="Include" />
               </e>
               <e p="Player" t="Include">
                 <e p="Player.cs" t="Include" />
@@ -601,10 +610,12 @@
             <e p="Room" t="Include">
               <e p="Room.cs" t="Include" />
               <e p="RoomGenerator.cs" t="Include" />
+              <e p="RoomType.cs" t="Include" />
             </e>
             <e p="Tiles" t="Include">
+              <e p="FloorTile.cs" t="Include" />
               <e p="MapTile.cs" t="Include" />
-              <e p="MapWall.cs" t="Include" />
+              <e p="WallTile.cs" t="Include" />
             </e>
           </e>
           <e p="Installers" t="Include">
@@ -626,6 +637,23 @@
               <e p="MenuCanvas.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="unity-wave-function-collapse" t="Include">
+          <e p="impl" t="Include">
+            <e p="Model.cs" t="Include" />
+            <e p="OverlappingModel.cs" t="Include" />
+            <e p="SimpleTiledModel.cs" t="Include" />
+            <e p="Stuff.cs" t="Include" />
+            <e p="Tuple.cs" t="Include" />
+            <e p="Tuple2.cs" t="Include" />
+            <e p="Tuple3.cs" t="Include" />
+            <e p="Tuple4.cs" t="Include" />
+          </e>
+          <e p="LICENSE.txt" t="Include" />
+          <e p="OverlapWFC.cs" t="Include" />
+          <e p="SimpleTiledWFC.cs" t="Include" />
+          <e p="TilePainter.cs" t="Include" />
+          <e p="Training.cs" t="Include" />
         </e>
       </e>
       <e p="Cyber Infection.sln" t="IncludeFlat" />

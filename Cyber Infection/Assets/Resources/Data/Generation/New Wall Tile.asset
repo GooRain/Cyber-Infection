@@ -7,11 +7,11 @@ MonoBehaviour:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: FloorTile
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b82b6dce54449d291a0922f6cd8d8d7, type: 3}
+  m_Name: New Wall Tile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 26cd5bd26a7caf24f94b288b6c9a01f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f57731379a42d34b9957677a20a71cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -30,6 +30,7 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  m_InstancedGameObject: {fileID: 0}
+  m_InstancedGameObject: {fileID: 1727834448150326, guid: b47d8cdae7ab3b043b7d959d44ac213b,
+    type: 2}
   m_Flags: 1
-  m_ColliderType: 0
+  m_ColliderType: 2

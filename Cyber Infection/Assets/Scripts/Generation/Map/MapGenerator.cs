@@ -111,6 +111,7 @@ namespace Generation.Map
 				_collisionTileMap.SetTile(start + new Vector3Int(0, y, 0), _mapSettingsData.GetWallTile());
 				_collisionTileMap.SetTile(start + new Vector3Int(roomSizeInfo.roomWidth - 1, y, 0), _mapSettingsData.GetWallTile());
 			}
+			
 		}
 
 		private void SetFloor(Vector3Int center, RoomSizeInfo roomSizeInfo)
@@ -155,7 +156,7 @@ namespace Generation.Map
 //		public Room roomPrefab;
 //
 //		// Ссылка на префаб стены
-//		public MapWall wallPrefab;
+//		public WallTile wallPrefab;
 //
 //		// Начальная область
 //		private Area _root;

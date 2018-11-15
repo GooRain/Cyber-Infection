@@ -10,11 +10,11 @@ namespace Generation.Room
 
 		public MeshRenderer meshRenderer;
 		public RoomSettings Settings { get; set; }
-		public List<MapWall> Walls { get; set; }
+		public List<WallTile> Walls { get; set; }
 
 		private void Awake()
 		{
-			Walls = new List<MapWall>();
+			Walls = new List<WallTile>();
 		}
 
 		public void SetRandomColor()

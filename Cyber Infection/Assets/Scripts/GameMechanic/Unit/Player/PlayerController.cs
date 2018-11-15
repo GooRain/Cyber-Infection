@@ -35,7 +35,7 @@ namespace GameMechanic.Unit.Player
 		private bool _attacking;
 
 		private Vector3 _movement; // The vector to store the direction of the player's movement.
-		private Rigidbody _playerRigidbody; // Reference to the player's rigidbody.
+		private Rigidbody2D _playerRigidbody; // Reference to the player's rigidbody.
 		private int _floorMask; // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
 		private float _camRayLength = 100f; // The length of the ray from the camera into the scene.
 		private SpriteRenderer _spriteRenderer;
@@ -46,7 +46,7 @@ namespace GameMechanic.Unit.Player
 		{
 			_animator = GetComponent<Animator>();
 			_sprite = GetComponentInChildren<SpriteRenderer>();
-			_playerRigidbody = GetComponent<Rigidbody>();
+			_playerRigidbody = GetComponent<Rigidbody2D>();
 			_floorMask = LayerMask.GetMask("Floor");
 			_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 			_camera = Camera.main;
@@ -105,7 +105,8 @@ namespace GameMechanic.Unit.Player
 			var running = UnityEngine.Input.GetKey(KeyCode.LeftShift);
 			var speed = (running ? _runSpeed : _walkSpeed) * inputDir.magnitude;
 
-			transform.Translate(input * speed * Time.deltaTime, Space.World);
+			//transform.Translate(, Space.World);
+			_playerRigidbody.MovePosition(_playerRigidbody.position + input * speed * Time.deltaTime);
 
 //		float animationSpeedPercent = ((running) ? 1 : .5f) * inputDir.magnitude;
 //		animator.SetFloat("speedPercent", animationSpeedPercent);
@@ -205,29 +206,29 @@ namespace GameMechanic.Unit.Player
 			//if(Input.GetKeyUp(KeyCode.RightArrow)) attacking = false;
 		}
 
-		private void Turning()
-		{
-			// Create a ray from the mouse cursor on screen in the direction of the camera.
-			Ray camRay = Camera.main.ScreenPointToRay(UnityEngine.Input.mousePosition);
-
-			// Create a RaycastHit variable to store information about what was hit by the ray.
-			RaycastHit floorHit;
-
-			// Perform the raycast and if it hits something on the floor layer...
-			if (Physics.Raycast(camRay, out floorHit, _camRayLength, _floorMask))
-			{
-				// Create a vector from the player to the point on the floor the raycast from the mouse hit.
-				Vector3 playerToMouse = floorHit.point - transform.position;
-
-				// Ensure the vector is entirely along the floor plane.
-				playerToMouse.y = 0f;
-
-				// Create a quaternion (rotation) based on looking down the vector from the player to the mouse.
-				Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-
-				// Set the player's rotation to this new rotation.
-				_playerRigidbody.MoveRotation(newRotation);
-			}
-		}
+//		private void Turning()
+//		{
+//			// Create a ray from the mouse cursor on screen in the direction of the camera.
+//			Ray camRay = Camera.main.ScreenPointToRay(UnityEngine.Input.mousePosition);
+//
+//			// Create a RaycastHit variable to store information about what was hit by the ray.
+//			RaycastHit floorHit;
+//
+//			// Perform the raycast and if it hits something on the floor layer...
+//			if (Physics.Raycast(camRay, out floorHit, _camRayLength, _floorMask))
+//			{
+//				// Create a vector from the player to the point on the floor the raycast from the mouse hit.
+//				Vector3 playerToMouse = floorHit.point - transform.position;
+//
+//				// Ensure the vector is entirely along the floor plane.
+//				playerToMouse.y = 0f;
+//
+//				// Create a quaternion (rotation) based on looking down the vector from the player to the mouse.
+//				Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
+//
+//				// Set the player's rotation to this new rotation.
+//				_playerRigidbody.MoveRotation(newRotation);
+//			}
+//		}
 	}
 }
