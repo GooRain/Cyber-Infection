@@ -6,10 +6,10 @@ namespace Extension
 	public class Rectangle
 	{
 
-		public float width;
-		public float height;
+		public int width;
+		public int height;
 
-		public Rectangle(float width, float height)
+		public Rectangle(int width, int height)
 		{
 			this.width = width;
 			this.height = height;

@@ -1,40 +1,38 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
+using Generation.Room;
+using UnityEngine;
 
 namespace Generation.Map
 {
 	public class Map
 	{
+		public RoomType[,] roomMatrix;
+		
+		public int width { get; }
+		public int height { get; }
 
-		private List<Room.Room> _roomsList;
-
-		public List<Room.Room> roomsList => _roomsList;
-
-		public Map()
+		public Map(int width, int height)
 		{
-			_roomsList = new List<Room.Room>();
+			this.width = width;
+			this.height = height;
+			Debug.Log($"{width} / {height}");
+			roomMatrix = new RoomType[this.width, this.height];
 		}
-
-		public void Add(Room.Room newRoom)
+		
+		public bool HasEnd()
 		{
-			var newRoomTransform = newRoom.transform;
-			newRoomTransform.position = newRoom.Settings.Pos.GetVector3();
-			_roomsList.Add(newRoom);
-		}
-
-		public Room.Room Get(int index)
-		{
-			return _roomsList[index];
-		}
-
-		public bool Remove(Room.Room room)
-		{
-			return _roomsList.Remove(room);
+			return roomMatrix.Cast<RoomType>().Any(roomType => (roomType & RoomType.Boss) != 0);
 		}
 
 		public void Clear()
 		{
-			_roomsList.RemoveRange(0, _roomsList.Count);
+			for (var x = 0; x < width; x++)
+			{
+				for (var y = 0; y < height; y++)
+				{
+					roomMatrix[x, y] = RoomType.None;
+				}
+			}
 		}
-
 	}
 }

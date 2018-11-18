@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Data.Settings.Generation;
 using Extension;
+using Generation.Room;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
@@ -25,22 +26,30 @@ namespace Generation.Map
 		 */
 
 		private MapSettingsData _mapSettingsData;
-		private Map _map;
+		private MapController _mapController;
 
 		[Inject]
-		private void Construct(Map map, MapSettingsData mapSettingsData)
+		private void Construct(MapSettingsData mapSettingsData)
 		{
-			_map = map;
 			_mapSettingsData = mapSettingsData;
 		}
 
 		private void Awake()
 		{
+			_mapController = gameObject.AddComponent<MapController>();
+			_mapController.Initialize(_mapSettingsData);
+
+			InitSeed();
+			
+			SceneManager.activeSceneChanged += OnSceneLoaded;
+		}
+
+		private void InitSeed()
+		{
 			var seed = SystemInfo.deviceModel + SystemInfo.deviceName;
 			Random.InitState(seed.GetHashCode());
+			
 			Debug.Log(seed + " => " + seed.GetHashCode());
-
-			SceneManager.activeSceneChanged += OnSceneLoaded;
 		}
 
 		private void Update()
@@ -59,12 +68,9 @@ namespace Generation.Map
 
 		private void Clear()
 		{
-			foreach (var room in _map.roomsList)
-			{
-				Destroy(room.gameObject);
-			}
-
-			_map.Clear();
+			_mapController.Clear();
+			_tilemap.ClearAllTiles();
+			_collisionTileMap.ClearAllTiles();
 		}
 
 		private bool TryToGenerate(string sceneName)
@@ -76,56 +82,51 @@ namespace Generation.Map
 		private void Generate()
 		{
 			Debug.Log("Generating...");
-			_map = new Map();
 			var roomsAmount = Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
-			var roomSizeInfo = _mapSettingsData.roomSizeInfo;
-			Debug.Log("RoomSizeInfo: " + roomSizeInfo.roomHeight + " / " + roomSizeInfo.roomWidth);
-			var currentPosition = new Vector3Int(0, 0, 0);
 
-			_tilemap.size = new Vector3Int(128, 128, 0);
-			_collisionTileMap.size = new Vector3Int(128, 128, 0);
+			var generatingEntitiesCount = roomsAmount / _mapSettingsData.roomsRange.x;
 
-			for (var i = 0; i < _mapSettingsData.roomsRange.x; i++)
+			_collisionTileMap.size = new Vector3Int(_mapSettingsData.mapSize.width, _mapSettingsData.mapSize.height, 0);
+			_tilemap.size = new Vector3Int(_mapSettingsData.mapSize.width, _mapSettingsData.mapSize.height, 0);
+
+			var generatingEntities = new List<GeneratingEntity>();
+
+			for (var i = 0; i < generatingEntitiesCount; i++)
 			{
-				SetFloor(currentPosition, roomSizeInfo);
-				SetWall(currentPosition, roomSizeInfo);
-
-				currentPosition.x += roomSizeInfo.roomWidth;
+				generatingEntities.Add(new GeneratingEntity(ref _mapController.map, new PointInt(
+					_mapSettingsData.mapSize.width / 2,
+					_mapSettingsData.mapSize.height / 2
+				)));
 			}
-			
-			_tilemap.RefreshAllTiles();
-			_collisionTileMap.RefreshAllTiles();
-		}
 
-		private void SetWall(Vector3Int center, RoomSizeInfo roomSizeInfo)
-		{
-			var start = new Vector3Int(center.x - roomSizeInfo.roomWidth / 2, center.z - roomSizeInfo.roomHeight / 2,
-				center.z);
-			for (var x = 0; x < roomSizeInfo.roomWidth; x++)
+			while (!_mapController.map.HasEnd() && generatingEntities.Count > 0)
 			{
-				_collisionTileMap.SetTile(start + new Vector3Int(x, 0, 0), _mapSettingsData.GetWallTile());
-				_collisionTileMap.SetTile(start + new Vector3Int(x, roomSizeInfo.roomHeight - 1, 0), _mapSettingsData.GetWallTile());
-			}
-			for (var y = 0; y < roomSizeInfo.roomHeight; y++)
-			{
-				_collisionTileMap.SetTile(start + new Vector3Int(0, y, 0), _mapSettingsData.GetWallTile());
-				_collisionTileMap.SetTile(start + new Vector3Int(roomSizeInfo.roomWidth - 1, y, 0), _mapSettingsData.GetWallTile());
-			}
-			
-		}
-
-		private void SetFloor(Vector3Int center, RoomSizeInfo roomSizeInfo)
-		{
-			var start = new Vector3Int(center.x - roomSizeInfo.roomWidth / 2, center.z - roomSizeInfo.roomHeight / 2,
-				center.z);
-			for (var x = 1; x < roomSizeInfo.roomWidth - 1; x++)
-			{
-				for (var y = 1; y < roomSizeInfo.roomHeight - 1; y++)
+				var removeEntities = new List<GeneratingEntity>();
+				
+				foreach (var generatingEntity in generatingEntities)
 				{
-					Debug.Log("Set floor tile at: " + (start + new Vector3Int(x, y, 0)));
-					_tilemap.SetTile(start + new Vector3Int(x, y, 0), _mapSettingsData.GetFloorTile());
+					generatingEntity.Move();
+
+					if (generatingEntity.CanPlace())
+					{
+						generatingEntity.PlaceRoom((RoomType) Random.Range(0, 32));
+					}
+					else
+					{
+						removeEntities.Add(generatingEntity);
+					}
+				}
+
+				foreach (var removeEntity in removeEntities)
+				{
+					generatingEntities.Remove(removeEntity);
 				}
 			}
+
+			_mapController.PlaceRooms(_tilemap, _collisionTileMap);
+
+			_tilemap.RefreshAllTiles();
+			_collisionTileMap.RefreshAllTiles();
 		}
 
 		#region DEPRECATED
@@ -153,7 +154,7 @@ namespace Generation.Map
 //
 //		[Header("Prefabs")]
 //		// Ссылка на префаб комнаты
-//		public Room roomPrefab;
+//		public RoomController roomPrefab;
 //
 //		// Ссылка на префаб стены
 //		public WallTile wallPrefab;
@@ -322,7 +323,7 @@ namespace Generation.Map
 //		}
 //
 //		// Метод ставит стену
-//		private void PlaceWall(Room room, Vector3 pos, Vector3 scale)
+//		private void PlaceWall(RoomController room, Vector3 pos, Vector3 scale)
 //		{
 //			var newWall = Instantiate(wallPrefab, pos, Quaternion.identity, map.transform);
 //			newWall.transform.LookAt(new Vector3(room.transform.position.x, newWall.transform.position.y,
