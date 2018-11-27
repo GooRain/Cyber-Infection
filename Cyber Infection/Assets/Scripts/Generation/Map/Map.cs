@@ -21,7 +21,7 @@ namespace Generation.Map
 		
 		public bool HasEnd()
 		{
-			return roomMatrix.Cast<RoomType>().Any(roomType => (roomType & RoomType.Boss) != 0);
+			return roomMatrix.Cast<RoomType>().Any(roomType => (roomType & RoomType.End) != 0);
 		}
 
 		public void Clear()

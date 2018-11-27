@@ -11,8 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5e7a15e23e81b4eaab375a8aea6d52, type: 3}
   m_Name: MapSettingsData
   m_EditorClassIdentifier: 
+  seed: StartLevel
   roomsRange:
-    x: 10
+    x: 5
     y: 10
   roomSizeInfo:
     roomWidth: 15

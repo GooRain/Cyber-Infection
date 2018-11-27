@@ -37,7 +37,7 @@ namespace Generation.Map
 				{
 					var currentPosition = new Vector3Int(
 						x * _mapSettingsData.roomSizeInfo.roomWidth,
-						y * _mapSettingsData.roomSizeInfo.roomWidth,
+						y * _mapSettingsData.roomSizeInfo.roomHeight,
 						0
 					);
 
@@ -76,7 +76,7 @@ namespace Generation.Map
 			{
 				for (var y = 1; y < roomSizeInfo.roomHeight - 1; y++)
 				{
-					Debug.Log("Set floor tile at: " + (start + new Vector3Int(x, y, 0)));
+					//Debug.Log("Set floor tile at: " + (start + new Vector3Int(x, y, 0)));
 					tileMap.SetTile(start + new Vector3Int(x, y, 0), _mapSettingsData.GetFloorTile());
 				}
 			}

@@ -15,6 +15,8 @@ namespace Data.Settings.Generation
 		{
 			return Instantiate(TryToLoad(AssetPath));
 		}
+
+		public string seed;
 		
 		public Point roomsRange;
 		public RoomSizeInfo roomSizeInfo;

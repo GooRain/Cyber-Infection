@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Data.Settings.Generation;
 using Extension;
 using Generation.Room;
@@ -6,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using Zenject;
+using Random = UnityEngine.Random;
 
 #if UNITY_EDITOR
 
@@ -40,15 +42,16 @@ namespace Generation.Map
 			_mapController.Initialize(_mapSettingsData);
 
 			InitSeed();
-			
+
 			SceneManager.activeSceneChanged += OnSceneLoaded;
 		}
 
 		private void InitSeed()
 		{
-			var seed = SystemInfo.deviceModel + SystemInfo.deviceName;
+			// Задаем семя для генерации ПСЧ
+			var seed = _mapSettingsData.seed; // SystemInfo.deviceModel + SystemInfo.deviceName;
 			Random.InitState(seed.GetHashCode());
-			
+
 			Debug.Log(seed + " => " + seed.GetHashCode());
 		}
 
@@ -82,9 +85,19 @@ namespace Generation.Map
 		private void Generate()
 		{
 			Debug.Log("Generating...");
-			var roomsAmount = Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
+			var maxRoomsAmount = Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
+			var values = Enum.GetValues(typeof(RoomType));
+			for (var i = 0; i < values.Length; i++)
+			{
+				Debug.Log($"[{i}] = {values.GetValue(i)}");
+			}
 
-			var generatingEntitiesCount = roomsAmount / _mapSettingsData.roomsRange.x;
+			var generatingEntitiesCount = maxRoomsAmount / _mapSettingsData.roomsRange.x;
+
+			var offset = new Vector3(-_mapSettingsData.mapSize.width / 2f * _mapSettingsData.roomSizeInfo.roomWidth,
+				-_mapSettingsData.mapSize.height / 2f * _mapSettingsData.roomSizeInfo.roomHeight);
+			_tilemap.transform.position = offset;
+			_collisionTileMap.transform.position = offset;
 
 			_collisionTileMap.size = new Vector3Int(_mapSettingsData.mapSize.width, _mapSettingsData.mapSize.height, 0);
 			_tilemap.size = new Vector3Int(_mapSettingsData.mapSize.width, _mapSettingsData.mapSize.height, 0);
@@ -99,28 +112,56 @@ namespace Generation.Map
 				)));
 			}
 
-			while (!_mapController.map.HasEnd() && generatingEntities.Count > 0)
+			var currentRoomsCount = 0;
+
+			while (currentRoomsCount < maxRoomsAmount && generatingEntities.Count > 0)
 			{
-				var removeEntities = new List<GeneratingEntity>();
-				
+				//var removeEntities = new List<GeneratingEntity>();
+
 				foreach (var generatingEntity in generatingEntities)
 				{
 					generatingEntity.Move();
 
 					if (generatingEntity.CanPlace())
 					{
-						generatingEntity.PlaceRoom((RoomType) Random.Range(0, 32));
+						var roomType = (RoomType) values.GetValue(Random.Range(1, values.Length));
+						if (_mapController.map.HasEnd())
+						{
+							while (((roomType & ~RoomType.End) | RoomType.None) == 0)
+							{
+								roomType = (RoomType) values.GetValue(Random.Range(1, values.Length));
+							}
+
+							generatingEntity.PlaceRoom(roomType & ~RoomType.End);
+						}
+						else
+						{
+							generatingEntity.PlaceRoom(roomType);
+						}
+
+						currentRoomsCount++;
 					}
-					else
-					{
-						removeEntities.Add(generatingEntity);
-					}
+
+//					else
+//					{
+//						removeEntities.Add(generatingEntity);
+//					}
 				}
 
-				foreach (var removeEntity in removeEntities)
-				{
-					generatingEntities.Remove(removeEntity);
-				}
+//				foreach (var removeEntity in removeEntities)
+//				{
+//					generatingEntities.Remove(removeEntity);
+//				}
+			}
+
+			if (_mapController.map.HasEnd())
+			{
+				Debug.Log("Map has end!");
+			}
+
+			if (generatingEntities.Count > 0)
+			{
+				Debug.Log($"Generating entities count = {generatingEntities.Count}");
 			}
 
 			_mapController.PlaceRooms(_tilemap, _collisionTileMap);

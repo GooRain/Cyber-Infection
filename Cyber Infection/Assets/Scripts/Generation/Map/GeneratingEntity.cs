@@ -30,13 +30,14 @@ namespace Generation.Map
 			var moveDirection = (EntityMoveDirection) Random.Range(0, 4);
 
 			var offset = GetOffset(moveDirection);
-			_currentPosition.x = Mathf.Clamp(_currentPosition.x + offset.x, 0, _map.width);
-			_currentPosition.y = Mathf.Clamp(_currentPosition.y + offset.y, 0, _map.height);
+			_currentPosition.x = Mathf.Clamp(_currentPosition.x + offset.x, 0, _map.width - 1);
+			_currentPosition.y = Mathf.Clamp(_currentPosition.y + offset.y, 0, _map.height - 1);
 		}
 
 		public void PlaceRoom(RoomType room)
 		{
 			_map.roomMatrix[_currentPosition.x, _currentPosition.y] = room;
+			Debug.Log($"Placing {room} at [{_currentPosition.x},{_currentPosition.y}]");
 		}
 
 		public bool CanPlace()
