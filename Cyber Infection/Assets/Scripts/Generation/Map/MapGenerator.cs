@@ -86,16 +86,17 @@ namespace Generation.Map
 		{
 			Debug.Log("Generating...");
 			var maxRoomsAmount = Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
-			var values = Enum.GetValues(typeof(RoomType));
-			for (var i = 0; i < values.Length; i++)
+			var roomTypes = Enum.GetValues(typeof(RoomType));
+			for (var i = 0; i < roomTypes.Length; i++)
 			{
-				Debug.Log($"[{i}] = {values.GetValue(i)}");
+				Debug.Log($"[{i}] = {roomTypes.GetValue(i)}");
 			}
 
 			var generatingEntitiesCount = maxRoomsAmount / _mapSettingsData.roomsRange.x;
 
-			var offset = new Vector3(-_mapSettingsData.mapSize.width / 2f * _mapSettingsData.roomSizeInfo.roomWidth,
-				-_mapSettingsData.mapSize.height / 2f * _mapSettingsData.roomSizeInfo.roomHeight);
+			var offset = new Vector3(
+				-_mapSettingsData.mapSize.width / 2f * (_mapSettingsData.roomSizeInfo.roomWidth - 1),
+				-_mapSettingsData.mapSize.height / 2f * (_mapSettingsData.roomSizeInfo.roomHeight - 1));
 			_tilemap.transform.position = offset;
 			_collisionTileMap.transform.position = offset;
 
@@ -113,25 +114,23 @@ namespace Generation.Map
 			}
 
 			var currentRoomsCount = 0;
-			
+
 			generatingEntities[0].PlaceRoom(RoomType.Start);
 
 			while (currentRoomsCount < maxRoomsAmount && generatingEntities.Count > 0)
 			{
-				//var removeEntities = new List<GeneratingEntity>();
-
 				foreach (var generatingEntity in generatingEntities)
 				{
 					generatingEntity.Move();
 
 					if (!generatingEntity.CanPlace()) continue;
-					
-					var roomType = (RoomType) values.GetValue(Random.Range(2, values.Length));
+
+					var roomType = (RoomType) roomTypes.GetValue(Random.Range(2, roomTypes.Length));
 					if (_mapController.map.HasEnd())
 					{
 						while (((roomType & ~RoomType.End & ~RoomType.Start) | RoomType.None) == 0)
 						{
-							roomType = (RoomType) values.GetValue(Random.Range(2, values.Length));
+							roomType = (RoomType) roomTypes.GetValue(Random.Range(2, roomTypes.Length));
 						}
 
 						generatingEntity.PlaceRoom(roomType & ~RoomType.End);
@@ -142,27 +141,12 @@ namespace Generation.Map
 					}
 
 					currentRoomsCount++;
-
-//					else
-//					{
-//						removeEntities.Add(generatingEntity);
-//					}
 				}
-
-//				foreach (var removeEntity in removeEntities)
-//				{
-//					generatingEntities.Remove(removeEntity);
-//				}
 			}
 
 			if (_mapController.map.HasEnd())
 			{
 				Debug.Log("Map has end!");
-			}
-
-			if (generatingEntities.Count > 0)
-			{
-				Debug.Log($"Generating entities count = {generatingEntities.Count}");
 			}
 
 			_mapController.PlaceRooms(_tilemap, _collisionTileMap);

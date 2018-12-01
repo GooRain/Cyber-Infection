@@ -31,13 +31,13 @@ namespace Generation.Map
 
 		public void PlaceRooms(Tilemap floorTileMap, Tilemap wallTileMap)
 		{
-			for (var x = 0; x < _mapSettingsData.mapSize.width; x++)
+			for (var x = 0; x < map.width; x++)
 			{
-				for (var y = 0; y < _mapSettingsData.mapSize.height; y++)
+				for (var y = 0; y < map.height; y++)
 				{
 					var currentPosition = new Vector3Int(
-						x * _mapSettingsData.roomSizeInfo.roomWidth,
-						y * _mapSettingsData.roomSizeInfo.roomHeight,
+						x * (_mapSettingsData.roomSizeInfo.roomWidth - 1),
+						y * (_mapSettingsData.roomSizeInfo.roomHeight - 1),
 						0
 					);
 
