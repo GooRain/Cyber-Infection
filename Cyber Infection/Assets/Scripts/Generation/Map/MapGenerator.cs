@@ -113,6 +113,8 @@ namespace Generation.Map
 			}
 
 			var currentRoomsCount = 0;
+			
+			generatingEntities[0].PlaceRoom(RoomType.Start);
 
 			while (currentRoomsCount < maxRoomsAmount && generatingEntities.Count > 0)
 			{
@@ -122,25 +124,24 @@ namespace Generation.Map
 				{
 					generatingEntity.Move();
 
-					if (generatingEntity.CanPlace())
+					if (!generatingEntity.CanPlace()) continue;
+					
+					var roomType = (RoomType) values.GetValue(Random.Range(2, values.Length));
+					if (_mapController.map.HasEnd())
 					{
-						var roomType = (RoomType) values.GetValue(Random.Range(1, values.Length));
-						if (_mapController.map.HasEnd())
+						while (((roomType & ~RoomType.End & ~RoomType.Start) | RoomType.None) == 0)
 						{
-							while (((roomType & ~RoomType.End) | RoomType.None) == 0)
-							{
-								roomType = (RoomType) values.GetValue(Random.Range(1, values.Length));
-							}
-
-							generatingEntity.PlaceRoom(roomType & ~RoomType.End);
-						}
-						else
-						{
-							generatingEntity.PlaceRoom(roomType);
+							roomType = (RoomType) values.GetValue(Random.Range(2, values.Length));
 						}
 
-						currentRoomsCount++;
+						generatingEntity.PlaceRoom(roomType & ~RoomType.End);
 					}
+					else
+					{
+						generatingEntity.PlaceRoom(roomType);
+					}
+
+					currentRoomsCount++;
 
 //					else
 //					{
