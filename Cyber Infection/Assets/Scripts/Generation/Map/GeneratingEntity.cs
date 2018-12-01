@@ -19,7 +19,7 @@ namespace Generation.Map
 
 		private readonly Map _map;
 		private PointInt _currentPosition;
-		private EntityMoveDirection _previousDirection = EntityMoveDirection.None;
+		private PointInt _directionToPrevious;
 
 		private int _debugID;
 
@@ -28,23 +28,26 @@ namespace Generation.Map
 			_map = map;
 			_currentPosition = currentPosition;
 			_debugID = Guid.NewGuid().GetHashCode() % 1000;
+			_directionToPrevious = new PointInt(0, 0);
 		}
 
 		public void Move()
 		{
 			var moveDirection = (EntityMoveDirection) Random.Range(1, 5);
-			while (moveDirection == GetInvertedDirection(_previousDirection))
+			var offset = GetOffset(moveDirection);
+			
+			while (offset == _directionToPrevious)
 			{
 				moveDirection = (EntityMoveDirection) Random.Range(1, 5);
+				offset = GetOffset(moveDirection);
 			}
 			
 			Debug.Log($"[{_debugID}] moving {moveDirection}");
 
-			var offset = GetOffset(moveDirection);
 			_currentPosition.x = Mathf.Clamp(_currentPosition.x + offset.x, 0, _map.width - 1);
 			_currentPosition.y = Mathf.Clamp(_currentPosition.y + offset.y, 0, _map.height - 1);
 
-			_previousDirection = moveDirection;
+			_directionToPrevious = -offset;
 		}
 
 		public void PlaceRoom(RoomType room)
@@ -56,26 +59,6 @@ namespace Generation.Map
 		public bool CanPlace()
 		{
 			return (_map.roomMatrix[_currentPosition.x, _currentPosition.y] | RoomType.None) == 0;
-		}
-
-		private EntityMoveDirection GetInvertedDirection(EntityMoveDirection direction)
-		{
-			switch(direction)
-			{
-				case EntityMoveDirection.None:
-					return EntityMoveDirection.None;
-				case EntityMoveDirection.Right:
-					return EntityMoveDirection.Left;
-				case EntityMoveDirection.Up:
-					return EntityMoveDirection.Down;
-				case EntityMoveDirection.Left:
-					return EntityMoveDirection.Right;
-				case EntityMoveDirection.Down:
-					return EntityMoveDirection.Up;
-				default:
-					Debug.LogError(direction);
-					return EntityMoveDirection.None;
-			}
 		}
 		
 		private PointInt GetOffset(EntityMoveDirection direction)

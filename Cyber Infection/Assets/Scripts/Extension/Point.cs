@@ -51,5 +51,10 @@ namespace Extension
 		{
 			return $"({x}, {y})";
 		}
+		
+		public static PointInt operator -(PointInt other)
+		{
+			return new PointInt(-other.x, -other.y);
+		}
 	}
 }
