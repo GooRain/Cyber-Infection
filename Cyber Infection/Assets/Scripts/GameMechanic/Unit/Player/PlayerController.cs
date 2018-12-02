@@ -81,14 +81,14 @@ namespace GameMechanic.Unit.Player
 			var difference = (_camera.ScreenToWorldPoint(UnityEngine.Input.mousePosition) - _transform.position)
 				.normalized;
 			var rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-			if (rotationZ >= -22.5f && rotationZ < 22.5f) _spriteRenderer.sprite = differentRotation[0];				// r
-			else if (rotationZ >= 22.5f && rotationZ < 47.5f) _spriteRenderer.sprite = differentRotation[1];		// ru
-			else if (rotationZ >= 47.5f && rotationZ < 112.5f) _spriteRenderer.sprite = differentRotation[2];		// u
-			else if (rotationZ >= 112.5f && rotationZ < 157.5f) _spriteRenderer.sprite = differentRotation[3];		// lu
-			else if (rotationZ >= 157.5f || rotationZ < -157.5f) _spriteRenderer.sprite = differentRotation[4];		// l
-			else if (rotationZ >= -157.5f && rotationZ < -112.5f) _spriteRenderer.sprite = differentRotation[5];		// ld
-			else if (rotationZ >= -112.5f && rotationZ < -62.5f) _spriteRenderer.sprite = differentRotation[6];		// d
-			else if (rotationZ >= -62.5f && rotationZ < -22.5f) _spriteRenderer.sprite = differentRotation[7];	// dr
+			if (rotationZ >= -22.5f && rotationZ < 22.5f) _spriteRenderer.sprite = differentRotation[0]; // r
+			else if (rotationZ >= 22.5f && rotationZ < 47.5f) _spriteRenderer.sprite = differentRotation[1]; // ru
+			else if (rotationZ >= 47.5f && rotationZ < 112.5f) _spriteRenderer.sprite = differentRotation[2]; // u
+			else if (rotationZ >= 112.5f && rotationZ < 157.5f) _spriteRenderer.sprite = differentRotation[3]; // lu
+			else if (rotationZ >= 157.5f || rotationZ < -157.5f) _spriteRenderer.sprite = differentRotation[4]; // l
+			else if (rotationZ >= -157.5f && rotationZ < -112.5f) _spriteRenderer.sprite = differentRotation[5]; // ld
+			else if (rotationZ >= -112.5f && rotationZ < -62.5f) _spriteRenderer.sprite = differentRotation[6]; // d
+			else if (rotationZ >= -62.5f && rotationZ < -22.5f) _spriteRenderer.sprite = differentRotation[7]; // dr
 		}
 
 		private void Movement()

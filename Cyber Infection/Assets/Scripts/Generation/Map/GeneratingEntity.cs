@@ -21,7 +21,7 @@ namespace Generation.Map
 		private PointInt _currentPosition;
 		private PointInt _directionToPrevious;
 
-		private int _debugID;
+		private readonly int _debugID;
 
 		public GeneratingEntity(ref Map map, PointInt currentPosition)
 		{

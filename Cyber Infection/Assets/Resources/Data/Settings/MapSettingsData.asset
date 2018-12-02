@@ -19,8 +19,8 @@ MonoBehaviour:
     roomWidth: 15
     roomHeight: 9
   mapSize:
-    width: 10
-    height: 6
+    width: 12
+    height: 8
   _floorTile: {fileID: 11400000, guid: 5cc4bfa05b809594183ba750c90c086e, type: 2}
   _wallTile: {fileID: 11400000, guid: 14dc612e558fa084aa8896d65a5b7078, type: 2}
   _colorGradient:

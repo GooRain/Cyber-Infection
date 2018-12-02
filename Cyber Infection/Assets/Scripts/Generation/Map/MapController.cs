@@ -45,7 +45,45 @@ namespace Generation.Map
 
 					SetFloor(floorTileMap, currentPosition, _mapSettingsData.roomSizeInfo);
 					SetWall(wallTileMap, currentPosition, _mapSettingsData.roomSizeInfo);
+					SetDoors(wallTileMap, floorTileMap, map.roomMatrix, x, y, currentPosition, _mapSettingsData.roomSizeInfo);
 				}
+			}
+		}
+
+		//	TODO Vitcor: Надо будет получше сделать
+		private void SetDoors(Tilemap wallTileMap,Tilemap floorTileMap, RoomType[,] mapRoomMatrix, int x, int y, Vector3Int center,
+			RoomSizeInfo roomSizeInfo)
+		{
+			if (x > 0 && mapRoomMatrix[x - 1, y] != RoomType.None)
+			{
+				var leftDoorPos = center - new Vector3Int(roomSizeInfo.roomWidth / 2, 0, 0);
+				wallTileMap.SetTile(leftDoorPos, null);
+				floorTileMap.SetTile(leftDoorPos, _mapSettingsData.GetFloorTile());
+				//Debug.Log($"Set Left Door at: {leftDoorPos}");
+			}
+
+			if (x < map.width - 1 && mapRoomMatrix[x + 1, y] != RoomType.None)
+			{
+				var rightDoorPos = center + new Vector3Int(roomSizeInfo.roomWidth / 2, 0, 0);
+				wallTileMap.SetTile(rightDoorPos, null);
+				floorTileMap.SetTile(rightDoorPos, _mapSettingsData.GetFloorTile());
+				//Debug.Log($"Set Right Door at: {rightDoorPos}");
+			}
+
+			if (y > 0 && mapRoomMatrix[x, y - 1] != RoomType.None)
+			{
+				var downDoorPos = center - new Vector3Int(0, roomSizeInfo.roomHeight / 2, 0);
+				wallTileMap.SetTile(downDoorPos, null);
+				floorTileMap.SetTile(downDoorPos, _mapSettingsData.GetFloorTile());
+				//Debug.Log($"Set Down Door at: {downDoorPos}");
+			}
+
+			if (y < map.height - 1 && mapRoomMatrix[x, y + 1] != RoomType.None)
+			{
+				var upDoorPos = center + new Vector3Int(0, roomSizeInfo.roomHeight / 2, 0);
+				wallTileMap.SetTile(upDoorPos, null);
+				floorTileMap.SetTile(upDoorPos, _mapSettingsData.GetFloorTile());
+				//Debug.Log($"Set Up Door at: {upDoorPos}");
 			}
 		}
 

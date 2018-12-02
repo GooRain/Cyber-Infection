@@ -13,6 +13,7 @@ namespace Generation.Room
 		Advanced = 16,
 		
 		BossEnd = 12,
+		AdvancedBoss = 24,
 		AdvancedBossEnd = 28
 	}
 }
