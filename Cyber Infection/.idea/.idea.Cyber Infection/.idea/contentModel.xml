@@ -578,6 +578,9 @@
               <e p="Bullet.cs" t="Include" />
               <e p="BulletController.cs" t="Include" />
             </e>
+            <e p="CameraMechanic" t="Include">
+              <e p="CameraController.cs" t="Include" />
+            </e>
             <e p="Input" t="Include">
               <e p="InputController.cs" t="Include" />
             </e>
@@ -640,23 +643,6 @@
               <e p="MenuCanvas.cs" t="Include" />
             </e>
           </e>
-        </e>
-        <e p="unity-wave-function-collapse" t="Include">
-          <e p="impl" t="Include">
-            <e p="Model.cs" t="Include" />
-            <e p="OverlappingModel.cs" t="Include" />
-            <e p="SimpleTiledModel.cs" t="Include" />
-            <e p="Stuff.cs" t="Include" />
-            <e p="Tuple.cs" t="Include" />
-            <e p="Tuple2.cs" t="Include" />
-            <e p="Tuple3.cs" t="Include" />
-            <e p="Tuple4.cs" t="Include" />
-          </e>
-          <e p="LICENSE.txt" t="Include" />
-          <e p="OverlapWFC.cs" t="Include" />
-          <e p="SimpleTiledWFC.cs" t="Include" />
-          <e p="TilePainter.cs" t="Include" />
-          <e p="Training.cs" t="Include" />
         </e>
       </e>
       <e p="Cyber Infection.sln" t="IncludeFlat" />
