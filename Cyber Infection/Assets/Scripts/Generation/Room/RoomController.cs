@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Extension;
 using Generation.Tiles;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
 namespace Generation.Room
@@ -21,12 +22,44 @@ namespace Generation.Room
 	public class RoomController : MonoBehaviour
 	{
 		public Room room { get; set; }
-		
-		public List<WallTile> Walls { get; set; }
 
-		private void Awake()
+		private List<Tile> _myTiles = new List<Tile>();
+
+		public void TryToToggle(bool value)
 		{
-			Walls = new List<WallTile>();
+			if (value)
+			{
+				// ...
+				Activate();
+				// ...
+			}
+			else
+			{
+				// ...
+				Deactivate();
+				// ...
+			}
 		}
+
+		private void Deactivate()
+		{
+			var transparent = Color.white;
+			transparent.a = 0f;
+			foreach (var tile in _myTiles)
+			{
+				tile.color = transparent;
+			}
+		}
+
+		public void Activate()
+		{
+			var transparent = Color.white;
+			transparent.a = 1f;
+			foreach (var tile in _myTiles)
+			{
+				tile.color = transparent;
+			}
+		}
+
 	}
 }

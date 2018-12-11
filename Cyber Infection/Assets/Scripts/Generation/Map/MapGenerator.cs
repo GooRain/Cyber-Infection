@@ -95,8 +95,9 @@ namespace Generation.Map
 			var generatingEntitiesCount = maxRoomsAmount / _mapSettingsData.roomsRange.x;
 
 			var offset = new Vector3(
-				-_mapSettingsData.mapSize.width / 2f * (_mapSettingsData.roomSizeInfo.roomWidth - 1),
-				-_mapSettingsData.mapSize.height / 2f * (_mapSettingsData.roomSizeInfo.roomHeight - 1));
+				-_mapSettingsData.mapSize.width / 2f * (_mapSettingsData.roomSizeInfo.roomWidth - 1) -.5f,
+				-_mapSettingsData.mapSize.height / 2f * (_mapSettingsData.roomSizeInfo.roomHeight - 1) -.5f);
+			
 			_tilemap.transform.position = offset;
 			_collisionTileMap.transform.position = offset;
 
