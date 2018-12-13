@@ -14,15 +14,21 @@ namespace GameMechanic.Unit.Player
 		private float _runSpeed;
 
 		[FormerlySerializedAs("reloadSpeed")] [SerializeField]
-		private float _reloadSpeed;
+		private float _reloadSpeed = 5.0f;
+        private float _timeBtwShot;
 
-		[SerializeField] private Sprite[] differentRotation;
-		//[SerializeField]
-		//private GameObject bulletSpawnPoint;
-		//[SerializeField]
-		//private GameObject bullet;            // пуля которая будет стрелять
+        [FormerlySerializedAs("legsObject")]
+        [SerializeField]
+        private GameObject _legs;
 
-		private SpriteRenderer _sprite;
+        [FormerlySerializedAs("Bullet")] [SerializeField]
+        private GameObject _bulletPrefab;
+
+        [SerializeField]
+        private Sprite[] differentRotation;
+        
+
+        private SpriteRenderer _sprite;
 
 		private Animator _animator;
 		//private CharState State
@@ -41,10 +47,11 @@ namespace GameMechanic.Unit.Player
 		private SpriteRenderer _spriteRenderer;
 		private Camera _camera;
 		private Transform _transform;
+        private GameObject _bullet;
 
-		private void Awake()
+        private void Awake()
 		{
-			_animator = GetComponent<Animator>();
+			_animator = _legs.GetComponent<Animator>();
 			_sprite = GetComponentInChildren<SpriteRenderer>();
 			_playerRigidbody = GetComponent<Rigidbody2D>();
 			_floorMask = LayerMask.GetMask("Floor");
@@ -75,7 +82,6 @@ namespace GameMechanic.Unit.Player
 			//Turning();
 		}
 
-
 		private void RotationMouse()
 		{
 			var difference = (_camera.ScreenToWorldPoint(UnityEngine.Input.mousePosition) - _transform.position)
@@ -97,57 +103,76 @@ namespace GameMechanic.Unit.Player
 				UnityEngine.Input.GetAxisRaw("Vertical"));
 			Vector2 inputDir = input.normalized;
 
-//			if(inputDir != Vector2.zero)
-//			{
-//				transform.eulerAngles = Vector3.up * Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg;
-//			}
+            _animator.SetFloat("Horizontal", input.x);
+            _animator.SetFloat("Vertical", input.y);
+            _animator.SetFloat("Magnitude", input.magnitude);
 
-			var running = UnityEngine.Input.GetKey(KeyCode.LeftShift);
+            //			if(inputDir != Vector2.zero)
+            //			{
+            //				transform.eulerAngles = Vector3.up * Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg;
+            //			}
+
+            var running = UnityEngine.Input.GetKey(KeyCode.LeftShift);
 			var speed = (running ? _runSpeed : _walkSpeed) * inputDir.magnitude;
 
 			//transform.Translate(, Space.World);
 			_playerRigidbody.MovePosition(_playerRigidbody.position + input * speed * Time.deltaTime);
 
-//		float animationSpeedPercent = ((running) ? 1 : .5f) * inputDir.magnitude;
-//		animator.SetFloat("speedPercent", animationSpeedPercent);
+            
 
-			//if(Input.GetKey(KeyCode.W))
-			//{
-			//	transform.Translate(Vector2.up * Time.deltaTime * moveSpeed);
-			//	if(!attacking)
-			//	{
-			//		bulletSpawnPoint.transform.eulerAngles = new Vector3(0, 0, 0);
-			//		State = CharState.up;
-			//	}
-			//}
-			//if(Input.GetKey(KeyCode.S))
-			//{
-			//	transform.Translate(Vector2.down * Time.deltaTime * moveSpeed);
-			//	if(!attacking) { bulletSpawnPoint.transform.eulerAngles = new Vector3(0, 0, 180); State = CharState.down; }
-			//}
-			//if(Input.GetKey(KeyCode.A))
-			//{
-			//	sprite.flipX = true;
-			//	transform.Translate(Vector2.left * Time.deltaTime * moveSpeed);
-			//	if(!attacking) { bulletSpawnPoint.transform.eulerAngles = new Vector3(0, 0, 90); if(!Input.GetKey(KeyCode.W) || !Input.GetKey(KeyCode.S)) State = CharState.sideways; }
-			//	if(Input.GetKey(KeyCode.RightArrow)) { sprite.flipX = false; }
-			//}
-			//else sprite.flipX = false;
 
-			//if(Input.GetKey(KeyCode.D))
-			//{
+            //		float animationSpeedPercent = ((running) ? 1 : .5f) * inputDir.magnitude;
+            //		animator.SetFloat("speedPercent", animationSpeedPercent);
 
-			//	transform.Translate(Vector2.right * Time.deltaTime * moveSpeed);
-			//	if(!attacking)
-			//	{
-			//		bulletSpawnPoint.transform.eulerAngles = new Vector3(0, 0, -90);
-			//		if(!Input.GetKey(KeyCode.W) || !Input.GetKey(KeyCode.S)) State = CharState.sideways;
-			//	}
-			//}
-		}
+            //if(Input.GetKey(KeyCode.W))
+            //{
+            //	transform.Translate(Vector2.up * Time.deltaTime * moveSpeed);
+            //	if(!attacking)
+            //	{
+            //		bulletSpawnPoint.transform.eulerAngles = new Vector3(0, 0, 0);
+            //		State = CharState.up;
+            //	}
+            //}
+            //if(Input.GetKey(KeyCode.S))
+            //{
+            //	transform.Translate(Vector2.down * Time.deltaTime * moveSpeed);
+            //	if(!attacking) { bulletSpawnPoint.transform.eulerAngles = new Vector3(0, 0, 180); State = CharState.down; }
+            //}
+            //if(Input.GetKey(KeyCode.A))
+            //{
+            //	sprite.flipX = true;
+            //	transform.Translate(Vector2.left * Time.deltaTime * moveSpeed);
+            //	if(!attacking) { bulletSpawnPoint.transform.eulerAngles = new Vector3(0, 0, 90); if(!Input.GetKey(KeyCode.W) || !Input.GetKey(KeyCode.S)) State = CharState.sideways; }
+            //	if(Input.GetKey(KeyCode.RightArrow)) { sprite.flipX = false; }
+            //}
+            //else sprite.flipX = false;
+
+            //if(Input.GetKey(KeyCode.D))
+            //{
+
+            //	transform.Translate(Vector2.right * Time.deltaTime * moveSpeed);
+            //	if(!attacking)
+            //	{
+            //		bulletSpawnPoint.transform.eulerAngles = new Vector3(0, 0, -90);
+            //		if(!Input.GetKey(KeyCode.W) || !Input.GetKey(KeyCode.S)) State = CharState.sideways;
+            //	}
+            //}
+        }
 
 		private void Shoot()
 		{
+            if (_timeBtwShot <= 0)
+            {
+                if (UnityEngine.Input.GetMouseButtonDown(0))
+                {
+                    _bullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
+                    _timeBtwShot = _reloadSpeed;
+                }
+            }
+            else
+            {
+                _timeBtwShot -= Time.deltaTime;
+            }
 			//waitTime += 1 * Time.deltaTime * reloadSpeed;         // Это типа время перезарядки
 			//if(waitTime > 1) waitTime = 2;                       // Это типа что бы много не считала
 			//if(Input.GetKey(KeyCode.UpArrow))                  // Поворачивает то чем будет стрелять(палец там руку), проходит кд и стреляет
