@@ -1,13 +1,13 @@
-﻿using Data.Enemys;
-using GameMechanic.Unit.Enemy;
+﻿using GameMechanic.Unit.Enemy;
 using System.Collections;
+using Data.Unit.Enemy;
 using UnityEngine;
 
 namespace GameMechanic.Spawn
 {
     public class EnemySpawn : MonoBehaviour
     {
-        public EnemysPool Pool { get; set; }
+        public EnemyData Pool { get; set; }
 
         void Start()
         {
@@ -16,7 +16,7 @@ namespace GameMechanic.Spawn
 
         private void Awake()
         {
-            Pool = GetComponent<EnemysPool>();
+            Pool = GetComponent<EnemyData>();
         }
 
         private IEnumerator SpawnControl()
@@ -39,7 +39,7 @@ namespace GameMechanic.Spawn
                     break;
             }
 
-            Pool.GetObject(type);
+            Pool.Instantiate(type);
             yield return new WaitForSeconds(1.0f);
         }
     }

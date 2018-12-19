@@ -534,9 +534,6 @@
               <e p="SerializableDictionary.cs" t="Include" />
               <e p="SingletonScriptableObject.cs" t="Include" />
             </e>
-            <e p="Enemys" t="Include">
-              <e p="EnemysPool.cs" t="Include" />
-            </e>
             <e p="Loading" t="Include">
               <e p="LoadingData.cs" t="Include" />
             </e>
@@ -556,6 +553,11 @@
               </e>
               <e p="InputSettingsData.cs" t="Include" />
             </e>
+            <e p="Unit" t="Include">
+              <e p="Enemy" t="Include">
+                <e p="EnemyData.cs" t="Include" />
+              </e>
+            </e>
           </e>
           <e p="Editor" t="Include">
             <e p="CustomDictionaryHolder.cs" t="Include" />
@@ -568,6 +570,12 @@
             <e p="Utility" t="Include">
               <e p="Enums.cs" t="Include" />
             </e>
+          </e>
+          <e p="Factory" t="Include">
+            <e p="EnemyFactory" t="Include">
+              <e p="EnemyFactoryBase.cs" t="Include" />
+            </e>
+            <e p="FactoryBase.cs" t="Include" />
           </e>
           <e p="GameMechanic" t="Include">
             <e p="Base" t="Include">
