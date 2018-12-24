@@ -43,7 +43,10 @@ namespace Generation.Map
 		{
 			_mapController = gameObject.AddComponent<MapController>();
 
-			InitSeed();
+			if (_mapSettingsData.useSeed)
+			{
+				InitSeed();				
+			}
 
 			SceneManager.activeSceneChanged += OnSceneLoaded;
 		}

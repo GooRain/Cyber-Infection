@@ -105,7 +105,7 @@ namespace Generation.Map
 					var newRoomController = roomGameObject.AddComponent<RoomController>();
 					var roomControllerTransform = newRoomController.transform;
 					roomControllerTransform.SetParent(roomControllersHolder.transform);
-					roomControllerTransform.localPosition = currentPosition;
+					roomControllerTransform.localPosition = currentPosition + Vector3.one * 0.5f;
 					_roomControllers.Add(newRoomController);
 					_roomControllersMatrix[x, y] = newRoomController;
 				}

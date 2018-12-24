@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Data.Settings.Generation;
+using DG.Tweening;
 using Extension;
 using GameMechanic.Unit.Player;
 using Generation.Map;
@@ -14,9 +15,10 @@ namespace GameMechanic.CameraMechanic
 {
 	public class CameraController : SingletonMonobehaviour<CameraController>
 	{
+		[SerializeField] private Transform _anchor;
 		[SerializeField] private float _dampTime = 0.2f;
 		[SerializeField] private Vector2 _xOffset = new Vector2(-0.4f, 1.15f);
-		[SerializeField] private Vector2 _yOffset = new Vector2(-0.15f, 1.18f);
+		[SerializeField] private Vector2 _yOffset = new Vector2(-0.4f, 1.18f);
 
 		private Vector3 _velocity = Vector3.zero;
 		private float _cameraZ;
@@ -34,8 +36,6 @@ namespace GameMechanic.CameraMechanic
 		private Player _player;
 		private MapSettingsData _mapSettingsData;
 
-		private Vector2 _anchor;
-
 		[Inject]
 		private void Construct(Player player, MapSettingsData map)
 		{
@@ -46,17 +46,16 @@ namespace GameMechanic.CameraMechanic
 		private void Awake()
 		{
 			_instance = this;
-			
+
 			_camera = GetComponent<Camera>();
 			_transform = transform;
 			_playerTransform = _player.transform;
 			var minSize = _mapSettingsData.roomSizeInfo.roomWidth / 16f < _mapSettingsData.roomSizeInfo.roomHeight / 9f
-				? _mapSettingsData.roomSizeInfo.roomWidth / 2f / 16f * 9f
-				: _mapSettingsData.roomSizeInfo.roomHeight / 2f; // Vremenno, potom nado sohranyat sootnoshenie ekrana
+				? (_mapSettingsData.roomSizeInfo.roomWidth - 2) * .5f / 16f * 9f
+				: (_mapSettingsData.roomSizeInfo.roomHeight - 2) * .5f; // Vremenno, potom nado sohranyat sootnoshenie ekrana
 			_camera.orthographicSize = minSize;
 
-			_anchor = _transform.position;
-			CalculateBorders();
+			//CalculateBorders();
 		}
 
 		private void Start()
@@ -71,33 +70,39 @@ namespace GameMechanic.CameraMechanic
 
 		public void SetRoom(RoomController roomController)
 		{
-			_anchor = roomController.transform.position;
+			//_anchor.position = roomController.transform.position;
 
-			CalculateBorders();
+			_anchor.DOMove(roomController.transform.position, 1f);
+
+			//CalculateBorders();
 		}
 
-		private void CalculateBorders()
-		{
-			_xBorder.x = _anchor.x + _xOffset.x;
-			_xBorder.y = _anchor.x + _xOffset.y;
-			
-			_yBorder.x = _anchor.y + _yOffset.x;
-			_yBorder.y = _anchor.y + _yOffset.y;
-		}
+//		private void CalculateBorders()
+//		{
+//			_xBorder.x = _anchor.x - _xOffset.x;
+//			_xBorder.y = _anchor.x + _xOffset.y;
+//
+//			Debug.Log(_xBorder);
+//			_yBorder.x = _anchor.y - _yOffset.x;
+//			_yBorder.y = _anchor.y + _yOffset.y;
+//
+//			Debug.Log(_yBorder);
+//		}
 
 		private void FollowPlayer()
 		{
 			if (!_playerTransform) return;
 
-			var delta = _playerTransform.position -
-			            _camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, _cameraZ));
-			var position = _transform.position;
+//			var delta = _playerTransform.position -
+//			            _camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, _cameraZ));
+			var delta = _playerTransform.position - _anchor.position;
+			var position = _transform.localPosition;
 			var destination = position + delta;
 			destination.z = _cameraZ;
-			destination.x = Mathf.Clamp(delta.x, _xBorder.x, _xBorder.y);
-			destination.y = Mathf.Clamp(delta.y, _yBorder.x, _yBorder.y);
+			destination.x = Mathf.Clamp(delta.x, _xOffset.x, _xOffset.y);
+			destination.y = Mathf.Clamp(delta.y, _yOffset.x, _yOffset.y);
 			position = Vector3.SmoothDamp(position, destination, ref _velocity, _dampTime);
-			_transform.position = position;
+			_transform.localPosition = position;
 		}
 	}
 }
