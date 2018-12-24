@@ -197,6 +197,11 @@ namespace GameMechanic.Unit.Player
 
 		private void Shoot()
 		{
+			if (_shotPos == null)
+			{
+				return;
+			}
+			
             Vector2 diff = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition) - _shotPos.transform.position;
             float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             _shotPos.transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);

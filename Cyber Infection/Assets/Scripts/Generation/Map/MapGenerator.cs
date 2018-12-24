@@ -17,6 +17,7 @@ namespace Generation.Map
 {
 	public class MapGenerator : MonoBehaviour
 	{
+		[SerializeField] private Transform _mapHolder;
 		[SerializeField] private Tilemap _tilemap;
 		[SerializeField] private Tilemap _collisionTileMap;
 
@@ -30,6 +31,8 @@ namespace Generation.Map
 		private MapSettingsData _mapSettingsData;
 		private MapController _mapController;
 
+		public Vector3 offset { get; private set; }
+
 		[Inject]
 		private void Construct(MapSettingsData mapSettingsData)
 		{
@@ -39,7 +42,6 @@ namespace Generation.Map
 		private void Awake()
 		{
 			_mapController = gameObject.AddComponent<MapController>();
-			_mapController.Initialize(_mapSettingsData);
 
 			InitSeed();
 
@@ -94,12 +96,15 @@ namespace Generation.Map
 
 			var generatingEntitiesCount = maxRoomsAmount / _mapSettingsData.roomsRange.x;
 
-			var offset = new Vector3(
+			offset = new Vector3(
 				-_mapSettingsData.mapSize.width / 2f * (_mapSettingsData.roomSizeInfo.roomWidth - 1) -.5f,
 				-_mapSettingsData.mapSize.height / 2f * (_mapSettingsData.roomSizeInfo.roomHeight - 1) -.5f);
 			
-			_tilemap.transform.position = offset;
-			_collisionTileMap.transform.position = offset;
+			_mapController.Initialize(_mapSettingsData, offset, _mapHolder);
+			
+//			_tilemap.transform.position = offset;
+//			_collisionTileMap.transform.position = offset;
+			_mapHolder.position = offset;
 
 			_collisionTileMap.size = new Vector3Int(_mapSettingsData.mapSize.width, _mapSettingsData.mapSize.height, 0);
 			_tilemap.size = new Vector3Int(_mapSettingsData.mapSize.width, _mapSettingsData.mapSize.height, 0);
