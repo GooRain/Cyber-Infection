@@ -24,6 +24,10 @@ namespace GameMechanic.Unit.Player
         [FormerlySerializedAs("Bullet")] [SerializeField]
         private GameObject _bulletPrefab;
 
+        [FormerlySerializedAs("ShotPos")]
+        [SerializeField]
+        private GameObject _shotPos;
+
         [SerializeField]
         private Sprite[] differentRotation;
         
@@ -87,14 +91,46 @@ namespace GameMechanic.Unit.Player
 			var difference = (_camera.ScreenToWorldPoint(UnityEngine.Input.mousePosition) - _transform.position)
 				.normalized;
 			var rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-			if (rotationZ >= -22.5f && rotationZ < 22.5f) _spriteRenderer.sprite = differentRotation[0]; // r
-			else if (rotationZ >= 22.5f && rotationZ < 47.5f) _spriteRenderer.sprite = differentRotation[1]; // ru
-			else if (rotationZ >= 47.5f && rotationZ < 112.5f) _spriteRenderer.sprite = differentRotation[2]; // u
-			else if (rotationZ >= 112.5f && rotationZ < 157.5f) _spriteRenderer.sprite = differentRotation[3]; // lu
-			else if (rotationZ >= 157.5f || rotationZ < -157.5f) _spriteRenderer.sprite = differentRotation[4]; // l
-			else if (rotationZ >= -157.5f && rotationZ < -112.5f) _spriteRenderer.sprite = differentRotation[5]; // ld
-			else if (rotationZ >= -112.5f && rotationZ < -62.5f) _spriteRenderer.sprite = differentRotation[6]; // d
-			else if (rotationZ >= -62.5f && rotationZ < -22.5f) _spriteRenderer.sprite = differentRotation[7]; // dr
+            if (rotationZ >= -22.5f && rotationZ < 22.5f)
+            {
+                _spriteRenderer.sprite = differentRotation[0]; // r
+                _shotPos.transform.position = transform.position + new Vector3(0.54f, 0.06f, 0f);
+            }
+            else if (rotationZ >= 22.5f && rotationZ < 47.5f)
+            {
+                _spriteRenderer.sprite = differentRotation[1]; // ru
+                _shotPos.transform.position = transform.position + new Vector3(0.27f, 0.59f, 0f);
+            }
+            else if (rotationZ >= 47.5f && rotationZ < 112.5f)
+            {
+                _spriteRenderer.sprite = differentRotation[2]; // u
+                _shotPos.transform.position = transform.position + new Vector3(-0.3f, 0.59f, 0f);
+            }
+            else if (rotationZ >= 112.5f && rotationZ < 157.5f)
+            {
+                _spriteRenderer.sprite = differentRotation[3]; // lu
+                _shotPos.transform.position = transform.position + new Vector3(-0.63f, 0.35f, 0f);
+            }
+            else if (rotationZ >= 157.5f || rotationZ < -157.5f)
+            {
+                _spriteRenderer.sprite = differentRotation[4]; // l
+                _shotPos.transform.position = transform.position + new Vector3(-0.7f, 0f, 0f);
+            }
+            else if (rotationZ >= -157.5f && rotationZ < -112.5f)
+            {
+                _spriteRenderer.sprite = differentRotation[5]; // ld
+                _shotPos.transform.position = transform.position + new Vector3(-0.66f, -0.19f, 0f);
+            }
+            else if (rotationZ >= -112.5f && rotationZ < -62.5f)
+            {
+                _spriteRenderer.sprite = differentRotation[6]; // d
+                _shotPos.transform.position = transform.position + new Vector3(-0.51f, -0.39f, 0f);
+            }
+            else if (rotationZ >= -62.5f && rotationZ < -22.5f)
+            {
+                _spriteRenderer.sprite = differentRotation[7]; // dr
+                _shotPos.transform.position = transform.position + new Vector3(-0.03f, -0.22f, 0f);
+            }
 		}
 
 		private void Movement()
@@ -161,11 +197,15 @@ namespace GameMechanic.Unit.Player
 
 		private void Shoot()
 		{
+            Vector2 diff = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition) - _shotPos.transform.position;
+            float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            _shotPos.transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
+
             if (_timeBtwShot <= 0)
             {
                 if (UnityEngine.Input.GetMouseButtonDown(0))
                 {
-                    _bullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
+                    Instantiate(_bulletPrefab, _shotPos.transform.position, _shotPos.transform.rotation);
                     _timeBtwShot = _reloadSpeed;
                 }
             }
