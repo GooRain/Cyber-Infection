@@ -20,6 +20,14 @@ namespace Generation.Room.Door
         private RoomController _left;
         [SerializeField]
         private RoomController _right;
+
+        private Transform _transform;
+
+        private void Awake()
+        {
+            _transform = transform;
+        }
+
         public void Initialize(DoorType type, RoomController a, RoomController b)
         {
             _type = type;
@@ -33,20 +41,25 @@ namespace Generation.Room.Door
             {
                 var playerTransform = other.transform;
 
-                MovePlayer(playerTransform.position);
+                MovePlayer(playerTransform);
             }
         }
 
-        private void MovePlayer(Vector3 position)
+        private void MovePlayer(Transform playerTransform)
         {
             RoomController nextRoom;
+            var position = _transform.position;
             switch(_type)
             {
                 case DoorType.Horizontal:
-                    nextRoom = position.x > transform.position.x ? _left : _right;
+                    var xLeft = playerTransform.position.x > position.x;
+                    nextRoom = xLeft ? _left : _right;
+                    playerTransform.position = position + Vector3.right * (xLeft ? -1 : 1);
                     break;
                 case DoorType.Vertical:
-                    nextRoom = position.y > transform.position.y ? _left : _right;
+                    var yLeft = playerTransform.position.y > position.y;
+                    nextRoom = yLeft ? _left : _right;
+                    playerTransform.position = position + Vector3.up * (yLeft ? -1 : 1);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
