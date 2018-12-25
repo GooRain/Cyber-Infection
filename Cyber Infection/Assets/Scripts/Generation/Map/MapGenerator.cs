@@ -47,8 +47,11 @@ namespace Generation.Map
 			{
 				InitSeed();				
 			}
+		}
 
-			SceneManager.activeSceneChanged += OnSceneLoaded;
+		private void Start()
+		{
+			Generate();
 		}
 
 		private void InitSeed()
@@ -67,11 +70,6 @@ namespace Generation.Map
 				Clear();
 				TryToGenerate(SceneManager.GetActiveScene().name);
 			}
-		}
-
-		private void OnSceneLoaded(Scene from, Scene to)
-		{
-			TryToGenerate(to.name);
 		}
 
 		private void Clear()

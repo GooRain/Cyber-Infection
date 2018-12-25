@@ -1,13 +1,14 @@
-﻿using UnityEngine;
+﻿using Constants;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace UI.MainMenu
 {
 	public class MenuCanvas : MonoBehaviour
 	{
-		public void OnNextSceneButtonClick(string sceneName)
+		public void LoadPlayScene()
 		{
-			SceneManager.LoadScene(sceneName);
+			SceneManager.LoadSceneAsync(SceneName.Play);
 		}
 		
 	}
