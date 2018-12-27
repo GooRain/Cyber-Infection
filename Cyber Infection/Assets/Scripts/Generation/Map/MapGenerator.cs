@@ -98,18 +98,15 @@ namespace Generation.Map
 			var generatingEntitiesCount = maxRoomsAmount / _mapSettingsData.roomsRange.x;
 
 			offset = new Vector3(
-				-_mapSettingsData.mapSize.width / 2f * (_mapSettingsData.roomSizeInfo.roomWidth - 1) -.5f,
-				-_mapSettingsData.mapSize.height / 2f * (_mapSettingsData.roomSizeInfo.roomHeight - 1) -.5f);
+				-_mapSettingsData.mapSize.width * .5f * (_mapSettingsData.roomSizeInfo.roomWidth - 1) -.5f,
+				-_mapSettingsData.mapSize.height * .5f * (_mapSettingsData.roomSizeInfo.roomHeight - 1) -.5f);
 			
 			_mapController.Initialize(_mapSettingsData, offset, _mapHolder);
 			
 //			_tilemap.transform.position = offset;
 //			_collisionTileMap.transform.position = offset;
 			_mapHolder.position = offset;
-
-			_collisionTileMap.size = new Vector3Int(_mapSettingsData.mapSize.width, _mapSettingsData.mapSize.height, 0);
-			_tilemap.size = new Vector3Int(_mapSettingsData.mapSize.width, _mapSettingsData.mapSize.height, 0);
-
+			
 			var generatingEntities = new List<GeneratingEntity>();
 
 			for (var i = 0; i < generatingEntitiesCount; i++)
