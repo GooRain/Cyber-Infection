@@ -667,15 +667,18 @@
             </e>
             <e p="SingletonMonobehaviour.cs" t="Include" />
           </e>
-          <e p="SceneContexts" t="Include">
-            <e p="LoadSceneContext.cs" t="Include" />
-            <e p="MenuSceneContext.cs" t="Include" />
-            <e p="PlaySceneContext.cs" t="Include" />
+          <e p="SceneManagers" t="Include">
+            <e p="LoadSceneManager.cs" t="Include" />
+            <e p="PlaySceneManager.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="Game" t="Include">
+              <e p="GameCanvas.cs" t="Include" />
+            </e>
             <e p="MainMenu" t="Include">
               <e p="MenuCanvas.cs" t="Include" />
             </e>
+            <e p="MouseCursor.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">
