@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using GameMechanic.Unit.Base;
 using UnityEngine.Serialization;
-using Persistent;
 
 namespace GameMechanic.Unit.Enemy
 {
