@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Plugins.Zenject.Source.Injection;
+using Plugins.Zenject.Source.Internal;
 
 namespace Plugins.Zenject.Source.Util
 {

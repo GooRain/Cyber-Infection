@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LoadScene.unity
+    path: Assets/CyberInfection/Scenes/LoadScene.unity
     guid: a74c0a145ec6df24698e7e91d645b45b
   - enabled: 1
-    path: Assets/Scenes/MenuScene.unity
+    path: Assets/CyberInfection/Scenes/MenuScene.unity
     guid: a793d1c71901dff448ab1c501f9598af
   - enabled: 1
-    path: Assets/Scenes/PlayScene.unity
+    path: Assets/CyberInfection/Scenes/PlayScene.unity
     guid: 338982dc97924fd46936337a6af20d98
   m_configObjects: {}

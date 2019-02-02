@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using GameMechanic.Unit.Base;
 using UnityEngine.Serialization;
 
-namespace GameMechanic.Unit.Enemy
+namespace CyberInfection.GameMechanics.Unit.Enemy
 {
     public class EnemyController : UnitController
     {

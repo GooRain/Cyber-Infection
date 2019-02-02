@@ -77,6 +77,11 @@
               <e p="Unit" t="Include">
                 <e p="Enemy" t="Include">
                   <e p="Enemy.cs" t="Include" />
+                  <e p="EnemyController.cs" t="Include" />
+                  <e p="ShootingEnemy" t="Include">
+                    <e p="EnemyBulletController.cs" t="Include" />
+                    <e p="ShootingEnemy.cs" t="Include" />
+                  </e>
                 </e>
                 <e p="IUnit.cs" t="Include" />
                 <e p="Player" t="Include">
@@ -197,55 +202,6 @@
                   <e p="ZenjectReflectionBakingSettingsEditor.cs" t="Include" />
                 </e>
                 <e p="Zenject-ReflectionBaking-Editor.asmdef" t="Include" />
-              </e>
-              <e p="SampleGame1 (Beginner)" t="Include">
-                <e p="Media" t="Include">
-                  <e p="Fonts" t="Include">
-                    <e p="Space.txt" t="Include" />
-                  </e>
-                  <e p="Imported" t="Include">
-                    <e p="Shaders" t="Include">
-                      <e p="Add_Layer.shader" t="Include" />
-                      <e p="AddSmooth_Layer.shader" t="Include" />
-                      <e p="Particle Alpha Blend_IgnoreFog.shader" t="Include" />
-                    </e>
-                  </e>
-                </e>
-                <e p="Scripts" t="Include">
-                  <e p="Asteroid" t="Include">
-                    <e p="Asteroid.cs" t="Include" />
-                    <e p="AsteroidManager.cs" t="Include" />
-                  </e>
-                  <e p="Installers" t="Include">
-                    <e p="GameInstaller.cs" t="Include" />
-                    <e p="GameSettingsInstaller.cs" t="Include" />
-                  </e>
-                  <e p="Main" t="Include">
-                    <e p="GameController.cs" t="Include" />
-                  </e>
-                  <e p="Misc" t="Include">
-                    <e p="AudioHandler.cs" t="Include" />
-                    <e p="GuiHandler.cs" t="Include" />
-                    <e p="LevelHelper.cs" t="Include" />
-                    <e p="TilingBackground.cs" t="Include" />
-                  </e>
-                  <e p="Ship" t="Include">
-                    <e p="Ship.cs" t="Include" />
-                    <e p="ShipStateFactory.cs" t="Include" />
-                    <e p="States" t="Include">
-                      <e p="BrokenShipFactory.cs" t="Include" />
-                      <e p="ExplosionFactory.cs" t="Include" />
-                      <e p="ShipState.cs" t="Include" />
-                      <e p="ShipStateDead.cs" t="Include" />
-                      <e p="ShipStateMoving.cs" t="Include" />
-                      <e p="ShipStateWaitingToStart.cs" t="Include" />
-                    </e>
-                  </e>
-                  <e p="Util" t="Include">
-                    <e p="GameEvents.cs" t="Include" />
-                    <e p="UnityExtensionMethods.cs" t="Include" />
-                  </e>
-                </e>
               </e>
               <e p="SampleGame2 (Advanced)" t="Include">
                 <e p="Scripts" t="Include">

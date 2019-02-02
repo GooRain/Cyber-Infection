@@ -51,7 +51,7 @@ namespace CyberInfection.Generation.Map
 
 		private void Start()
 		{
-			Generate();
+			TryToGenerate();
 		}
 
 		private void InitSeed()
@@ -68,7 +68,7 @@ namespace CyberInfection.Generation.Map
 			if (Input.GetKeyDown(KeyCode.G))
 			{
 				Clear();
-				TryToGenerate(SceneManager.GetActiveScene().name);
+				TryToGenerate();
 			}
 		}
 
@@ -79,23 +79,26 @@ namespace CyberInfection.Generation.Map
 			_collisionTileMap.ClearAllTiles();
 		}
 
-		private bool TryToGenerate(string sceneName)
+		private bool TryToGenerate()
 		{
-			Generate();
+			GenerateGraph();
+			GenerateOld();
 			return true;
 		}
 
-		private void Generate()
+		private void GenerateGraph()
 		{
-			Debug.Log("Generating...");
-
-			
 			var maxRoomsAmount = (int)Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
 
 			var mapGraph = new MapGraph(maxRoomsAmount);
+		}
 
-			return;
+		[Obsolete]
+		private void GenerateOld()
+		{
+			Debug.Log("Generating...");
 			
+			var maxRoomsAmount = (int)Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
 			var roomTypes = Enum.GetValues(typeof(RoomType));
 			for (var i = 0; i < roomTypes.Length; i++)
 			{

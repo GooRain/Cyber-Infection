@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace GameMechanic.Unit.ShootingEnemy
+namespace CyberInfection.GameMechanics.Unit.Enemy.ShootingEnemy
 {
     public class EnemyBulletController : MonoBehaviour
     {
