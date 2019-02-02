@@ -2,8 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using Plugins.Zenject.Source.Internal;
 
-namespace ModestTree
+namespace Plugins.Zenject.Source.Util
 {
     public static class ReflectionUtil
     {

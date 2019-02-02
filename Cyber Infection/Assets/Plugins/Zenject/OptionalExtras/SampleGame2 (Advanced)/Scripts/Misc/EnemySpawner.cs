@@ -1,9 +1,12 @@
 using System;
-using ModestTree;
+using Plugins.Zenject.OptionalExtras.Scripts.Enemy;
+using Plugins.Zenject.OptionalExtras.Signals.Main;
+using Plugins.Zenject.Source.Internal;
 using UnityEngine;
+using Zenject;
 using Random = UnityEngine.Random;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Misc
 {
     public class EnemySpawner : ITickable, IInitializable
     {

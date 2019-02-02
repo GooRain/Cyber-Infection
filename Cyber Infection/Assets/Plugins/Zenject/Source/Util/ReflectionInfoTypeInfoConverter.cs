@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using ModestTree;
-#if !NOT_UNITY3D
+using Plugins.Zenject.Source.Internal;
 using UnityEngine;
+using Zenject;
+#if !NOT_UNITY3D
+
 #endif
 
-namespace Zenject.Internal
+namespace Plugins.Zenject.Source.Util
 {
     public static class ReflectionInfoTypeInfoConverter
     {

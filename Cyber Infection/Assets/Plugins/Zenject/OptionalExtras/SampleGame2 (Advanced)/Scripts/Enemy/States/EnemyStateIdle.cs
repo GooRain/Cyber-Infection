@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Enemy.States
 {
     public class EnemyStateIdle : IEnemyState
     {

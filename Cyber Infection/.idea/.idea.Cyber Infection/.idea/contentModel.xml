@@ -5,6 +5,146 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="CyberInfection" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Constants" t="Include">
+              <e p="SceneName.cs" t="Include" />
+            </e>
+            <e p="Data" t="Include">
+              <e p="Loading" t="Include">
+                <e p="LoadingData.cs" t="Include" />
+              </e>
+              <e p="Object" t="Include">
+                <e p="BlockData.cs" t="Include" />
+                <e p="WeaponData.cs" t="Include" />
+              </e>
+              <e p="SerializableDictionary.cs" t="Include" />
+              <e p="Settings" t="Include">
+                <e p="Base" t="Include">
+                  <e p="ILoadableAsset.cs" t="Include" />
+                  <e p="SettingsDataBase.cs" t="Include" />
+                </e>
+                <e p="GameSettingsData.cs" t="Include" />
+                <e p="Generation" t="Include">
+                  <e p="GeneratingScenesData.cs" t="Include" />
+                  <e p="MapSettingsData.cs" t="Include" />
+                </e>
+                <e p="InputSettingsData.cs" t="Include" />
+              </e>
+              <e p="SingletonScriptableObject.cs" t="Include" />
+              <e p="Unit" t="Include">
+                <e p="Enemy" t="Include">
+                  <e p="EnemyData.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Editor" t="Include">
+              <e p="CustomDictionaryHolder.cs" t="Include" />
+              <e p="DictionaryDrawer.cs" t="Include" />
+            </e>
+            <e p="Extension" t="Include">
+              <e p="Graph.cs" t="Include" />
+              <e p="Point.cs" t="Include" />
+              <e p="Rectangle.cs" t="Include" />
+              <e p="RoomSettings.cs" t="Include" />
+              <e p="TagManager.cs" t="Include" />
+              <e p="Utility" t="Include">
+                <e p="Enums.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Factory" t="Include">
+              <e p="EnemyFactory" t="Include">
+                <e p="EnemyFactoryBase.cs" t="Include" />
+              </e>
+              <e p="FactoryBase.cs" t="Include" />
+            </e>
+            <e p="GameMechanics" t="Include">
+              <e p="Bullet" t="Include">
+                <e p="Bullet.cs" t="Include" />
+                <e p="BulletController.cs" t="Include" />
+              </e>
+              <e p="Camera" t="Include">
+                <e p="CameraController.cs" t="Include" />
+              </e>
+              <e p="IAlive.cs" t="Include" />
+              <e p="IControllable.cs" t="Include" />
+              <e p="Input" t="Include">
+                <e p="InputController.cs" t="Include" />
+              </e>
+              <e p="Spawn" t="Include">
+                <e p="EnemySpawn.cs" t="Include" />
+              </e>
+              <e p="Unit" t="Include">
+                <e p="Enemy" t="Include">
+                  <e p="Enemy.cs" t="Include" />
+                </e>
+                <e p="IUnit.cs" t="Include" />
+                <e p="Player" t="Include">
+                  <e p="Player.cs" t="Include" />
+                  <e p="PlayerController.cs" t="Include" />
+                </e>
+                <e p="Unit.cs" t="Include" />
+                <e p="UnitController.cs" t="Include" />
+              </e>
+              <e p="Weapon" t="Include">
+                <e p="IWeapon.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Generation" t="Include">
+              <e p="Map" t="Include">
+                <e p="GeneratingEntity.cs" t="Include" />
+                <e p="Map.cs" t="Include" />
+                <e p="MapController.cs" t="Include" />
+                <e p="MapGenerator.cs" t="Include" />
+                <e p="MapGraph.cs" t="Include" />
+              </e>
+              <e p="Room" t="Include">
+                <e p="Door" t="Include">
+                  <e p="Door.cs" t="Include" />
+                </e>
+                <e p="Room.cs" t="Include" />
+                <e p="RoomController.cs" t="Include" />
+                <e p="RoomGenerator.cs" t="Include" />
+                <e p="RoomType.cs" t="Include" />
+              </e>
+              <e p="Tiles" t="Include">
+                <e p="FloorTile.cs" t="Include" />
+                <e p="MapTile.cs" t="Include" />
+                <e p="WallTile.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Installers" t="Include">
+              <e p="GameInstaller.cs" t="Include" />
+              <e p="MapGenerationInstaller.cs" t="Include" />
+            </e>
+            <e p="Networking" t="Include">
+              <e p="NetworkManager.cs" t="Include" />
+            </e>
+            <e p="Persistent" t="Include">
+              <e p="IInitializable.cs" t="Include" />
+              <e p="Settings" t="Include">
+                <e p="GameSettings.cs" t="Include" />
+                <e p="LevelSettings.cs" t="Include" />
+                <e p="MapSettings.cs" t="Include" />
+                <e p="SettingsBase.cs" t="Include" />
+              </e>
+              <e p="SingletonMonobehaviour.cs" t="Include" />
+            </e>
+            <e p="SceneManagers" t="Include">
+              <e p="LoadSceneManager.cs" t="Include" />
+              <e p="PlaySceneManager.cs" t="Include" />
+            </e>
+            <e p="UI" t="Include">
+              <e p="Game" t="Include">
+                <e p="GameCanvas.cs" t="Include" />
+              </e>
+              <e p="MainMenu" t="Include">
+                <e p="MenuCanvas.cs" t="Include" />
+              </e>
+              <e p="MouseCursor.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Demigiant" t="Include">
           <e p="DOTween" t="Include">
             <e p="Modules" t="Include">
@@ -542,145 +682,6 @@
             <e p="zenject.asmdef" t="Include" />
           </e>
         </e>
-        <e p="Scripts" t="Include">
-          <e p="Constants" t="Include">
-            <e p="SceneName.cs" t="Include" />
-          </e>
-          <e p="Data" t="Include">
-            <e p="Base" t="Include">
-              <e p="SerializableDictionary.cs" t="Include" />
-              <e p="SingletonScriptableObject.cs" t="Include" />
-            </e>
-            <e p="Loading" t="Include">
-              <e p="LoadingData.cs" t="Include" />
-            </e>
-            <e p="Object" t="Include">
-              <e p="BlockData.cs" t="Include" />
-              <e p="WeaponData.cs" t="Include" />
-            </e>
-            <e p="Settings" t="Include">
-              <e p="Base" t="Include">
-                <e p="ILoadableAsset.cs" t="Include" />
-                <e p="SettingsDataBase.cs" t="Include" />
-              </e>
-              <e p="GameSettingsData.cs" t="Include" />
-              <e p="Generation" t="Include">
-                <e p="GeneratingScenesData.cs" t="Include" />
-                <e p="MapSettingsData.cs" t="Include" />
-              </e>
-              <e p="InputSettingsData.cs" t="Include" />
-            </e>
-            <e p="Unit" t="Include">
-              <e p="Enemy" t="Include">
-                <e p="EnemyData.cs" t="Include" />
-              </e>
-            </e>
-          </e>
-          <e p="Editor" t="Include">
-            <e p="CustomDictionaryHolder.cs" t="Include" />
-            <e p="DictionaryDrawer.cs" t="Include" />
-          </e>
-          <e p="Extension" t="Include">
-            <e p="Point.cs" t="Include" />
-            <e p="Rectangle.cs" t="Include" />
-            <e p="RoomSettings.cs" t="Include" />
-            <e p="TagManager.cs" t="Include" />
-            <e p="Utility" t="Include">
-              <e p="Enums.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Factory" t="Include">
-            <e p="EnemyFactory" t="Include">
-              <e p="EnemyFactoryBase.cs" t="Include" />
-            </e>
-            <e p="FactoryBase.cs" t="Include" />
-          </e>
-          <e p="GameMechanic" t="Include">
-            <e p="Base" t="Include">
-              <e p="IAlive.cs" t="Include" />
-              <e p="IControllable.cs" t="Include" />
-            </e>
-            <e p="Bullet" t="Include">
-              <e p="Bullet.cs" t="Include" />
-              <e p="BulletController.cs" t="Include" />
-            </e>
-            <e p="CameraMechanic" t="Include">
-              <e p="CameraController.cs" t="Include" />
-            </e>
-            <e p="Input" t="Include">
-              <e p="InputController.cs" t="Include" />
-            </e>
-            <e p="Spawn" t="Include">
-              <e p="EnemySpawn.cs" t="Include" />
-            </e>
-            <e p="Unit" t="Include">
-              <e p="Base" t="Include">
-                <e p="IUnit.cs" t="Include" />
-                <e p="Unit.cs" t="Include" />
-                <e p="UnitController.cs" t="Include" />
-              </e>
-              <e p="Enemy" t="Include">
-                <e p="Enemy.cs" t="Include" />
-              </e>
-              <e p="Player" t="Include">
-                <e p="Player.cs" t="Include" />
-                <e p="PlayerController.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Weapon" t="Include">
-              <e p="IWeapon.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Generation" t="Include">
-            <e p="Map" t="Include">
-              <e p="GeneratingEntity.cs" t="Include" />
-              <e p="Map.cs" t="Include" />
-              <e p="MapController.cs" t="Include" />
-              <e p="MapGenerator.cs" t="Include" />
-            </e>
-            <e p="Room" t="Include">
-              <e p="Door" t="Include">
-                <e p="Door.cs" t="Include" />
-              </e>
-              <e p="Room.cs" t="Include" />
-              <e p="RoomController.cs" t="Include" />
-              <e p="RoomGenerator.cs" t="Include" />
-              <e p="RoomType.cs" t="Include" />
-            </e>
-            <e p="Tiles" t="Include">
-              <e p="FloorTile.cs" t="Include" />
-              <e p="MapTile.cs" t="Include" />
-              <e p="WallTile.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Installers" t="Include">
-            <e p="GameInstaller.cs" t="Include" />
-            <e p="MapGenerationInstaller.cs" t="Include" />
-          </e>
-          <e p="Persistent" t="Include">
-            <e p="IInitializable.cs" t="Include" />
-            <e p="Settings" t="Include">
-              <e p="GameSettings.cs" t="Include" />
-              <e p="LevelSettings.cs" t="Include" />
-              <e p="MapSettings.cs" t="Include" />
-              <e p="SettingsBase.cs" t="Include" />
-            </e>
-            <e p="SingletonMonobehaviour.cs" t="Include" />
-          </e>
-          <e p="SceneManagers" t="Include">
-            <e p="LoadSceneManager.cs" t="Include" />
-            <e p="PlaySceneManager.cs" t="Include" />
-          </e>
-          <e p="UI" t="Include">
-            <e p="Game" t="Include">
-              <e p="GameCanvas.cs" t="Include" />
-            </e>
-            <e p="MainMenu" t="Include">
-              <e p="MenuCanvas.cs" t="Include" />
-            </e>
-            <e p="MouseCursor.cs" t="Include" />
-          </e>
-        </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Resources" t="Include">
             <e p="LineBreaking Following Characters.txt" t="Include" />
@@ -720,8 +721,7 @@
       <e p="Zenject-TestFramework.csproj" t="IncludeRecursive" />
       <e p="Zenject.csproj" t="IncludeRecursive" />
     </e>
-    <e p="C:\Users\VICTOR\.Rider2018.3\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\VICTOR\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\VICTOR\.Rider2018.3\system\resharper-host\Local\Transient\ReSharperHost\v183\SolutionCaches\_Cyber Infection.437327030.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Vitcor\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Vitcor\.Rider2018.3\system\resharper-host\Local\Transient\ReSharperHost\v183\SolutionCaches\_Cyber Infection.437327030.00" t="ExcludeRecursive" />
   </component>
 </project>

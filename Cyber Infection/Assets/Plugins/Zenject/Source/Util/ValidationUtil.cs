@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ModestTree;
+using Plugins.Zenject.Source.Injection;
 
-namespace Zenject
+namespace Plugins.Zenject.Source.Util
 {
     public static class ValidationUtil
     {

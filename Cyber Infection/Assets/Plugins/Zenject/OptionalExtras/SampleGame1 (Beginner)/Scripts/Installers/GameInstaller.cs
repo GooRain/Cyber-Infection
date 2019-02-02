@@ -1,7 +1,17 @@
 ﻿using System;
+using Plugins.Zenject.OptionalExtras.Scripts.Asteroid;
+using Plugins.Zenject.OptionalExtras.Scripts.Main;
+using Plugins.Zenject.OptionalExtras.Scripts.Misc;
+using Plugins.Zenject.OptionalExtras.Scripts.Ship;
+using Plugins.Zenject.OptionalExtras.Scripts.Ship.States;
+using Plugins.Zenject.OptionalExtras.Scripts.Util;
+using Plugins.Zenject.OptionalExtras.Signals.Internal.Binders;
+using Plugins.Zenject.OptionalExtras.Signals.Main;
+using Plugins.Zenject.Source.Install;
 using UnityEngine;
+using Zenject;
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Installers
 {
     public class GameInstaller : MonoInstaller
     {
@@ -54,7 +64,7 @@ namespace Zenject.Asteroids
             // Here, we're defining a generic factory to create asteroid objects using the given prefab
             // So any classes that want to create new asteroid objects can simply include an injected field
             // or constructor parameter of type Asteroid.Factory, then call Create() on that
-            Container.BindFactory<Asteroid, Asteroid.Factory>()
+            Container.BindFactory<Asteroid.Asteroid, Asteroid.Asteroid.Factory>()
                 // This means that any time Asteroid.Factory.Create is called, it will instantiate
                 // this prefab and then search it for the Asteroid component
                 .FromComponentInNewPrefab(_settings.AsteroidPrefab)

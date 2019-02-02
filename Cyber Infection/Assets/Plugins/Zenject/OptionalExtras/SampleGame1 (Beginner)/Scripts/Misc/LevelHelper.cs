@@ -1,6 +1,7 @@
 using UnityEngine;
+using Zenject;
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Misc
 {
     public class LevelHelper
     {

@@ -1,6 +1,7 @@
-using ModestTree;
+using Plugins.Zenject.OptionalExtras.Scripts.Ship.States;
+using Plugins.Zenject.Source.Internal;
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Ship
 {
     public enum ShipStates
     {

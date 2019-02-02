@@ -1,4 +1,8 @@
-﻿namespace Zenject.SpaceFighter
+﻿using Plugins.Zenject.OptionalExtras.Scripts.Enemy;
+using Plugins.Zenject.OptionalExtras.Scripts.Enemy.States;
+using Plugins.Zenject.Source.Install;
+
+namespace Plugins.Zenject.OptionalExtras.Scripts.Installers
 {
     public class EnemyInstaller : Installer<EnemyInstaller>
     {

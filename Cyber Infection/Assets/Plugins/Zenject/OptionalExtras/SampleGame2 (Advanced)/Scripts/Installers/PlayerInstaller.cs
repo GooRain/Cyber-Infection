@@ -1,7 +1,9 @@
 ﻿using System;
+using Plugins.Zenject.OptionalExtras.Scripts.Player;
+using Plugins.Zenject.Source.Install;
 using UnityEngine;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Installers
 {
     public class PlayerInstaller : MonoInstaller
     {
@@ -10,7 +12,7 @@ namespace Zenject.SpaceFighter
 
         public override void InstallBindings()
         {
-            Container.Bind<Player>().AsSingle()
+            Container.Bind<Player.Player>().AsSingle()
                 .WithArguments(_settings.Rigidbody, _settings.MeshRenderer);
 
             Container.BindInterfacesTo<PlayerInputHandler>().AsSingle();

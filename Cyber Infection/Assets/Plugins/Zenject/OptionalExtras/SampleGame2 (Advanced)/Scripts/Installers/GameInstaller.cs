@@ -1,7 +1,13 @@
 ﻿using System;
+using Plugins.Zenject.OptionalExtras.Scripts.Enemy;
+using Plugins.Zenject.OptionalExtras.Scripts.Misc;
+using Plugins.Zenject.Source.Binding.Binders.Factory.FactoryFromBinder;
+using Plugins.Zenject.Source.Factories.Pooling;
+using Plugins.Zenject.Source.Install;
 using UnityEngine;
+using Zenject;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Installers
 {
     // Main installer for our game
     public class GameInstaller : MonoInstaller

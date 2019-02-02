@@ -1,6 +1,10 @@
+using Plugins.Zenject.OptionalExtras.Scripts.Enemy;
+using Plugins.Zenject.OptionalExtras.Signals.Internal.Binders;
+using Plugins.Zenject.OptionalExtras.Signals.Main;
+using Plugins.Zenject.Source.Install;
 using UnityEngine;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Installers
 {
     // Include this just to ensure BindSignal with an object mapping works
     public class PlayerDiedSignalObserver

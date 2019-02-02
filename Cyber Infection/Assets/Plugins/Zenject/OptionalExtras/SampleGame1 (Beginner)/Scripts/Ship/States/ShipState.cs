@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Ship.States
 {
     public abstract class ShipState : IDisposable
     {

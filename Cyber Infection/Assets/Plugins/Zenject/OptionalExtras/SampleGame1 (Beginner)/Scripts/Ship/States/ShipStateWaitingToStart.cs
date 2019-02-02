@@ -1,7 +1,8 @@
 using System;
+using Plugins.Zenject.Source.Factories;
 using UnityEngine;
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Ship.States
 {
     public class ShipStateWaitingToStart : ShipState
     {

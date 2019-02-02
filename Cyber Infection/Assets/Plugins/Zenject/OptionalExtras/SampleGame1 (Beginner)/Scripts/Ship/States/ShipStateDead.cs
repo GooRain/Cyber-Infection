@@ -1,8 +1,11 @@
 using System;
+using Plugins.Zenject.OptionalExtras.Scripts.Util;
+using Plugins.Zenject.OptionalExtras.Signals.Main;
+using Plugins.Zenject.Source.Factories;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Ship.States
 {
     public class ShipStateDead : ShipState
     {

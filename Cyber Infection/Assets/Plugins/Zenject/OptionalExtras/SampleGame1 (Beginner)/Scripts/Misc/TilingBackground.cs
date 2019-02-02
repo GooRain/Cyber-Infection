@@ -2,7 +2,7 @@
 
 #pragma warning disable 649
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Misc
 {
     public class TilingBackground : MonoBehaviour
     {

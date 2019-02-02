@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
+using Zenject;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Enemy
 {
     // Responsibilities:
     // - Interpolate rotation of enemy towards the current desired

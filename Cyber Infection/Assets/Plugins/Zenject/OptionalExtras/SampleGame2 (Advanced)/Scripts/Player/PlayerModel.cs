@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Player
 {
     public class Player
     {

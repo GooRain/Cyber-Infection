@@ -1,6 +1,10 @@
 using System;
+using Plugins.Zenject.OptionalExtras.Scripts.Enemy;
+using Plugins.Zenject.OptionalExtras.Scripts.Enemy.States;
+using Plugins.Zenject.OptionalExtras.Scripts.Misc;
+using Plugins.Zenject.OptionalExtras.Scripts.Player;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Installers
 {
     // We prefer to use ScriptableObjectInstaller for installers that contain game settings
     // There's no reason why you couldn't use a MonoInstaller here instead, however

@@ -1,9 +1,11 @@
+using Plugins.Zenject.OptionalExtras.Scripts.Ship.States;
 using UnityEngine;
+using Zenject;
 
 #pragma warning disable 649
 #pragma warning disable 618
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Ship
 {
     public class Ship : MonoBehaviour
     {

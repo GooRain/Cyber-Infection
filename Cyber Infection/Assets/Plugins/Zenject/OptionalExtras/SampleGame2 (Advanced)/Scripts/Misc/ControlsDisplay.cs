@@ -2,7 +2,7 @@ using UnityEngine;
 
 #pragma warning disable 649
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Misc
 {
     public class ControlsDisplay : MonoBehaviour
     {

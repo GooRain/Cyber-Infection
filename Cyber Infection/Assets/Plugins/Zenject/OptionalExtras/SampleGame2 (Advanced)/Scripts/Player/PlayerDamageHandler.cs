@@ -1,7 +1,8 @@
 using System;
+using Plugins.Zenject.OptionalExtras.Scripts.Misc;
 using UnityEngine;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Player
 {
     public class PlayerDamageHandler
     {

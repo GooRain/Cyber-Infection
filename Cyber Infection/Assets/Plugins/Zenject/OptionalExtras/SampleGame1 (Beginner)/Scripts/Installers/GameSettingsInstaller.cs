@@ -1,6 +1,9 @@
 using System;
+using Plugins.Zenject.OptionalExtras.Scripts.Asteroid;
+using Plugins.Zenject.OptionalExtras.Scripts.Misc;
+using Plugins.Zenject.OptionalExtras.Scripts.Ship.States;
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Installers
 {
     // We prefer to use ScriptableObjectInstaller for installers that contain game settings
     // There's no reason why you couldn't use a MonoInstaller here instead, however
@@ -38,7 +41,7 @@ namespace Zenject.Asteroids
         public class AsteroidSettings
         {
             public AsteroidManager.Settings Spawner;
-            public Asteroid.Settings General;
+            public Asteroid.Asteroid.Settings General;
         }
 
         public override void InstallBindings()

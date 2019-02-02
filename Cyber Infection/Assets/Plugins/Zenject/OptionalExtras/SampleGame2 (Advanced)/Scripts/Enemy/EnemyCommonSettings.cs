@@ -1,6 +1,6 @@
 using System;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Enemy
 {
     [Serializable]
     public class EnemyCommonSettings

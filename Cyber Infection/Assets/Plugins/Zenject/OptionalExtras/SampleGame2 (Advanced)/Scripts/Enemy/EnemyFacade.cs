@@ -1,7 +1,10 @@
 ﻿using System;
+using Plugins.Zenject.Source.Factories;
+using Plugins.Zenject.Source.Factories.Pooling;
 using UnityEngine;
+using Zenject;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Enemy
 {
     // Here we can add some high-level methods to give some info to other
     // parts of the codebase outside of our enemy facade

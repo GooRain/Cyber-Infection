@@ -1,10 +1,14 @@
 using System;
-using ModestTree;
+using Plugins.Zenject.OptionalExtras.Scripts.Main;
+using Plugins.Zenject.OptionalExtras.Scripts.Util;
+using Plugins.Zenject.OptionalExtras.Signals.Main;
+using Plugins.Zenject.Source.Internal;
 using UnityEngine;
+using Zenject;
 
 #pragma warning disable 649
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Misc
 {
     public class GuiHandler : MonoBehaviour, IDisposable, IInitializable
     {

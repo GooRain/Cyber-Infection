@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ModestTree;
+using Plugins.Zenject.OptionalExtras.Scripts.Misc;
+using Plugins.Zenject.Source.Internal;
 using UnityEngine;
+using Zenject;
 using Random = UnityEngine.Random;
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Asteroid
 {
     public class AsteroidManager : ITickable, IFixedTickable
     {

@@ -1,4 +1,4 @@
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Enemy
 {
     public struct PlayerDiedSignal
     {

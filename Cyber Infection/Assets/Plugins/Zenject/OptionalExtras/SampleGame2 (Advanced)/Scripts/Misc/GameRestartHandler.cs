@@ -1,8 +1,11 @@
 using System;
+using Plugins.Zenject.OptionalExtras.Scripts.Enemy;
+using Plugins.Zenject.OptionalExtras.Signals.Main;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zenject;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Misc
 {
     public class GameRestartHandler : IInitializable, IDisposable, ITickable
     {

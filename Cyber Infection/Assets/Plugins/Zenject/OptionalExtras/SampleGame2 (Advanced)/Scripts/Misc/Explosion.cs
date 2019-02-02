@@ -1,8 +1,11 @@
+using Plugins.Zenject.Source.Factories;
+using Plugins.Zenject.Source.Factories.Pooling;
 using UnityEngine;
+using Zenject;
 
 #pragma warning disable 649
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Misc
 {
     public class Explosion : MonoBehaviour, IPoolable<IMemoryPool>
     {

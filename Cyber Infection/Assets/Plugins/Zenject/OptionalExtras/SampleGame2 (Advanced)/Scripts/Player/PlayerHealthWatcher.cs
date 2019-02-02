@@ -1,7 +1,11 @@
 using System;
+using Plugins.Zenject.OptionalExtras.Scripts.Enemy;
+using Plugins.Zenject.OptionalExtras.Scripts.Misc;
+using Plugins.Zenject.OptionalExtras.Signals.Main;
 using UnityEngine;
+using Zenject;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Player
 {
     public class PlayerHealthWatcher : ITickable
     {

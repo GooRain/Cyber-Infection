@@ -1,8 +1,13 @@
 using System;
-using ModestTree;
+using Plugins.Zenject.OptionalExtras.Scripts.Asteroid;
+using Plugins.Zenject.OptionalExtras.Scripts.Ship;
+using Plugins.Zenject.OptionalExtras.Scripts.Util;
+using Plugins.Zenject.OptionalExtras.Signals.Main;
+using Plugins.Zenject.Source.Internal;
 using UnityEngine;
+using Zenject;
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Main
 {
     public enum GameStates
     {
@@ -14,14 +19,14 @@ namespace Zenject.Asteroids
     public class GameController : IInitializable, ITickable, IDisposable
     {
         readonly SignalBus _signalBus;
-        readonly Ship _ship;
+        readonly Ship.Ship _ship;
         readonly AsteroidManager _asteroidSpawner;
 
         GameStates _state = GameStates.WaitingToStart;
         float _elapsedTime;
 
         public GameController(
-            Ship ship, AsteroidManager asteroidSpawner,
+            Ship.Ship ship, AsteroidManager asteroidSpawner,
             SignalBus signalBus)
         {
             _signalBus = signalBus;

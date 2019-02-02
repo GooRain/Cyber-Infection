@@ -1,8 +1,12 @@
 using System;
-using ModestTree;
+using Plugins.Zenject.OptionalExtras.Scripts.Misc;
+using Plugins.Zenject.OptionalExtras.Scripts.Util;
+using Plugins.Zenject.Source.Factories;
+using Plugins.Zenject.Source.Internal;
 using UnityEngine;
+using Zenject;
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Asteroid
 {
     public class Asteroid : MonoBehaviour
     {

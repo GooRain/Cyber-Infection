@@ -1,8 +1,10 @@
 using System.Collections.Generic;
-using ModestTree;
+using Plugins.Zenject.OptionalExtras.Scripts.Enemy.States;
+using Plugins.Zenject.Source.Internal;
 using UnityEngine;
+using Zenject;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Enemy
 {
     public interface IEnemyState
     {

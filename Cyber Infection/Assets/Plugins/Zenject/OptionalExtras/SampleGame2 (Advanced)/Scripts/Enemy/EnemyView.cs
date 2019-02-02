@@ -1,6 +1,7 @@
 using UnityEngine;
+using Zenject;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Enemy
 {
     public class EnemyView : MonoBehaviour
     {

@@ -1,8 +1,10 @@
 using System;
-using ModestTree;
+using Plugins.Zenject.Source.Factories;
+using Plugins.Zenject.Source.Internal;
 using UnityEngine;
+using Zenject;
 
-namespace Zenject.Asteroids
+namespace Plugins.Zenject.OptionalExtras.Scripts.Ship.States
 {
     public class ShipStateMoving : ShipState
     {
@@ -88,7 +90,7 @@ namespace Zenject.Asteroids
 
         public override void OnTriggerEnter(Collider other)
         {
-            Assert.That(other.GetComponent<Asteroid>() != null);
+            Assert.That(other.GetComponent<Asteroid.Asteroid>() != null);
             _ship.ChangeState(ShipStates.Dead);
         }
 

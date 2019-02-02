@@ -1,8 +1,9 @@
 using System;
+using Plugins.Zenject.OptionalExtras.Scripts.Player;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Zenject.SpaceFighter
+namespace Plugins.Zenject.OptionalExtras.Scripts.Enemy.States
 {
     public class EnemyStateFollow : IEnemyState
     {
