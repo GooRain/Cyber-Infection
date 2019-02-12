@@ -17,11 +17,6 @@ namespace CyberInfection.GameMechanics.Unit.Enemy
             _animator = gameObject.GetComponent<Animator>();
             _playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        void Start()
-        {
-            
-        }
-
         
         void Update()
         {
@@ -30,7 +25,7 @@ namespace CyberInfection.GameMechanics.Unit.Enemy
 
         void EnemyFollow()
         {
-            if (UnityEngine.Input.GetMouseButtonDown(0)) // На самом деле тут должно быть что то вроде когда все загрузится и гг будет готов убивать.
+            if (Vector2.Distance(transform.position, _playerPos.position) > 1)
             {
                 StartFollowing();
             }
@@ -43,6 +38,16 @@ namespace CyberInfection.GameMechanics.Unit.Enemy
         void StartFollowing()
         {
             _animator.SetBool("iFollow", true);
+        }
+
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag.Equals("Player"))
+            {
+                _animator.SetBool("iFollow", false);
+                Debug.Log("-5HP");
+            }
         }
     }
 }
