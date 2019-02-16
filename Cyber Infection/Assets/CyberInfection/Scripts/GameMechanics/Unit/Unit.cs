@@ -8,7 +8,7 @@ namespace CyberInfection.GameMechanics.Unit
 
 		public int health
 		{
-			get { return _health; }
+			get => _health;
 			set
 			{
 				_health = value;
