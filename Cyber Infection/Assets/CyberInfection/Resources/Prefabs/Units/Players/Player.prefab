@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 212329926796049168}
   - component: {fileID: 114403988159243956}
   - component: {fileID: 114860657085519826}
+  - component: {fileID: 9051900556601357328}
   - component: {fileID: 61302035126443344}
   - component: {fileID: 50471969337656774}
   m_Layer: 9
@@ -210,11 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _walkSpeed: 5
   _runSpeed: 8
-  _reloadSpeed: 1
   _legs: {fileID: 1567955072}
-  _bulletPrefab: {fileID: 1769993339345016, guid: b5dcb5b76d7c00b4a8cc3b2b2a3ffd79,
-    type: 3}
-  _shotPos: {fileID: 3461620020151390233}
   differentRotation:
   - {fileID: 21300000, guid: 876bef917517bef45bcddd74adbe1928, type: 3}
   - {fileID: 21300000, guid: fdccade6a620f404dbc7f43bfd2956f2, type: 3}
@@ -224,6 +221,21 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 29dfc663e99657b45898498630889b9f, type: 3}
   - {fileID: 21300000, guid: bbe962479f821754596ca9322cdfab8c, type: 3}
   - {fileID: 21300000, guid: af95474f41ad5504ab16aa66fd093ca4, type: 3}
+  _weaponController: {fileID: 9051900556601357328}
+--- !u!114 &9051900556601357328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554278104405244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9440c9d0124404ad9ec4639e5fe7e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzleTransform: {fileID: 8243011713662560619}
+  pistolWeaponData: {fileID: 11400000, guid: a5155cea470fd564b9ff84d92bcd8437, type: 2}
 --- !u!61 &61302035126443344
 BoxCollider2D:
   m_ObjectHideFlags: 0

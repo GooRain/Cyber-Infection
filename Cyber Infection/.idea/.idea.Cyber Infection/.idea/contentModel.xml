@@ -66,6 +66,10 @@
               <e p="Camera" t="Include">
                 <e p="CameraController.cs" t="Include" />
               </e>
+              <e p="Container" t="Include">
+                <e p="AmmunitionContainer.cs" t="Include" />
+                <e p="ContainerBase.cs" t="Include" />
+              </e>
               <e p="IAlive.cs" t="Include" />
               <e p="IControllable.cs" t="Include" />
               <e p="Input" t="Include">
@@ -92,7 +96,15 @@
                 <e p="UnitController.cs" t="Include" />
               </e>
               <e p="Weapon" t="Include">
-                <e p="IWeapon.cs" t="Include" />
+                <e p="Behaviour" t="Include">
+                  <e p="ShootBehaviour.cs" t="Include" />
+                </e>
+                <e p="WeaponController.cs" t="Include" />
+                <e p="WeaponTypes" t="Include">
+                  <e p="IWeapon.cs" t="Include" />
+                  <e p="Pistol.cs" t="Include" />
+                  <e p="WeaponBase.cs" t="Include" />
+                </e>
               </e>
             </e>
             <e p="Generation" t="Include">

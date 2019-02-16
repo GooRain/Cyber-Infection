@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CyberInfection.GameMechanics.Weapon;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace CyberInfection.GameMechanics.Unit.Player
@@ -11,25 +12,15 @@ namespace CyberInfection.GameMechanics.Unit.Player
 		[FormerlySerializedAs("runSpeed")] [SerializeField]
 		private float _runSpeed;
 
-		[FormerlySerializedAs("reloadSpeed")] [SerializeField]
-		private float _reloadSpeed = 5.0f;
-        private float _timeBtwShot;
-
         [FormerlySerializedAs("legsObject")]
         [SerializeField]
         private GameObject _legs;
 
-        [FormerlySerializedAs("Bullet")] [SerializeField]
-        private GameObject _bulletPrefab;
-
-        [FormerlySerializedAs("ShotPos")]
-        [SerializeField]
-        private GameObject _shotPos;
-
         [SerializeField]
         private Sprite[] differentRotation;
-        
 
+        [SerializeField] private WeaponController _weaponController;
+        
         private SpriteRenderer _sprite;
 
 		private Animator _animator;
@@ -49,7 +40,6 @@ namespace CyberInfection.GameMechanics.Unit.Player
 		private SpriteRenderer _spriteRenderer;
 		private UnityEngine.Camera _camera;
 		private Transform _transform;
-        private GameObject _bullet;
 
         private void Awake()
 		{
@@ -60,6 +50,8 @@ namespace CyberInfection.GameMechanics.Unit.Player
 			_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 			_camera = UnityEngine.Camera.main;
 			_transform = transform;
+
+			_weaponController = GetComponent<WeaponController>();
 		}
 
 		private void Start()
@@ -70,8 +62,12 @@ namespace CyberInfection.GameMechanics.Unit.Player
 		{
 			//if(!attacking) State = CharState.idle;
 			Movement();
-			Shoot();
 			RotationMouse();
+
+			if (UnityEngine.Input.GetMouseButton(0))
+			{
+				Shoot();
+			}
 		}
 
 		private void FixedUpdate()
@@ -92,42 +88,42 @@ namespace CyberInfection.GameMechanics.Unit.Player
             if (rotationZ >= -22.5f && rotationZ < 22.5f)
             {
                 _spriteRenderer.sprite = differentRotation[0]; // r
-                _shotPos.transform.position = transform.position + new Vector3(0.54f, 0.06f, 0f);
+                _weaponController.SetMuzzlePos(transform.position + new Vector3(0.54f, 0.06f, 0f));
             }
             else if (rotationZ >= 22.5f && rotationZ < 47.5f)
             {
                 _spriteRenderer.sprite = differentRotation[1]; // ru
-                _shotPos.transform.position = transform.position + new Vector3(0.27f, 0.59f, 0f);
+                _weaponController.SetMuzzlePos(transform.position + new Vector3(0.27f, 0.59f, 0f));
             }
             else if (rotationZ >= 47.5f && rotationZ < 112.5f)
             {
                 _spriteRenderer.sprite = differentRotation[2]; // u
-                _shotPos.transform.position = transform.position + new Vector3(-0.3f, 0.59f, 0f);
+                _weaponController.SetMuzzlePos(transform.position + new Vector3(-0.3f, 0.59f, 0f));
             }
             else if (rotationZ >= 112.5f && rotationZ < 157.5f)
             {
                 _spriteRenderer.sprite = differentRotation[3]; // lu
-                _shotPos.transform.position = transform.position + new Vector3(-0.63f, 0.35f, 0f);
+                _weaponController.SetMuzzlePos(transform.position + new Vector3(-0.63f, 0.35f, 0f));
             }
             else if (rotationZ >= 157.5f || rotationZ < -157.5f)
             {
                 _spriteRenderer.sprite = differentRotation[4]; // l
-                _shotPos.transform.position = transform.position + new Vector3(-0.7f, 0f, 0f);
+                _weaponController.SetMuzzlePos(transform.position + new Vector3(-0.7f, 0f, 0f));
             }
             else if (rotationZ >= -157.5f && rotationZ < -112.5f)
             {
                 _spriteRenderer.sprite = differentRotation[5]; // ld
-                _shotPos.transform.position = transform.position + new Vector3(-0.66f, -0.19f, 0f);
+                _weaponController.SetMuzzlePos(transform.position + new Vector3(-0.66f, -0.19f, 0f));
             }
             else if (rotationZ >= -112.5f && rotationZ < -62.5f)
             {
                 _spriteRenderer.sprite = differentRotation[6]; // d
-                _shotPos.transform.position = transform.position + new Vector3(-0.51f, -0.39f, 0f);
+                _weaponController.SetMuzzlePos(transform.position + new Vector3(-0.51f, -0.39f, 0f));
             }
             else if (rotationZ >= -62.5f && rotationZ < -22.5f)
             {
                 _spriteRenderer.sprite = differentRotation[7]; // dr
-                _shotPos.transform.position = transform.position + new Vector3(-0.03f, -0.22f, 0f);
+                _weaponController.SetMuzzlePos(transform.position + new Vector3(-0.03f, -0.22f, 0f));
             }
 		}
 
@@ -195,27 +191,7 @@ namespace CyberInfection.GameMechanics.Unit.Player
 
 		private void Shoot()
 		{
-			if (_shotPos == null)
-			{
-				return;
-			}
-			
-            Vector2 diff = UnityEngine.Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition) - _shotPos.transform.position;
-            float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-            _shotPos.transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
-
-            if (_timeBtwShot <= 0)
-            {
-                if (UnityEngine.Input.GetMouseButtonDown(0))
-                {
-                    Instantiate(_bulletPrefab, _shotPos.transform.position, _shotPos.transform.rotation);
-                    _timeBtwShot = _reloadSpeed;
-                }
-            }
-            else
-            {
-                _timeBtwShot -= Time.deltaTime;
-            }
+			_weaponController.Shoot();
 			//waitTime += 1 * Time.deltaTime * reloadSpeed;         // Это типа время перезарядки
 			//if(waitTime > 1) waitTime = 2;                       // Это типа что бы много не считала
 			//if(Input.GetKey(KeyCode.UpArrow))                  // Поворачивает то чем будет стрелять(палец там руку), проходит кд и стреляет
