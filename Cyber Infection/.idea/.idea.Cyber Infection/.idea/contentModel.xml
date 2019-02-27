@@ -177,12 +177,33 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
-        <e p="Fonts" t="Include">
-          <e p="raider-crusader" t="Include">
-            <e p="raidercrusader.txt" t="Include" />
+        <e p="KenneyNL" t="Include">
+          <e p="generic-items-160-assets" t="Include">
+            <e p="LICENSE.txt" t="Include" />
           </e>
-          <e p="saucer" t="Include">
-            <e p="fontinfo.txt" t="Include" />
+          <e p="kenney_uiaudio" t="Include">
+            <e p="LICENSE.txt" t="Include" />
+          </e>
+          <e p="platformergraphics-buildings" t="Include">
+            <e p="LICENSE.txt" t="Include" />
+          </e>
+          <e p="roguelike-modern-city-pack" t="Include">
+            <e p="LICENSE.txt" t="Include" />
+            <e p="Spritesheet" t="Include">
+              <e p="spritesheetInfo.txt" t="Include" />
+            </e>
+          </e>
+          <e p="roguelike-pack" t="Include">
+            <e p="LICENSE.txt" t="Include" />
+            <e p="Spritesheet" t="Include">
+              <e p="spritesheetInfo.txt" t="Include" />
+            </e>
+          </e>
+          <e p="uipack-space" t="Include">
+            <e p="LICENSE.txt" t="Include" />
+            <e p="Spritesheet" t="Include">
+              <e p="uipackSpace_sheet.xml" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Photon" t="Include">
