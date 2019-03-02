@@ -181,30 +181,6 @@
           <e p="generic-items-160-assets" t="Include">
             <e p="LICENSE.txt" t="Include" />
           </e>
-          <e p="kenney_uiaudio" t="Include">
-            <e p="LICENSE.txt" t="Include" />
-          </e>
-          <e p="platformergraphics-buildings" t="Include">
-            <e p="LICENSE.txt" t="Include" />
-          </e>
-          <e p="roguelike-modern-city-pack" t="Include">
-            <e p="LICENSE.txt" t="Include" />
-            <e p="Spritesheet" t="Include">
-              <e p="spritesheetInfo.txt" t="Include" />
-            </e>
-          </e>
-          <e p="roguelike-pack" t="Include">
-            <e p="LICENSE.txt" t="Include" />
-            <e p="Spritesheet" t="Include">
-              <e p="spritesheetInfo.txt" t="Include" />
-            </e>
-          </e>
-          <e p="uipack-space" t="Include">
-            <e p="LICENSE.txt" t="Include" />
-            <e p="Spritesheet" t="Include">
-              <e p="uipackSpace_sheet.xml" t="Include" />
-            </e>
-          </e>
         </e>
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">

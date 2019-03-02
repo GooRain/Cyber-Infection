@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3bba103e-8942-48b6-b774-94ecc63c91f7" name="Default" comment="" />
+    <list default="true" id="3bba103e-8942-48b6-b774-94ecc63c91f7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Prefabs/UI/GameCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Prefabs/UI/GameCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Generation/New Wall Tile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Generation/New Wall Tile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scenes/PlayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scenes/PlayScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Demigiant/DOTween/DOTween.XML" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Demigiant/DOTween/DOTween.XML" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Demigiant/DOTween/DOTween.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Demigiant/DOTween/DOTween.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Demigiant/DOTween/DOTween.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Demigiant/DOTween/DOTween.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModuleAudio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModuleAudio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModuleUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModuleUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/Player/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
+            <state relative-caret-position="1220">
               <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
               <folding>
                 <marker date="1550331845703" expanded="false" signature="6:94" ph="..." />
@@ -77,6 +95,18 @@
                 <marker date="1550331845703" expanded="true" signature="7060:9816" ph="{...}" />
                 <marker date="1550331845703" expanded="true" signature="7098:9812" ph="/* waitTime += 1 * Time.deltaTime * reloadSpeed;         // Это типа время перезарядки ... */" />
                 <marker date="1550331845703" expanded="true" signature="9818:10853" ph="/* private void Turning() ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Tiles/WallTile.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <marker date="1549106132730" expanded="true" signature="61:174" ph="{...}" />
+                <marker date="1549106132730" expanded="true" signature="166:172" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -244,6 +274,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponTypes/WeaponBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Install/MonoInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Main/LazyInstanceInjector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Tiles/WallTile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PunClasses.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -322,14 +353,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
+      <pane id="AssemblyExplorer" />
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
       </pane>
-      <pane id="AssemblyExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
       <pane id="FileSystemExplorer" />
     </panes>
   </component>
@@ -413,11 +444,12 @@
       <workItem from="1549105815551" duration="7114000" />
       <workItem from="1550328579843" duration="3282000" />
       <workItem from="1551111121551" duration="610000" />
+      <workItem from="1551540173841" duration="599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116873000" />
+    <option name="totallyTimeSpent" value="117472000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -517,20 +549,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Factories/Pooling/Util/ListPool.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-          <folding>
-            <marker date="1546966413402" expanded="true" signature="52:463" ph="{...}" />
-            <marker date="1546966413402" expanded="true" signature="111:461" ph="{...}" />
-            <marker date="1546966413402" expanded="true" signature="202:267" ph="{...}" />
-            <marker date="1546966413402" expanded="true" signature="311:369" ph="{...}" />
-            <marker date="1546966413402" expanded="true" signature="409:455" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C8EA872B-C6C3-4547-B28C-904F5E42F85A/44/916aa0d1/__DynamicallyInvokableAttribute.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -2341,6 +2359,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/License.txt" />
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -2378,7 +2397,6 @@
         <state relative-caret-position="60">
           <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
           <folding>
-            <marker date="1550329945814" expanded="true" signature="57:168" ph="{...}" />
             <marker date="1550329945814" expanded="true" signature="85:166" ph="{...}" />
           </folding>
         </state>
@@ -2390,7 +2408,6 @@
           <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
           <folding>
             <marker date="1550331597536" expanded="false" signature="6:151" ph="..." />
-            <marker date="1550331597536" expanded="true" signature="210:1260" ph="{...}" />
             <marker date="1550331597536" expanded="true" signature="285:1258" ph="{...}" />
             <marker date="1550331597536" expanded="true" signature="545:806" ph="{...}" />
             <marker date="1550331597536" expanded="true" signature="890:1006" ph="{...}" />
@@ -2407,7 +2424,6 @@
           <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
           <folding>
             <marker date="1550331245015" expanded="false" signature="6:61" ph="..." />
-            <marker date="1550331245015" expanded="true" signature="99:408" ph="{...}" />
             <marker date="1550331245015" expanded="true" signature="213:406" ph="{...}" />
           </folding>
         </state>
@@ -2419,7 +2435,6 @@
           <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding>
             <marker date="1550331834633" expanded="false" signature="6:52" ph="..." />
-            <marker date="1550331834633" expanded="true" signature="111:1035" ph="{...}" />
             <marker date="1550331834633" expanded="true" signature="176:1033" ph="{...}" />
             <marker date="1550331834633" expanded="true" signature="309:342" ph="{...}" />
             <marker date="1550331834633" expanded="true" signature="383:641" ph="{...}" />
@@ -2437,7 +2452,6 @@
           <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
           <folding>
             <marker date="1550330540670" expanded="false" signature="6:52" ph="..." />
-            <marker date="1550330540670" expanded="true" signature="102:1160" ph="{...}" />
             <marker date="1550330540670" expanded="true" signature="161:1158" ph="{...}" />
             <marker date="1550330540670" expanded="true" signature="288:346" ph="{...}" />
             <marker date="1550330540670" expanded="true" signature="372:427" ph="{...}" />
@@ -2457,19 +2471,15 @@
         <state relative-caret-position="40">
           <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
           <folding>
-            <marker date="1550330040508" expanded="true" signature="48:267" ph="{...}" />
             <marker date="1550330040508" expanded="true" signature="129:265" ph="{...}" />
             <marker date="1550330040508" expanded="true" signature="239:259" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/License.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/Player/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
+        <state relative-caret-position="1220">
           <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
           <folding>
             <marker date="1550331845703" expanded="false" signature="6:94" ph="..." />
@@ -2497,6 +2507,16 @@
             <marker date="1550331845703" expanded="true" signature="7060:9816" ph="{...}" />
             <marker date="1550331845703" expanded="true" signature="7098:9812" ph="/* waitTime += 1 * Time.deltaTime * reloadSpeed;         // Это типа время перезарядки ... */" />
             <marker date="1550331845703" expanded="true" signature="9818:10853" ph="/* private void Turning() ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Tiles/WallTile.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1549106132730" expanded="true" signature="61:174" ph="{...}" />
+            <marker date="1549106132730" expanded="true" signature="166:172" ph="{...}" />
           </folding>
         </state>
       </provider>
