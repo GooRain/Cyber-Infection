@@ -43,6 +43,7 @@
               <e p="DictionaryDrawer.cs" t="Include" />
             </e>
             <e p="Extension" t="Include">
+              <e p="EightWayRotation.cs" t="Include" />
               <e p="Graph.cs" t="Include" />
               <e p="Point.cs" t="Include" />
               <e p="Rectangle.cs" t="Include" />
@@ -101,8 +102,8 @@
                 </e>
                 <e p="WeaponController.cs" t="Include" />
                 <e p="WeaponTypes" t="Include">
+                  <e p="FireableWeapon.cs" t="Include" />
                   <e p="IWeapon.cs" t="Include" />
-                  <e p="Pistol.cs" t="Include" />
                   <e p="WeaponBase.cs" t="Include" />
                 </e>
               </e>

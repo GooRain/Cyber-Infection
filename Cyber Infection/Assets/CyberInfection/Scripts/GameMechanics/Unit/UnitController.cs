@@ -12,12 +12,12 @@ namespace CyberInfection.GameMechanics.Unit
 			_unit = GetComponent<IUnit>();
 		}
 		
-		public void Move(Vector3 direction)
+		public virtual void Move(Vector2 direction)
 		{
 			_unit.refTransform.Translate(direction * Time.deltaTime);
 		}
 
-		public void Rotate(Vector3 direction)
+		public virtual void Rotate(Vector2 direction)
 		{
 			_unit.refTransform.rotation.SetLookRotation(direction);
 		}

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
 {
     [System.Serializable]
-    public abstract class WeaponBase : IWeapon
+    public abstract class WeaponBase : MonoBehaviour, IWeapon
     {
         public WeaponData weaponData;
         
@@ -15,7 +15,7 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
 
         protected float _lastShootTime;
         
-        public WeaponBase(WeaponData data, Transform muzzle)
+        public virtual void Initialize(WeaponData data, Transform muzzle)
         {
             weaponData = data;
             

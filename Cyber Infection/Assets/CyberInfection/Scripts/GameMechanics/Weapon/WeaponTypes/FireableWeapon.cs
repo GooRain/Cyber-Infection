@@ -4,13 +4,13 @@ using UnityEngine;
 namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
 {
     [System.Serializable]
-    public class Pistol : WeaponBase
+    public class FireableWeapon : WeaponBase
     {
         public AudioSource audioSource;
-        
-        public Pistol(WeaponData data, Transform muzzle) : base(data, muzzle)
+
+        public override void Initialize(WeaponData data, Transform muzzle)
         {
-            
+            base.Initialize(data, muzzle);
         }
 
         protected override void Shoot()
