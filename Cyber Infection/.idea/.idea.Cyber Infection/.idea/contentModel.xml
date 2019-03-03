@@ -43,8 +43,8 @@
               <e p="DictionaryDrawer.cs" t="Include" />
             </e>
             <e p="Extension" t="Include">
-              <e p="EightWayRotation.cs" t="Include" />
               <e p="Graph.cs" t="Include" />
+              <e p="OctaRotationHelper.cs" t="Include" />
               <e p="Point.cs" t="Include" />
               <e p="Rectangle.cs" t="Include" />
               <e p="RoomSettings.cs" t="Include" />

@@ -1,7 +1,6 @@
 ﻿using CyberInfection.Extension;
 using CyberInfection.GameMechanics.Weapon;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CyberInfection.GameMechanics.Unit.Player
 {
@@ -55,7 +54,7 @@ namespace CyberInfection.GameMechanics.Unit.Player
         {
             m_SpriteRenderer.sprite =
                 differentRotation[
-                    EightWayRotation.RotateFrame(m_Transform.position,
+                    OctaRotationHelper.RotateFrame(m_Transform.position,
                         m_MainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition))];
         }
 
