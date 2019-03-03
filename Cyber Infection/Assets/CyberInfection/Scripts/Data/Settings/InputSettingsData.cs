@@ -1,4 +1,5 @@
 ﻿using CyberInfection.Data.Settings.Base;
+using CyberInfection.Extension.Utility;
 using UnityEngine;
 
 namespace CyberInfection.Data.Settings

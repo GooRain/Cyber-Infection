@@ -1,11 +1,7 @@
-﻿using CyberInfection.Data.Settings;
+﻿using CyberInfection.Extension.Utility;
 using UnityEditor;
-using UnityEngine;
 
-namespace CyberInfection.Editor
-{
-	[CustomPropertyDrawer(typeof(InputSettingsData.KeyCodesDictionary))]
-	public class KeyCodesDictionaryDrawer : DictionaryDrawer<string, KeyCode>
-	{
-	}
-}
+[CustomPropertyDrawer(typeof(PaneltypeGameObjectDictionary))]
+public class AnySerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer {}
+
+public class AnySerializableDictionaryStoragePropertyDrawer: SerializableDictionaryStoragePropertyDrawer {}
