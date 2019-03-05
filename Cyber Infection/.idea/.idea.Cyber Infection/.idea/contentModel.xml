@@ -48,8 +48,8 @@
               <e p="RoomSettings.cs" t="Include" />
               <e p="TagManager.cs" t="Include" />
               <e p="Utility" t="Include">
+                <e p="AnimatorHash.cs" t="Include" />
                 <e p="Enums.cs" t="Include" />
-                <e p="SerializableDictionaryPropertyDrawer.cs" t="Include" />
                 <e p="UserSerializableDictionaries.cs" t="Include" />
               </e>
             </e>
@@ -59,6 +59,7 @@
               </e>
               <e p="FactoryBase.cs" t="Include" />
             </e>
+            <e p="GameManager.cs" t="Include" />
             <e p="GameMechanics" t="Include">
               <e p="Bullet" t="Include">
                 <e p="Bullet.cs" t="Include" />
@@ -74,7 +75,10 @@
               <e p="IAlive.cs" t="Include" />
               <e p="IControllable.cs" t="Include" />
               <e p="Input" t="Include">
+                <e p="InputComponentBase.cs" t="Include" />
                 <e p="InputController.cs" t="Include" />
+                <e p="LocalInputComponent.cs" t="Include" />
+                <e p="RemoteInputComponent.cs" t="Include" />
               </e>
               <e p="Spawn" t="Include">
                 <e p="EnemySpawn.cs" t="Include" />
@@ -149,9 +153,9 @@
               </e>
               <e p="SingletonMonobehaviour.cs" t="Include" />
             </e>
+            <e p="PlayerHandler.cs" t="Include" />
             <e p="SceneManagers" t="Include">
               <e p="LoadSceneManager.cs" t="Include" />
-              <e p="PlaySceneManager.cs" t="Include" />
             </e>
             <e p="UI" t="Include">
               <e p="Game" t="Include">

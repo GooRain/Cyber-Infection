@@ -277,8 +277,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114073380798836320}
-        m_MethodName: OnSingleButtonClicked
+      - m_Target: {fileID: 431005832434677987}
+        m_MethodName: OnButtonSingleplayerClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -399,19 +399,6 @@ MonoBehaviour:
     - {fileID: 6798630903156216823}
     - {fileID: 3975984470009986995}
     - {fileID: 4048746019261865198}
-  LoginPanel: {fileID: 0}
-  PlayerNameInput: {fileID: 0}
-  SelectionPanel: {fileID: 0}
-  CreateRoomPanel: {fileID: 7457560497996269817}
-  RoomNameInputField: {fileID: 0}
-  MaxPlayersInputField: {fileID: 0}
-  JoinRandomRoomPanel: {fileID: 0}
-  RoomListPanel: {fileID: 0}
-  RoomListContent: {fileID: 0}
-  RoomListEntryPrefab: {fileID: 0}
-  InsideRoomPanel: {fileID: 0}
-  StartGameButton: {fileID: 0}
-  PlayerListEntryPrefab: {fileID: 0}
 --- !u!114 &1981100127215759643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,7 +533,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 431005832434677987}
-        m_MethodName: OnJoinRandomRoomButtonClicked
+        m_MethodName: OnButtonJoinClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -736,7 +723,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 431005832434677987}
-        m_MethodName: OnCreateRoomButtonClicked
+        m_MethodName: OnButtonCreateClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -925,8 +912,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114073380798836320}
-        m_MethodName: OnSingleButtonClicked
+      - m_Target: {fileID: 431005832434677987}
+        m_MethodName: OnButtonMultiplayerClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1054,8 +1041,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114073380798836320}
-        m_MethodName: OnSingleButtonClicked
+      - m_Target: {fileID: 431005832434677987}
+        m_MethodName: OnButtonStartClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2068,8 +2055,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114073380798836320}
-        m_MethodName: OnSingleButtonClicked
+      - m_Target: {fileID: 431005832434677987}
+        m_MethodName: OnButtonContinueClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

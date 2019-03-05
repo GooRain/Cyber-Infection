@@ -1,14 +1,14 @@
 ﻿using CyberInfection.Extension;
+using CyberInfection.GameMechanics.Input;
 using CyberInfection.GameMechanics.Weapon;
+using Photon.Pun;
 using UnityEngine;
 
 namespace CyberInfection.GameMechanics.Unit.Player
 {
-    public class PlayerController : UnitController
+    public class PlayerController : UnitController, IPunObservable
     {
-        [SerializeField] private float m_WalkSpeed;
-
-        [SerializeField] private float m_RunSpeed;
+        private PhotonView m_PhotonView;
 
         [SerializeField] private GameObject m_Legs;
 
@@ -29,77 +29,70 @@ namespace CyberInfection.GameMechanics.Unit.Player
         private bool m_IsAttacking;
 
         private Vector3 _movement; // The vector to store the direction of the player's movement.
+
         private Rigidbody2D m_PlayerRigidbody; // Reference to the player's rigidbody.
+
         //private int m_FloorMask; // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
         private UnityEngine.Camera m_MainCamera;
         private Transform m_Transform;
+
+        private int m_CurrentFrame;
+
+        private IInputComponent m_InputComponent;
 
         private void Awake()
         {
             m_Transform = transform;
             m_MainCamera = UnityEngine.Camera.main;
-            
+
             m_Animator = m_Legs.GetComponent<Animator>();
             m_PlayerRigidbody = GetComponent<Rigidbody2D>();
             //m_FloorMask = LayerMask.GetMask("Floor");
             m_SpriteRenderer = GetComponent<SpriteRenderer>();
+
+            m_PhotonView = GetComponent<PhotonView>();
+
+            if (m_PhotonView.IsMine)
+            {
+                m_InputComponent = new LocalInputComponent(this, m_Animator);
+            }
+            else
+            {
+                m_InputComponent = new RemoteInputComponent();
+            }
         }
 
         private void Update()
         {
-            HandleInput();
-        }
-
-        private void HandleRotation()
-        {
-            m_SpriteRenderer.sprite =
-                differentRotation[
-                    OctaRotationHelper.RotateFrame(m_Transform.position,
-                        m_MainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition))];
-        }
-
-        private void HandleInput()
-        {
-            HandleMovement();
-            HandleRotation();
-            HandleAction();
-        }
-
-        private void HandleAction()
-        {
-            if (UnityEngine.Input.GetMouseButton(0))
-            {
-                Shoot();
-            }
-        }
-
-        private void HandleMovement()
-        {
-            var input = new Vector2(UnityEngine.Input.GetAxisRaw("Horizontal"),
-                UnityEngine.Input.GetAxisRaw("Vertical"));
-
-            m_Animator.SetFloat("Horizontal", input.x);
-            m_Animator.SetFloat("Vertical", input.y);
-            m_Animator.SetFloat("Magnitude", input.magnitude);
-
-            Move(input.normalized);
-        }
-
-        private void Shoot()
-        {
-            m_WeaponController.Shoot();
-        }
-
-        public override void Rotate(Vector2 direction)
-        {
-            HandleRotation();
+            m_InputComponent.Update();
         }
 
         public override void Move(Vector2 direction)
         {
-            var running = UnityEngine.Input.GetKey(KeyCode.LeftShift);
-            var speed = running ? m_RunSpeed : m_WalkSpeed;
-            m_PlayerRigidbody.MovePosition(m_PlayerRigidbody.position + direction * speed * Time.deltaTime);
+            m_PlayerRigidbody.position += direction * Time.deltaTime;
+        }
+
+        public override void Rotate(Vector2 direction)
+        {
+            m_CurrentFrame = OctaRotationHelper.RotateFrame(m_Transform.position,
+                m_MainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition));
+            m_SpriteRenderer.sprite = differentRotation[m_CurrentFrame];
+        }
+
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                stream.SendNext(m_Transform.position);
+                stream.SendNext(m_CurrentFrame);
+            }
+            else
+            {
+                m_Transform.position = (Vector3) stream.ReceiveNext();
+                m_CurrentFrame = (int) stream.ReceiveNext();
+                
+                m_SpriteRenderer.sprite = differentRotation[m_CurrentFrame];
+            }
         }
     }
 }

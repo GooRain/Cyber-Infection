@@ -9,9 +9,6 @@ namespace CyberInfection.UI.MainMenu
 {
 	public class MenuCanvas : MonoBehaviour
 	{
-		public void OnSingleButtonClicked()
-		{
-			SceneManager.LoadSceneAsync(SceneName.Play);
-		}
+		
 	}
 }

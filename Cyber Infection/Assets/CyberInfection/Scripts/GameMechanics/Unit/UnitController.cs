@@ -7,6 +7,13 @@ namespace CyberInfection.GameMechanics.Unit
 	{
 		private IUnit _unit;
 
+		[SerializeField] private float m_WalkSpeed;
+
+		[SerializeField] private float m_RunSpeed;
+
+		public float walkSpeed => m_WalkSpeed;
+		public float runSpeed => m_RunSpeed;
+
 		private void Awake()
 		{
 			_unit = GetComponent<IUnit>();
@@ -20,6 +27,11 @@ namespace CyberInfection.GameMechanics.Unit
 		public virtual void Rotate(Vector2 direction)
 		{
 			_unit.refTransform.rotation.SetLookRotation(direction);
+		}
+
+		public virtual void Shoot()
+		{
+			
 		}
 	}
 }

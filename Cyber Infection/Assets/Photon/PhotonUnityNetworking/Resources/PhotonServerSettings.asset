@@ -18,7 +18,7 @@ MonoBehaviour:
     AppIdVoice: 
     AppVersion: 0.01
     UseNameServer: 1
-    FixedRegion: rue
+    FixedRegion: 
     Server: 
     Port: 0
     Protocol: 0
@@ -32,5 +32,6 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - SpawnPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 1

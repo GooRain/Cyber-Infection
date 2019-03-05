@@ -28,14 +28,17 @@ namespace CyberInfection.GameMechanics.Camera
 //		private Vector2 _maxXAndY = new Vector2(1.15f, 1.18f);
 //		private Vector2 _minXAndY = new Vector2(-0.4f, -0.15f);
 
-		private Player _player;
 		private MapSettingsData _mapSettingsData;
 
 		[Inject]
-		private void Construct(Player player, MapSettingsData map)
+		private void Construct(MapSettingsData map)
 		{
-			_player = player;
 			_mapSettingsData = map;
+		}
+
+		public void SetPlayer(Player player)
+		{
+			_playerTransform = player.transform;
 		}
 
 		private void Awake()
@@ -44,7 +47,6 @@ namespace CyberInfection.GameMechanics.Camera
 
 			_camera = GetComponent<UnityEngine.Camera>();
 			_transform = transform;
-			_playerTransform = _player.transform;
 			var minSize = _mapSettingsData.roomSizeInfo.roomWidth / 16f < _mapSettingsData.roomSizeInfo.roomHeight / 9f
 				? (_mapSettingsData.roomSizeInfo.roomWidth - 2) * .5f / 16f * 9f
 				: (_mapSettingsData.roomSizeInfo.roomHeight - 2) * .5f; // Vremenno, potom nado sohranyat sootnoshenie ekrana
