@@ -107,7 +107,7 @@ namespace CyberInfection.Networking
         {
             PhotonNetwork.CreateRoom(null, new RoomOptions
             {
-                MaxPlayers = 2
+                MaxPlayers = 4
             });
         }
 

@@ -33,5 +33,6 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - SpawnPlayer
+  - GenerateWithSeed
   DisableAutoOpenWizard: 1
   ShowSettings: 1

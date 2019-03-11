@@ -21,12 +21,12 @@ namespace CyberInfection.GameMechanics.Unit
 		
 		public virtual void Move(Vector2 direction)
 		{
-			_unit.refTransform.Translate(direction * Time.deltaTime);
+			_unit.cachedTransform.Translate(direction * Time.deltaTime);
 		}
 
 		public virtual void Rotate(Vector2 direction)
 		{
-			_unit.refTransform.rotation.SetLookRotation(direction);
+			_unit.cachedTransform.rotation.SetLookRotation(direction);
 		}
 
 		public virtual void Shoot()

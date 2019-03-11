@@ -15,7 +15,6 @@ namespace CyberInfection.Data.Settings.Generation
 			return Instantiate(TryToLoad(AssetPath));
 		}
 
-		public bool useSeed;
 		public string seed;
 		
 		[Space(10)]

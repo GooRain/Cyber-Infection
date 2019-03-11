@@ -1,3 +1,5 @@
+using CyberInfection.Data.Entities;
+using CyberInfection.GameMechanics.Projectile;
 using UnityEngine;
 
 namespace CyberInfection.GameMechanics.Weapon.Behaviour
@@ -6,24 +8,26 @@ namespace CyberInfection.GameMechanics.Weapon.Behaviour
     public class ShootBehaviour
     {
         public Transform muzzle;
-        public Bullet.Bullet bulletPrefab;
 
-        public ShootBehaviour(Transform muzzle, Bullet.Bullet bulletPrefab)
+        private BulletData m_BulletData;
+
+        public ShootBehaviour(Transform muzzle, BulletData bulletData)
         {
             this.muzzle = muzzle;
-            this.bulletPrefab = bulletPrefab;
+            m_BulletData = bulletData;
         }
-        
+
         public void Shoot()
         {
+            var bullet = (Bullet) BulletPoolContainer.instance.Pop();
+
             if (UnityEngine.Camera.main != null)
             {
-                Vector2 diff = UnityEngine.Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition) - muzzle.position;
-                float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-                muzzle.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
+                var position = muzzle.position;
+                Vector2 diff = UnityEngine.Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition) - position;
+                bullet.cachedTransform.position = position;
+                bullet.InitializeParameters(m_BulletData, diff.normalized);
             }
-            
-            Object.Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
         }
 
         public bool CanShoot()

@@ -1,5 +1,6 @@
 using Boo.Lang;
-using CyberInfection.Data.Object;
+using CyberInfection.Data.Entities;
+using CyberInfection.GameMechanics.Projectile;
 using CyberInfection.GameMechanics.Weapon.WeaponTypes;
 using UnityEngine;
 
@@ -11,18 +12,18 @@ namespace CyberInfection.GameMechanics.Weapon
         [SerializeField] private GameObject currentWeapon;
         [SerializeField] private Transform weaponHolder;
 
-        private List<WeaponBase> _weaponList;
-        private WeaponBase _currentWeapon;
+        private List<WeaponBase> m_WeaponList;
+        private WeaponBase m_CurrentWeapon;
 
         private void Awake()
         {
-            _weaponList = new List<WeaponBase> {currentWeapon.AddComponent<FireableWeapon>()};
+            m_WeaponList = new List<WeaponBase> {currentWeapon.AddComponent<FireableWeapon>()};
 
-            _weaponList[0].Initialize(pistolWeaponData, transform);
+            m_WeaponList[0].Initialize(pistolWeaponData, transform);
 
-            if (_weaponList.Count > 0)
+            if (m_WeaponList.Count > 0)
             {
-                _currentWeapon = _weaponList[0];
+                m_CurrentWeapon = m_WeaponList[0];
             }
         }
 
@@ -32,12 +33,12 @@ namespace CyberInfection.GameMechanics.Weapon
         
         public void Shoot()
         {
-            _currentWeapon.TryToShoot();
+            m_CurrentWeapon.TryToShoot();
         }
 
         public void Reload()
         {
-            _currentWeapon.TryToReload();
+            m_CurrentWeapon.TryToReload();
         }
     }
 }

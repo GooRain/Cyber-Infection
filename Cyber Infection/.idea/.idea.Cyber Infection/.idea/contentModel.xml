@@ -11,12 +11,13 @@
               <e p="SceneName.cs" t="Include" />
             </e>
             <e p="Data" t="Include">
+              <e p="Entities" t="Include">
+                <e p="BlockData.cs" t="Include" />
+                <e p="BulletData.cs" t="Include" />
+                <e p="WeaponData.cs" t="Include" />
+              </e>
               <e p="Loading" t="Include">
                 <e p="LoadingData.cs" t="Include" />
-              </e>
-              <e p="Object" t="Include">
-                <e p="BlockData.cs" t="Include" />
-                <e p="WeaponData.cs" t="Include" />
               </e>
               <e p="Settings" t="Include">
                 <e p="Base" t="Include">
@@ -44,6 +45,13 @@
               <e p="Graph.cs" t="Include" />
               <e p="OctaRotationHelper.cs" t="Include" />
               <e p="Point.cs" t="Include" />
+              <e p="Pool" t="Include">
+                <e p="GenericPoolContainer.cs" t="Include" />
+                <e p="IPoolable.cs" t="Include" />
+                <e p="IPoolContainer.cs" t="Include" />
+                <e p="PoolableMonoBehaviour.cs" t="Include" />
+                <e p="PoolContainer.cs" t="Include" />
+              </e>
               <e p="Rectangle.cs" t="Include" />
               <e p="RoomSettings.cs" t="Include" />
               <e p="TagManager.cs" t="Include" />
@@ -61,10 +69,6 @@
             </e>
             <e p="GameManager.cs" t="Include" />
             <e p="GameMechanics" t="Include">
-              <e p="Bullet" t="Include">
-                <e p="Bullet.cs" t="Include" />
-                <e p="BulletController.cs" t="Include" />
-              </e>
               <e p="Camera" t="Include">
                 <e p="CameraController.cs" t="Include" />
               </e>
@@ -79,6 +83,11 @@
                 <e p="InputController.cs" t="Include" />
                 <e p="LocalInputComponent.cs" t="Include" />
                 <e p="RemoteInputComponent.cs" t="Include" />
+              </e>
+              <e p="Projectile" t="Include">
+                <e p="Bullet.cs" t="Include" />
+                <e p="BulletPoolContainer.cs" t="Include" />
+                <e p="MetalBullet.cs" t="Include" />
               </e>
               <e p="Spawn" t="Include">
                 <e p="EnemySpawn.cs" t="Include" />

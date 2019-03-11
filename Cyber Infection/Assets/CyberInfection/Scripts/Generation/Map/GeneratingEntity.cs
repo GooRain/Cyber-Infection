@@ -42,7 +42,7 @@ namespace CyberInfection.Generation.Map
 				offset = GetOffset(moveDirection);
 			}
 			
-			Debug.Log($"[{_debugID}] moving {moveDirection}");
+//			Debug.Log($"[{_debugID}] moving {moveDirection}");
 
 			_currentPosition.x = Mathf.Clamp(_currentPosition.x + offset.x, 0, _map.width - 1);
 			_currentPosition.y = Mathf.Clamp(_currentPosition.y + offset.y, 0, _map.height - 1);
@@ -53,7 +53,7 @@ namespace CyberInfection.Generation.Map
 		public void PlaceRoom(RoomType room)
 		{
 			_map.roomMatrix[_currentPosition.x, _currentPosition.y] = room;
-			Debug.Log($"Placing {room} at [{_currentPosition.x},{_currentPosition.y}]");
+//			Debug.Log($"Placing {room} at [{_currentPosition.x},{_currentPosition.y}]");
 		}
 
 		public bool CanPlace()

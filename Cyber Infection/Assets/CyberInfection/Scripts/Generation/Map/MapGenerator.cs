@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CyberInfection.Data.Settings.Generation;
 using CyberInfection.Extension;
 using CyberInfection.Generation.Room;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
@@ -15,8 +16,11 @@ using Random = UnityEngine.Random;
 
 namespace CyberInfection.Generation.Map
 {
+	[RequireComponent(typeof(PhotonView))]
 	public class MapGenerator : MonoBehaviour
 	{
+		private PhotonView m_PhotonView;
+		
 		[SerializeField] private Transform _mapHolder;
 		[SerializeField] private Tilemap _tilemap;
 		[SerializeField] private Tilemap _collisionTileMap;
@@ -30,6 +34,7 @@ namespace CyberInfection.Generation.Map
 
 		private MapSettingsData _mapSettingsData;
 		private MapController _mapController;
+		private int m_Seed;
 
 		public Vector3 offset { get; private set; }
 
@@ -41,26 +46,31 @@ namespace CyberInfection.Generation.Map
 
 		private void Awake()
 		{
+			m_PhotonView = GetComponent<PhotonView>();
 			_mapController = gameObject.AddComponent<MapController>();
+			
+			InitSeed();
 
-			if (_mapSettingsData.useSeed)
+			if (PhotonNetwork.IsMasterClient)
 			{
-				InitSeed();				
+				m_PhotonView.RPC("GenerateWithSeed", RpcTarget.AllBufferedViaServer, m_Seed);
 			}
 		}
 
-		private void Start()
+		[PunRPC]
+		private void GenerateWithSeed(int seed)
 		{
+			Random.InitState(seed);
 			TryToGenerate();
 		}
-
+		
 		private void InitSeed()
 		{
 			// Задаем семя для генерации ПСЧ
-			var seed = _mapSettingsData.seed; // SystemInfo.deviceModel + SystemInfo.deviceName;
-			Random.InitState(seed.GetHashCode());
+			m_Seed = _mapSettingsData.seed.GetHashCode(); // SystemInfo.deviceModel + SystemInfo.deviceName;
+			Random.InitState(m_Seed);
 
-			Debug.Log(seed + " => " + seed.GetHashCode());
+			Debug.Log(_mapSettingsData.seed + " => " + m_Seed);
 		}
 
 		private void Update()
@@ -96,14 +106,14 @@ namespace CyberInfection.Generation.Map
 		[Obsolete]
 		private void GenerateOld()
 		{
-			Debug.Log("Generating...");
+//			Debug.Log("Generating...");
 			
 			var maxRoomsAmount = (int)Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
 			var roomTypes = Enum.GetValues(typeof(RoomType));
-			for (var i = 0; i < roomTypes.Length; i++)
-			{
-				Debug.Log($"[{i}] = {roomTypes.GetValue(i)}");
-			}
+//			for (var i = 0; i < roomTypes.Length; i++)
+//			{
+//				Debug.Log($"[{i}] = {roomTypes.GetValue(i)}");
+//			}
 
 			var generatingEntitiesCount = maxRoomsAmount / _mapSettingsData.roomsRange.x;
 
@@ -158,10 +168,10 @@ namespace CyberInfection.Generation.Map
 				}
 			}
 
-			if (_mapController.map.HasEnd())
-			{
-				Debug.Log("Map has end!");
-			}
+//			if (_mapController.map.HasEnd())
+//			{
+//				Debug.Log("Map has end!");
+//			}
 
 			_mapController.PlaceRooms(_tilemap, _collisionTileMap);
 

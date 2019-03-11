@@ -15,7 +15,7 @@ namespace CyberInfection.Generation.Map
 		{
 			this.width = width;
 			this.height = height;
-			Debug.Log($"{width} / {height}");
+//			Debug.Log($"{width} / {height}");
 			roomMatrix = new RoomType[this.width, this.height];
 		}
 		

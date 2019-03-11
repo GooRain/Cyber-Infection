@@ -1,7 +1,9 @@
-using CyberInfection.Data.Object;
+using CyberInfection.Data.Entities;
 using CyberInfection.GameMechanics.Container;
+using CyberInfection.GameMechanics.Projectile;
 using CyberInfection.GameMechanics.Weapon.Behaviour;
 using UnityEngine;
+using Zenject;
 
 namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
 {
@@ -20,18 +22,23 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
             weaponData = data;
             
             ammoContainer = new AmmunitionContainer(weaponData.maxAmmoInMagazine, weaponData.startAmmunitionSize);
-            shootBehaviour = new ShootBehaviour(muzzle, weaponData.bulletPrefab);
+            shootBehaviour = new ShootBehaviour(muzzle, data.bulletData);
         }
         
         public float recoil { get; set; }
         public void TryToShoot()
         {
-            if (shootBehaviour.CanShoot())
+            if (CanShoot())
             {
                 Shoot();
             }
         }
 
+        protected virtual bool CanShoot()
+        {
+            return shootBehaviour.CanShoot();
+        }
+        
         protected abstract void Shoot();
         
         public void TryToReload()

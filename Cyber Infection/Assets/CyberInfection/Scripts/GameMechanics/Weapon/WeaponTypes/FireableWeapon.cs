@@ -1,4 +1,3 @@
-using CyberInfection.Data.Object;
 using UnityEngine;
 
 namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
@@ -8,27 +7,22 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
     {
         public AudioSource audioSource;
 
-        public override void Initialize(WeaponData data, Transform muzzle)
-        {
-            base.Initialize(data, muzzle);
-        }
-
         protected override void Shoot()
         {
-            if (CanShoot())
-            {
-                return;
-            }
-
             _lastShootTime = Time.timeSinceLevelLoad;
             shootBehaviour.Shoot();
             //audioSource.Play();
             ammoContainer.Dec();
+
+            if (ammoContainer.count <= 0)
+            {
+                Reload();
+            }
         }
 
-        private bool CanShoot()
+        protected override bool CanShoot()
         {
-            return _lastShootTime + weaponData.shootRate > Time.timeSinceLevelLoad && shootBehaviour.CanShoot() &&
+            return Time.timeSinceLevelLoad > _lastShootTime + weaponData.shootRate  &&
                    ammoContainer.HasAny();
         }
 

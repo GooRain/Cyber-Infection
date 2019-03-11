@@ -56,7 +56,7 @@ namespace CyberInfection
                 PhotonNetwork.Destroy(player.gameObject);
             }
 
-            player = PhotonNetwork.Instantiate("Prefabs/Units/Players/" + prefab.gameObject.name, position, rotation).GetComponent<Player>();
+            player = PhotonNetwork.Instantiate("Prefabs/Entities/Units/Players/" + prefab.gameObject.name, position, rotation).GetComponent<Player>();
         }
     }
 }

@@ -7,15 +7,16 @@ namespace CyberInfection.Persistent.Settings
 	public class GameSettings : SettingsBase
 	{
 		[Header("Game Data")]
-		[SerializeField] private GameSettingsData _data;
+		
+		[SerializeField] private GameSettingsData m_Data;
 
 		[Space(10)]
 		[Header("Runtime Game Data")] 
-		[SerializeField, FormerlySerializedAs("Do Copy Of Every Data")]
-		private bool _doCopyOfData;
-		[SerializeField] private GameSettingsData _loadedData;
 		
-		public GameSettingsData data => _loadedData;
+		[SerializeField] private bool m_DoCopyOfData;
+		[SerializeField] private GameSettingsData m_LoadedData;
+		
+		public GameSettingsData data => m_LoadedData;
 
 		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 		private static void InitializeGameSettings()
@@ -25,16 +26,16 @@ namespace CyberInfection.Persistent.Settings
 
 		private void InitializeLoadData()
 		{
-			if (_doCopyOfData)
+			if (m_DoCopyOfData)
 			{
-				_loadedData = _data.GetCopy();
-				_loadedData.generatingScenesData = _data.generatingScenesData.GetCopy();
-				_loadedData.inputSettingsData = _data.inputSettingsData.GetCopy();
-				_loadedData.mapSettingsData = _data.mapSettingsData.GetCopy();
+				m_LoadedData = m_Data.GetCopy();
+				m_LoadedData.generatingScenesData = m_Data.generatingScenesData.GetCopy();
+				m_LoadedData.inputSettingsData = m_Data.inputSettingsData.GetCopy();
+				m_LoadedData.mapSettingsData = m_Data.mapSettingsData.GetCopy();
 			}
 			else
 			{
-				_loadedData = _data;
+				m_LoadedData = m_Data;
 			}
 			
 		}

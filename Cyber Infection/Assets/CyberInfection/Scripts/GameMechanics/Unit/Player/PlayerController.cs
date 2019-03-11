@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace CyberInfection.GameMechanics.Unit.Player
 {
+    [RequireComponent(typeof(Player))]
     public class PlayerController : UnitController, IPunObservable
     {
         private PhotonView m_PhotonView;
@@ -79,6 +80,11 @@ namespace CyberInfection.GameMechanics.Unit.Player
             m_SpriteRenderer.sprite = differentRotation[m_CurrentFrame];
         }
 
+        public override void Shoot()
+        {
+            m_WeaponController.Shoot();
+        }
+
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
             if (stream.IsWriting)
@@ -90,7 +96,7 @@ namespace CyberInfection.GameMechanics.Unit.Player
             {
                 m_Transform.position = (Vector3) stream.ReceiveNext();
                 m_CurrentFrame = (int) stream.ReceiveNext();
-                
+
                 m_SpriteRenderer.sprite = differentRotation[m_CurrentFrame];
             }
         }

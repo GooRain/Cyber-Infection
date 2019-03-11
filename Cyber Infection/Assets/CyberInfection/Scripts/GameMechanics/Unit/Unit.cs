@@ -4,32 +4,32 @@ namespace CyberInfection.GameMechanics.Unit
 {
 	public class Unit : MonoBehaviour, IUnit
 	{
-		private int _health;
+		private float _health;
 
-		public int health
+		public float health
 		{
 			get => _health;
 			set
 			{
 				_health = value;
-				if (_health <= 0)
+				if (_health <= 0f)
 					Die();
 			}
 		}
 
-		public Transform refTransform { get; private set; }
+		public Transform cachedTransform { get; private set; }
 
-		private void Awake()
+		protected virtual void Awake()
 		{
 			CacheReferences();
 		}
 
 		private void CacheReferences()
 		{
-			refTransform = transform;
+			cachedTransform = transform;
 		}
 
-		public void GetDamage(int damageAmount)
+		public void GetDamage(float damageAmount)
 		{
 			health -= damageAmount;
 		}

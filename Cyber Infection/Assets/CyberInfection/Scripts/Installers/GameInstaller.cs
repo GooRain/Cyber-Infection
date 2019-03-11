@@ -1,8 +1,6 @@
 using CyberInfection.Data.Settings.Generation;
-using CyberInfection.GameMechanics.Unit.Player;
 using CyberInfection.Persistent.Settings;
 using Plugins.Zenject.Source.Install;
-using UnityEngine;
 
 namespace CyberInfection.Installers
 {
