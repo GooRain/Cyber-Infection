@@ -8,13 +8,15 @@ using Zenject;
 
 namespace CyberInfection.GameMechanics.Camera
 {
-	public class CameraController : SingletonMonobehaviour<CameraController>
+	public class CameraController : MonoBehaviour
 	{
 		[SerializeField] private Transform _anchor;
 		[SerializeField] private float _dampTime = 0.2f;
 		[SerializeField] private Vector2 _xOffset = new Vector2(-0.4f, 1.15f);
 		[SerializeField] private Vector2 _yOffset = new Vector2(-0.4f, 1.18f);
 
+		public static CameraController instance { get; private set; }
+		
 		private Vector3 _velocity = Vector3.zero;
 		private float _cameraZ;
 		private Transform _playerTransform;
@@ -43,7 +45,7 @@ namespace CyberInfection.GameMechanics.Camera
 
 		private void Awake()
 		{
-			_instance = this;
+			instance = this;
 
 			_camera = GetComponent<UnityEngine.Camera>();
 			_transform = transform;

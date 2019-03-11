@@ -48,11 +48,10 @@ namespace CyberInfection.Generation.Map
 		{
 			m_PhotonView = GetComponent<PhotonView>();
 			_mapController = gameObject.AddComponent<MapController>();
-			
-			InitSeed();
 
 			if (PhotonNetwork.IsMasterClient)
 			{
+				InitSeed();
 				m_PhotonView.RPC("GenerateWithSeed", RpcTarget.AllBufferedViaServer, m_Seed);
 			}
 		}
@@ -67,10 +66,13 @@ namespace CyberInfection.Generation.Map
 		private void InitSeed()
 		{
 			// Задаем семя для генерации ПСЧ
-			m_Seed = _mapSettingsData.seed.GetHashCode(); // SystemInfo.deviceModel + SystemInfo.deviceName;
+			var seedString = Guid.NewGuid();
+			m_Seed = seedString.GetHashCode();
+				//_mapSettingsData.seed.GetHashCode();
+				// SystemInfo.deviceModel + SystemInfo.deviceName;
 			Random.InitState(m_Seed);
 
-			Debug.Log(_mapSettingsData.seed + " => " + m_Seed);
+			Debug.Log(seedString + " => " + m_Seed);
 		}
 
 		private void Update()

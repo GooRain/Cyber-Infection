@@ -2,216 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bba103e-8942-48b6-b774-94ecc63c91f7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/BulletData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/BulletData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Pool.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Pool/GenericPoolContainer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Pool/GenericPoolContainer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Pool/IPoolContainer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Pool/IPoolContainer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Pool/IPoolable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Pool/IPoolable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Pool/PoolContainer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Pool/PoolContainer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Pool/PoolableMonoBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Pool/PoolableMonoBehaviour.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/Bullet.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/BulletPoolContainer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/BulletPoolContainer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/MetalBullet.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/MetalBullet.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Prefabs/UI/MenuCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Prefabs/UI/MenuCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Enemy.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Enemy/Follow.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Enemy/Follow.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Enemy/Idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Enemy/Idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Enemy/red_enemy.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Enemy/red_enemy.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Player.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Player/Idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Player/Idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Player/Player.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Player/Player.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Player/RunDown.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Player/RunDown.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Player/RunLeft.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Player/RunLeft.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Player/RunRight.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Player/RunRight.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Player/RunUp.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Animations/Player/RunUp.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/DOTweenSettings.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/DOTweenSettings.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Base.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Base/GameSettingsData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Base/GameSettingsData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/BlockData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/BlockData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Generation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Generation/New Floor Tile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Generation/New Floor Tile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Generation/New Wall Tile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Generation/New Wall Tile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/LoadingData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/LoadingData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Settings.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Settings/GeneratingScenesData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Settings/GeneratingScenesData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Settings/InputSettingsData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Settings/InputSettingsData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Settings/MapSettingsData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Settings/MapSettingsData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Units.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Units/Enemies.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Units/Enemies/New Enemy Data.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Units/Enemies/New Enemy Data.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Weapons.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Weapons/Pistol Data.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Data/Weapons/Pistol Data.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Installers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Installers/GameInstaller.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Installers/GameInstaller.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Installers/MapGenerationInstaller.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Installers/MapGenerationInstaller.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Materials/FloorMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Materials/FloorMaterial.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Generation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Generation/FloorTile0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Generation/FloorTile0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Generation/MapGenerator.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Generation/MapGenerator.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Generation/WallTile0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Generation/WallTile0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Installers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Installers/GameInstaller.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Installers/GameInstaller.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/InstantiateBeforeScene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/InstantiateBeforeScene/GameSettings.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/InstantiateBeforeScene/GameSettings.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Other.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Other/enemyBullet.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Other/enemyBullet.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Other/playerBullet.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Other/playerBullet.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Player Camera.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Player Camera.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Units.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Units/Enemys.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Units/Enemys/ShaserEnemy.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Units/Enemys/ShaserEnemy.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Units/Enemys/ShootingEnemy.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Units/Enemys/ShootingEnemy.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Units/Enemys/blue_enemy.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Units/Enemys/blue_enemy.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Units/Enemys/purple_enemy.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Units/Enemys/purple_enemy.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Units/Players.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Units/Players/Player0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Prefabs/Units/Players/Player0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_Down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_Down.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_Left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_Left.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_LeftDown.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_LeftDown.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_LeftUp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_LeftUp.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_Right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_Right.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_RightDown.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_RightDown.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_RightUp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_RightUp.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_Up.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/CorpusRotation/player_Body_Up.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Idle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Idle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Left1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Left1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Left2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Left2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Left3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Left3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Right1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Right1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Right2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Right2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Right3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_Right3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_UpDown1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_UpDown1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_UpDown2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/Run/player_Legs_UpDown2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/bullet1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/bullet1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/crosshair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Player/crosshair.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/UI/Battle.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/UI/Battle/crosshair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/UI/Battle/crosshair.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/UI/Battle/crosshair_center.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/UI/Battle/crosshair_center.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/UI/Battle/crosshair_out.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/UI/Battle/crosshair_out.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Units.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Units/Enemys.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Units/Enemys/enemy_Blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Units/Enemys/enemy_Blue.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Units/Enemys/enemy_Orange.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Units/Enemys/enemy_Orange.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Units/Enemys/enemy_Purple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Units/Enemys/enemy_Purple.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Units/Enemys/enemy_Red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Units/Enemys/enemy_Red.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Units/bullet2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Resources/Sprites/Units/bullet2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scenes/PlayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scenes/PlayScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Object.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Object/BlockData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/BlockData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Object/BlockData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/BlockData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Object/WeaponData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/WeaponData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Object/WeaponData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/WeaponData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Settings/Generation/MapSettingsData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Settings/Generation/MapSettingsData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/TagManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/TagManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Bullet.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Bullet.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Bullet/Bullet.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Bullet/Bullet.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/Bullet.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Bullet/BulletController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Bullet/BulletController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/IAlive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/IAlive.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/IUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/IUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/UnitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/UnitController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/Behaviour/ShootBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/Behaviour/ShootBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponTypes/FireableWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponTypes/FireableWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponTypes/WeaponBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponTypes/WeaponBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/GeneratingEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/GeneratingEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/Map.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/Map.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Bullet/MetalBullet.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Installers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Installers/GameInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Networking/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Networking/NetworkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Persistent/Settings/GameSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Persistent/Settings/GameSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/PlayerHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/PlayerHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -239,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/PlayerHandler.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="328">
-              <caret line="59" column="9" lean-forward="true" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+              <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
               <folding>
                 <marker date="1552321090183" expanded="false" signature="6:177" ph="..." />
                 <marker date="1552321090183" expanded="true" signature="203:1975" ph="{...}" />
@@ -259,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/Player/Player.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
               <folding>
                 <marker date="1552322196223" expanded="true" signature="6:49" ph="..." />
                 <marker date="1552322196223" expanded="true" signature="101:503" ph="{...}" />
@@ -299,45 +92,67 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapGenerator.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+            <state relative-caret-position="316">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
               <folding>
-                <marker date="1552322721369" expanded="false" signature="6:314" ph="..." />
-                <marker date="1552322721369" expanded="true" signature="381:10722" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="466:10720" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="659:727" ph="/* 0000000 ... */" />
-                <marker date="1552322721369" expanded="true" signature="951:998" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="1022:1287" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="1191:1283" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="1341:1396" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="1425:1654" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="1679:1767" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="1719:1763" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="1791:1893" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="1925:1987" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="2019:2181" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="2224:4369" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="2424:2538" ph="/* for (var i = 0; i &lt; roomTypes.Length; i++) ... */" />
-                <marker date="1552322721369" expanded="true" signature="2918:3012" ph="/* _tilemap.transform.position = offset; ... */" />
-                <marker date="1552322721369" expanded="true" signature="3161:3348" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="3511:4147" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="3573:4142" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="3784:4041" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="3873:3973" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="4051:4109" ph="{...}" />
-                <marker date="1552322721369" expanded="true" signature="4149:4233" ph="/* if (_mapController.map.HasEnd()) ... */" />
-                <marker date="1552322721369" expanded="false" signature="4373:10717" ph="DEPRECATED" />
-                <marker date="1552322721369" expanded="true" signature="4395:10703" ph="/* Статическая ссылка на этот объект ... */" />
+                <marker date="1552323134361" expanded="false" signature="6:314" ph="..." />
+                <marker date="1552323134361" expanded="true" signature="381:10780" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="466:10778" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="659:727" ph="/* 0000000 ... */" />
+                <marker date="1552323134361" expanded="true" signature="951:998" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="1022:1284" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="1172:1280" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="1338:1393" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="1422:1712" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="1541:1634" ph="/* _mapSettingsData.seed.GetHashCode(); ... */" />
+                <marker date="1552323134361" expanded="true" signature="1737:1825" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="1777:1821" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="1849:1951" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="1983:2045" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="2077:2239" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="2282:4427" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="2482:2596" ph="/* for (var i = 0; i &lt; roomTypes.Length; i++) ... */" />
+                <marker date="1552323134361" expanded="true" signature="2976:3070" ph="/* _tilemap.transform.position = offset; ... */" />
+                <marker date="1552323134361" expanded="true" signature="3219:3406" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="3569:4205" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="3631:4200" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="3842:4099" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="3931:4031" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="4109:4167" ph="{...}" />
+                <marker date="1552323134361" expanded="true" signature="4207:4291" ph="/* if (_mapController.map.HasEnd()) ... */" />
+                <marker date="1552323134361" expanded="false" signature="4431:10775" ph="DEPRECATED" />
+                <marker date="1552323134361" expanded="true" signature="4453:10761" ph="/* Статическая ссылка на этот объект ... */" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/Door/Door.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+              <folding>
+                <marker date="1552322065683" expanded="false" signature="6:107" ph="..." />
+                <marker date="1552322065683" expanded="true" signature="154:1960" ph="{...}" />
+                <marker date="1552322065683" expanded="true" signature="194:1958" ph="{...}" />
+                <marker date="1552322065683" expanded="true" signature="229:294" ph="{...}" />
+                <marker date="1552322065683" expanded="true" signature="523:579" ph="{...}" />
+                <marker date="1552322065683" expanded="true" signature="662:755" ph="{...}" />
+                <marker date="1552322065683" expanded="true" signature="812:1017" ph="{...}" />
+                <marker date="1552322065683" expanded="true" signature="878:1007" ph="{...}" />
+                <marker date="1552322065683" expanded="true" signature="1077:1952" ph="{...}" />
+                <marker date="1552322065683" expanded="true" signature="1198:1885" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Graph.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="300">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <marker date="1549106132917" expanded="false" signature="6:52" ph="..." />
                 <marker date="1549106132917" expanded="true" signature="88:1401" ph="{...}" />
@@ -740,7 +555,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/Unit.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
               <folding>
                 <marker date="1552322143764" expanded="true" signature="63:592" ph="{...}" />
                 <marker date="1552322143764" expanded="true" signature="107:590" ph="{...}" />
@@ -750,23 +565,6 @@
                 <marker date="1552322143764" expanded="true" signature="414:454" ph="{...}" />
                 <marker date="1552322143764" expanded="true" signature="499:534" ph="{...}" />
                 <marker date="1552322143764" expanded="true" signature="555:587" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameManager.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-              <folding>
-                <marker date="1551809036005" expanded="false" signature="6:146" ph="..." />
-                <marker date="1551809036005" expanded="true" signature="172:572" ph="{...}" />
-                <marker date="1551809036005" expanded="true" signature="231:570" ph="{...}" />
-                <marker date="1551809036005" expanded="true" signature="319:467" ph="{...}" />
-                <marker date="1551809036005" expanded="true" signature="373:457" ph="{...}" />
-                <marker date="1551809036005" expanded="true" signature="497:564" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -1496,12 +1294,12 @@
       <workItem from="1552140738254" duration="654000" />
       <workItem from="1552234352639" duration="1997000" />
       <workItem from="1552307914877" duration="2937000" />
-      <workItem from="1552310874313" duration="10336000" />
+      <workItem from="1552310874313" duration="10698000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158627000" />
+    <option name="totallyTimeSpent" value="158989000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2347,25 +2145,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/Door/Door.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <marker date="1552322065683" expanded="false" signature="6:107" ph="..." />
-            <marker date="1552322065683" expanded="true" signature="154:1960" ph="{...}" />
-            <marker date="1552322065683" expanded="true" signature="194:1958" ph="{...}" />
-            <marker date="1552322065683" expanded="true" signature="229:294" ph="{...}" />
-            <marker date="1552322065683" expanded="true" signature="523:579" ph="{...}" />
-            <marker date="1552322065683" expanded="true" signature="662:755" ph="{...}" />
-            <marker date="1552322065683" expanded="true" signature="812:1017" ph="{...}" />
-            <marker date="1552322065683" expanded="true" signature="878:1007" ph="{...}" />
-            <marker date="1552322065683" expanded="true" signature="1077:1952" ph="{...}" />
-            <marker date="1552322065683" expanded="true" signature="1198:1885" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -2384,7 +2163,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/Unit.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
           <folding>
             <marker date="1552322143764" expanded="true" signature="63:592" ph="{...}" />
             <marker date="1552322143764" expanded="true" signature="107:590" ph="{...}" />
@@ -2781,7 +2560,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/PlayerHandler.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
-          <caret line="59" column="9" lean-forward="true" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
           <folding>
             <marker date="1552321090183" expanded="false" signature="6:177" ph="..." />
             <marker date="1552321090183" expanded="true" signature="203:1975" ph="{...}" />
@@ -2799,7 +2578,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Unit/Player/Player.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
           <folding>
             <marker date="1552322196223" expanded="true" signature="6:49" ph="..." />
             <marker date="1552322196223" expanded="true" signature="101:503" ph="{...}" />
@@ -2827,45 +2606,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapGenerator.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-          <folding>
-            <marker date="1552322721369" expanded="false" signature="6:314" ph="..." />
-            <marker date="1552322721369" expanded="true" signature="381:10722" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="466:10720" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="659:727" ph="/* 0000000 ... */" />
-            <marker date="1552322721369" expanded="true" signature="951:998" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="1022:1287" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="1191:1283" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="1341:1396" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="1425:1654" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="1679:1767" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="1719:1763" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="1791:1893" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="1925:1987" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="2019:2181" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="2224:4369" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="2424:2538" ph="/* for (var i = 0; i &lt; roomTypes.Length; i++) ... */" />
-            <marker date="1552322721369" expanded="true" signature="2918:3012" ph="/* _tilemap.transform.position = offset; ... */" />
-            <marker date="1552322721369" expanded="true" signature="3161:3348" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="3511:4147" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="3573:4142" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="3784:4041" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="3873:3973" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="4051:4109" ph="{...}" />
-            <marker date="1552322721369" expanded="true" signature="4149:4233" ph="/* if (_mapController.map.HasEnd()) ... */" />
-            <marker date="1552322721369" expanded="false" signature="4373:10717" ph="DEPRECATED" />
-            <marker date="1552322721369" expanded="true" signature="4395:10703" ph="/* Статическая ссылка на этот объект ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Graph.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="300">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <marker date="1549106132917" expanded="false" signature="6:52" ph="..." />
             <marker date="1549106132917" expanded="true" signature="88:1401" ph="{...}" />
@@ -2879,6 +2623,61 @@
             <marker date="1549106132917" expanded="true" signature="896:992" ph="{...}" />
             <marker date="1549106132917" expanded="true" signature="1125:1383" ph="{...}" />
             <marker date="1549106132917" expanded="true" signature="1238:1328" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapGenerator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <marker date="1552323134361" expanded="false" signature="6:314" ph="..." />
+            <marker date="1552323134361" expanded="true" signature="381:10780" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="466:10778" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="659:727" ph="/* 0000000 ... */" />
+            <marker date="1552323134361" expanded="true" signature="951:998" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="1022:1284" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="1172:1280" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="1338:1393" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="1422:1712" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="1541:1634" ph="/* _mapSettingsData.seed.GetHashCode(); ... */" />
+            <marker date="1552323134361" expanded="true" signature="1737:1825" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="1777:1821" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="1849:1951" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="1983:2045" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="2077:2239" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="2282:4427" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="2482:2596" ph="/* for (var i = 0; i &lt; roomTypes.Length; i++) ... */" />
+            <marker date="1552323134361" expanded="true" signature="2976:3070" ph="/* _tilemap.transform.position = offset; ... */" />
+            <marker date="1552323134361" expanded="true" signature="3219:3406" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="3569:4205" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="3631:4200" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="3842:4099" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="3931:4031" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="4109:4167" ph="{...}" />
+            <marker date="1552323134361" expanded="true" signature="4207:4291" ph="/* if (_mapController.map.HasEnd()) ... */" />
+            <marker date="1552323134361" expanded="false" signature="4431:10775" ph="DEPRECATED" />
+            <marker date="1552323134361" expanded="true" signature="4453:10761" ph="/* Статическая ссылка на этот объект ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/Door/Door.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+          <folding>
+            <marker date="1552322065683" expanded="false" signature="6:107" ph="..." />
+            <marker date="1552322065683" expanded="true" signature="154:1960" ph="{...}" />
+            <marker date="1552322065683" expanded="true" signature="194:1958" ph="{...}" />
+            <marker date="1552322065683" expanded="true" signature="229:294" ph="{...}" />
+            <marker date="1552322065683" expanded="true" signature="523:579" ph="{...}" />
+            <marker date="1552322065683" expanded="true" signature="662:755" ph="{...}" />
+            <marker date="1552322065683" expanded="true" signature="812:1017" ph="{...}" />
+            <marker date="1552322065683" expanded="true" signature="878:1007" ph="{...}" />
+            <marker date="1552322065683" expanded="true" signature="1077:1952" ph="{...}" />
+            <marker date="1552322065683" expanded="true" signature="1198:1885" ph="{...}" />
           </folding>
         </state>
       </provider>
