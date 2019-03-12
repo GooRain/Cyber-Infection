@@ -68,6 +68,17 @@ namespace CyberInfection.UI.MainMenu
 
         #endregion
 
+        public void OnButtonBackClicked()
+        {
+            SetPanel(PanelType.Main);
+
+        }
+
+        public void OnButtonQuitClicked()
+        {
+            Application.Quit();
+        }
+
         public void SetPanel(PanelType type)
         {
             if (panelDictionary.ContainsKey(type))
