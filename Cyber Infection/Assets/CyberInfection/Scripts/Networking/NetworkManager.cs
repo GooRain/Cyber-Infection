@@ -21,10 +21,16 @@ namespace CyberInfection.Networking
         public bool isConnectionToRoom { get; private set; }
 
         private Action m_ConnectToMasterCallback;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private static void CreateNetworkManager()
+        {
+            new GameObject("Network Manager").AddComponent<NetworkManager>();
+        }
         
         private void Awake()
         {
-            if (instance != null)
+            if (instance != null && instance != this)
             {
                 Destroy(gameObject);
                 return;
@@ -34,7 +40,6 @@ namespace CyberInfection.Networking
             DontDestroyOnLoad(gameObject);
             PhotonNetwork.SendRate = 60;
             PhotonNetwork.SerializationRate = 60;
-            ConnectToMaster("Test_" + Random.Range(1000, 9999));
         }
 
         private void Start()
@@ -114,6 +119,11 @@ namespace CyberInfection.Networking
         public void LeaveRoom()
         {
             PhotonNetwork.LeaveRoom();
+        }
+
+        public void Disconnect()
+        {
+            PhotonNetwork.Disconnect();
         }
     }
 }

@@ -16,174 +16,179 @@ using Random = UnityEngine.Random;
 
 namespace CyberInfection.Generation.Map
 {
-	[RequireComponent(typeof(PhotonView))]
-	public class MapGenerator : MonoBehaviour
-	{
-		private PhotonView m_PhotonView;
-		
-		[SerializeField] private Transform _mapHolder;
-		[SerializeField] private Tilemap _tilemap;
-		[SerializeField] private Tilemap _collisionTileMap;
+    [RequireComponent(typeof(PhotonView))]
+    public class MapGenerator : MonoBehaviour
+    {
+        private PhotonView m_PhotonView;
 
-		/* 0000000
-		 * 0001100
-		 * 0002100
-		 * 0001000
-		 * 0031000
-		 */
+        [SerializeField] private Transform _mapHolder;
+        [SerializeField] private Tilemap _tilemap;
+        [SerializeField] private Tilemap _collisionTileMap;
 
-		private MapSettingsData _mapSettingsData;
-		private MapController _mapController;
-		private int m_Seed;
+        /* 0000000
+         * 0001100
+         * 0002100
+         * 0001000
+         * 0031000
+         */
 
-		public Vector3 offset { get; private set; }
+        private MapSettingsData _mapSettingsData;
+        private MapController _mapController;
+        private int m_Seed;
 
-		[Inject]
-		private void Construct(MapSettingsData mapSettingsData)
-		{
-			_mapSettingsData = mapSettingsData;
-		}
+        public Vector3 offset { get; private set; }
 
-		private void Awake()
-		{
-			m_PhotonView = GetComponent<PhotonView>();
-			_mapController = gameObject.AddComponent<MapController>();
+        [Inject]
+        private void Construct(MapSettingsData mapSettingsData)
+        {
+            _mapSettingsData = mapSettingsData;
+        }
 
-			if (PhotonNetwork.IsMasterClient)
-			{
-				InitSeed();
-				m_PhotonView.RPC("GenerateWithSeed", RpcTarget.AllBufferedViaServer, m_Seed);
-			}
-		}
+        private void Awake()
+        {
+            m_PhotonView = GetComponent<PhotonView>();
+            _mapController = gameObject.AddComponent<MapController>();
 
-		[PunRPC]
-		private void GenerateWithSeed(int seed)
-		{
-			Random.InitState(seed);
-			TryToGenerate();
-		}
-		
-		private void InitSeed()
-		{
-			// Задаем семя для генерации ПСЧ
-			var seedString = Guid.NewGuid();
-			m_Seed = seedString.GetHashCode();
-				//_mapSettingsData.seed.GetHashCode();
-				// SystemInfo.deviceModel + SystemInfo.deviceName;
-			Random.InitState(m_Seed);
+            if (PhotonNetwork.OfflineMode)
+            {
+                InitSeed();
+                GenerateWithSeed(m_Seed);
+            }
+            else if (PhotonNetwork.IsMasterClient)
+            {
+                InitSeed();
+                m_PhotonView.RPC("GenerateWithSeed", RpcTarget.AllBufferedViaServer, m_Seed);
+            }
+        }
 
-			Debug.Log(seedString + " => " + m_Seed);
-		}
+        [PunRPC]
+        private void GenerateWithSeed(int seed)
+        {
+            Random.InitState(seed);
+            TryToGenerate();
+        }
 
-		private void Update()
-		{
-			if (Input.GetKeyDown(KeyCode.G))
-			{
-				Clear();
-				TryToGenerate();
-			}
-		}
+        private void InitSeed()
+        {
+            // Задаем семя для генерации ПСЧ
+            var seedString = Guid.NewGuid();
+            m_Seed = seedString.GetHashCode();
+            //_mapSettingsData.seed.GetHashCode();
+            // SystemInfo.deviceModel + SystemInfo.deviceName;
+            Random.InitState(m_Seed);
 
-		private void Clear()
-		{
-			_mapController.Clear();
-			_tilemap.ClearAllTiles();
-			_collisionTileMap.ClearAllTiles();
-		}
+            Debug.Log(seedString + " => " + m_Seed);
+        }
 
-		private bool TryToGenerate()
-		{
-			GenerateGraph();
-			GenerateOld();
-			return true;
-		}
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                Clear();
+                TryToGenerate();
+            }
+        }
 
-		private void GenerateGraph()
-		{
-			var maxRoomsAmount = (int)Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
+        private void Clear()
+        {
+            _mapController.Clear();
+            _tilemap.ClearAllTiles();
+            _collisionTileMap.ClearAllTiles();
+        }
 
-			var mapGraph = new MapGraph(maxRoomsAmount);
-		}
+        private bool TryToGenerate()
+        {
+            GenerateGraph();
+            GenerateOld();
+            return true;
+        }
 
-		[Obsolete]
-		private void GenerateOld()
-		{
+        private void GenerateGraph()
+        {
+            var maxRoomsAmount = (int) Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
+
+            var mapGraph = new MapGraph(maxRoomsAmount);
+        }
+
+        [Obsolete]
+        private void GenerateOld()
+        {
 //			Debug.Log("Generating...");
-			
-			var maxRoomsAmount = (int)Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
-			var roomTypes = Enum.GetValues(typeof(RoomType));
+
+            var maxRoomsAmount = (int) Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
+            var roomTypes = Enum.GetValues(typeof(RoomType));
 //			for (var i = 0; i < roomTypes.Length; i++)
 //			{
 //				Debug.Log($"[{i}] = {roomTypes.GetValue(i)}");
 //			}
 
-			var generatingEntitiesCount = maxRoomsAmount / _mapSettingsData.roomsRange.x;
+            var generatingEntitiesCount = maxRoomsAmount / _mapSettingsData.roomsRange.x;
 
-			offset = new Vector3(
-				-_mapSettingsData.mapSize.width * .5f * (_mapSettingsData.roomSizeInfo.roomWidth - 1) -.5f,
-				-_mapSettingsData.mapSize.height * .5f * (_mapSettingsData.roomSizeInfo.roomHeight - 1) -.5f);
-			
-			_mapController.Initialize(_mapSettingsData, offset, _mapHolder);
-			
+            offset = new Vector3(
+                -_mapSettingsData.mapSize.width * .5f * (_mapSettingsData.roomSizeInfo.roomWidth - 1) - .5f,
+                -_mapSettingsData.mapSize.height * .5f * (_mapSettingsData.roomSizeInfo.roomHeight - 1) - .5f);
+
+            _mapController.Initialize(_mapSettingsData, offset, _mapHolder);
+
 //			_tilemap.transform.position = offset;
 //			_collisionTileMap.transform.position = offset;
-			_mapHolder.position = offset;
-			
-			var generatingEntities = new List<GeneratingEntity>();
+            _mapHolder.position = offset;
 
-			for (var i = 0; i < generatingEntitiesCount; i++)
-			{
-				generatingEntities.Add(new GeneratingEntity(ref _mapController.map, new PointInt(
-					_mapSettingsData.mapSize.width / 2,
-					_mapSettingsData.mapSize.height / 2
-				)));
-			}
+            var generatingEntities = new List<GeneratingEntity>();
 
-			var currentRoomsCount = 0;
+            for (var i = 0; i < generatingEntitiesCount; i++)
+            {
+                generatingEntities.Add(new GeneratingEntity(ref _mapController.map, new PointInt(
+                    _mapSettingsData.mapSize.width / 2,
+                    _mapSettingsData.mapSize.height / 2
+                )));
+            }
 
-			generatingEntities[0].PlaceRoom(RoomType.Start);
+            var currentRoomsCount = 0;
 
-			while (currentRoomsCount < maxRoomsAmount && generatingEntities.Count > 0)
-			{
-				foreach (var generatingEntity in generatingEntities)
-				{
-					generatingEntity.Move();
+            generatingEntities[0].PlaceRoom(RoomType.Start);
 
-					if (!generatingEntity.CanPlace()) continue;
+            while (currentRoomsCount < maxRoomsAmount && generatingEntities.Count > 0)
+            {
+                foreach (var generatingEntity in generatingEntities)
+                {
+                    generatingEntity.Move();
 
-					var roomType = (RoomType) roomTypes.GetValue(Random.Range(2, roomTypes.Length));
-					if (_mapController.map.HasEnd())
-					{
-						while (((roomType & ~RoomType.End & ~RoomType.Start) | RoomType.None) == 0)
-						{
-							roomType = (RoomType) roomTypes.GetValue(Random.Range(2, roomTypes.Length));
-						}
+                    if (!generatingEntity.CanPlace()) continue;
 
-						generatingEntity.PlaceRoom(roomType & ~RoomType.End);
-					}
-					else
-					{
-						generatingEntity.PlaceRoom(roomType);
-					}
+                    var roomType = (RoomType) roomTypes.GetValue(Random.Range(2, roomTypes.Length));
+                    if (_mapController.map.HasEnd())
+                    {
+                        while (((roomType & ~RoomType.End & ~RoomType.Start) | RoomType.None) == 0)
+                        {
+                            roomType = (RoomType) roomTypes.GetValue(Random.Range(2, roomTypes.Length));
+                        }
 
-					currentRoomsCount++;
-				}
-			}
+                        generatingEntity.PlaceRoom(roomType & ~RoomType.End);
+                    }
+                    else
+                    {
+                        generatingEntity.PlaceRoom(roomType);
+                    }
+
+                    currentRoomsCount++;
+                }
+            }
 
 //			if (_mapController.map.HasEnd())
 //			{
 //				Debug.Log("Map has end!");
 //			}
 
-			_mapController.PlaceRooms(_tilemap, _collisionTileMap);
+            _mapController.PlaceRooms(_tilemap, _collisionTileMap);
 
-			_tilemap.RefreshAllTiles();
-			_collisionTileMap.RefreshAllTiles();
-		}
+            _tilemap.RefreshAllTiles();
+            _collisionTileMap.RefreshAllTiles();
+        }
 
-		#region DEPRECATED
+        #region DEPRECATED
 
-		//		// Статическая ссылка на этот объект
+        //		// Статическая ссылка на этот объект
 //		public static MapGenerator Ins { get; private set; }
 //
 //		// Метод паттерна SingletonMonobehaviour
@@ -391,6 +396,6 @@ namespace CyberInfection.Generation.Map
 //			_roomsSettings.Add(sender.room);
 //		}
 
-		#endregion
-	}
+        #endregion
+    }
 }

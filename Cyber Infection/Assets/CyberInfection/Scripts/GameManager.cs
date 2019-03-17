@@ -12,6 +12,11 @@ namespace CyberInfection
         
         private void Awake()
         {
+            if (PhotonNetwork.OfflineMode)
+            {
+                return;
+            }
+            
             if (!PhotonNetwork.IsConnected)
             {
                 SceneManager.LoadScene(SceneName.Menu);

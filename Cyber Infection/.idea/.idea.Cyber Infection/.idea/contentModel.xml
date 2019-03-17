@@ -171,6 +171,7 @@
                 <e p="GameCanvas.cs" t="Include" />
               </e>
               <e p="MainMenu" t="Include">
+                <e p="GearsRotation.cs" t="Include" />
                 <e p="LobbyMainPanel.cs" t="Include" />
                 <e p="MenuCanvas.cs" t="Include" />
               </e>

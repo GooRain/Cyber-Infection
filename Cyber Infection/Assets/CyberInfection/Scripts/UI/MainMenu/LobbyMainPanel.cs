@@ -13,7 +13,7 @@ using UnityEngine.UI;
 
 namespace CyberInfection.UI.MainMenu
 {
-    public class LobbyMainPanel : MonoBehaviour
+    public class LobbyMainPanel : MonoBehaviourPunCallbacks
     {
         [System.Serializable]
         public enum PanelType : sbyte
@@ -25,15 +25,20 @@ namespace CyberInfection.UI.MainMenu
             Multi = 32,
             Lobby = 33,
             CreateLobby = 34,
-            JoinLobby = 35
+            JoinLobby = 35,
+            
+            Loading = 64
         }
 
         public PaneltypeGameObjectDictionary panelDictionary;
 
+        private PanelType m_CurrentPanel;
+        
         #region SINGLEPLAYER
 
         public void OnButtonSingleplayerClicked()
         {
+            PhotonNetwork.OfflineMode = true;
             SetPanel(PanelType.Single);
         }
 
@@ -53,7 +58,9 @@ namespace CyberInfection.UI.MainMenu
 
         public void OnButtonMultiplayerClicked()
         {
-            SetPanel(PanelType.Multi);
+            PhotonNetwork.OfflineMode = false;
+            NetworkManager.instance.ConnectToMaster("Test_" + Random.Range(1000, 9999));
+            SetPanel(PanelType.Loading);
         }
 
         public void OnButtonCreateClicked()
@@ -70,8 +77,12 @@ namespace CyberInfection.UI.MainMenu
 
         public void OnButtonBackClicked()
         {
+            if (m_CurrentPanel == PanelType.Multi)
+            {
+                NetworkManager.instance.Disconnect();
+            }
+            
             SetPanel(PanelType.Main);
-
         }
 
         public void OnButtonQuitClicked()
@@ -88,8 +99,21 @@ namespace CyberInfection.UI.MainMenu
                     panel.Value.SetActive(false);
                 }
 
-                panelDictionary[type].SetActive(true);
+                m_CurrentPanel = type;
+                panelDictionary[m_CurrentPanel].SetActive(true);
             }
+        }
+
+        public override void OnConnectedToMaster()
+        {
+            base.OnConnectedToMaster();
+            SetPanel(PanelType.Multi);
+        }
+
+        public override void OnDisconnected(DisconnectCause cause)
+        {
+            base.OnDisconnected(cause);
+            SetPanel(PanelType.Main);
         }
     }
 }
