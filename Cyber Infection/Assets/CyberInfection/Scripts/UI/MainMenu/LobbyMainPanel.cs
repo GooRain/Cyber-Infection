@@ -90,7 +90,7 @@ namespace CyberInfection.UI.MainMenu
             Application.Quit();
         }
 
-        public void SetPanel(PanelType type)
+        private void SetPanel(PanelType type)
         {
             if (panelDictionary.ContainsKey(type))
             {

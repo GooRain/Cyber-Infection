@@ -18,6 +18,19 @@ namespace CyberInfection.Extension
     
     public static class OctaRotationHelper
     {
+        public static float GetAngle(Vector3 from, Vector3 to)
+        {
+            var diff = to - from;
+            var angleBetween = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            
+            angleBetween %= 360;
+            if (angleBetween < 0)
+            {
+                angleBetween += 360;
+            }
+
+            return angleBetween;
+        }
         /// <summary>
         /// Rotating 8 Ways and returning frame index
         /// </summary>
