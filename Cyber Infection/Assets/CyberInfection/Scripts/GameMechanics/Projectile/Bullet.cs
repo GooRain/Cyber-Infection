@@ -1,6 +1,7 @@
 ﻿using CyberInfection.Data.Entities;
 using CyberInfection.Extension.Pool;
 using CyberInfection.GameMechanics.Unit.Player;
+using Photon.Pun;
 using UnityEngine;
 
 namespace CyberInfection.GameMechanics.Projectile
@@ -9,6 +10,8 @@ namespace CyberInfection.GameMechanics.Projectile
 	{
 		private SpriteRenderer m_SpriteRenderer;
 		private Rigidbody2D m_Rigidbody;
+		private Collider2D m_Collider;
+		
 		private float m_Speed;
 		private float m_Damage;
 		private float m_Lifetime = 5f;
@@ -19,11 +22,13 @@ namespace CyberInfection.GameMechanics.Projectile
 			base.Awake();
 			m_SpriteRenderer = GetComponent<SpriteRenderer>();
 			m_Rigidbody = GetComponent<Rigidbody2D>();
+			m_Collider = GetComponent<Collider2D>();
 		}
 
 		public override void OnPop()
 		{
 			enabled = true;
+			m_Collider.enabled = PhotonNetwork.IsMasterClient;
 		}
 
 		public override void OnPush()

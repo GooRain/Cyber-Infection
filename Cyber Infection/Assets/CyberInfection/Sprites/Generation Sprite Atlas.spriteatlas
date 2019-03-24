@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Generation Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 78ee0a793de93e34d8e50e800dbc8cbc, type: 3}
+    totalSpriteSurfaceArea: 8352
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 26cd5bd26a7caf24f94b288b6c9a01f0, type: 3}
+  - {fileID: 21300000, guid: 6f57731379a42d34b9957677a20a71cb, type: 3}
+  - {fileID: 21300000, guid: 45468d4576e14fb429c06f9f402edfc7, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - FloorTile0
+  - WallTile0
+  - 1
+  m_Tag: Generation Sprite Atlas
+  m_IsVariant: 0

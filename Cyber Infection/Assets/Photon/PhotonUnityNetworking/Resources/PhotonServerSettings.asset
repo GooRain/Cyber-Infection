@@ -34,5 +34,10 @@ MonoBehaviour:
   - RespawnSpaceship
   - SpawnPlayer
   - GenerateWithSeed
+  - ReceiveDamage
+  - Shoot
+  - RPCPush
+  - RPCShoot
+  - Push
   DisableAutoOpenWizard: 1
   ShowSettings: 1

@@ -609,6 +609,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2810408189175246082, guid: 611bfc7e08aeef541ac62ceb307590ba,
+        type: 3}
+      propertyPath: viewIdField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810408189175246082, guid: 611bfc7e08aeef541ac62ceb307590ba,
+        type: 3}
+      propertyPath: InstantiationId
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 611bfc7e08aeef541ac62ceb307590ba, type: 3}
 --- !u!114 &1240836206 stripped
@@ -907,7 +917,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1719517541}
   - component: {fileID: 1719517543}
-  - component: {fileID: 1719517542}
   m_Layer: 12
   m_Name: Camera
   m_TagString: Untagged
@@ -929,14 +938,6 @@ Transform:
   m_Father: {fileID: 2113318386}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1719517542
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719517540}
-  m_Enabled: 1
 --- !u!20 &1719517543
 Camera:
   m_ObjectHideFlags: 0

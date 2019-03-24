@@ -7,10 +7,11 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
     {
         public AudioSource audioSource;
 
-        protected override void Shoot()
+        public override void Shoot(Vector2 direction)
         {
             _lastShootTime = Time.timeSinceLevelLoad;
-            shootBehaviour.Shoot();
+            
+            shootBehaviour.Shoot(direction);
             //audioSource.Play();
             ammoContainer.Dec();
 
@@ -20,13 +21,13 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
             }
         }
 
-        protected override bool CanShoot()
+        public override bool CanShoot()
         {
             return Time.timeSinceLevelLoad > _lastShootTime + weaponData.shootRate  &&
                    ammoContainer.HasAny();
         }
 
-        protected override void Reload()
+        public override void Reload()
         {
             if (ammoContainer.CanRestore())
             {

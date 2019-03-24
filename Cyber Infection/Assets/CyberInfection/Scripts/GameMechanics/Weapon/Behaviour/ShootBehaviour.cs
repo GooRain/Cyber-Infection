@@ -7,7 +7,7 @@ namespace CyberInfection.GameMechanics.Weapon.Behaviour
     [System.Serializable]
     public class ShootBehaviour
     {
-        public Transform muzzle;
+        public Transform muzzle { get; }
 
         private BulletData m_BulletData;
 
@@ -17,16 +17,14 @@ namespace CyberInfection.GameMechanics.Weapon.Behaviour
             m_BulletData = bulletData;
         }
 
-        public void Shoot()
+        public void Shoot(Vector2 direction)
         {
             var bullet = (Bullet) BulletPoolContainer.instance.Pop();
 
             if (UnityEngine.Camera.main != null)
             {
-                var position = muzzle.position;
-                Vector2 diff = UnityEngine.Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition) - position;
-                bullet.cachedTransform.position = position;
-                bullet.InitializeParameters(m_BulletData, diff.normalized);
+                bullet.cachedTransform.position = muzzle.position;
+                bullet.InitializeParameters(m_BulletData, direction);
             }
         }
 

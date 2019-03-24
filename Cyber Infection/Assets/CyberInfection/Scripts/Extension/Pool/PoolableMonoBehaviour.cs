@@ -6,6 +6,8 @@ namespace CyberInfection.Extension.Pool
     {
         public Transform cachedTransform { get; private set; }
         public IPoolContainer poolContainer { get; protected set; }
+        
+        public int index { get; set; }
 
         protected virtual void Awake()
         {
@@ -19,7 +21,7 @@ namespace CyberInfection.Extension.Pool
         
         public void Push()
         {
-            poolContainer.Push(this);
+            poolContainer.RpcPush(this);
         }
 
         public abstract void OnPush();

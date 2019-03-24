@@ -2,6 +2,7 @@ using CyberInfection.Data.Entities;
 using CyberInfection.GameMechanics.Container;
 using CyberInfection.GameMechanics.Projectile;
 using CyberInfection.GameMechanics.Weapon.Behaviour;
+using Photon.Pun;
 using UnityEngine;
 using Zenject;
 
@@ -10,14 +11,17 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
     [System.Serializable]
     public abstract class WeaponBase : MonoBehaviour, IWeapon
     {
-        public WeaponData weaponData;
         
-        public AmmunitionContainer ammoContainer;
-        public ShootBehaviour shootBehaviour;
+        public WeaponData weaponData;
+        public Transform muzzle;
+        
+        protected ShootBehaviour shootBehaviour;
 
         protected float _lastShootTime;
         
-        public virtual void Initialize(WeaponData data, Transform muzzle)
+        public AmmunitionContainer ammoContainer { get; protected set; }
+        
+        public virtual void Initialize(WeaponData data)
         {
             weaponData = data;
             
@@ -26,20 +30,14 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
         }
         
         public float recoil { get; set; }
-        public void TryToShoot()
-        {
-            if (CanShoot())
-            {
-                Shoot();
-            }
-        }
 
-        protected virtual bool CanShoot()
+        public virtual bool CanShoot()
         {
             return shootBehaviour.CanShoot();
         }
         
-        protected abstract void Shoot();
+        [PunRPC]
+        public abstract void Shoot(Vector2 direction);
         
         public void TryToReload()
         {
@@ -49,6 +47,6 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
             }
         }
 
-        protected abstract void Reload();
+        public abstract void Reload();
     }
 }

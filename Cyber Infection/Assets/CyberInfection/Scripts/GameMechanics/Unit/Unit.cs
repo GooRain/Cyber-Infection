@@ -1,9 +1,18 @@
-﻿using UnityEngine;
+﻿using CyberInfection.GameMechanics.Projectile;
+using Photon.Pun;
+using UnityEngine;
 
 namespace CyberInfection.GameMechanics.Unit
 {
-	public class Unit : MonoBehaviour, IUnit
+	public class Unit : MonoBehaviourPun, IUnit
 	{
+		public class CachedRPC
+		{
+			public const string ReceiveDamage = "ReceiveDamage";
+		}
+
+		public PhotonView cachedPhotonView => photonView;
+
 		private float _health;
 
 		public float health
@@ -31,12 +40,23 @@ namespace CyberInfection.GameMechanics.Unit
 
 		public void GetDamage(float damageAmount)
 		{
-			health -= damageAmount;
+			var damageData = new DamageData
+			{
+				damage = damageAmount
+			};
+			
+			photonView.RPC(CachedRPC.ReceiveDamage, RpcTarget.All, damageData);
 		}
 
 		public void Die()
 		{
-			Destroy(gameObject);
+			PhotonNetwork.Destroy(gameObject);
+		}
+
+		[PunRPC]
+		private void ReceiveDamage(DamageData data)
+		{
+			health -= data.damage;
 		}
 	}
 }

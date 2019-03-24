@@ -9,16 +9,6 @@ namespace CyberInfection.GameMechanics.Projectile
         {
             base.Awake();
             
-            InitializeContainerToPool();
-        }
-
-        private void InitializeContainerToPool()
-        {
-            foreach (var bullet in m_Store)
-            {
-                bullet.SetContainer(this);
-            }
-
             instance = this;
         }
     }
