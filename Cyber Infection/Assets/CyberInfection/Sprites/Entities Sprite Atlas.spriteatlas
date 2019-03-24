@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 7babeb2dd07fc7b47880badb3d670c2d, type: 3}
-    totalSpriteSurfaceArea: 1392140
+    totalSpriteSurfaceArea: 1435490
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -48,6 +48,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: bbe962479f821754596ca9322cdfab8c, type: 3}
   - {fileID: 21300000, guid: b2ad2448cb6a47c4b94a0bf88d1f1f95, type: 3}
   - {fileID: 21300000, guid: a3603758d1897da4db13766ac7a5a351, type: 3}
+  - {fileID: 21300000, guid: b0f30409c4153484d89492d1792e3a41, type: 3}
   - {fileID: 21300000, guid: 55f6220ae4e570b42a3b7fca2092243a, type: 3}
   - {fileID: 21300000, guid: 1091af6a9cf023f4c864659641da2660, type: 3}
   - {fileID: 21300000, guid: 81b202aa2e22c3f408f38fc61af97986, type: 3}
@@ -75,6 +76,7 @@ SpriteAtlas:
   - player_Body_Down
   - bullet1
   - main_hand
+  - weapon_m9
   - player_Legs_Left2
   - player_Legs_Left1
   - player_Legs_Left3
