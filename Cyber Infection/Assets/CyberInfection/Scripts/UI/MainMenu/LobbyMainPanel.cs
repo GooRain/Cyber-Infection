@@ -5,7 +5,6 @@ using CyberInfection.Extension.Utility;
 using CyberInfection.Networking;
 using ExitGames.Client.Photon;
 using Photon.Pun;
-using Photon.Pun.Demo.Asteroids;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;

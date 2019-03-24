@@ -1,5 +1,6 @@
 using Boo.Lang;
 using CyberInfection.Data.Entities;
+using CyberInfection.Extension;
 using CyberInfection.GameMechanics.Projectile;
 using CyberInfection.GameMechanics.Unit;
 using CyberInfection.GameMechanics.Weapon.WeaponTypes;
@@ -46,8 +47,8 @@ namespace CyberInfection.GameMechanics.Weapon
 
         public void Shoot()
         {
-            Vector2 direction = (m_Camera.ScreenToWorldPoint(UnityEngine.Input.mousePosition) - 
-                        m_CurrentWeapon.muzzle.position).normalized;
+            var direction = (m_Camera.ScreenToWorldPoint(UnityEngine.Input.mousePosition).OnlyXY() - 
+                        m_CurrentWeapon.muzzle.position.OnlyXY()).normalized;
 
             if (m_CurrentWeapon.CanShoot())
             {

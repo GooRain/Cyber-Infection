@@ -43,6 +43,8 @@ namespace CyberInfection.GameMechanics.Projectile
 			m_Damage = parameters.damage;
 			m_Lifetime = 5f;
 			m_Direction = direction;
+			Debug.Log("<b>Bullet Parameters:</b> Speed = " + m_Speed + "; Damage = " + m_Damage + "; " +
+			          "Direction = " + m_Direction.ToString("F3"));
 		}
 
 		private void Update()
