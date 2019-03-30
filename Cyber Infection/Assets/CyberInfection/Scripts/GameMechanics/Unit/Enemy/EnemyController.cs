@@ -11,15 +11,24 @@ namespace CyberInfection.GameMechanics.Unit.Enemy
 
         private Animator _animator;
         private Transform _playerPos;
+        private bool _inited;
 
         private void Awake()
         {
             _animator = gameObject.GetComponent<Animator>();
-            _playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        
+
         void Update()
         {
+            if (!_inited)
+            {
+                if (GameObject.FindGameObjectWithTag("Player"))
+                {
+                    _playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+                    _inited = true;
+                }
+                return;
+            }
             EnemyFollow();
         }
 

@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96a01ac4a6342b6973d83fe70598e08, type: 3}
-  m_Name: Default Bullet Data
+  m_Script: {fileID: 11500000, guid: 6b16b6cd8e0766e4091c2a1ebc600f71, type: 3}
+  m_Name: Enemy_Purple
   m_EditorClassIdentifier: 
-  speed: 20
-  damage: 25
-  sprite: {fileID: 21300000, guid: b2ad2448cb6a47c4b94a0bf88d1f1f95, type: 3}
+  health: 50

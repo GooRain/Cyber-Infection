@@ -36,6 +36,8 @@
                 <e p="Enemy" t="Include">
                   <e p="EnemyData.cs" t="Include" />
                 </e>
+                <e p="PlayerData.cs" t="Include" />
+                <e p="UnitData.cs" t="Include" />
               </e>
             </e>
             <e p="Editor" t="Include">

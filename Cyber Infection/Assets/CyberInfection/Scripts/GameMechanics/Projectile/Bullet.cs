@@ -70,6 +70,7 @@ namespace CyberInfection.GameMechanics.Projectile
 
 		private void OnCollisionEnter2D(Collision2D other)
 		{
+			other.gameObject.GetComponent<IAlive>()?.GetDamage(m_Damage);
 			Push();
 		}
 	}

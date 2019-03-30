@@ -47,8 +47,10 @@ namespace CyberInfection.GameMechanics.Weapon
 
         public void Shoot()
         {
-            var direction = (m_Camera.ScreenToWorldPoint(UnityEngine.Input.mousePosition).OnlyXY() - 
-                        m_CurrentWeapon.muzzle.position.OnlyXY()).normalized;
+            //var direction = (m_Camera.ScreenToWorldPoint(UnityEngine.Input.mousePosition).OnlyXY() - 
+            //            m_CurrentWeapon.muzzle.position.OnlyXY()).normalized;
+
+            var direction = (m_CurrentWeapon.muzzle.rotation * Vector2.right).OnlyXY().normalized;
 
             if (m_CurrentWeapon.CanShoot())
             {
