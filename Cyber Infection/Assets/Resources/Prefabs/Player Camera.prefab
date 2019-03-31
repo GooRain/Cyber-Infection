@@ -130,3 +130,5 @@ MonoBehaviour:
   _dampTime: 0.5
   _xOffset: {x: -0.75, y: 0.75}
   _yOffset: {x: -0.75, y: 0.75}
+  _roomTransitionDuration: 0.5
+  _roomTransitionEase: 9

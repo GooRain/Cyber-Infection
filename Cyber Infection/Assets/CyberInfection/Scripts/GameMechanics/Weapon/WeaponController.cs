@@ -3,6 +3,7 @@ using CyberInfection.Data.Entities;
 using CyberInfection.Extension;
 using CyberInfection.GameMechanics.Projectile;
 using CyberInfection.GameMechanics.Unit;
+using CyberInfection.GameMechanics.Weapon.Components;
 using CyberInfection.GameMechanics.Weapon.WeaponTypes;
 using Photon.Pun;
 using UnityEngine;
@@ -27,6 +28,8 @@ namespace CyberInfection.GameMechanics.Weapon
 
         private IUnit m_Unit;
 
+        private IShootComponent _shootComponent;
+
         private void Awake()
         {
             m_Unit = GetComponent<IUnit>();
@@ -39,6 +42,25 @@ namespace CyberInfection.GameMechanics.Weapon
             {
                 m_CurrentWeapon = m_WeaponList[0];
             }
+
+            if (PhotonNetwork.OfflineMode)
+            {
+                InitializeLocal();
+            }
+            else
+            {
+                InitializeNetworked();
+            }
+        }
+
+        private void InitializeNetworked()
+        {
+            _shootComponent = new NetworkShootComponent(m_Unit.cachedPhotonView);
+        }
+
+        private void InitializeLocal()
+        {
+            _shootComponent = new LocalShootComponent(this);
         }
 
         public void SetMuzzlePos(Vector3 pos)
@@ -49,22 +71,21 @@ namespace CyberInfection.GameMechanics.Weapon
         {
             //var direction = (m_Camera.ScreenToWorldPoint(UnityEngine.Input.mousePosition).OnlyXY() - 
             //            m_CurrentWeapon.muzzle.position.OnlyXY()).normalized;
-
             var direction = (m_CurrentWeapon.muzzle.rotation * Vector2.right).OnlyXY().normalized;
 
             if (m_CurrentWeapon.CanShoot())
             {
-                m_Unit.cachedPhotonView.RPC(CachedRPC.Shoot, RpcTarget.All, direction);
+                _shootComponent.Shoot(direction);
             }
         }
 
-        
+
         [PunRPC]
         public void RPCShoot(Vector2 direction)
         {
             m_CurrentWeapon.Shoot(direction);
         }
-        
+
         public void Reload()
         {
             m_CurrentWeapon.TryToReload();

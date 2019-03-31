@@ -40,6 +40,12 @@ namespace CyberInfection.GameMechanics.Unit
 
 		public void GetDamage(float damageAmount)
 		{
+			if (PhotonNetwork.OfflineMode)
+			{
+				health -= damageAmount;
+				return;
+			}
+			
 			var damageData = new DamageData
 			{
 				damage = damageAmount

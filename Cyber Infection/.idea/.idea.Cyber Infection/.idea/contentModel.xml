@@ -97,6 +97,7 @@
                 <e p="EnemySpawn.cs" t="Include" />
               </e>
               <e p="Unit" t="Include">
+                <e p="DamageHandler.cs" t="Include" />
                 <e p="Enemy" t="Include">
                   <e p="Enemy.cs" t="Include" />
                   <e p="EnemyController.cs" t="Include" />
@@ -116,6 +117,11 @@
               <e p="Weapon" t="Include">
                 <e p="Behaviour" t="Include">
                   <e p="ShootBehaviour.cs" t="Include" />
+                </e>
+                <e p="Components" t="Include">
+                  <e p="IShootComponent.cs" t="Include" />
+                  <e p="LocalShootComponent.cs" t="Include" />
+                  <e p="NetworkShootComponent.cs" t="Include" />
                 </e>
                 <e p="WeaponController.cs" t="Include" />
                 <e p="WeaponTypes" t="Include">
