@@ -15,6 +15,11 @@ namespace CyberInfection.GameMechanics.Camera
 		[SerializeField] private Vector2 _xOffset = new Vector2(-0.4f, 1.15f);
 		[SerializeField] private Vector2 _yOffset = new Vector2(-0.4f, 1.18f);
 
+		[Header("Easings")] 
+		
+		[SerializeField] private float _roomTransitionDuration = .5f;
+		[SerializeField] private Ease _roomTransitionEase = Ease.OutBack;
+
 		public static CameraController instance { get; private set; }
 		
 		private Vector3 _velocity = Vector3.zero;
@@ -71,7 +76,7 @@ namespace CyberInfection.GameMechanics.Camera
 		{
 			//_anchor.position = roomController.transform.position;
 
-			_anchor.DOMove(roomController.transform.position, 1f);
+			_anchor.DOMove(roomController.transform.position, _roomTransitionDuration).SetEase(_roomTransitionEase);
 
 			//CalculateBorders();
 		}

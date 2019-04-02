@@ -40,12 +40,18 @@ namespace CyberInfection.GameMechanics.Unit
 
 		public void GetDamage(float damageAmount)
 		{
+			if (PhotonNetwork.OfflineMode)
+			{
+				health -= damageAmount;
+				return;
+			}
+			
 			var damageData = new DamageData
 			{
 				damage = damageAmount
 			};
 			
-			photonView.RPC(CachedRPC.ReceiveDamage, RpcTarget.All, damageData);
+			photonView.RPC(CachedRPC.ReceiveDamage, RpcTarget.All, JsonUtility.ToJson(damageData));
 		}
 
 		public void Die()
@@ -54,9 +60,10 @@ namespace CyberInfection.GameMechanics.Unit
 		}
 
 		[PunRPC]
-		private void ReceiveDamage(DamageData data)
+		protected virtual void ReceiveDamage(string data)
 		{
-			health -= data.damage;
+			var damageData = JsonUtility.FromJson<DamageData>(data);
+			health -= damageData.damage;
 		}
 	}
 }

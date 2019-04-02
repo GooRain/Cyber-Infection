@@ -29,17 +29,25 @@ namespace CyberInfection.GameMechanics.Unit.Enemy.ShootingEnemy
         private Transform _player;
         private Vector2 _target;
 
-
-
+        private bool _inited;
 
         void Start()
         {
-            _player = GameObject.FindGameObjectWithTag("Player").transform;
+            //_player = GameObject.FindGameObjectWithTag("Player").transform;
             _timeBtwShots = _reloadSpeed; 
         }
 
         void Update()
         {
+            if (!_inited)
+            {
+                if (GameObject.FindGameObjectWithTag("Player"))
+                {
+                    _player = GameObject.FindGameObjectWithTag("Player").transform;
+                    _inited = true;
+                }
+                return;
+            }
             SmartMovement();
             Shooting();
         }

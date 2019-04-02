@@ -38,7 +38,7 @@ namespace CyberInfection.GameMechanics.Spawn
                     break;
             }
 
-            Pool.Instantiate(type);
+            //Pool.Instantiate(type);
             yield return new WaitForSeconds(1.0f);
         }
     }

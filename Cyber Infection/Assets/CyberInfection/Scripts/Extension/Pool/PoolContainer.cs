@@ -94,6 +94,12 @@ namespace CyberInfection.Extension.Pool
 
         public void RpcPush(IPoolable obj)
         {
+            if (PhotonNetwork.OfflineMode)
+            {
+                Push(obj.index);
+                return;
+            }
+            
             if (PhotonNetwork.IsMasterClient)
             {
                 photonView.RPC(CachedRPC.Push, RpcTarget.All, obj.index);
