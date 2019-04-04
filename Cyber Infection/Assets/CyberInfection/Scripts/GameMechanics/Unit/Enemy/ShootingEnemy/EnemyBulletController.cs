@@ -24,16 +24,11 @@ namespace CyberInfection.GameMechanics.Unit.Enemy.ShootingEnemy
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            other.GetComponent<IAlive>()?.GetDamage(_damage);
             if (other.CompareTag("Player"))
             {
+                other.GetComponent<IAlive>()?.GetDamage(_damage);
                 Destroy(gameObject);
             }
-        }
-
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            other.gameObject.GetComponent<IAlive>()?.GetDamage(_damage);
         }
     }
 }
