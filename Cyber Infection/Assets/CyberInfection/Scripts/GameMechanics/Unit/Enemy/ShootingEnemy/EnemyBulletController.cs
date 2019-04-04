@@ -11,6 +11,10 @@ namespace CyberInfection.GameMechanics.Unit.Enemy.ShootingEnemy
         [FormerlySerializedAs("lifeTime")]
         [SerializeField]
         private float _lifeTime = 1.2f;
+        [FormerlySerializedAs("damage")]
+        [SerializeField]
+        private float _damage;
+        private Collider2D m_Collider;
 
         void Update()
         {
@@ -18,12 +22,18 @@ namespace CyberInfection.GameMechanics.Unit.Enemy.ShootingEnemy
             Destroy(gameObject, _lifeTime);
         }
 
-        void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            if (collision.CompareTag("Player"))
+            other.GetComponent<IAlive>()?.GetDamage(_damage);
+            if (other.CompareTag("Player"))
             {
                 Destroy(gameObject);
             }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            other.gameObject.GetComponent<IAlive>()?.GetDamage(_damage);
         }
     }
 }

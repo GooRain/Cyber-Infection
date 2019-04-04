@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8682377876691996154}
   - component: {fileID: 2346388104218662791}
   - component: {fileID: 1774983736077454049}
+  - component: {fileID: 5915552041509289037}
   m_Layer: 0
   m_Name: enemyBullet
   m_TagString: Untagged
@@ -95,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _lifeTime: 1.2
+  _damage: 5
 --- !u!58 &1774983736077454049
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -111,3 +113,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.0037090182}
   serializedVersion: 2
   m_Radius: 0.06633556
+--- !u!50 &5915552041509289037
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541210581340783114}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
