@@ -104,7 +104,16 @@ namespace CyberInfection.UI.Radar
         public void SetRoomsCount(int roomCount)
         {
             maxcount = roomCount + 1;
-            Debug.Log("ВСЕГО КОМНАТ: " + maxcount);
+        }
+
+        private void Clear()
+        {
+            for (int i = 0; i < maxcount; i++)
+            {
+                Destroy(allRadarRooms[i]);
+                allRadarRooms[i] = null;
+            }
+            Destroy(minicharObj);
         }
     }
 }
