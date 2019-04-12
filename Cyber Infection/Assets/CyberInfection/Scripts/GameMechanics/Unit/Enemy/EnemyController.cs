@@ -55,7 +55,7 @@ namespace CyberInfection.GameMechanics.Unit.Enemy
             if (collision.gameObject.tag.Equals("Player"))
             {
                 _animator.SetBool("iFollow", false);
-                Debug.Log("-5HP");
+                // - HP
             }
         }
     }

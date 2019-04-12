@@ -36,7 +36,6 @@ namespace CyberInfection.GameMechanics.Unit.Player
             
             if (health != _lastHP)
             {
-                Debug.Log(_healthBar.fillAmount);
                 _healthBar.fillAmount = health / _startHealth;
                 _lastHP = health;
             }

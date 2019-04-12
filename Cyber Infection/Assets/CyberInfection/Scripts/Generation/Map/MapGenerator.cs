@@ -6,6 +6,7 @@ using CyberInfection.Generation.Room;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using CyberInfection.UI.Radar;
 using UnityEngine.Tilemaps;
 using Zenject;
 using Random = UnityEngine.Random;
@@ -106,7 +107,6 @@ namespace CyberInfection.Generation.Map
         private void GenerateGraph()
         {
             var maxRoomsAmount = (int) Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
-
             var mapGraph = new MapGraph(maxRoomsAmount);
         }
 
@@ -174,11 +174,12 @@ namespace CyberInfection.Generation.Map
                     currentRoomsCount++;
                 }
             }
+            RadarController.instance.SetRoomsCount(currentRoomsCount);
+            //if (_mapController.map.HasEnd())
+            //{
+            //    Debug.Log("Map has end!");
 
-//			if (_mapController.map.HasEnd())
-//			{
-//				Debug.Log("Map has end!");
-//			}
+            //}
 
             _mapController.PlaceRooms(_tilemap, _collisionTileMap);
 
