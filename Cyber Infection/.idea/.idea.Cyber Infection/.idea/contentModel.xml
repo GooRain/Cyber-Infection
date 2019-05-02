@@ -177,6 +177,7 @@
               <e p="LoadSceneManager.cs" t="Include" />
             </e>
             <e p="UI" t="Include">
+              <e p="CursorRotate.cs" t="Include" />
               <e p="Game" t="Include">
                 <e p="GameCanvas.cs" t="Include" />
               </e>
@@ -190,6 +191,7 @@
                 <e p="RadarCamera.cs" t="Include" />
                 <e p="RadarController.cs" t="Include" />
               </e>
+              <e p="SwipeZoom.cs" t="Include" />
             </e>
           </e>
         </e>
