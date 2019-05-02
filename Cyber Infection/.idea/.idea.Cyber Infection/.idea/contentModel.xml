@@ -186,6 +186,10 @@
                 <e p="MenuCanvas.cs" t="Include" />
               </e>
               <e p="MouseCursor.cs" t="Include" />
+              <e p="Radar" t="Include">
+                <e p="RadarCamera.cs" t="Include" />
+                <e p="RadarController.cs" t="Include" />
+              </e>
             </e>
           </e>
         </e>

@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9440c9d0124404ad9ec4639e5fe7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pistolWeaponData: {fileID: 11400000, guid: a5155cea470fd564b9ff84d92bcd8437, type: 2}
+  pistolWeaponData: {fileID: 11400000, guid: 76b0186dc2b9a3640acc1ee8e98e4cf6, type: 2}
   currentWeapon: {fileID: 7218931055023614852}
   weaponHolder: {fileID: 1602517244830662680}
 --- !u!212 &212329926796049168
