@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Boo.Lang;
 using CyberInfection.GameMechanics.Camera;
-using CyberInfection.GameMechanics.Unit.Player;
+using CyberInfection.GameMechanics.Entity.Player;
 using Photon.Pun;
 using UnityEngine;
 

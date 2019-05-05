@@ -4,7 +4,7 @@ using CyberInfection.GameMechanics.Weapon;
 using Photon.Pun;
 using UnityEngine;
 
-namespace CyberInfection.GameMechanics.Unit.Player
+namespace CyberInfection.GameMechanics.Entity.Player
 {
     [RequireComponent(typeof(Player))]
     public class PlayerController : UnitController, IPunObservable

@@ -1,4 +1,4 @@
-﻿using CyberInfection.GameMechanics.Unit.Enemy;
+﻿using CyberInfection.GameMechanics.Entity.Enemy;
 
 namespace CyberInfection.Factory.EnemyFactory
 {

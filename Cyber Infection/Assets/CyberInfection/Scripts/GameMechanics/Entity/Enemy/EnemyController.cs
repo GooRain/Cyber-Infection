@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace CyberInfection.GameMechanics.Unit.Enemy
+namespace CyberInfection.GameMechanics.Entity.Enemy
 {
     public class EnemyController : UnitController
     {
@@ -10,37 +10,41 @@ namespace CyberInfection.GameMechanics.Unit.Enemy
         private float _followSpeed = 1f;
 
         private Animator _animator;
-        private Transform _playerPos;
-        private bool _inited;
+        private Transform _target;
 
         private void Awake()
         {
             _animator = gameObject.GetComponent<Animator>();
+            
+            enabled = false;
         }
 
-        void Update()
+        private void SetTarget(Transform newTarget)
         {
-            if (!_inited)
-            {
-                if (GameObject.FindGameObjectWithTag("Player"))
-                {
-                    _playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-                    _inited = true;
-                }
-                return;
-            }
+            _target = newTarget;
+            enabled = true;
+        }
+
+        private void Update()
+        {
             EnemyFollow();
         }
 
         void EnemyFollow()
         {
-            if (Vector2.Distance(transform.position, _playerPos.position) > 1)
+            if (_target == null)
+            {
+                enabled = false;
+                return;
+            }
+
+            if (Vector2.Distance(transform.position, _target.position) > 1)
             {
                 StartFollowing();
             }
             if (_animator.GetBool("iFollow"))
             {
-                gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, _playerPos.position, _followSpeed * Time.deltaTime);
+                gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, _target.position, _followSpeed * Time.deltaTime);
             }
         }
 

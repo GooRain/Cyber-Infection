@@ -1,5 +1,5 @@
 ﻿using CyberInfection.Data.Settings.Generation;
-using CyberInfection.GameMechanics.Unit.Player;
+using CyberInfection.GameMechanics.Entity.Player;
 using CyberInfection.Generation.Room;
 using CyberInfection.Persistent;
 using DG.Tweening;

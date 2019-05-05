@@ -1,7 +1,7 @@
 ﻿using Photon.Pun;
 using UnityEngine;
 
-namespace CyberInfection.GameMechanics.Unit
+namespace CyberInfection.GameMechanics.Entity
 {
 	public interface IUnit : IAlive
 	{

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using CyberInfection.GameMechanics.Entity.Enemy;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Random = UnityEngine.Random;
 
 namespace CyberInfection.Generation.Room
 {
@@ -21,6 +24,13 @@ namespace CyberInfection.Generation.Room
 		public Room room { get; set; }
 
 		private List<Tile> _myTiles = new List<Tile>();
+
+		private Transform _transform;
+
+		private void Awake()
+		{
+			_transform = transform;
+		}
 
 		public void TryToToggle(bool value)
 		{
@@ -58,5 +68,35 @@ namespace CyberInfection.Generation.Room
 			}
 		}
 
+		public Vector3 GetEnemySpawnPos()
+		{
+			var spawnPos = _transform.position;
+			spawnPos.x += FiftyFifty() ? -5 : 5;
+			return spawnPos;
+		}
+
+		private bool FiftyFifty()
+		{
+			return Random.Range(0, 1) == 0;
+		}
+
+		public void OnFocus()
+		{
+			if (!PhotonNetwork.IsMasterClient)
+			{
+				return;
+			}
+			
+			var enemyCount = Random.Range(1, 3);
+			for (var i = 0; i < enemyCount; i++)
+			{
+				EnemySpawner.instance.SpawnEnemy(GetEnemySpawnPos());
+			}
+		}
+
+		public void OnUnFocus()
+		{
+			
+		}
 	}
 }

@@ -5,11 +5,10 @@
 // <author>developer@exitgames.com</author>
 // --------------------------------------------------------------------------------------------------------------------
 
-using UnityEngine;
-
 #if PHOTON_UNITY_NETWORKING
-using UnityEngine.UI;
 using Photon.Pun;
+using UnityEngine;
+using UnityEngine.UI;
 
 
 /// <summary>

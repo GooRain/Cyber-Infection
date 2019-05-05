@@ -79,6 +79,26 @@
                 <e p="AmmunitionContainer.cs" t="Include" />
                 <e p="ContainerBase.cs" t="Include" />
               </e>
+              <e p="Entity" t="Include">
+                <e p="DamageHandler.cs" t="Include" />
+                <e p="Enemy" t="Include">
+                  <e p="Enemy.cs" t="Include" />
+                  <e p="EnemyController.cs" t="Include" />
+                  <e p="EnemySpawner.cs" t="Include" />
+                  <e p="ShootingEnemy" t="Include">
+                    <e p="EnemyBulletController.cs" t="Include" />
+                    <e p="ShootingEnemy.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="IUnit.cs" t="Include" />
+                <e p="Player" t="Include">
+                  <e p="Player.cs" t="Include" />
+                  <e p="PlayerController.cs" t="Include" />
+                </e>
+                <e p="Unit.cs" t="Include" />
+                <e p="UnitController.cs" t="Include" />
+                <e p="UnitsManager.cs" t="Include" />
+              </e>
               <e p="IAlive.cs" t="Include" />
               <e p="IControllable.cs" t="Include" />
               <e p="Input" t="Include">
@@ -95,24 +115,6 @@
               </e>
               <e p="Spawn" t="Include">
                 <e p="EnemySpawn.cs" t="Include" />
-              </e>
-              <e p="Unit" t="Include">
-                <e p="DamageHandler.cs" t="Include" />
-                <e p="Enemy" t="Include">
-                  <e p="Enemy.cs" t="Include" />
-                  <e p="EnemyController.cs" t="Include" />
-                  <e p="ShootingEnemy" t="Include">
-                    <e p="EnemyBulletController.cs" t="Include" />
-                    <e p="ShootingEnemy.cs" t="Include" />
-                  </e>
-                </e>
-                <e p="IUnit.cs" t="Include" />
-                <e p="Player" t="Include">
-                  <e p="Player.cs" t="Include" />
-                  <e p="PlayerController.cs" t="Include" />
-                </e>
-                <e p="Unit.cs" t="Include" />
-                <e p="UnitController.cs" t="Include" />
               </e>
               <e p="Weapon" t="Include">
                 <e p="Behaviour" t="Include">
@@ -163,6 +165,7 @@
               <e p="NetworkManager.cs" t="Include" />
             </e>
             <e p="Persistent" t="Include">
+              <e p="DontDestroyOnLoadObject.cs" t="Include" />
               <e p="IInitializable.cs" t="Include" />
               <e p="Settings" t="Include">
                 <e p="GameSettings.cs" t="Include" />
@@ -177,7 +180,6 @@
               <e p="LoadSceneManager.cs" t="Include" />
             </e>
             <e p="UI" t="Include">
-              <e p="CursorRotate.cs" t="Include" />
               <e p="Game" t="Include">
                 <e p="GameCanvas.cs" t="Include" />
               </e>
@@ -191,13 +193,13 @@
                 <e p="RadarCamera.cs" t="Include" />
                 <e p="RadarController.cs" t="Include" />
               </e>
-              <e p="SwipeZoom.cs" t="Include" />
             </e>
           </e>
         </e>
         <e p="Demigiant" t="Include">
           <e p="DOTween" t="Include">
             <e p="Modules" t="Include">
+              <e p="DOTween.Modules.asmdef" t="Include" />
               <e p="DOTweenModuleAudio.cs" t="Include" />
               <e p="DOTweenModulePhysics.cs" t="Include" />
               <e p="DOTweenModulePhysics2D.cs" t="Include" />
@@ -830,6 +832,7 @@
         </e>
       </e>
       <e p="Cyber Infection.sln" t="IncludeFlat" />
+      <e p="DOTween.Modules.csproj" t="IncludeRecursive" />
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />

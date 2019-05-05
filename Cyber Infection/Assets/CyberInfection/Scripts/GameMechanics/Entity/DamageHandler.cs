@@ -1,4 +1,4 @@
-namespace CyberInfection.GameMechanics.Unit
+namespace CyberInfection.GameMechanics.Entity
 {
     public class DamageHandler
     {

@@ -1,5 +1,6 @@
 ﻿using CyberInfection.Data.Settings.Base;
 using CyberInfection.Extension.Utility;
+using SerializableDictionary;
 using UnityEngine;
 
 namespace CyberInfection.Data.Settings

@@ -4,7 +4,7 @@ using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CyberInfection.GameMechanics.Unit.Player
+namespace CyberInfection.GameMechanics.Entity.Player
 {
     public class Player : Unit
     {
@@ -22,6 +22,8 @@ namespace CyberInfection.GameMechanics.Unit.Player
             gameObject.tag = m_PhotonView.IsMine ? TagManager.PlayerTag : TagManager.OtherPlayerTag;
 
             health = _data.health;
+            
+            UnitsManager.instance.OnPlayerSpawn(this);
         }
 
         private void Start()

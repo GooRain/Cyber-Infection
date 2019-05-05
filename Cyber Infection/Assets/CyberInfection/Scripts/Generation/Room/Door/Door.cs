@@ -1,6 +1,7 @@
 ﻿using System;
 using CyberInfection.Extension;
 using CyberInfection.GameMechanics.Camera;
+using CyberInfection.GameMechanics.Entity.Enemy;
 using UnityEngine;
 using CyberInfection.UI.Radar;
 
@@ -55,21 +56,20 @@ namespace CyberInfection.Generation.Room.Door
                     var xLeft = playerTransform.position.x > position.x;
                     nextRoom = xLeft ? _left : _right;
                     playerTransform.position = position + Vector3.right * (xLeft ? -1 : 1);
-                    if (xLeft) roomSide = 1;
-                    else roomSide = 2;
+                    roomSide = xLeft ? 1 : 2;
                     break;
                 case DoorType.Vertical:
                     var yLeft = playerTransform.position.y > position.y;
                     nextRoom = yLeft ? _left : _right;
                     playerTransform.position = position + Vector3.up * (yLeft ? -1 : 1);
-                    if (yLeft) roomSide = 3;
-                    else roomSide = 4;
+                    roomSide = yLeft ? 3 : 4;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
             CameraController.instance.SetRoom(nextRoom);
             RadarController.instance.DrawRoom(roomSide);
+            nextRoom.OnFocus();
         }
     }
 }

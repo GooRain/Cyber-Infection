@@ -1,4 +1,5 @@
 ﻿using CyberInfection.UI.MainMenu;
+using SerializableDictionary;
 using UnityEngine;
 
 namespace CyberInfection.Extension.Utility

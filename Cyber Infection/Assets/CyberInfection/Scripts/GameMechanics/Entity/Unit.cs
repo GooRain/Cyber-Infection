@@ -2,7 +2,7 @@
 using Photon.Pun;
 using UnityEngine;
 
-namespace CyberInfection.GameMechanics.Unit
+namespace CyberInfection.GameMechanics.Entity
 {
 	public class Unit : MonoBehaviourPun, IUnit
 	{
@@ -31,6 +31,7 @@ namespace CyberInfection.GameMechanics.Unit
 		protected virtual void Awake()
 		{
 			CacheReferences();
+			UnitsManager.instance.OnUnitSpawn(this);
 		}
 
 		private void CacheReferences()

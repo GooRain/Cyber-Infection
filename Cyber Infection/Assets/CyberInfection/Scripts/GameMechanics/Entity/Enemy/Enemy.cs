@@ -1,7 +1,7 @@
 ﻿using CyberInfection.Data.Unit.Enemy;
 using UnityEngine;
 
-namespace CyberInfection.GameMechanics.Unit.Enemy
+namespace CyberInfection.GameMechanics.Entity.Enemy
 {
     public class Enemy : Unit
     {
@@ -11,6 +11,8 @@ namespace CyberInfection.GameMechanics.Unit.Enemy
         {
             base.Awake();
             health = _data.health;
+
+            UnitsManager.instance.OnEnemySpawn(this);
         }
     }
 }

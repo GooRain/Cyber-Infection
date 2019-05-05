@@ -23,6 +23,7 @@ namespace CyberInfection.UI.Radar
 
         public void DrawRoom(int roomSide)
         {
+            return; // TODO: Айаал, тут надо что-то сделать, куча багов
             // 1 left
             // 2 right
             // 3 down
@@ -50,6 +51,11 @@ namespace CyberInfection.UI.Radar
             }
             for (int i = 0; i < count; i++)
             {
+                if (i >= allRadarRooms.Length)
+                {
+                    break; // TODO: Айаал, тут надо что-то сделать, чтобы за пределы массива не уходило
+                }
+                
                 if (allRadarRooms[i].transform.position == lastRoomTransform.position + sidePosition)
                 {
                     if (allRadarRooms[i].transform.position == lastRoomTransform.position + sidePosition)

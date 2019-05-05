@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CyberInfection.GameMechanics.Unit
+namespace CyberInfection.GameMechanics.Entity
 {
 	[RequireComponent(typeof(IUnit))]
 	public class UnitController : MonoBehaviour, IControllable

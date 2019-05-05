@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace CyberInfection.GameMechanics.Unit.Enemy.ShootingEnemy
+namespace CyberInfection.GameMechanics.Entity.Enemy.ShootingEnemy
 {
     public class ShootingEnemy : UnitController
     {
@@ -31,23 +31,19 @@ namespace CyberInfection.GameMechanics.Unit.Enemy.ShootingEnemy
 
         private bool _inited;
 
-        void Start()
+        private void Awake()
+        {
+            enabled = false;
+        }
+
+        private void Start()
         {
             //_player = GameObject.FindGameObjectWithTag("Player").transform;
             _timeBtwShots = _reloadSpeed; 
         }
 
-        void Update()
+        private void Update()
         {
-            if (!_inited)
-            {
-                if (GameObject.FindGameObjectWithTag("Player"))
-                {
-                    _player = GameObject.FindGameObjectWithTag("Player").transform;
-                    _inited = true;
-                }
-                return;
-            }
             SmartMovement();
             Shooting();
         }
