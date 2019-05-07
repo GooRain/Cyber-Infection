@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using CyberInfection.Generation.Room;
-using UnityEngine;
 
 namespace CyberInfection.Generation.Map
 {

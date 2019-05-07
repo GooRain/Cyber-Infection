@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
+using UnityEngine;
 
 namespace CyberInfection.GameMechanics.Entity
 {
 	[RequireComponent(typeof(IUnit))]
-	public class UnitController : MonoBehaviour, IControllable
+	public class UnitController : MonoBehaviour, IControllable, IPunObservable
 	{
 		private IUnit _unit;
 
@@ -30,6 +31,11 @@ namespace CyberInfection.GameMechanics.Entity
 		}
 
 		public virtual void Shoot()
+		{
+			
+		}
+
+		public virtual void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
 		{
 			
 		}

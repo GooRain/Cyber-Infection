@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmmoInMagazine: 12
   startAmmunitionSize: 120
-  shootRate: 1
+  shootRate: 0.5
   bulletData: {fileID: 11400000, guid: 374f2bdc654bdf74a9f8dada31075866, type: 2}

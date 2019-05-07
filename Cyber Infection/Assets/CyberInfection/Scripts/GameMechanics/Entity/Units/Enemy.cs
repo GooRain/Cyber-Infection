@@ -1,7 +1,7 @@
 ﻿using CyberInfection.Data.Entities.Unit.Enemy;
 using UnityEngine;
 
-namespace CyberInfection.GameMechanics.Entity.Enemy
+namespace CyberInfection.GameMechanics.Entity.Units
 {
     public class Enemy : Unit
     {

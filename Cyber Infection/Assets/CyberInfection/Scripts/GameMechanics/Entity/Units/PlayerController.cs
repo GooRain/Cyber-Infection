@@ -4,7 +4,7 @@ using CyberInfection.GameMechanics.Weapon;
 using Photon.Pun;
 using UnityEngine;
 
-namespace CyberInfection.GameMechanics.Entity.Player
+namespace CyberInfection.GameMechanics.Entity.Units
 {
     [RequireComponent(typeof(Player))]
     public class PlayerController : UnitController, IPunObservable
@@ -108,7 +108,7 @@ namespace CyberInfection.GameMechanics.Entity.Player
             m_WeaponController.Shoot();
         }
 
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        public override void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
             if (stream.IsWriting)
             {

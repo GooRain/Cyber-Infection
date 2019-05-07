@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101324180523260654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.842742, y: -0.025499046, z: 0.6191406}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8559666248794481176}
@@ -76,9 +76,10 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -130,5 +131,5 @@ MonoBehaviour:
   _dampTime: 0.5
   _xOffset: {x: -0.75, y: 0.75}
   _yOffset: {x: -0.75, y: 0.75}
-  _roomTransitionDuration: 0.5
-  _roomTransitionEase: 9
+  _roomTransitionDuration: 1
+  _roomTransitionEase: 18

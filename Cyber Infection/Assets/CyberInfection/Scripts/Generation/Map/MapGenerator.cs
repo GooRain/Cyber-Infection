@@ -5,7 +5,6 @@ using CyberInfection.Extension;
 using CyberInfection.Generation.Room;
 using Photon.Pun;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using CyberInfection.UI.Radar;
 using UnityEngine.Tilemaps;
 using Zenject;

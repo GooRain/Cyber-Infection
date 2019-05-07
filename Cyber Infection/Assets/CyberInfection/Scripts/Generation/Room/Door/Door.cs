@@ -1,7 +1,6 @@
 ﻿using System;
 using CyberInfection.Extension;
 using CyberInfection.GameMechanics.Camera;
-using CyberInfection.GameMechanics.Entity.Enemy;
 using UnityEngine;
 using CyberInfection.UI.Radar;
 

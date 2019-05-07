@@ -1,6 +1,5 @@
 ﻿using CyberInfection.Data.Settings;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CyberInfection.Persistent.Settings
 {

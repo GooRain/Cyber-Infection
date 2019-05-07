@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using CyberInfection.Extension.Enums;
-using CyberInfection.GameMechanics.Entity.Enemy;
+using CyberInfection.GameMechanics.Entity.Units;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -78,7 +77,7 @@ namespace CyberInfection.Generation.Room
 
 		private bool FiftyFifty()
 		{
-			return Random.Range(0, 1) == 0;
+			return Random.Range(0, 2) == 0;
 		}
 
 		public void OnFocus()
@@ -91,7 +90,8 @@ namespace CyberInfection.Generation.Room
 			var enemyCount = Random.Range(1, 3);
 			for (var i = 0; i < enemyCount; i++)
 			{
-				EnemySpawner.instance.SpawnEnemy(EnemyDifficulty.first, GetEnemySpawnPos());
+				Debug.Log("Enemy #" + i);
+				EnemySpawner.instance.SpawnEnemy(GetEnemySpawnPos());
 			}
 		}
 

@@ -2,7 +2,6 @@ using Boo.Lang;
 using CyberInfection.Data.Entities;
 using CyberInfection.Extension;
 using CyberInfection.GameMechanics.Entity;
-using CyberInfection.GameMechanics.Projectile;
 using CyberInfection.GameMechanics.Weapon.Components;
 using CyberInfection.GameMechanics.Weapon.WeaponTypes;
 using Photon.Pun;

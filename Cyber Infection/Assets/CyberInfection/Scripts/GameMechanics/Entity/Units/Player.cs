@@ -4,7 +4,7 @@ using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CyberInfection.GameMechanics.Entity.Player
+namespace CyberInfection.GameMechanics.Entity.Units
 {
     public class Player : Unit
     {

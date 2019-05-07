@@ -88,22 +88,20 @@
               </e>
               <e p="Entity" t="Include">
                 <e p="DamageHandler.cs" t="Include" />
-                <e p="Enemy" t="Include">
+                <e p="IUnit.cs" t="Include" />
+                <e p="Unit.cs" t="Include" />
+                <e p="UnitController.cs" t="Include" />
+                <e p="Units" t="Include">
                   <e p="Enemy.cs" t="Include" />
                   <e p="EnemyController.cs" t="Include" />
                   <e p="EnemySpawner.cs" t="Include" />
+                  <e p="Player.cs" t="Include" />
+                  <e p="PlayerController.cs" t="Include" />
                   <e p="ShootingEnemy" t="Include">
                     <e p="EnemyBulletController.cs" t="Include" />
                     <e p="ShootingEnemy.cs" t="Include" />
                   </e>
                 </e>
-                <e p="IUnit.cs" t="Include" />
-                <e p="Player" t="Include">
-                  <e p="Player.cs" t="Include" />
-                  <e p="PlayerController.cs" t="Include" />
-                </e>
-                <e p="Unit.cs" t="Include" />
-                <e p="UnitController.cs" t="Include" />
                 <e p="UnitsManager.cs" t="Include" />
               </e>
               <e p="IAlive.cs" t="Include" />

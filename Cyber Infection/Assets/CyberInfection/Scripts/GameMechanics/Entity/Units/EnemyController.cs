@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using Photon.Pun;
+using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace CyberInfection.GameMechanics.Entity.Enemy
+namespace CyberInfection.GameMechanics.Entity.Units
 {
     public class EnemyController : UnitController
     {
@@ -12,11 +14,29 @@ namespace CyberInfection.GameMechanics.Entity.Enemy
         private Animator _animator;
         private Transform _target;
 
+        private Transform _transform;
+
         private void Awake()
         {
-            _animator = gameObject.GetComponent<Animator>();
+            _transform = transform;
+            _animator = GetComponent<Animator>();
             
             enabled = false;
+
+            StartCoroutine(SearchPlayer());
+        }
+
+        private IEnumerator SearchPlayer()
+        {
+            while (true)
+            {
+                if (_target == null)
+                {
+                    SetTarget(UnitsManager.instance.GetRandomPlayer().transform);
+                }
+                yield return new WaitForSeconds(0.5f);
+            }
+            // ReSharper disable once IteratorNeverReturns
         }
 
         private void SetTarget(Transform newTarget)
@@ -42,7 +62,8 @@ namespace CyberInfection.GameMechanics.Entity.Enemy
             {
                 StartFollowing();
             }
-            if (_animator.GetBool("iFollow"))
+            
+            if (_animator != null && _animator.GetBool("iFollow"))
             {
                 gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, _target.position, _followSpeed * Time.deltaTime);
             }
@@ -50,16 +71,30 @@ namespace CyberInfection.GameMechanics.Entity.Enemy
 
         void StartFollowing()
         {
-            _animator.SetBool("iFollow", true);
+            if (_animator != null)
+            {
+                _animator.SetBool("iFollow", true);
+            }
         }
-
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.tag.Equals("Player"))
+            if (_animator != null && collision.gameObject.tag.Equals("Player"))
             {
                 _animator.SetBool("iFollow", false);
                 // - HP
+            }
+        }
+        
+        public override void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                stream.SendNext(_transform.position);
+            }
+            else
+            {
+                _transform.position = (Vector3) stream.ReceiveNext();
             }
         }
     }

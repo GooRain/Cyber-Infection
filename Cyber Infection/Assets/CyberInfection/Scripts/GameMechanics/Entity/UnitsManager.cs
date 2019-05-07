@@ -1,18 +1,25 @@
 using System;
 using System.Collections.Generic;
+using CyberInfection.GameMechanics.Entity.Units;
 using CyberInfection.Persistent;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 namespace CyberInfection.GameMechanics.Entity
 {
     public class UnitsManager : SingletonMonobehaviour<UnitsManager>
     {
-        private List<Player.Player> players;
-        private List<Unit> units;
-        private List<Enemy.Enemy> enemies;
+        private List<Player> _players;
+        private List<Unit> _units;
 
-        public event Action<Player.Player> onPlayerSpawn;
+        private List<Units.Enemy> _enemies;
 
+        public event Action<Player> onPlayerSpawn;
+
+        public List<Player> players => _players;
+        public List<Unit> units => _units;
+        public List<Units.Enemy> enemies => _enemies;
+        
         private void Awake()
         {
             _instance = this;
@@ -28,41 +35,46 @@ namespace CyberInfection.GameMechanics.Entity
 
         private void Initialize()
         {
-            players = new List<Player.Player>();
-            units = new List<Unit>();
-            enemies = new List<Enemy.Enemy>();
+            _players = new List<Player>();
+            _units = new List<Unit>();
+            _enemies = new List<Units.Enemy>();
             onPlayerSpawn = delegate { };
         }
 
-        public void OnPlayerSpawn(Player.Player player)
+        public void OnPlayerSpawn(Player player)
         {
-            players.Add(player);
+            _players.Add(player);
             onPlayerSpawn?.Invoke(player);
         }
         
-        public void OnPlayerDeath(Player.Player player)
+        public void OnPlayerDeath(Player player)
         {
-            players.Remove(player);
+            _players.Remove(player);
         }
 
         public void OnUnitSpawn(Unit unit)
         {
-            units.Add(unit);
+            _units.Add(unit);
         }
 
         public void OnUnitDeath(Unit unit)
         {
-            units.Remove(unit);
+            _units.Remove(unit);
         }
         
-        public void OnEnemySpawn(Enemy.Enemy enemy)
+        public void OnEnemySpawn(Units.Enemy enemy)
         {
-            enemies.Add(enemy);
+            _enemies.Add(enemy);
         }
 
-        public void OnEnemyDeath(Enemy.Enemy enemy)
+        public void OnEnemyDeath(Units.Enemy enemy)
         {
-            enemies.Remove(enemy);
+            _enemies.Remove(enemy);
+        }
+
+        public Player GetRandomPlayer()
+        {
+            return _players[Random.Range(0, _players.Count)];
         }
     }
 }

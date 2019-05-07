@@ -91,7 +91,7 @@ MonoBehaviour:
   _dontDestroyOnLoad: 1
   _spawnData: {fileID: 11400000, guid: b44caaf25b2cb2048b65508ffaee1592, type: 2}
   _enemiesPrefabPrefix: Prefabs/Entities/Units/Enemies/
-  _maxEnemyID: 4
+  _availableDifficulties: 0102
 --- !u!1 &9101650462357143641
 GameObject:
   m_ObjectHideFlags: 0
