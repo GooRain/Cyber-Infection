@@ -14,6 +14,13 @@
               <e p="Entities" t="Include">
                 <e p="BlockData.cs" t="Include" />
                 <e p="BulletData.cs" t="Include" />
+                <e p="Unit" t="Include">
+                  <e p="Enemy" t="Include">
+                    <e p="EnemyData.cs" t="Include" />
+                  </e>
+                  <e p="PlayerData.cs" t="Include" />
+                  <e p="UnitData.cs" t="Include" />
+                </e>
                 <e p="WeaponData.cs" t="Include" />
               </e>
               <e p="Loading" t="Include">
@@ -26,24 +33,24 @@
                 </e>
                 <e p="GameSettingsData.cs" t="Include" />
                 <e p="Generation" t="Include">
+                  <e p="EnemySpawnData.cs" t="Include" />
                   <e p="GeneratingScenesData.cs" t="Include" />
                   <e p="MapSettingsData.cs" t="Include" />
                 </e>
                 <e p="InputSettingsData.cs" t="Include" />
               </e>
               <e p="SingletonScriptableObject.cs" t="Include" />
-              <e p="Unit" t="Include">
-                <e p="Enemy" t="Include">
-                  <e p="EnemyData.cs" t="Include" />
-                </e>
-                <e p="PlayerData.cs" t="Include" />
-                <e p="UnitData.cs" t="Include" />
-              </e>
             </e>
             <e p="Editor" t="Include">
               <e p="CustomDictionaryHolder.cs" t="Include" />
             </e>
             <e p="Extension" t="Include">
+              <e p="Enums" t="Include">
+                <e p="BlockType.cs" t="Include" />
+                <e p="CharState.cs" t="Include" />
+                <e p="Doors.cs" t="Include" />
+                <e p="EnemyDifficulty.cs" t="Include" />
+              </e>
               <e p="Graph.cs" t="Include" />
               <e p="OctaRotationHelper.cs" t="Include" />
               <e p="Point.cs" t="Include" />
@@ -59,7 +66,7 @@
               <e p="TagManager.cs" t="Include" />
               <e p="Utility" t="Include">
                 <e p="AnimatorHash.cs" t="Include" />
-                <e p="Enums.cs" t="Include" />
+                <e p="CustomLists.cs" t="Include" />
                 <e p="UserSerializableDictionaries.cs" t="Include" />
               </e>
               <e p="VectorExt.cs" t="Include" />
@@ -799,11 +806,25 @@
             <e p="zenject.asmdef" t="Include" />
           </e>
         </e>
-        <e p="SerializableDictionary" t="Include">
-          <e p="Editor" t="Include">
-            <e p="SerializableDictionaryPropertyDrawer.cs" t="Include" />
+        <e p="Rotary Heart" t="Include">
+          <e p="SerializableDictionary" t="Include">
+            <e p="DrawKeyAsPropertyAttribute.cs" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="Constants.cs" t="Include" />
+              <e p="Definer.cs" t="Include" />
+              <e p="DictionaryPropertyDrawer.cs" t="Include" />
+              <e p="PreferencesWindow.cs" t="Include" />
+              <e p="SupportWindow.cs" t="Include" />
+            </e>
+            <e p="IDAttribute.cs" t="Include" />
+            <e p="References" t="Include">
+              <e p="RequiredReferences.cs" t="Include" />
+            </e>
+            <e p="ReorderableList" t="Include">
+              <e p="ReorderableList.cs" t="Include" />
+            </e>
+            <e p="SerializableDictionaryBase.cs" t="Include" />
           </e>
-          <e p="SerializableDictionary.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Resources" t="Include">

@@ -1,6 +1,5 @@
 ﻿using CyberInfection.Data.Settings.Base;
 using CyberInfection.Extension.Utility;
-using SerializableDictionary;
 using UnityEngine;
 
 namespace CyberInfection.Data.Settings
@@ -12,11 +11,6 @@ namespace CyberInfection.Data.Settings
 		public override InputSettingsData GetCopy()
 		{
 			return Instantiate(TryToLoad(AssetPath));
-		}
-		
-		[System.Serializable]
-		public class KeyCodesDictionary : SerializableDictionary<string, KeyCode>
-		{
 		}
 
 		[SerializeField] private KeyCodesDictionary _keyCodesDictionary;

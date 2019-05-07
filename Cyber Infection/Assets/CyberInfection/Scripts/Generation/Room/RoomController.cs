@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CyberInfection.Extension.Enums;
 using CyberInfection.GameMechanics.Entity.Enemy;
 using Photon.Pun;
 using UnityEngine;
@@ -90,7 +91,7 @@ namespace CyberInfection.Generation.Room
 			var enemyCount = Random.Range(1, 3);
 			for (var i = 0; i < enemyCount; i++)
 			{
-				EnemySpawner.instance.SpawnEnemy(GetEnemySpawnPos());
+				EnemySpawner.instance.SpawnEnemy(EnemyDifficulty.first, GetEnemySpawnPos());
 			}
 		}
 

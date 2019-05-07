@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712a90baf01d48148fcf39bad2c0695c, type: 3}
+  m_Name: Enemy Spawn Data
+  m_EditorClassIdentifier: 
+  _enemiesDictionary:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues: 0001020304
+    _keys: 0001020304
+    _values:
+    - _list:
+      - {fileID: 1422575438, guid: ec1843cc64c895547b282a5e31fb2a6b, type: 3}
+    - _list:
+      - {fileID: 1977455177878708, guid: 51810967a782d4d4dbc8803f90e29cbb, type: 3}
+      - {fileID: 1873101416588508, guid: d937e202608c20244ab710fab37b21f3, type: 3}
+    - _list:
+      - {fileID: 1422575438, guid: ec1843cc64c895547b282a5e31fb2a6b, type: 3}
+      - {fileID: 12889986, guid: c83427209c168ed4abafabee59364b01, type: 3}
+    - _list: []
+    - _list: []

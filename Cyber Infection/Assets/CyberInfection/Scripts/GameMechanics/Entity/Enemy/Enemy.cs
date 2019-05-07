@@ -1,4 +1,4 @@
-﻿using CyberInfection.Data.Unit.Enemy;
+﻿using CyberInfection.Data.Entities.Unit.Enemy;
 using UnityEngine;
 
 namespace CyberInfection.GameMechanics.Entity.Enemy

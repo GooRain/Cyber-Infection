@@ -57,7 +57,10 @@ namespace CyberInfection.GameMechanics.Entity
 
 		public void Die()
 		{
-			PhotonNetwork.Destroy(gameObject);
+			if (cachedPhotonView.IsMine)
+			{
+				PhotonNetwork.Destroy(gameObject);
+			}
 		}
 
 		[PunRPC]

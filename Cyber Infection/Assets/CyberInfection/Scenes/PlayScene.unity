@@ -1190,6 +1190,15 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 28159559, guid: 0e7cb08c71f74e142a63b0e3cd4beca6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00024414062
+      objectReference: {fileID: 0}
+    - target: {fileID: 2952384335401069714, guid: 0e7cb08c71f74e142a63b0e3cd4beca6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -37.80005
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 185884051, guid: 0e7cb08c71f74e142a63b0e3cd4beca6, type: 3}
     - {fileID: 2104276098, guid: 0e7cb08c71f74e142a63b0e3cd4beca6, type: 3}

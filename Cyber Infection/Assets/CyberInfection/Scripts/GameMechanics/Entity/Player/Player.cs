@@ -1,4 +1,4 @@
-﻿using CyberInfection.Data.Unit;
+﻿using CyberInfection.Data.Entities.Unit;
 using CyberInfection.Extension;
 using Photon.Pun;
 using UnityEngine;

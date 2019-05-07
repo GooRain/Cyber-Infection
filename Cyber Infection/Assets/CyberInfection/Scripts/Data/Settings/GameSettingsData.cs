@@ -15,9 +15,7 @@ namespace CyberInfection.Data.Settings
 		}
 		
 		#region SerializedFields
-
-		[SerializeField] private InputSettingsData _inputSettingsData;
-
+		
 		[SerializeField] private MapSettingsData _mapSettingsData;
 
 		[SerializeField] private GeneratingScenesData _generatingScenesData;
@@ -55,21 +53,6 @@ namespace CyberInfection.Data.Settings
 				return _mapSettingsData;
 			}
 			set { _mapSettingsData = value; }
-		}
-
-		public InputSettingsData inputSettingsData
-		{
-			get
-			{
-				if (_inputSettingsData == null)
-				{
-					_inputSettingsData = CreateInstance<InputSettingsData>();
-					Debug.Log("_inputSettingsData == null");
-				}
-
-				return _inputSettingsData;
-			}
-			set { _inputSettingsData = value; }
 		}
 
 		#endregion
