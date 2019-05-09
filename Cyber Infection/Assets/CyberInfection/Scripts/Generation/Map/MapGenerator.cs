@@ -24,6 +24,7 @@ namespace CyberInfection.Generation.Map
         [SerializeField] private Transform _mapHolder;
         [SerializeField] private Tilemap _tilemap;
         [SerializeField] private Tilemap _collisionTileMap;
+        [SerializeField] private Tilemap _shadowTileMap;
 
         /* 0000000
          * 0001100
@@ -94,6 +95,7 @@ namespace CyberInfection.Generation.Map
             _mapController.Clear();
             _tilemap.ClearAllTiles();
             _collisionTileMap.ClearAllTiles();
+            _shadowTileMap.ClearAllTiles();
         }
 
         private bool TryToGenerate()
@@ -185,10 +187,11 @@ namespace CyberInfection.Generation.Map
 
             //}
 
-            _mapController.PlaceRooms(_tilemap, _collisionTileMap);
+            _mapController.PlaceRooms(_tilemap, _collisionTileMap, _shadowTileMap);
 
             _tilemap.RefreshAllTiles();
             _collisionTileMap.RefreshAllTiles();
+            _shadowTileMap.RefreshAllTiles();
         }
 
         #region DEPRECATED
