@@ -25,18 +25,18 @@ namespace CyberInfection.Data.Settings.Generation
 
 		[Space(10), Header("Visual Settings")] 
 		[SerializeField]
-		private Tile _floorTile;
+		private TileBase _floorTile;
 		[SerializeField]
-		private Tile _wallTile;
+		private TileBase _wallTile;
 		[SerializeField]
 		private Gradient _colorGradient;
 		
-		public Tile GetFloorTile()
+		public TileBase GetFloorTile()
 		{
 			return _floorTile;
 		}
 
-		public Tile GetWallTile()
+		public TileBase GetWallTile()
 		{
 			return _wallTile;
 		}

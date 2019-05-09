@@ -173,7 +173,12 @@ namespace CyberInfection.Generation.Map
                     currentRoomsCount++;
                 }
             }
-            RadarController.instance.SetRoomsCount(currentRoomsCount);
+
+            if (RadarController.instance != null)
+            {
+                RadarController.instance.SetRoomsCount(currentRoomsCount);
+            }
+            
             //if (_mapController.map.HasEnd())
             //{
             //    Debug.Log("Map has end!");
