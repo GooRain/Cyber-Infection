@@ -4,7 +4,7 @@ namespace CyberInfection.GameMechanics.Entity
     {
         private IAlive _unit;
 
-        public void GetDamage(float damageAmount)
+        public void GetDamage(int damageAmount)
         {
             _unit.health -= damageAmount;
         }

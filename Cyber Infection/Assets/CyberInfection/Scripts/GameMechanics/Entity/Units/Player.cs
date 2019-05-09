@@ -10,9 +10,12 @@ namespace CyberInfection.GameMechanics.Entity.Units
     {
         [SerializeField] private PlayerData _data;
         [SerializeField] private Image _healthBar;
-        private float _lastHP, _startHealth;
+        
+        private int _maxHP;
 
         private PhotonView m_PhotonView;
+
+        public float healthPercentage => (float) health / _maxHP;
 
         protected override void Awake()
         {
@@ -22,26 +25,27 @@ namespace CyberInfection.GameMechanics.Entity.Units
             gameObject.tag = m_PhotonView.IsMine ? TagManager.PlayerTag : TagManager.OtherPlayerTag;
 
             health = _data.health;
+            _maxHP = health;
+            OnHealthChanged();
             
             UnitsManager.instance.OnPlayerSpawn(this);
         }
 
-        private void Start()
+        public override void GetDamage(int damageAmount)
         {
-            _startHealth = health;
-            _healthBar.fillAmount = 1;
-            _lastHP = health;
+            base.GetDamage(damageAmount);
+            OnHealthChanged();
         }
 
-        private void Update()
+        private void OnHealthChanged()
         {
-            
-            if (health != _lastHP)
-            {
-                _healthBar.fillAmount = health / _startHealth;
-                _lastHP = health;
-            }
+            _healthBar.fillAmount = healthPercentage;
         }
-            
+
+        public override void Die()
+        {
+            base.Die();
+            UnitsManager.instance.OnPlayerDeath(this);
+        }
     }
 }

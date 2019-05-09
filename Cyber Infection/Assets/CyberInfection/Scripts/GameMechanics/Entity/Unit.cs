@@ -13,9 +13,9 @@ namespace CyberInfection.GameMechanics.Entity
 
 		public PhotonView cachedPhotonView => photonView;
 
-		private float _health;
+		private int _health;
 
-		public float health
+		public int health
 		{
 			get => _health;
 			set
@@ -39,7 +39,7 @@ namespace CyberInfection.GameMechanics.Entity
 			cachedTransform = transform;
 		}
 
-		public void GetDamage(float damageAmount)
+		public virtual void GetDamage(int damageAmount)
 		{
 			if (PhotonNetwork.OfflineMode)
 			{
@@ -55,7 +55,7 @@ namespace CyberInfection.GameMechanics.Entity
 			photonView.RPC(CachedRPC.ReceiveDamage, RpcTarget.All, JsonUtility.ToJson(damageData));
 		}
 
-		public void Die()
+		public virtual void Die()
 		{
 			if (cachedPhotonView.IsMine)
 			{

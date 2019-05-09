@@ -14,7 +14,7 @@ namespace CyberInfection.GameMechanics.Projectile
 		private Collider2D m_Collider;
 		
 		private float m_Speed;
-		private float m_Damage;
+		private int m_Damage;
 		private float m_Lifetime = 5f;
 		private Vector2 m_Direction;
 		

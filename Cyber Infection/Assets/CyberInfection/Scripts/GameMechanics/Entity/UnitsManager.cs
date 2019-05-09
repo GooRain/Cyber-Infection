@@ -74,7 +74,7 @@ namespace CyberInfection.GameMechanics.Entity
 
         public Player GetRandomPlayer()
         {
-            return _players[Random.Range(0, _players.Count)];
+            return _players.Count == 0 ? null : _players[Random.Range(0, _players.Count)];
         }
     }
 }

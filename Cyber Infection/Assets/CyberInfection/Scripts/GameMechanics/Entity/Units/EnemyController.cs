@@ -32,7 +32,11 @@ namespace CyberInfection.GameMechanics.Entity.Units
             {
                 if (_target == null)
                 {
-                    SetTarget(UnitsManager.instance.GetRandomPlayer().transform);
+                    var player = UnitsManager.instance.GetRandomPlayer();
+                    if (player != null)
+                    {
+                        SetTarget(player.transform);
+                    }
                 }
                 yield return new WaitForSeconds(0.5f);
             }
@@ -82,6 +86,7 @@ namespace CyberInfection.GameMechanics.Entity.Units
             if (_animator != null && collision.gameObject.tag.Equals("Player"))
             {
                 _animator.SetBool("iFollow", false);
+                collision.gameObject.GetComponent<Player>().GetDamage(10);
                 // - HP
             }
         }

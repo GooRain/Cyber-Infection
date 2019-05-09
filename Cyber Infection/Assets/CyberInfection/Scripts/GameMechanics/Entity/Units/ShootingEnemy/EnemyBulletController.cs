@@ -13,7 +13,7 @@ namespace CyberInfection.GameMechanics.Entity.Enemy.ShootingEnemy
         private float _lifeTime = 1.2f;
         [FormerlySerializedAs("damage")]
         [SerializeField]
-        private float _damage;
+        private int _damage;
         private Collider2D m_Collider;
 
         void Update()
