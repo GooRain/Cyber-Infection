@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 776525396}
   - component: {fileID: 776525395}
   - component: {fileID: 776525397}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HealthPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1154,7 +1154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2053513680}
   - component: {fileID: 2053513681}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
