@@ -39,5 +39,6 @@ MonoBehaviour:
   - RPCPush
   - RPCShoot
   - Push
+  - ReceiveHealth
   DisableAutoOpenWizard: 1
   ShowSettings: 1

@@ -39,6 +39,10 @@ namespace CyberInfection.GameMechanics.Unit.Player
                 _healthBar.fillAmount = health / _startHealth;
                 _lastHP = health;
             }
+            if (health > _startHealth)
+            {
+                health = _startHealth;
+            }
         }
             
     }

@@ -1,4 +1,5 @@
 ﻿using CyberInfection.GameMechanics.Projectile;
+using CyberInfection.GameMechanics.Improvements.HealthPotion;
 using Photon.Pun;
 using UnityEngine;
 
@@ -9,7 +10,8 @@ namespace CyberInfection.GameMechanics.Unit
 		public class CachedRPC
 		{
 			public const string ReceiveDamage = "ReceiveDamage";
-		}
+            public const string ReceiveHealth = "ReceiveHealth";
+        }
 
 		public PhotonView cachedPhotonView => photonView;
 
@@ -54,6 +56,22 @@ namespace CyberInfection.GameMechanics.Unit
 			photonView.RPC(CachedRPC.ReceiveDamage, RpcTarget.All, JsonUtility.ToJson(damageData));
 		}
 
+        public void RestoreHealth(float healthAmount)
+        {
+            if (PhotonNetwork.OfflineMode)
+            {
+                health += healthAmount;
+                return;
+            }
+
+            var healthAmountData = new HealthAmountData
+            {
+                _healthAmount = healthAmount
+            };
+
+            photonView.RPC(CachedRPC.ReceiveHealth, RpcTarget.All, JsonUtility.ToJson(healthAmount));
+        }
+
 		public void Die()
 		{
 			PhotonNetwork.Destroy(gameObject);
@@ -65,5 +83,12 @@ namespace CyberInfection.GameMechanics.Unit
 			var damageData = JsonUtility.FromJson<DamageData>(data);
 			health -= damageData.damage;
 		}
-	}
+
+        [PunRPC]
+        protected virtual void ReceiveHealth(string data)
+        {
+            var healthAmountData = JsonUtility.FromJson<HealthAmountData>(data);
+            health += healthAmountData._healthAmount;
+        }
+    }
 }

@@ -25,7 +25,7 @@ namespace CyberInfection.GameMechanics.Unit.Enemy.ShootingEnemy
         [SerializeField]
         private GameObject _enemyShotPos;
 
-
+        private AudioSource audioS;
         private Transform _player;
         private Vector2 _target;
 
@@ -34,7 +34,8 @@ namespace CyberInfection.GameMechanics.Unit.Enemy.ShootingEnemy
         void Start()
         {
             //_player = GameObject.FindGameObjectWithTag("Player").transform;
-            _timeBtwShots = _reloadSpeed; 
+            _timeBtwShots = _reloadSpeed;
+            audioS = GetComponent<AudioSource>();
         }
 
         void Update()

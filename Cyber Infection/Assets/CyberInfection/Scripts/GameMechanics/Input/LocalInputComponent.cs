@@ -43,7 +43,6 @@ namespace CyberInfection.GameMechanics.Input
             m_Animator.SetFloat(AnimatorHash.Horizontal, input.x);
             m_Animator.SetFloat(AnimatorHash.Vertical, input.y);
             m_Animator.SetFloat(AnimatorHash.Magnitude, input.magnitude);
-
             Move(input.normalized);
         }
 
