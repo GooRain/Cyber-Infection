@@ -534,15 +534,15 @@ RectTransform:
   m_GameObject: {fileID: 1381199679}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.7354088, y: 3.7354088, z: 3.7354088}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1579433750}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0017089844, y: -0.0024414062}
-  m_SizeDelta: {x: -1406, y: -790.53}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1381199681
 MonoBehaviour:
@@ -685,7 +685,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -945,6 +945,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401497145441022922, guid: ea2372670f883d649bc29558a9299491,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -53.99994
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401497146628848773, guid: ea2372670f883d649bc29558a9299491,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -66.799866
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea2372670f883d649bc29558a9299491, type: 3}
