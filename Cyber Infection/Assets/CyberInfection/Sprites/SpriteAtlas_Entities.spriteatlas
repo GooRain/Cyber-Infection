@@ -31,13 +31,14 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 7babeb2dd07fc7b47880badb3d670c2d, type: 3}
-    totalSpriteSurfaceArea: 1435660
+    totalSpriteSurfaceArea: 1440462
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 731eeaf089e0393419bc1ec918214ca3, type: 3}
   - {fileID: 21300000, guid: a9594e01e31ae44488137ffc8ae4faa0, type: 3}
   - {fileID: 21300000, guid: 876bef917517bef45bcddd74adbe1928, type: 3}
+  - {fileID: 21300000, guid: bec770b11fe56054880905a830d33467, type: 3}
   - {fileID: 21300000, guid: f7798ca27b1f5a94da604c70ebbc3a6b, type: 3}
   - {fileID: 21300000, guid: 29dfc663e99657b45898498630889b9f, type: 3}
   - {fileID: 21300000, guid: 4e9257831aeddf6419f53c8fc1a9dec3, type: 3}
@@ -46,6 +47,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 675e461788086bd40ab1092fb1eff7b8, type: 3}
   - {fileID: 21300000, guid: 0da058276c8efe6479748acfd72b5b28, type: 3}
   - {fileID: 21300000, guid: bbe962479f821754596ca9322cdfab8c, type: 3}
+  - {fileID: 21300000, guid: edaa98e7f05dcb246a5fd94dbdf83ca7, type: 3}
   - {fileID: 21300000, guid: b2ad2448cb6a47c4b94a0bf88d1f1f95, type: 3}
   - {fileID: 21300000, guid: a3603758d1897da4db13766ac7a5a351, type: 3}
   - {fileID: 21300000, guid: b0f30409c4153484d89492d1792e3a41, type: 3}
@@ -66,6 +68,7 @@ SpriteAtlas:
   - player_Legs_UpDown1
   - player_Legs_UpDown2
   - player_Body_Right
+  - flying_monster_bullet
   - player_Body_Up
   - player_Body_LeftDown
   - player_Legs_Right3
@@ -74,6 +77,7 @@ SpriteAtlas:
   - player_Legs_Right1
   - player_Body_Left
   - player_Body_Down
+  - Player_Bullet
   - bullet1
   - main_hand
   - weapon_m9

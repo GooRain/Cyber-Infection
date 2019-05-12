@@ -227,6 +227,56 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
+        <e p="Dungeon Crawler 2D Art Pack" t="Include">
+          <e p="Spine Projects" t="Include">
+            <e p="ExportedForUnity" t="Include">
+              <e p="Character" t="Include">
+                <e p="Back" t="Include">
+                  <e p="CharacterBack.atlas.txt" t="Include" />
+                </e>
+                <e p="Front" t="Include">
+                  <e p="CharacterFront.atlas.txt" t="Include" />
+                </e>
+                <e p="Left" t="Include">
+                  <e p="CharacterLeft.atlas.txt" t="Include" />
+                </e>
+              </e>
+              <e p="Monster1" t="Include">
+                <e p="Back" t="Include">
+                  <e p="Monster1Back.atlas.txt" t="Include" />
+                </e>
+                <e p="Front" t="Include">
+                  <e p="Monster1Front.atlas.txt" t="Include" />
+                </e>
+                <e p="Left" t="Include">
+                  <e p="Monster1Left.atlas.txt" t="Include" />
+                </e>
+              </e>
+              <e p="Monster2" t="Include">
+                <e p="Back" t="Include">
+                  <e p="Monster2Back.atlas.txt" t="Include" />
+                </e>
+                <e p="Front" t="Include">
+                  <e p="Monster2Right.atlas.txt" t="Include" />
+                </e>
+                <e p="Left" t="Include">
+                  <e p="Monster2Left.atlas.txt" t="Include" />
+                </e>
+              </e>
+              <e p="Monster3" t="Include">
+                <e p="Back" t="Include">
+                  <e p="Monster3Back.atlas.txt" t="Include" />
+                </e>
+                <e p="Front" t="Include">
+                  <e p="Monster3Front.atlas.txt" t="Include" />
+                </e>
+                <e p="Left" t="Include">
+                  <e p="Monster3Left.atlas.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">
             <e p="Code" t="Include">
