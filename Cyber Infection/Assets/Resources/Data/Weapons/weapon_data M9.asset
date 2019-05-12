@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: weapon_data M9
   m_EditorClassIdentifier: 
   maxAmmoInMagazine: 12
-  startAmmunitionSize: 0
+  startAmmunitionSize: 144
   shootRate: 0.5
   bulletData: {fileID: 11400000, guid: 374f2bdc654bdf74a9f8dada31075866, type: 2}

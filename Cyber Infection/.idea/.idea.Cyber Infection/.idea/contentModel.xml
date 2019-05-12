@@ -106,6 +106,12 @@
               </e>
               <e p="IAlive.cs" t="Include" />
               <e p="IControllable.cs" t="Include" />
+              <e p="Improvements" t="Include">
+                <e p="HealthPotion" t="Include">
+                  <e p="HealthAmountData.cs" t="Include" />
+                  <e p="HealthPotion.cs" t="Include" />
+                </e>
+              </e>
               <e p="Input" t="Include">
                 <e p="InputComponentBase.cs" t="Include" />
                 <e p="InputController.cs" t="Include" />
@@ -120,6 +126,11 @@
               </e>
               <e p="Spawn" t="Include">
                 <e p="EnemySpawn.cs" t="Include" />
+              </e>
+              <e p="Unit" t="Include">
+                <e p="Player" t="Include">
+                  <e p="Player.cs" t="Include" />
+                </e>
               </e>
               <e p="Weapon" t="Include">
                 <e p="Behaviour" t="Include">

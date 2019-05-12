@@ -1,4 +1,4 @@
-﻿using CyberInfection.Data.Unit;
+﻿using CyberInfection.Data.Entities.Unit;
 using CyberInfection.Extension;
 using Photon.Pun;
 using UnityEngine;
@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 namespace CyberInfection.GameMechanics.Unit.Player
 {
-    public class Player : Unit
+    public class Player : Entity.Unit
     {
         [SerializeField] private PlayerData _data;
         [SerializeField] private Image _healthBar;
-        private float _lastHP, _startHealth;
+        private int _lastHP, _startHealth;
 
         private PhotonView m_PhotonView;
 

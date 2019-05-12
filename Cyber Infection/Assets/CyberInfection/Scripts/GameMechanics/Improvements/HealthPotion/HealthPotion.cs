@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthPotion : MonoBehaviour
 {
     [SerializeField]
-    private float restoreHealth = 10;
+    private int restoreHealth = 10;
     private AudioSource audioSource;
 
     private void Awake()

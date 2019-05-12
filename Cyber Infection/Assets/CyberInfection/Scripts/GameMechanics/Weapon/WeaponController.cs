@@ -85,7 +85,7 @@ namespace CyberInfection.GameMechanics.Weapon
             m_CurrentWeapon.Shoot(direction);
         }
 
-        public void Reload()
+        public void TryToReload()
         {
             m_CurrentWeapon.TryToReload();
         }

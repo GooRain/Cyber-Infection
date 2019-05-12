@@ -57,7 +57,7 @@ namespace CyberInfection.GameMechanics.Entity
 			photonView.RPC(CachedRPC.ReceiveDamage, RpcTarget.All, JsonUtility.ToJson(damageData));
 		}
 
-        public void RestoreHealth(float healthAmount)
+        public void RestoreHealth(int healthAmount)
         {
             if (PhotonNetwork.OfflineMode)
             {

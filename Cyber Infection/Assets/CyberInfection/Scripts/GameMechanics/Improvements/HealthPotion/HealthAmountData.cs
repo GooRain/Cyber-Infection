@@ -3,6 +3,6 @@
     [System.Serializable]
     public class HealthAmountData
     {
-        public float _healthAmount;
+        public int _healthAmount;
     }
 }

@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
@@ -62,6 +62,7 @@ LightmapSettings:
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -76,10 +77,16 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 500
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 1
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -88,6 +95,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
+    m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -222,9 +230,10 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.15761839, g: 0.1680289, b: 0.20754719, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -340,7 +349,7 @@ PrefabInstance:
     - target: {fileID: 224708503377261992, guid: 54dd6d7d131211b43be73ef38995b6f9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.024902344
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224708503377261992, guid: 54dd6d7d131211b43be73ef38995b6f9,
         type: 3}
@@ -350,7 +359,7 @@ PrefabInstance:
     - target: {fileID: 224708503377261992, guid: 54dd6d7d131211b43be73ef38995b6f9,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -0.050049
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224708503377261992, guid: 54dd6d7d131211b43be73ef38995b6f9,
         type: 3}
@@ -442,16 +451,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1861153692521134092, guid: 54dd6d7d131211b43be73ef38995b6f9,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861153692521134092, guid: 54dd6d7d131211b43be73ef38995b6f9,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 718584659, guid: 54dd6d7d131211b43be73ef38995b6f9, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -499,22 +498,6 @@ PrefabInstance:
     - target: {fileID: 894181739, guid: 54dd6d7d131211b43be73ef38995b6f9, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 766698646, guid: 54dd6d7d131211b43be73ef38995b6f9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 766698646, guid: 54dd6d7d131211b43be73ef38995b6f9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1617781397, guid: 54dd6d7d131211b43be73ef38995b6f9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1617781397, guid: 54dd6d7d131211b43be73ef38995b6f9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54dd6d7d131211b43be73ef38995b6f9, type: 3}
@@ -558,7 +541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0017089844, y: -0.0025634766}
+  m_AnchoredPosition: {x: -0.0017089844, y: -0.0024414062}
   m_SizeDelta: {x: -1406, y: -790.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1381199681
@@ -760,9 +743,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b3d24fc0a97578a43b95b7fb39f6894e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d4e5bf922ea70ea42bea4e9839bb5e69, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -857,11 +840,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GearsPool
-      objectReference: {fileID: 0}
-    - target: {fileID: 5401497146529921594, guid: ea2372670f883d649bc29558a9299491,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5401497146529921595, guid: ea2372670f883d649bc29558a9299491,
         type: 3}
@@ -967,46 +945,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5401497145441022925, guid: ea2372670f883d649bc29558a9299491,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5401497145441022923, guid: ea2372670f883d649bc29558a9299491,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5401497146628848772, guid: ea2372670f883d649bc29558a9299491,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5401497146628848770, guid: ea2372670f883d649bc29558a9299491,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5401497145190774196, guid: ea2372670f883d649bc29558a9299491,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5401497145190774194, guid: ea2372670f883d649bc29558a9299491,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5401497145190774194, guid: ea2372670f883d649bc29558a9299491,
-        type: 3}
-      propertyPath: m_PreserveAspect
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5401497145190774194, guid: ea2372670f883d649bc29558a9299491,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea2372670f883d649bc29558a9299491, type: 3}
