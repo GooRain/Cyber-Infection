@@ -1,5 +1,5 @@
 using CyberInfection.Extension.Utility;
-using CyberInfection.GameMechanics.Unit;
+using CyberInfection.GameMechanics.Entity;
 using UnityEngine;
 
 namespace CyberInfection.GameMechanics.Input

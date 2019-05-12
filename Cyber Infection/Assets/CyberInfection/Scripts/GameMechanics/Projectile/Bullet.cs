@@ -1,6 +1,7 @@
-﻿using CyberInfection.Data.Entities;
+﻿//#define SHOW_DEBUG
+
+using CyberInfection.Data.Entities;
 using CyberInfection.Extension.Pool;
-using CyberInfection.GameMechanics.Unit.Player;
 using Photon.Pun;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ namespace CyberInfection.GameMechanics.Projectile
 		private Collider2D m_Collider;
 		
 		private float m_Speed;
-		private float m_Damage;
+		private int m_Damage;
 		private float m_Lifetime = 5f;
 		private Vector2 m_Direction;
 		
@@ -43,8 +44,10 @@ namespace CyberInfection.GameMechanics.Projectile
 			m_Damage = parameters.damage;
 			m_Lifetime = 5f;
 			m_Direction = direction;
+#if SHOW_DEBUG
 			Debug.Log("<b>Bullet Parameters:</b> Speed = " + m_Speed + "; Damage = " + m_Damage + "; " +
 			          "Direction = " + m_Direction.ToString("F3"));
+#endif
 		}
 
 		private void Update()

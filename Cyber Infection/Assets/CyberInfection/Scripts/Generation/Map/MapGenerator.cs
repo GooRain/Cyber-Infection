@@ -5,7 +5,6 @@ using CyberInfection.Extension;
 using CyberInfection.Generation.Room;
 using Photon.Pun;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using CyberInfection.UI.Radar;
 using UnityEngine.Tilemaps;
 using Zenject;
@@ -25,6 +24,7 @@ namespace CyberInfection.Generation.Map
         [SerializeField] private Transform _mapHolder;
         [SerializeField] private Tilemap _tilemap;
         [SerializeField] private Tilemap _collisionTileMap;
+        [SerializeField] private Tilemap _shadowTileMap;
 
         /* 0000000
          * 0001100
@@ -95,6 +95,7 @@ namespace CyberInfection.Generation.Map
             _mapController.Clear();
             _tilemap.ClearAllTiles();
             _collisionTileMap.ClearAllTiles();
+            _shadowTileMap.ClearAllTiles();
         }
 
         private bool TryToGenerate()
@@ -174,17 +175,23 @@ namespace CyberInfection.Generation.Map
                     currentRoomsCount++;
                 }
             }
-            RadarController.instance.SetRoomsCount(currentRoomsCount);
+
+            if (RadarController.instance != null)
+            {
+                RadarController.instance.SetRoomsCount(currentRoomsCount);
+            }
+            
             //if (_mapController.map.HasEnd())
             //{
             //    Debug.Log("Map has end!");
 
             //}
 
-            _mapController.PlaceRooms(_tilemap, _collisionTileMap);
+            _mapController.PlaceRooms(_tilemap, _collisionTileMap, _shadowTileMap);
 
             _tilemap.RefreshAllTiles();
             _collisionTileMap.RefreshAllTiles();
+            _shadowTileMap.RefreshAllTiles();
         }
 
         #region DEPRECATED

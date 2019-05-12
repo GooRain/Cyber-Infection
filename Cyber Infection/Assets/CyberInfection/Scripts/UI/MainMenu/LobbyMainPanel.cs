@@ -1,14 +1,10 @@
-using System.Collections.Generic;
 using CyberInfection.Constants;
-using CyberInfection.Data;
 using CyberInfection.Extension.Utility;
 using CyberInfection.Networking;
-using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace CyberInfection.UI.MainMenu
 {

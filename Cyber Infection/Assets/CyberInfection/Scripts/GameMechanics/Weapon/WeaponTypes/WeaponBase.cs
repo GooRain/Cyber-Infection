@@ -1,10 +1,8 @@
 using CyberInfection.Data.Entities;
 using CyberInfection.GameMechanics.Container;
-using CyberInfection.GameMechanics.Projectile;
 using CyberInfection.GameMechanics.Weapon.Behaviour;
 using Photon.Pun;
 using UnityEngine;
-using Zenject;
 
 namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
 {

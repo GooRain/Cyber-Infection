@@ -39,7 +39,7 @@ namespace CyberInfection.Generation.Map
 			map.Clear();
 		}
 
-		public void PlaceRooms(Tilemap floorTileMap, Tilemap wallTileMap)
+		public void PlaceRooms(Tilemap floorTileMap, Tilemap wallTileMap, Tilemap shadowTileMap)
 		{
 			for (var x = 0; x < map.width; x++)
 			{
@@ -54,16 +54,17 @@ namespace CyberInfection.Generation.Map
 					if ((map.roomMatrix[x, y] | RoomType.None) == 0) continue;
 
 					SetFloor(floorTileMap, currentPosition, _mapSettingsData.roomSizeInfo);
-					SetWall(wallTileMap, currentPosition, _mapSettingsData.roomSizeInfo);
+					SetWall(wallTileMap, currentPosition, _mapSettingsData.roomSizeInfo, _mapSettingsData.GetWallTile());
+					//SetWall(shadowTileMap, currentPosition, _mapSettingsData.roomSizeInfo, _mapSettingsData.GetShadowTile());
 				}
 			}
 
 			SetRoomControllers();
 
-			PlaceDoors(floorTileMap, wallTileMap);
+			PlaceDoors(floorTileMap, wallTileMap, shadowTileMap);
 		}
 
-		private void PlaceDoors(Tilemap floorTileMap, Tilemap wallTileMap)
+		private void PlaceDoors(Tilemap floorTileMap, Tilemap wallTileMap, Tilemap shadowTileMap)
 		{
 			for (var x = 0; x < map.width; x++)
 			{
@@ -77,7 +78,7 @@ namespace CyberInfection.Generation.Map
 
 					if ((map.roomMatrix[x, y] | RoomType.None) == 0) continue;
 
-					SetDoors(wallTileMap, floorTileMap, map.roomMatrix, x, y, currentPosition,
+					SetDoors(wallTileMap, shadowTileMap, floorTileMap, map.roomMatrix, x, y, currentPosition,
 						_mapSettingsData.roomSizeInfo);
 				}
 			}
@@ -113,7 +114,7 @@ namespace CyberInfection.Generation.Map
 		}
 
 		//	TODO Vitcor: Надо будет получше сделать
-		private void SetDoors(Tilemap wallTileMap, Tilemap floorTileMap, RoomType[,] mapRoomMatrix, int x, int y,
+		private void SetDoors(Tilemap wallTileMap, Tilemap shadowTileMap, Tilemap floorTileMap, RoomType[,] mapRoomMatrix, int x, int y,
 			Vector3Int center,
 			RoomSizeInfo roomSizeInfo)
 		{
@@ -121,6 +122,7 @@ namespace CyberInfection.Generation.Map
 			{
 				var leftDoorPos = center - new Vector3Int(roomSizeInfo.roomWidth / 2, 0, 0);
 				wallTileMap.SetTile(leftDoorPos, null);
+				shadowTileMap.SetTile(leftDoorPos, null);
 				floorTileMap.SetTile(leftDoorPos, _mapSettingsData.GetFloorTile());
 				//Debug.Log($"Set Left Door at: {leftDoorPos}");
 
@@ -132,6 +134,7 @@ namespace CyberInfection.Generation.Map
 			{
 				var rightDoorPos = center + new Vector3Int(roomSizeInfo.roomWidth / 2, 0, 0);
 				wallTileMap.SetTile(rightDoorPos, null);
+				shadowTileMap.SetTile(rightDoorPos, null);
 				floorTileMap.SetTile(rightDoorPos, _mapSettingsData.GetFloorTile());
 				//Debug.Log($"Set Right Door at: {rightDoorPos}");
 
@@ -143,6 +146,7 @@ namespace CyberInfection.Generation.Map
 			{
 				var downDoorPos = center - new Vector3Int(0, roomSizeInfo.roomHeight / 2, 0);
 				wallTileMap.SetTile(downDoorPos, null);
+				shadowTileMap.SetTile(downDoorPos, null);
 				floorTileMap.SetTile(downDoorPos, _mapSettingsData.GetFloorTile());
 				//Debug.Log($"Set Down Door at: {downDoorPos}");
 				PlaceDoor(Door.DoorType.Vertical, downDoorPos,
@@ -153,6 +157,7 @@ namespace CyberInfection.Generation.Map
 			{
 				var upDoorPos = center + new Vector3Int(0, roomSizeInfo.roomHeight / 2, 0);
 				wallTileMap.SetTile(upDoorPos, null);
+				shadowTileMap.SetTile(upDoorPos, null);
 				floorTileMap.SetTile(upDoorPos, _mapSettingsData.GetFloorTile());
 				//Debug.Log($"Set Up Door at: {upDoorPos}");
 				PlaceDoor(Door.DoorType.Vertical, upDoorPos,
@@ -191,22 +196,20 @@ namespace CyberInfection.Generation.Map
 			return $"{x1}{y1} / {x2}{y2}";
 		}
 
-		private void SetWall(Tilemap tileMap, Vector3Int center, RoomSizeInfo roomSizeInfo)
+		private void SetWall(Tilemap tileMap, Vector3Int center, RoomSizeInfo roomSizeInfo, TileBase tile)
 		{
 			var start = new Vector3Int(center.x - roomSizeInfo.roomWidth / 2, center.y - roomSizeInfo.roomHeight / 2,
 				center.z);
 			for (var x = 0; x < roomSizeInfo.roomWidth; x++)
 			{
-				tileMap.SetTile(start + new Vector3Int(x, 0, 0), _mapSettingsData.GetWallTile());
-				tileMap.SetTile(start + new Vector3Int(x, roomSizeInfo.roomHeight - 1, 0),
-					_mapSettingsData.GetWallTile());
+				tileMap.SetTile(start + new Vector3Int(x, 0, 0), tile);
+				tileMap.SetTile(start + new Vector3Int(x, roomSizeInfo.roomHeight - 1, 0), tile);
 			}
 
 			for (var y = 0; y < roomSizeInfo.roomHeight; y++)
 			{
-				tileMap.SetTile(start + new Vector3Int(0, y, 0), _mapSettingsData.GetWallTile());
-				tileMap.SetTile(start + new Vector3Int(roomSizeInfo.roomWidth - 1, y, 0),
-					_mapSettingsData.GetWallTile());
+				tileMap.SetTile(start + new Vector3Int(0, y, 0), tile);
+				tileMap.SetTile(start + new Vector3Int(roomSizeInfo.roomWidth - 1, y, 0), tile);
 			}
 		}
 

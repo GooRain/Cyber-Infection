@@ -24,26 +24,24 @@ namespace CyberInfection.Data.Settings.Generation
 		public Rectangle mapSize;
 
 		[Space(10), Header("Visual Settings")] 
-		[SerializeField]
-		private Tile _floorTile;
-		[SerializeField]
-		private Tile _wallTile;
-		[SerializeField]
-		private Gradient _colorGradient;
 		
-		public Tile GetFloorTile()
+		[SerializeField] private TileBase _floorTile;
+		[SerializeField] private TileBase _wallTile;
+		[SerializeField] private TileBase _shadowTile;
+		
+		public TileBase GetFloorTile()
 		{
 			return _floorTile;
 		}
 
-		public Tile GetWallTile()
+		public TileBase GetWallTile()
 		{
 			return _wallTile;
 		}
 
-		public Color GetColor(float value = .5f)
+		public TileBase GetShadowTile()
 		{
-			return _colorGradient.Evaluate(value);
+			return _shadowTile;
 		}
 	}
 

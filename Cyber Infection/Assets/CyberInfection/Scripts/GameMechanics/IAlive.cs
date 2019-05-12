@@ -2,9 +2,9 @@
 {
 	public interface IAlive
 	{
-		float health { get; set; }
-		void GetDamage(float damageAmount);
-        void RestoreHealth(float healthAmount);
+		int health { get; set; }
+        void RestoreHealth(int healthAmount);
+		void GetDamage(int damageAmount);
 		void Die();
 	}
 }

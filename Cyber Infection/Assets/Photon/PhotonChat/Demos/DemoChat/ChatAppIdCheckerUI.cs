@@ -5,30 +5,31 @@
 // <author>developer@exitgames.com</author>
 // --------------------------------------------------------------------------------------------------------------------
 
-using UnityEngine;
-
 #if PHOTON_UNITY_NETWORKING
-using UnityEngine.UI;
 using Photon.Pun;
+using UnityEngine;
+using UnityEngine.UI;
 
-
-/// <summary>
-/// This is used in the Editor Splash to properly inform the developer about the chat AppId requirement.
-/// </summary>
-[ExecuteInEditMode]
-public class ChatAppIdCheckerUI : MonoBehaviour
+namespace Photon.PhotonChat.Demos.DemoChat
 {
-    public Text Description;
-
-    public void Update()
+    /// <summary>
+    /// This is used in the Editor Splash to properly inform the developer about the chat AppId requirement.
+    /// </summary>
+    [ExecuteInEditMode]
+    public class ChatAppIdCheckerUI : MonoBehaviour
     {
-		if (string.IsNullOrEmpty(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat))
+        public Text Description;
+
+        public void Update()
         {
-            Description.text = "<Color=Red>WARNING:</Color>\nPlease setup a Chat AppId in the PhotonServerSettings file.";
-        }
-        else
-        {
-            Description.text = string.Empty;
+            if (string.IsNullOrEmpty(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat))
+            {
+                Description.text = "<Color=Red>WARNING:</Color>\nPlease setup a Chat AppId in the PhotonServerSettings file.";
+            }
+            else
+            {
+                Description.text = string.Empty;
+            }
         }
     }
 }

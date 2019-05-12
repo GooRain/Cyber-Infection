@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using CyberInfection.Constants;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Random = UnityEngine.Random;
 
 namespace CyberInfection.Networking
 {

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-
+using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
-namespace Photon.Realtime.Demo
+namespace Photon.PhotonRealtime.Demos.DemoLoadBalancing
 {
     public class ConnectAndJoinRandomLb : MonoBehaviour, IConnectionCallbacks, IMatchmakingCallbacks, ILobbyCallbacks
     {

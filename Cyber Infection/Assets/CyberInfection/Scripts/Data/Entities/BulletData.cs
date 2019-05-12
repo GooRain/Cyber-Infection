@@ -6,7 +6,7 @@ namespace CyberInfection.Data.Entities
     public class BulletData : ScriptableObject
     {
         public float speed;
-        public float damage;
+        public int damage;
         public Sprite sprite;
     }
 }

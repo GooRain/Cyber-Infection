@@ -1,6 +1,5 @@
 ﻿using CyberInfection.Data.Settings;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CyberInfection.Persistent.Settings
 {
@@ -30,7 +29,6 @@ namespace CyberInfection.Persistent.Settings
 			{
 				m_LoadedData = m_Data.GetCopy();
 				m_LoadedData.generatingScenesData = m_Data.generatingScenesData.GetCopy();
-				m_LoadedData.inputSettingsData = m_Data.inputSettingsData.GetCopy();
 				m_LoadedData.mapSettingsData = m_Data.mapSettingsData.GetCopy();
 			}
 			else

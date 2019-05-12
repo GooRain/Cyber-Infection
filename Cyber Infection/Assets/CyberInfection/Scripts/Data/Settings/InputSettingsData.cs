@@ -12,11 +12,6 @@ namespace CyberInfection.Data.Settings
 		{
 			return Instantiate(TryToLoad(AssetPath));
 		}
-		
-		[System.Serializable]
-		public class KeyCodesDictionary : SerializableDictionary<string, KeyCode>
-		{
-		}
 
 		[SerializeField] private KeyCodesDictionary _keyCodesDictionary;
 

@@ -2,6 +2,10 @@
 
 namespace CyberInfection.Persistent
 {
+	public interface IDestroyOnLoad
+	{
+		bool dontDestroyOnLoad { get; }
+	}
 	/// <inheritdoc />
 	/// Inherit from Monobehaviour class
 	/// <summary>
@@ -10,8 +14,10 @@ namespace CyberInfection.Persistent
 	/// To prevent that, add `protected T () {}` to your singleton class.
 	/// As a note, this is made as MonoBehaviour because we need Coroutines.
 	/// </summary>
-	public class SingletonMonobehaviour<T> : MonoBehaviour where T : MonoBehaviour
+	public class SingletonMonobehaviour<T> : MonoBehaviour, IDestroyOnLoad where T : MonoBehaviour, IDestroyOnLoad
 	{
+		[SerializeField] protected bool _dontDestroyOnLoad = true;
+		
 		protected static T _instance;
 
 		public static T instance
@@ -35,20 +41,16 @@ namespace CyberInfection.Persistent
 			}
 		}
 
+		public bool dontDestroyOnLoad => _dontDestroyOnLoad;
+
 		protected static void InstantiateSingleton()
 		{
 			var singleton = new GameObject();
 			_instance = singleton.AddComponent<T>();
 			singleton.name = "(singleton) " + typeof(T);
 
-			DontDestroyOnLoad(singleton);
-		}
-		
-		protected static void InstantiateFromPrefab(string path)
-		{
-			_instance = Instantiate(Resources.Load<T>(path));
-
-			DontDestroyOnLoad(_instance.gameObject);
+			if(_instance.dontDestroyOnLoad)
+				DontDestroyOnLoad(singleton);
 		}
 		
 		// ReSharper disable once StaticMemberInGenericType
