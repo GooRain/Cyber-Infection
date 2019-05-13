@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 4075701828516498903}
   - component: {fileID: 1422575440}
   - component: {fileID: 1422575441}
-  - component: {fileID: 1422575439}
-  - component: {fileID: 4979439734036867439}
-  - component: {fileID: -5815439049661306392}
+  - component: {fileID: -4167417667589269569}
+  - component: {fileID: 1915769500844139270}
   m_Layer: 13
   m_Name: Enemy_red
   m_TagString: Enemy
@@ -31,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422575438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.9629648, y: -0.35998654, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,7 +103,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1cb6653b4e08edf459c4031ad1e14c1c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,10 +120,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -600868595
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 75fbe82d450db8141bbb0692f1e8f5d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4496c3d3f9f5e64f970e9f6c754456f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,27 +134,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1422575439
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422575438}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3820228ccc0f6df49a2c0df7ca5c7c3b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &4979439734036867439
-BoxCollider2D:
+--- !u!60 &-4167417667589269569
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -171,16 +151,22 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1.0351562, y: 1.0433071}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
-  m_EdgeRadius: 0
---- !u!114 &-5815439049661306392
+  m_Points:
+    m_Paths:
+    - - {x: 0.33894148, y: 0.0570848}
+      - {x: 0.44224775, y: -0.14635566}
+      - {x: 0.38881755, y: -0.32402927}
+      - {x: -0.0036392212, y: -0.40461594}
+      - {x: -0.399594, y: -0.32823792}
+      - {x: -0.42670494, y: -0.07519246}
+      - {x: -0.3746194, y: 0.060652703}
+--- !u!114 &1915769500844139270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,15 +175,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1422575438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Script: {fileID: 11500000, guid: 4309c10d5ebb4b3a8af143b55e8877e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 1
-  ShowParameterInspector: 1
-  m_SynchronizeParameters:
-  - Type: 4
-    SynchronizeType: 1
-    Name: iFollow
-  m_SynchronizeLayers:
-  - SynchronizeType: 1
-    LayerIndex: 0
+  Target: {fileID: 1422575442}
+  TargetOffset: 0

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 12889987}
   - component: {fileID: 12889989}
   - component: {fileID: 2125323576574020683}
+  - component: {fileID: 1386260747571546692}
   m_Layer: 13
   m_Name: Enemy_orange
   m_TagString: Enemy
@@ -109,7 +110,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,8 +127,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -600868595
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2c3b1b8c06ffca34dba3926a0f07d783, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -166,6 +167,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &1386260747571546692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12889986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4309c10d5ebb4b3a8af143b55e8877e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 12889990}
+  TargetOffset: 0
 --- !u!1 &1838519506
 GameObject:
   m_ObjectHideFlags: 0

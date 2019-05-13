@@ -52,6 +52,7 @@
                 <e p="EnemyDifficulty.cs" t="Include" />
               </e>
               <e p="Graph.cs" t="Include" />
+              <e p="IsometricObject.cs" t="Include" />
               <e p="OctaRotationHelper.cs" t="Include" />
               <e p="Point.cs" t="Include" />
               <e p="Pool" t="Include">

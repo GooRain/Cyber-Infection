@@ -11,15 +11,15 @@ namespace CyberInfection.GameMechanics.Entity.Units
         [SerializeField]
         private float _followSpeed = 1f;
 
-        private Animator _animator;
         private Transform _target;
 
         private Transform _transform;
 
+        public bool isFollowing { get; set; }
+
         private void Awake()
         {
             _transform = transform;
-            _animator = GetComponent<Animator>();
             
             enabled = false;
 
@@ -58,6 +58,7 @@ namespace CyberInfection.GameMechanics.Entity.Units
         {
             if (_target == null)
             {
+                StopFollowing();
                 enabled = false;
                 return;
             }
@@ -66,26 +67,31 @@ namespace CyberInfection.GameMechanics.Entity.Units
             {
                 StartFollowing();
             }
+            else
+            {
+                StopFollowing();
+            }
             
-            if (_animator != null && _animator.GetBool("iFollow"))
+            if (isFollowing)
             {
                 gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, _target.position, _followSpeed * Time.deltaTime);
             }
         }
 
-        void StartFollowing()
+        private void StopFollowing()
         {
-            if (_animator != null)
-            {
-                _animator.SetBool("iFollow", true);
-            }
+            isFollowing = false;
+        }
+
+        private void StartFollowing()
+        {
+            isFollowing = true;
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (_animator != null && collision.gameObject.tag.Equals("Player"))
+            if (collision.gameObject.tag.Equals("Player"))
             {
-                _animator.SetBool("iFollow", false);
                 collision.gameObject.GetComponent<Player>().GetDamage(10);
                 // - HP
             }
