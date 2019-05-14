@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using CyberInfection.GameMechanics.Entity.Units;
+using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -65,16 +69,18 @@ namespace CyberInfection.Generation.Room
 			}
 		}
 
+		private TweenerCore<Color, Color, ColorOptions> _coloringTween;
+		
 		private void Deactivate()
 		{
-			ColorAllTiles(Color.clear);
+			StartAnimateRoom(Color.clear);
 
 			ToggleDoors(true);
 		}
 
 		private void Activate()
 		{
-			ColorAllTiles(Color.white);
+			StartAnimateRoom(Color.white);
 
 			if ((room.type & RoomType.Start) == 0)
 			{
@@ -83,8 +89,23 @@ namespace CyberInfection.Generation.Room
 			}
 		}
 
+		private void StartAnimateRoom(Color endValue)
+		{
+			_coloringTween.Pause();
+			_coloringTween = DOTween.To(GetCurrentColor, ColorAllTiles, endValue, 2f);
+			_coloringTween.Play();
+		}
+
+		private Color _currentColor;
+		private Color GetCurrentColor()
+		{
+			return _currentColor;
+		}
+
 		private void ColorAllTiles(Color color)
 		{
+			_currentColor = color;
+			
 			foreach (var pos in _floorTiles)
 			{
 				ColorTile(MapGenerator.instance.floorTilemap, pos, color);

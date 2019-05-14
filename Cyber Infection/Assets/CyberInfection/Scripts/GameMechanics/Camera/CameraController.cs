@@ -76,7 +76,7 @@ namespace CyberInfection.GameMechanics.Camera
 		public void SetRoom(RoomController roomController)
 		{
 			//_anchor.position = roomController.transform.position;
-
+			_anchor.DOKill();
 			_anchor.DOMove(roomController.transform.position, _roomTransitionDuration).SetEase(_roomTransitionEase);
 
 			if (_previousRoom != null)

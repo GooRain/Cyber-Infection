@@ -129,11 +129,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anchor: {fileID: 8993494790356198548}
-  _dampTime: 0.5
-  _xOffset: {x: -0.75, y: 0.75}
-  _yOffset: {x: -0.75, y: 0.75}
-  _roomTransitionDuration: 1
-  _roomTransitionEase: 18
+  _dampTime: 0.4
+  _xOffset: {x: -2, y: 2}
+  _yOffset: {x: -2, y: 2}
+  _roomTransitionDuration: 2
+  _roomTransitionEase: 7
 --- !u!114 &6319480587580071281
 MonoBehaviour:
   m_ObjectHideFlags: 0
