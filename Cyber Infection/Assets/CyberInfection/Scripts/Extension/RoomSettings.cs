@@ -3,7 +3,6 @@
 	[System.Serializable]
 	public class RoomSettings
 	{
-
 		public Point Pos { get; private set; }
 		public Rectangle Size { get; private set; }
 		public float Z { get; private set; }

@@ -18,16 +18,17 @@ namespace CyberInfection.GameMechanics.Entity.Units
             _instance = this;
         }
 
-        public void SpawnEnemy(Vector3 pos)
+        public Enemy SpawnEnemy(Vector3 pos)
         {
-            SpawnEnemy(_availableDifficulties[Random.Range(0, _availableDifficulties.Count)], pos);
+            return SpawnEnemy(_availableDifficulties[Random.Range(0, _availableDifficulties.Count)], pos);
         }
 
-        public void SpawnEnemy(EnemyDifficulty difficulty, Vector3 pos)
+        private Enemy SpawnEnemy(EnemyDifficulty difficulty, Vector3 pos)
         {
             var path = _enemiesPrefabPrefix + _spawnData.enemiesDictionary[difficulty].GetRandomPrefab().name;
             Debug.Log("Difficulty = " + difficulty + " ::: Enemy Prefab Path = " + path);
-            PhotonNetwork.Instantiate(path, pos, Quaternion.identity);
+            return PhotonNetwork.Instantiate(path, pos, Quaternion.identity)
+                .GetComponent<Enemy>();
         }
     }
 }

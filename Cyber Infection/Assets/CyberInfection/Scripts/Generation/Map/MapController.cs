@@ -1,230 +1,172 @@
 using System.Collections.Generic;
 using CyberInfection.Data.Settings.Generation;
+using CyberInfection.GameMechanics;
 using CyberInfection.Generation.Room;
-using CyberInfection.Generation.Room.Door;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace CyberInfection.Generation.Map
+namespace CyberInfection.Generation
 {
-	public class MapController : MonoBehaviour
-	{
-		public Map map;
+    public class MapController : MonoBehaviour
+    {
+        public Map map;
 
-		private List<RoomController> _roomControllers = new List<RoomController>();
-		[SerializeField] private RoomController[,] _roomControllersMatrix;
-		private MapSettingsData _mapSettingsData;
-		private Dictionary<string, bool> _doorsIDs = new Dictionary<string, bool>();
+        private List<RoomController> _roomControllers = new List<RoomController>();
+        [SerializeField] private RoomController[,] _roomControllersMatrix;
+        private MapSettingsData _mapSettingsData;
 
-		private Vector3 _offset;
-		private Transform _mapHolder;
+        private Vector3 _offset;
+        private Transform _mapHolder;
+        private DoorPlacer _doorPlacer;
 
-		public void Initialize(MapSettingsData data, Vector3 offset, Transform mapHolder)
-		{
-			_mapSettingsData = data;
-			_offset = offset;
-			_mapHolder = mapHolder;
-			
-			map = new Map(data.mapSize.width, data.mapSize.height);
-			_roomControllersMatrix = new RoomController[data.mapSize.width, data.mapSize.height];
-		}
+        public List<RoomController> roomControllers => _roomControllers;
 
-		public void Clear()
-		{
-			foreach (var roomController in _roomControllers)
-			{
-				Destroy(roomController.gameObject);
-			}
+        public void Initialize(MapSettingsData data, Vector3 offset, Transform mapHolder)
+        {
+            _mapSettingsData = data;
+            _offset = offset;
+            _mapHolder = mapHolder;
 
-			map.Clear();
-		}
+            map = new Map(data.mapSize.width, data.mapSize.height);
+            _roomControllersMatrix = new RoomController[data.mapSize.width, data.mapSize.height];
+        }
 
-		public void PlaceRooms(Tilemap floorTileMap, Tilemap wallTileMap, Tilemap shadowTileMap)
-		{
-			for (var x = 0; x < map.width; x++)
-			{
-				for (var y = 0; y < map.height; y++)
-				{
-					var currentPosition = new Vector3Int(
-						x * (_mapSettingsData.roomSizeInfo.roomWidth - 1),
-						y * (_mapSettingsData.roomSizeInfo.roomHeight - 1),
-						0
-					);
+        public void Clear()
+        {
+            foreach (var roomController in _roomControllers)
+            {
+                Destroy(roomController.gameObject);
+            }
 
-					if ((map.roomMatrix[x, y] | RoomType.None) == 0) continue;
+            map.Clear();
+        }
 
-					SetFloor(floorTileMap, currentPosition, _mapSettingsData.roomSizeInfo);
-					SetWall(wallTileMap, currentPosition, _mapSettingsData.roomSizeInfo, _mapSettingsData.GetWallTile());
-					//SetWall(shadowTileMap, currentPosition, _mapSettingsData.roomSizeInfo, _mapSettingsData.GetShadowTile());
-				}
-			}
+        public void PlaceRooms(Tilemap floorTileMap, Tilemap wallTileMap, Tilemap shadowTileMap)
+        {
+            var roomIndex = 0;
+            var roomControllersHolder = new GameObject("RoomControllers Holder");
+            roomControllersHolder.transform.SetParent(_mapHolder);
 
-			SetRoomControllers();
+            for (var x = 0; x < map.width; x++)
+            {
+                for (var y = 0; y < map.height; y++)
+                {
+                    var currentPosition = new Vector3Int(
+                        x * (_mapSettingsData.roomSizeInfo.roomWidth - 1),
+                        y * (_mapSettingsData.roomSizeInfo.roomHeight - 1),
+                        0
+                    );
 
-			PlaceDoors(floorTileMap, wallTileMap, shadowTileMap);
-		}
+                    if ((map.roomMatrix[x, y] | RoomType.None) == 0) continue;
 
-		private void PlaceDoors(Tilemap floorTileMap, Tilemap wallTileMap, Tilemap shadowTileMap)
-		{
-			for (var x = 0; x < map.width; x++)
-			{
-				for (var y = 0; y < map.height; y++)
-				{
-					var currentPosition = new Vector3Int(
-						x * (_mapSettingsData.roomSizeInfo.roomWidth - 1),
-						y * (_mapSettingsData.roomSizeInfo.roomHeight - 1),
-						0
-					);
+                    var roomGameObject = new GameObject($"RoomController#{roomIndex++}");
+                    var newRoomController = roomGameObject.AddComponent<RoomController>();
+                    newRoomController.room = new Room.Room(map.roomMatrix[x, y]);
+                    var roomControllerTransform = newRoomController.transform;
+                    roomControllerTransform.SetParent(roomControllersHolder.transform);
+                    roomControllerTransform.localPosition = currentPosition + _offset + Vector3.one * 0.5f;
+                    _roomControllers.Add(newRoomController);
+                    _roomControllersMatrix[x, y] = newRoomController;
 
-					if ((map.roomMatrix[x, y] | RoomType.None) == 0) continue;
+                    newRoomController.floorTiles.AddRange(SetFloor(floorTileMap, currentPosition, _mapSettingsData.roomSizeInfo));
+                    newRoomController.wallTiles.AddRange(SetWalls(wallTileMap, currentPosition, _mapSettingsData.roomSizeInfo,
+                        _mapSettingsData.GetWallTile()));
+                    //SetWall(shadowTileMap, currentPosition, _mapSettingsData.roomSizeInfo, _mapSettingsData.GetShadowTile());
+                }
+            }
 
-					SetDoors(wallTileMap, shadowTileMap, floorTileMap, map.roomMatrix, x, y, currentPosition,
-						_mapSettingsData.roomSizeInfo);
-				}
-			}
-		}
+            PlaceDoors(floorTileMap, wallTileMap, shadowTileMap);
+        }
 
-		private void SetRoomControllers()
-		{
-			var roomIndex = 0;
-			var roomControllersHolder = new GameObject("RoomControllers Holder");
-			roomControllersHolder.transform.SetParent(_mapHolder);
-			
-			for (var x = 0; x < map.width; x++)
-			{
-				for (var y = 0; y < map.height; y++)
-				{
-					var currentPosition = _offset + new Vector3Int(
-						                      x * (_mapSettingsData.roomSizeInfo.roomWidth - 1),
-						                      y * (_mapSettingsData.roomSizeInfo.roomHeight - 1),
-						                      0
-					                      );
-					
-					if ((map.roomMatrix[x, y] | RoomType.None) == 0) continue;
-					
-					var roomGameObject = new GameObject($"RoomController#{roomIndex++}");
-					var newRoomController = roomGameObject.AddComponent<RoomController>();
-					var roomControllerTransform = newRoomController.transform;
-					roomControllerTransform.SetParent(roomControllersHolder.transform);
-					roomControllerTransform.localPosition = currentPosition + Vector3.one * 0.5f;
-					_roomControllers.Add(newRoomController);
-					_roomControllersMatrix[x, y] = newRoomController;
-				}
-			}
-		}
+        private void PlaceDoors(Tilemap floorTileMap, Tilemap wallTileMap, Tilemap shadowTileMap)
+        {
+            _doorPlacer = new DoorPlacer(map, _mapSettingsData, _mapHolder, _roomControllersMatrix);
 
-		//	TODO Vitcor: Надо будет получше сделать
-		private void SetDoors(Tilemap wallTileMap, Tilemap shadowTileMap, Tilemap floorTileMap, RoomType[,] mapRoomMatrix, int x, int y,
-			Vector3Int center,
-			RoomSizeInfo roomSizeInfo)
-		{
-			if (x > 0 && mapRoomMatrix[x - 1, y] != RoomType.None)
-			{
-				var leftDoorPos = center - new Vector3Int(roomSizeInfo.roomWidth / 2, 0, 0);
-				wallTileMap.SetTile(leftDoorPos, null);
-				shadowTileMap.SetTile(leftDoorPos, null);
-				floorTileMap.SetTile(leftDoorPos, _mapSettingsData.GetFloorTile());
-				//Debug.Log($"Set Left Door at: {leftDoorPos}");
+            for (var x = 0; x < map.width; x++)
+            {
+                for (var y = 0; y < map.height; y++)
+                {
+                    var currentPosition = new Vector3Int(
+                        x * (_mapSettingsData.roomSizeInfo.roomWidth - 1),
+                        y * (_mapSettingsData.roomSizeInfo.roomHeight - 1),
+                        0
+                    );
 
-				PlaceDoor(Door.DoorType.Horizontal, leftDoorPos,
-					mapRoomMatrix, x - 1, y, x, y);
-			}
+                    if ((map.roomMatrix[x, y] | RoomType.None) == 0) continue;
 
-			if (x < map.width - 1 && mapRoomMatrix[x + 1, y] != RoomType.None)
-			{
-				var rightDoorPos = center + new Vector3Int(roomSizeInfo.roomWidth / 2, 0, 0);
-				wallTileMap.SetTile(rightDoorPos, null);
-				shadowTileMap.SetTile(rightDoorPos, null);
-				floorTileMap.SetTile(rightDoorPos, _mapSettingsData.GetFloorTile());
-				//Debug.Log($"Set Right Door at: {rightDoorPos}");
+                    _doorPlacer.SetDoors(wallTileMap, shadowTileMap, floorTileMap, x, y, currentPosition,
+                        _mapSettingsData.roomSizeInfo, map.roomMatrix);
+                }
+            }
+        }
 
-				PlaceDoor(Door.DoorType.Horizontal, rightDoorPos,
-					mapRoomMatrix, x, y, x + 1, y);
-			}
+        private IEnumerable<Vector3Int> SetWalls(Tilemap tilemap, Vector3Int center, RoomSizeInfo roomSizeInfo, TileBase tile)
+        {
+            var tiles = new List<Vector3Int>();
+            var start = new Vector3Int(center.x - roomSizeInfo.roomWidth / 2, center.y - roomSizeInfo.roomHeight / 2,
+                center.z);
+            for (var x = 0; x < roomSizeInfo.roomWidth; x++)
+            {
+                var bottom = start + new Vector3Int(x, 0, 0);
+                var top = start + new Vector3Int(x, roomSizeInfo.roomHeight - 1, 0);
+                
+                tilemap.SetTile(bottom, tile);
+                tilemap.SetTile(top, tile);
 
-			if (y > 0 && mapRoomMatrix[x, y - 1] != RoomType.None)
-			{
-				var downDoorPos = center - new Vector3Int(0, roomSizeInfo.roomHeight / 2, 0);
-				wallTileMap.SetTile(downDoorPos, null);
-				shadowTileMap.SetTile(downDoorPos, null);
-				floorTileMap.SetTile(downDoorPos, _mapSettingsData.GetFloorTile());
-				//Debug.Log($"Set Down Door at: {downDoorPos}");
-				PlaceDoor(Door.DoorType.Vertical, downDoorPos,
-					mapRoomMatrix, x, y - 1, x, y);
-			}
+                tiles.Add(bottom);
+                tiles.Add(top);
+            }
 
-			if (y < map.height - 1 && mapRoomMatrix[x, y + 1] != RoomType.None)
-			{
-				var upDoorPos = center + new Vector3Int(0, roomSizeInfo.roomHeight / 2, 0);
-				wallTileMap.SetTile(upDoorPos, null);
-				shadowTileMap.SetTile(upDoorPos, null);
-				floorTileMap.SetTile(upDoorPos, _mapSettingsData.GetFloorTile());
-				//Debug.Log($"Set Up Door at: {upDoorPos}");
-				PlaceDoor(Door.DoorType.Vertical, upDoorPos,
-					mapRoomMatrix, x, y, x, y + 1);
-			}
-		}
+            for (var y = 0; y < roomSizeInfo.roomHeight; y++)
+            {
+                var left = start + new Vector3Int(0, y, 0);
+                var right = start + new Vector3Int(roomSizeInfo.roomWidth - 1, y, 0);
+                
+                tilemap.SetTile(left, tile);
+                tilemap.SetTile(right, tile);
+                
+                tiles.Add(left);
+                tiles.Add(right);
+            }
 
-		private void PlaceDoor(Door.DoorType doorType, Vector3 pos, RoomType[,] mapRoomMatrix, int x, int y, int x2,
-			int y2)
-		{
-			if (HasDoor(x, y, x2, y2))
-			{
-				return;
-			}
+            return tiles;
+        }
 
-			var doorGo = new GameObject($"HorizontalDoor[{GetDoorID(x, y, x2, y2)}]");
-			doorGo.transform.SetParent(_mapHolder);
-			doorGo.transform.localPosition = pos + Vector3.one * 0.5f;
-			var door = doorGo.AddComponent<Door>();
-			var doorTrigger = doorGo.AddComponent<BoxCollider2D>();
-			doorTrigger.isTrigger = true;
+        private IEnumerable<Vector3Int> SetFloor(Tilemap tilemap, Vector3Int center, RoomSizeInfo roomSizeInfo)
+        {
+            var tiles = new List<Vector3Int>();
+            var start = new Vector3Int(center.x - roomSizeInfo.roomWidth / 2, center.y - roomSizeInfo.roomHeight / 2,
+                center.z);
+            for (var x = 1; x < roomSizeInfo.roomWidth - 1; x++)
+            {
+                for (var y = 1; y < roomSizeInfo.roomHeight - 1; y++)
+                {
+                    //Debug.Log("Set floor tile at: " + (start + new Vector3Int(x, y, 0)));
+                    var pos = start + new Vector3Int(x, y, 0);
+                    var newTile = _mapSettingsData.GetFloorTile();
+                    tilemap.SetTile(pos, newTile);
+                    tiles.Add(pos);
+                }
+            }
 
-			door.Initialize(doorType, _roomControllersMatrix[x, y], _roomControllersMatrix[x2, y2]);
+            return tiles;
+        }
 
-			_doorsIDs.Add(GetDoorID(x, y, x2, y2), true);
-		}
-
-		private bool HasDoor(int x1, int y1, int x2, int y2)
-		{
-			return _doorsIDs.ContainsKey(GetDoorID(x1, y1, x2, y2)) ||
-			       _doorsIDs.ContainsKey(GetDoorID(x2, y2, x1, y1));
-		}
-
-		private string GetDoorID(int x1, int y1, int x2, int y2)
-		{
-			return $"{x1}{y1} / {x2}{y2}";
-		}
-
-		private void SetWall(Tilemap tileMap, Vector3Int center, RoomSizeInfo roomSizeInfo, TileBase tile)
-		{
-			var start = new Vector3Int(center.x - roomSizeInfo.roomWidth / 2, center.y - roomSizeInfo.roomHeight / 2,
-				center.z);
-			for (var x = 0; x < roomSizeInfo.roomWidth; x++)
-			{
-				tileMap.SetTile(start + new Vector3Int(x, 0, 0), tile);
-				tileMap.SetTile(start + new Vector3Int(x, roomSizeInfo.roomHeight - 1, 0), tile);
-			}
-
-			for (var y = 0; y < roomSizeInfo.roomHeight; y++)
-			{
-				tileMap.SetTile(start + new Vector3Int(0, y, 0), tile);
-				tileMap.SetTile(start + new Vector3Int(roomSizeInfo.roomWidth - 1, y, 0), tile);
-			}
-		}
-
-		private void SetFloor(Tilemap tileMap, Vector3Int center, RoomSizeInfo roomSizeInfo)
-		{
-			var start = new Vector3Int(center.x - roomSizeInfo.roomWidth / 2, center.y - roomSizeInfo.roomHeight / 2,
-				center.z);
-			for (var x = 1; x < roomSizeInfo.roomWidth - 1; x++)
-			{
-				for (var y = 1; y < roomSizeInfo.roomHeight - 1; y++)
-				{
-					//Debug.Log("Set floor tile at: " + (start + new Vector3Int(x, y, 0)));
-					tileMap.SetTile(start + new Vector3Int(x, y, 0), _mapSettingsData.GetFloorTile());
-				}
-			}
-		}
-	}
+        public void OnEndGenerate()
+        {
+            foreach (var roomController in _roomControllers)
+            {
+                roomController.TryToToggle(false);
+            }
+            
+            foreach (var roomController in _roomControllers)
+            {
+                if ((roomController.room.type & RoomType.Start) == RoomType.Start)
+                {
+                    LevelController.instance.level.SelectRoomController(roomController);
+                    break;
+                }
+            }
+        }
+    }
 }

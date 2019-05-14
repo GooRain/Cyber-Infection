@@ -30,6 +30,8 @@ namespace CyberInfection.GameMechanics.Camera
 		private Vector2 _xBorder;
 		private Vector2 _yBorder;
 
+		private RoomController _previousRoom;
+
 //		// что то типа такого пока что, пока других размеров комнат нет.
 //		private Vector2 _maxXAndY = new Vector2(1.15f, 1.18f);
 //		private Vector2 _minXAndY = new Vector2(-0.4f, -0.15f);
@@ -76,6 +78,15 @@ namespace CyberInfection.GameMechanics.Camera
 			//_anchor.position = roomController.transform.position;
 
 			_anchor.DOMove(roomController.transform.position, _roomTransitionDuration).SetEase(_roomTransitionEase);
+
+			if (_previousRoom != null)
+			{
+				_previousRoom.OnUnFocus();
+			}
+			
+			roomController.OnFocus();
+			
+			_previousRoom = roomController;
 
 			//CalculateBorders();
 		}

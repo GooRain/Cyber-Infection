@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using CyberInfection.Generation.Room;
 
-namespace CyberInfection.Generation.Map
+namespace CyberInfection.Generation
 {
 	public class Map
 	{

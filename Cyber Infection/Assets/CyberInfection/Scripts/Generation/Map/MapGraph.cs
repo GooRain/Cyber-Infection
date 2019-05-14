@@ -1,6 +1,6 @@
 ﻿using CyberInfection.Extension;
 
-namespace CyberInfection.Generation.Map
+namespace CyberInfection.Generation
 {
     public class MapGraph : Graph
     {

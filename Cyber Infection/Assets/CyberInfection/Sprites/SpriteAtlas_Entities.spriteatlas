@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 7babeb2dd07fc7b47880badb3d670c2d, type: 3}
-    totalSpriteSurfaceArea: 1440462
+    totalSpriteSurfaceArea: 1447267
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -85,13 +85,13 @@ SpriteAtlas:
   - player_Legs_Left1
   - player_Legs_Left3
   - player_Body_LeftUp
-  - enemy_Purple
-  - enemy_Orange
-  - enemy_Red
+  - square_purple
+  - square_orange
+  - square_red
   - player_Legs_Right2
   - player_Legs_Idle
   - second_hand
-  - enemy_Blue
+  - square_blue
   - player_Body_RightDown
   - bullet2
   m_Tag: SpriteAtlas_Entities

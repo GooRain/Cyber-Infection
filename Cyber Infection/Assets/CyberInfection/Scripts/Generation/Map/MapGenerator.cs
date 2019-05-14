@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using CyberInfection.Constants;
 using CyberInfection.Data.Settings.Generation;
 using CyberInfection.Extension;
+using CyberInfection.GameMechanics;
 using CyberInfection.Generation.Room;
 using Photon.Pun;
 using UnityEngine;
 using CyberInfection.UI.Radar;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using Zenject;
 using Random = UnityEngine.Random;
@@ -14,17 +18,19 @@ using Random = UnityEngine.Random;
 
 #endif
 
-namespace CyberInfection.Generation.Map
+namespace CyberInfection.Generation
 {
     [RequireComponent(typeof(PhotonView))]
     public class MapGenerator : MonoBehaviour
     {
+        public static MapGenerator instance;
+        
         private PhotonView m_PhotonView;
 
         [SerializeField] private Transform _mapHolder;
-        [SerializeField] private Tilemap _tilemap;
-        [SerializeField] private Tilemap _collisionTileMap;
-        [SerializeField] private Tilemap _shadowTileMap;
+        [SerializeField] private Tilemap _floorTilemap;
+        [SerializeField] private Tilemap _wallTilemap;
+        [SerializeField] private Tilemap _shadowTilemap;
 
         /* 0000000
          * 0001100
@@ -39,6 +45,10 @@ namespace CyberInfection.Generation.Map
 
         public Vector3 offset { get; private set; }
 
+        public Tilemap floorTilemap => _floorTilemap;
+        public Tilemap WallTilemap => _wallTilemap;
+        public Tilemap ShadowTilemap => _shadowTilemap;
+
         [Inject]
         private void Construct(MapSettingsData mapSettingsData)
         {
@@ -47,17 +57,26 @@ namespace CyberInfection.Generation.Map
 
         private void Awake()
         {
+            if (instance != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            
+            instance = this;
             m_PhotonView = GetComponent<PhotonView>();
             _mapController = gameObject.AddComponent<MapController>();
+            InitSeed();
+        }
 
+        private void Start()
+        {
             if (PhotonNetwork.OfflineMode)
             {
-                InitSeed();
                 GenerateWithSeed(m_Seed);
             }
             else if (PhotonNetwork.IsMasterClient)
             {
-                InitSeed();
                 m_PhotonView.RPC("GenerateWithSeed", RpcTarget.AllBufferedViaServer, m_Seed);
             }
         }
@@ -66,7 +85,14 @@ namespace CyberInfection.Generation.Map
         private void GenerateWithSeed(int seed)
         {
             Random.InitState(seed);
-            TryToGenerate();
+            if (TryToGenerate())
+            {
+                _mapController.OnEndGenerate();
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneName.Menu);
+            }
         }
 
         private void InitSeed()
@@ -93,9 +119,9 @@ namespace CyberInfection.Generation.Map
         private void Clear()
         {
             _mapController.Clear();
-            _tilemap.ClearAllTiles();
-            _collisionTileMap.ClearAllTiles();
-            _shadowTileMap.ClearAllTiles();
+            _floorTilemap.ClearAllTiles();
+            _wallTilemap.ClearAllTiles();
+            ShadowTilemap.ClearAllTiles();
         }
 
         private bool TryToGenerate()
@@ -187,11 +213,16 @@ namespace CyberInfection.Generation.Map
 
             //}
 
-            _mapController.PlaceRooms(_tilemap, _collisionTileMap, _shadowTileMap);
+            _mapController.PlaceRooms(_floorTilemap, _wallTilemap, _shadowTilemap);
 
-            _tilemap.RefreshAllTiles();
-            _collisionTileMap.RefreshAllTiles();
-            _shadowTileMap.RefreshAllTiles();
+            _floorTilemap.RefreshAllTiles();
+            _wallTilemap.RefreshAllTiles();
+            _shadowTilemap.RefreshAllTiles();
+        }
+
+        private void OnDestroy()
+        {
+            instance = null;
         }
 
         #region DEPRECATED

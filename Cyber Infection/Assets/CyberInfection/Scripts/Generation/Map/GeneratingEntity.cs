@@ -4,7 +4,7 @@ using CyberInfection.Generation.Room;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace CyberInfection.Generation.Map
+namespace CyberInfection.Generation
 {
 	public class GeneratingEntity
 	{

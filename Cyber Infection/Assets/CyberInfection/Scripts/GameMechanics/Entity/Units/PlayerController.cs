@@ -71,9 +71,9 @@ namespace CyberInfection.GameMechanics.Entity.Units
             m_InputComponent.Update();
         }
 
-        public override void Move(Vector2 direction)
+        public override void Move(Vector2 moveVector)
         {
-            m_PlayerRigidbody.position += direction * Time.deltaTime;
+            m_PlayerRigidbody.MovePosition(m_PlayerRigidbody.position + moveVector * Time.deltaTime);
         }
 
         public override void Rotate(Vector2 direction)

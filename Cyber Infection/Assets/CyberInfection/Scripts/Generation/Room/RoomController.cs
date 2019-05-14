@@ -21,15 +21,32 @@ namespace CyberInfection.Generation.Room
 	}
 	public class RoomController : MonoBehaviour
 	{
-		public Room room { get; set; }
-
-		private List<Tile> _myTiles = new List<Tile>();
+		private readonly List<Vector3Int> _floorTiles = new List<Vector3Int>();
+		private readonly List<Vector3Int> _wallTiles = new List<Vector3Int>();
+		private readonly List<Door> _myDoors = new List<Door>();
 
 		private Transform _transform;
+
+		public Room room { get; set; }
+
+		private List<Enemy> _enemies;
+
+		public List<Vector3Int> floorTiles => _floorTiles;
+		public List<Vector3Int> wallTiles => _wallTiles;
 
 		private void Awake()
 		{
 			_transform = transform;
+		}
+
+		public void AddDoor(Door door)
+		{
+			_myDoors.Add(door);
+		}
+
+		public void RemoveDoor(Door door)
+		{
+			_myDoors.Remove(door);
 		}
 
 		public void TryToToggle(bool value)
@@ -50,29 +67,47 @@ namespace CyberInfection.Generation.Room
 
 		private void Deactivate()
 		{
-			var transparent = Color.white;
-			transparent.a = 0f;
-			foreach (var tile in _myTiles)
+			ColorAllTiles(Color.clear);
+
+			ToggleDoors(true);
+		}
+
+		private void Activate()
+		{
+			ColorAllTiles(Color.white);
+
+			if ((room.type & RoomType.Start) == 0)
 			{
-				tile.color = transparent;
+				ToggleDoors(false);
+				SpawnEnemies();
 			}
 		}
 
-		public void Activate()
+		private void ColorAllTiles(Color color)
 		{
-			var transparent = Color.white;
-			transparent.a = 1f;
-			foreach (var tile in _myTiles)
+			foreach (var pos in _floorTiles)
 			{
-				tile.color = transparent;
+				ColorTile(MapGenerator.instance.floorTilemap, pos, color);
+			}
+
+			foreach (var pos in _wallTiles)
+			{
+				ColorTile(MapGenerator.instance.WallTilemap, pos, color);
 			}
 		}
-
-		public Vector3 GetEnemySpawnPos()
+		
+		private void ColorTile(Tilemap tilemap, Vector3Int pos, Color color)
 		{
-			var spawnPos = _transform.position;
-			spawnPos.x += FiftyFifty() ? -5 : 5;
-			return spawnPos;
+			tilemap.SetTileFlags(pos, TileFlags.LockTransform);
+			tilemap.SetColor(pos, color);
+		}
+
+		private void ToggleDoors(bool value)
+		{
+			foreach (var door in _myDoors)
+			{
+				door.Toggle(value);
+			}
 		}
 
 		private bool FiftyFifty()
@@ -82,22 +117,58 @@ namespace CyberInfection.Generation.Room
 
 		public void OnFocus()
 		{
-			if (!PhotonNetwork.IsMasterClient)
-			{
-				return;
-			}
 			
-			var enemyCount = Random.Range(1, 3);
-			for (var i = 0; i < enemyCount; i++)
-			{
-				Debug.Log("Enemy #" + i);
-				EnemySpawner.instance.SpawnEnemy(GetEnemySpawnPos());
-			}
 		}
 
 		public void OnUnFocus()
 		{
 			
+		}
+
+		private void SpawnEnemies()
+		{
+			if (!PhotonNetwork.IsMasterClient)
+			{
+				return;
+			}
+			
+			_enemies = new List<Enemy>();
+			
+			var enemyCount = Random.Range(1, 3);
+			for (var i = 0; i < enemyCount; i++)
+			{
+				Debug.Log("Enemy #" + i);
+				var enemy = EnemySpawner.instance.SpawnEnemy(GetEnemySpawnPos());
+				_enemies.Add(enemy);
+				enemy.OnDeath += OnEnemyDeath;
+			}
+		}
+
+		private void OnEnemyDeath(Enemy enemy)
+		{
+			_enemies.Remove(enemy);
+
+			CheckForRoomPass();
+		}
+
+		private void CheckForRoomPass()
+		{
+			if (IsRoomClear())
+			{
+				ToggleDoors(true);
+			}
+		}
+
+		private bool IsRoomClear()
+		{
+			return _enemies.Count < 1;
+		}
+
+		private Vector3 GetEnemySpawnPos()
+		{
+			var spawnPos = _transform.position;
+			spawnPos.x += FiftyFifty() ? -5 : 5;
+			return spawnPos;
 		}
 	}
 }

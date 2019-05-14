@@ -1,5 +1,5 @@
 using CyberInfection.Data.Settings.Generation;
-using CyberInfection.Generation.Map;
+using CyberInfection.Generation;
 using Plugins.Zenject.Source.Install;
 using UnityEngine;
 

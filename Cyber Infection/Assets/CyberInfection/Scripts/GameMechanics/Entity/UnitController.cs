@@ -20,9 +20,9 @@ namespace CyberInfection.GameMechanics.Entity
 			_unit = GetComponent<IUnit>();
 		}
 		
-		public virtual void Move(Vector2 direction)
+		public virtual void Move(Vector2 moveVector)
 		{
-			_unit.cachedTransform.Translate(direction * Time.deltaTime);
+			_unit.cachedTransform.Translate(moveVector * Time.deltaTime);
 		}
 
 		public virtual void Rotate(Vector2 direction)

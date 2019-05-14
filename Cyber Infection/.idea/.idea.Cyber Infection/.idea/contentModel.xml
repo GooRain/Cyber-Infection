@@ -52,7 +52,10 @@
                 <e p="EnemyDifficulty.cs" t="Include" />
               </e>
               <e p="Graph.cs" t="Include" />
-              <e p="IsometricObject.cs" t="Include" />
+              <e p="Isometry" t="Include">
+                <e p="IsometricObject.cs" t="Include" />
+                <e p="IsometricSorter.cs" t="Include" />
+              </e>
               <e p="OctaRotationHelper.cs" t="Include" />
               <e p="Point.cs" t="Include" />
               <e p="Pool" t="Include">
@@ -78,7 +81,6 @@
               </e>
               <e p="FactoryBase.cs" t="Include" />
             </e>
-            <e p="GameManager.cs" t="Include" />
             <e p="GameMechanics" t="Include">
               <e p="Camera" t="Include">
                 <e p="CameraController.cs" t="Include" />
@@ -119,6 +121,8 @@
                 <e p="LocalInputComponent.cs" t="Include" />
                 <e p="RemoteInputComponent.cs" t="Include" />
               </e>
+              <e p="Level.cs" t="Include" />
+              <e p="LevelController.cs" t="Include" />
               <e p="Projectile" t="Include">
                 <e p="Bullet.cs" t="Include" />
                 <e p="BulletPoolContainer.cs" t="Include" />
@@ -159,9 +163,8 @@
                 <e p="MapGraph.cs" t="Include" />
               </e>
               <e p="Room" t="Include">
-                <e p="Door" t="Include">
-                  <e p="Door.cs" t="Include" />
-                </e>
+                <e p="Door.cs" t="Include" />
+                <e p="DoorPlacer.cs" t="Include" />
                 <e p="Room.cs" t="Include" />
                 <e p="RoomController.cs" t="Include" />
                 <e p="RoomGenerator.cs" t="Include" />
@@ -881,6 +884,9 @@
             <e p="SerializableDictionaryBase.cs" t="Include" />
           </e>
         </e>
+        <e p="Shaders" t="Include">
+          <e p="Standard-Cull.shader" t="Include" />
+        </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Resources" t="Include">
             <e p="LineBreaking Following Characters.txt" t="Include" />
@@ -904,6 +910,43 @@
           </e>
           <e p="Sprites" t="Include">
             <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+        <e p="ThirdParty" t="Include">
+          <e p="UnitySpriteShaders" t="Include">
+            <e p="SpriteShaders" t="Include">
+              <e p="CameraDepthNormalsTexture.shader" t="Include" />
+              <e p="CameraDepthTexture.shader" t="Include" />
+              <e p="CameraNormalsTexture.shader" t="Include" />
+              <e p="CGIncludes" t="Include">
+                <e p="Noise" t="Include">
+                  <e p="ClassicNoise2D.hlsl" t="Include" />
+                  <e p="ClassicNoise3D.hlsl" t="Include" />
+                  <e p="Noise2d.cginc" t="Include" />
+                  <e p="Noise3d.cginc" t="Include" />
+                  <e p="SimplexNoise2D.hlsl" t="Include" />
+                  <e p="SimplexNoise3D.hlsl" t="Include" />
+                </e>
+                <e p="ShaderMaths.cginc" t="Include" />
+                <e p="ShaderShared.cginc" t="Include" />
+                <e p="SimplexNoise3D.hlsl" t="Include" />
+                <e p="SpriteDissolve.cginc" t="Include" />
+                <e p="SpriteLighting.cginc" t="Include" />
+                <e p="SpritePixelLighting.cginc" t="Include" />
+                <e p="SpriteShadows.cginc" t="Include" />
+                <e p="SpriteSpecular.cginc" t="Include" />
+                <e p="SpriteUnlit.cginc" t="Include" />
+                <e p="SpriteVertexLighting.cginc" t="Include" />
+              </e>
+              <e p="Editor" t="Include">
+                <e p="SpriteDiffuseShaderGUI.cs" t="Include" />
+                <e p="SpriteShaderGUI.cs" t="Include" />
+              </e>
+              <e p="SpritesPixelLit.shader" t="Include" />
+              <e p="SpritesPixelLitDissolve.shader" t="Include" />
+              <e p="SpritesUnlit.shader" t="Include" />
+              <e p="SpritesVertexLit.shader" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Tilemap" t="Include">
