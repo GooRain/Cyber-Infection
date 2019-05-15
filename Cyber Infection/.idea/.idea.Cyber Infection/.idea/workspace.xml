@@ -116,11 +116,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/Bullet.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
-              <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+              <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
               <folding>
                 <marker date="1557950780288" expanded="true" signature="28:163" ph="..." />
                 <marker date="1557950780288" expanded="true" signature="214:1717" ph="{...}" />
@@ -159,7 +159,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/VectorExt.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -892,12 +892,12 @@
       <workItem from="1557939526923" duration="84000" />
       <workItem from="1557939630503" duration="127000" />
       <workItem from="1557939780337" duration="874000" />
-      <workItem from="1557940690748" duration="3922000" />
+      <workItem from="1557940690748" duration="4403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227743000" />
+    <option name="totallyTimeSpent" value="228224000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2268,24 +2268,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/VectorExt.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <marker date="1557950780304" expanded="true" signature="54:548" ph="{...}" />
-            <marker date="1557950780304" expanded="true" signature="90:546" ph="{...}" />
-            <marker date="1557950780304" expanded="true" signature="151:217" ph="{...}" />
-            <marker date="1557950780304" expanded="true" signature="281:347" ph="{...}" />
-            <marker date="1557950780304" expanded="true" signature="419:540" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/Bullet.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
           <folding>
             <marker date="1557950780288" expanded="true" signature="28:163" ph="..." />
             <marker date="1557950780288" expanded="true" signature="214:1717" ph="{...}" />
@@ -2299,6 +2285,20 @@
             <marker date="1557950780288" expanded="true" signature="1353:1454" ph="{...}" />
             <marker date="1557950780288" expanded="true" signature="1505:1576" ph="{...}" />
             <marker date="1557950780288" expanded="true" signature="1630:1712" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/VectorExt.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <marker date="1557950780304" expanded="true" signature="54:548" ph="{...}" />
+            <marker date="1557950780304" expanded="true" signature="90:546" ph="{...}" />
+            <marker date="1557950780304" expanded="true" signature="151:217" ph="{...}" />
+            <marker date="1557950780304" expanded="true" signature="281:347" ph="{...}" />
+            <marker date="1557950780304" expanded="true" signature="419:540" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchor: {fileID: 8993494790356198548}
-  dampTime: 0.2
+  dampTime: 0.35
   xOffset: {x: -3, y: 3}
   yOffset: {x: -3, y: 3}
   roomTransitionDuration: 3
