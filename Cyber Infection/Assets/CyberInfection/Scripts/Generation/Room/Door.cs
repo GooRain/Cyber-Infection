@@ -67,6 +67,7 @@ namespace CyberInfection.Generation.Room
         {
             RoomController nextRoom;
             var position = _transform.position;
+            position.z = playerTransform.position.z;
             int roomSide;
             switch(_type)
             {

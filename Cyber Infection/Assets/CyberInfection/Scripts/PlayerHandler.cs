@@ -21,9 +21,9 @@ namespace CyberInfection
         {
             RefreshInstance(ref m_LocalPlayer, m_PlayerPrefab);
 
-            if (CameraController.instance != null)
+            if (CameraController.Instance != null)
             {
-                CameraController.instance.SetPlayer(m_LocalPlayer);
+                CameraController.Instance.SetPlayer(m_LocalPlayer);
             }
         }
 

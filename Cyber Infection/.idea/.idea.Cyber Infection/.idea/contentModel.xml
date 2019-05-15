@@ -22,6 +22,7 @@
                   <e p="UnitData.cs" t="Include" />
                 </e>
                 <e p="WeaponData.cs" t="Include" />
+                <e p="WeaponSounds.cs" t="Include" />
               </e>
               <e p="Loading" t="Include">
                 <e p="LoadingData.cs" t="Include" />
@@ -1078,7 +1079,6 @@
       </e>
       <e p="Cyber Infection.sln" t="IncludeFlat" />
       <e p="DOTween.Modules.csproj" t="IncludeRecursive" />
-      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="PhotonChat.csproj" t="IncludeRecursive" />
@@ -1089,16 +1089,14 @@
       <e p="PhotonUnityNetworking.Utilities.Culling.Editor.csproj" t="IncludeRecursive" />
       <e p="PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj" t="IncludeRecursive" />
       <e p="PhotonWebSocket.csproj" t="IncludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="Zenject-Editor.csproj" t="IncludeRecursive" />
       <e p="Zenject-PoolMonitor-Editor.csproj" t="IncludeRecursive" />
       <e p="Zenject-ReflectionBaking-Editor.csproj" t="IncludeRecursive" />
       <e p="Zenject-TestFramework.csproj" t="IncludeRecursive" />
       <e p="Zenject.csproj" t="IncludeRecursive" />
     </e>
-    <e p="C:\Users\Vitcor\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Vitcor\.Rider2018.3\system\resharper-host\Local\Transient\ReSharperHost\v183\SolutionCaches\_Cyber Infection.437327030.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Vitcor\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Vitcor\.Rider2019.1\system\resharper-host\Local\Transient\ReSharperHost\v191\SolutionCaches\_Cyber Infection.437327030.00" t="ExcludeRecursive" />
   </component>
 </project>

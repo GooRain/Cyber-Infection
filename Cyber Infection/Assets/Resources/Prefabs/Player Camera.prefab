@@ -128,12 +128,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d92f200c139ce4e99c5839a2235d15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _anchor: {fileID: 8993494790356198548}
-  _dampTime: 0.4
-  _xOffset: {x: -2, y: 2}
-  _yOffset: {x: -2, y: 2}
-  _roomTransitionDuration: 2
-  _roomTransitionEase: 7
+  anchor: {fileID: 8993494790356198548}
+  dampTime: 0.2
+  xOffset: {x: -3, y: 3}
+  yOffset: {x: -3, y: 3}
+  roomTransitionDuration: 3
+  roomTransitionEase: 27
 --- !u!114 &6319480587580071281
 MonoBehaviour:
   m_ObjectHideFlags: 0

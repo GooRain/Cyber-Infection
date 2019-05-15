@@ -20,7 +20,7 @@ namespace CyberInfection.GameMechanics
             Debug.Log("Selecting -> " + roomController.name);
             currentRoomController.TryToToggle(true);
             
-            CameraController.instance.SetRoom(currentRoomController);
+            CameraController.Instance.SetRoom(currentRoomController);
         }
     }
 }

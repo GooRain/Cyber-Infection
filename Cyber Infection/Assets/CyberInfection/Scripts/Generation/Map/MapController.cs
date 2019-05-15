@@ -68,8 +68,8 @@ namespace CyberInfection.Generation
                     _roomControllers.Add(newRoomController);
                     _roomControllersMatrix[x, y] = newRoomController;
 
-                    newRoomController.floorTiles.AddRange(SetFloor(floorTileMap, currentPosition, _mapSettingsData.roomSizeInfo));
-                    newRoomController.wallTiles.AddRange(SetWalls(wallTileMap, currentPosition, _mapSettingsData.roomSizeInfo,
+                    newRoomController.FloorTiles.AddRange(SetFloor(floorTileMap, currentPosition, _mapSettingsData.roomSizeInfo));
+                    newRoomController.WallTiles.AddRange(SetWalls(wallTileMap, currentPosition, _mapSettingsData.roomSizeInfo,
                         _mapSettingsData.GetWallTile()));
                     //SetWall(shadowTileMap, currentPosition, _mapSettingsData.roomSizeInfo, _mapSettingsData.GetShadowTile());
                 }

@@ -42,10 +42,11 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 85ecd6a78ef54224aa2dfa95a5fef0b6, type: 3}
-    totalSpriteSurfaceArea: 1376416
+    totalSpriteSurfaceArea: 1458336
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: eb3ad1409f306684e9e68bcbbecf5092, type: 3}
   - {fileID: 21300000, guid: 83fcda21d8a1cd643b3a6b9979dffcd1, type: 3}
   - {fileID: 21300000, guid: 45468d4576e14fb429c06f9f402edfc7, type: 3}
   - {fileID: 21300000, guid: 1884c128e93ef484e9ed43e84e63853a, type: 3}
@@ -68,7 +69,9 @@ SpriteAtlas:
   - {fileID: 2898664639076886817, guid: d4bbe61a082e0ad408dc8c441308cd65, type: 3}
   - {fileID: 8912248866912395419, guid: d4bbe61a082e0ad408dc8c441308cd65, type: 3}
   - {fileID: 5907749870854686333, guid: d4bbe61a082e0ad408dc8c441308cd65, type: 3}
+  - {fileID: 21300000, guid: 8e8d345b918a2774f8a3bd7f206b3209, type: 3}
   m_PackedSpriteNamesToIndex:
+  - Wall1
   - wall0
   - 1
   - floor0
@@ -91,5 +94,6 @@ SpriteAtlas:
   - shadows_RL
   - shadows_corner_RD
   - shadows_RD
+  - Floor1
   m_Tag: SpriteAtlas_Map
   m_IsVariant: 0

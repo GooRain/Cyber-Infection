@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHandler:
-    m_PlayerPrefab: {fileID: 114403988159243956, guid: 30c07414111d46d44a615be7994130d8,
+    m_PlayerPrefab: {fileID: 114403988159243956, guid: 8da26ba5786a515418c48549bde8717c,
       type: 3}
   level: {fileID: 182697571}
 --- !u!114 &182697568

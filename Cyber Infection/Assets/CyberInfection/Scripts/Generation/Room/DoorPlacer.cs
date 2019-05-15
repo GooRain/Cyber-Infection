@@ -128,8 +128,8 @@ namespace CyberInfection.Generation.Room
 
             door.Initialize(doorType, firstRoomController, secondRoomController);
             
-            firstRoomController.floorTiles.Add(pos);
-            secondRoomController.floorTiles.Add(pos);
+            firstRoomController.FloorTiles.Add(pos);
+            secondRoomController.FloorTiles.Add(pos);
 
             _doorsIDs.Add(GetDoorID(x1, y1, x2, y2), true);
         }

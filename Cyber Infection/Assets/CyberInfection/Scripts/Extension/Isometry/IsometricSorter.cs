@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace CyberInfection.Extension.Isometry
 {
-    [ExecuteInEditMode]
     public class IsometricSorter : MonoBehaviour
     {
         private const int IsometricRangePerYUnit = 100;

@@ -15,4 +15,6 @@ MonoBehaviour:
   maxAmmoInMagazine: 12
   startAmmunitionSize: 144
   shootRate: 0.5
+  sounds:
+    fire: {fileID: 8300000, guid: c2a22df68ef6118419fa635793897732, type: 3}
   bulletData: {fileID: 11400000, guid: 374f2bdc654bdf74a9f8dada31075866, type: 2}

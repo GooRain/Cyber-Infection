@@ -9,63 +9,63 @@ namespace CyberInfection.GameMechanics.Camera
 {
 	public class CameraController : MonoBehaviour
 	{
-		[SerializeField] private Transform _anchor;
-		[SerializeField] private float _dampTime = 0.2f;
-		[SerializeField] private Vector2 _xOffset = new Vector2(-0.4f, 1.15f);
-		[SerializeField] private Vector2 _yOffset = new Vector2(-0.4f, 1.18f);
+		[SerializeField] private Transform anchor;
+		[SerializeField] private float dampTime = 0.2f;
+		[SerializeField] private Vector2 xOffset = new Vector2(-0.4f, 1.15f);
+		[SerializeField] private Vector2 yOffset = new Vector2(-0.4f, 1.18f);
 
 		[Header("Easings")] 
 		
-		[SerializeField] private float _roomTransitionDuration = .5f;
-		[SerializeField] private Ease _roomTransitionEase = Ease.OutBack;
+		[SerializeField] private float roomTransitionDuration = .5f;
+		[SerializeField] private Ease roomTransitionEase = Ease.OutBack;
 
-		public static CameraController instance { get; private set; }
+		public static CameraController Instance { get; private set; }
 		
-		private Vector3 _velocity = Vector3.zero;
-		private float _cameraZ;
-		private Transform _playerTransform;
-		private UnityEngine.Camera _camera;
-		private Transform _transform;
+		private Vector3 velocity = Vector3.zero;
+		private float cameraZ;
+		private Transform playerTransform;
+		private UnityEngine.Camera cam;
+		private Transform cachedTransform;
 
-		private Vector2 _xBorder;
-		private Vector2 _yBorder;
+		private Vector2 xBorder;
+		private Vector2 yBorder;
 
-		private RoomController _previousRoom;
+		private RoomController previousRoom;
 
 //		// что то типа такого пока что, пока других размеров комнат нет.
 //		private Vector2 _maxXAndY = new Vector2(1.15f, 1.18f);
 //		private Vector2 _minXAndY = new Vector2(-0.4f, -0.15f);
 
-		private MapSettingsData _mapSettingsData;
+		private MapSettingsData mapSettingsData;
 
 		[Inject]
 		private void Construct(MapSettingsData map)
 		{
-			_mapSettingsData = map;
+			mapSettingsData = map;
 		}
 
 		public void SetPlayer(Player player)
 		{
-			_playerTransform = player.transform;
+			playerTransform = player.transform;
 		}
 
 		private void Awake()
 		{
-			instance = this;
+			Instance = this;
 
-			_camera = GetComponent<UnityEngine.Camera>();
-			_transform = transform;
-			var minSize = _mapSettingsData.roomSizeInfo.roomWidth / 16f < _mapSettingsData.roomSizeInfo.roomHeight / 9f
-				? (_mapSettingsData.roomSizeInfo.roomWidth - 2) * .5f / 16f * 9f
-				: (_mapSettingsData.roomSizeInfo.roomHeight - 2) * .5f; // Vremenno, potom nado sohranyat sootnoshenie ekrana
-			_camera.orthographicSize = minSize;
+			cam = GetComponent<UnityEngine.Camera>();
+			cachedTransform = transform;
+			var minSize = mapSettingsData.roomSizeInfo.roomWidth / 16f < mapSettingsData.roomSizeInfo.roomHeight / 9f
+				? (mapSettingsData.roomSizeInfo.roomWidth - 2) * .5f / 16f * 9f
+				: (mapSettingsData.roomSizeInfo.roomHeight - 2) * .5f; // Vremenno, potom nado sohranyat sootnoshenie ekrana
+			cam.orthographicSize = minSize;
 
 			//CalculateBorders();
 		}
 
 		private void Start()
 		{
-			_cameraZ = transform.position.z;
+			cameraZ = transform.position.z;
 		}
 
 		private void LateUpdate()
@@ -76,17 +76,17 @@ namespace CyberInfection.GameMechanics.Camera
 		public void SetRoom(RoomController roomController)
 		{
 			//_anchor.position = roomController.transform.position;
-			_anchor.DOKill();
-			_anchor.DOMove(roomController.transform.position, _roomTransitionDuration).SetEase(_roomTransitionEase);
+			anchor.DOKill();
+			anchor.DOMove(roomController.transform.position, roomTransitionDuration).SetEase(roomTransitionEase);
 
-			if (_previousRoom != null)
+			if (previousRoom != null)
 			{
-				_previousRoom.OnUnFocus();
+				previousRoom.OnUnFocus();
 			}
 			
 			roomController.OnFocus();
 			
-			_previousRoom = roomController;
+			previousRoom = roomController;
 
 			//CalculateBorders();
 		}
@@ -105,18 +105,18 @@ namespace CyberInfection.GameMechanics.Camera
 
 		private void FollowPlayer()
 		{
-			if (!_playerTransform) return;
+			if (!playerTransform) return;
 
 //			var delta = _playerTransform.position -
 //			            _camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, _cameraZ));
-			var delta = _playerTransform.position - _anchor.position;
-			var position = _transform.localPosition;
+			var delta = playerTransform.position - anchor.position;
+			var position = cachedTransform.localPosition;
 			var destination = position + delta;
-			destination.z = _cameraZ;
-			destination.x = Mathf.Clamp(delta.x, _xOffset.x, _xOffset.y);
-			destination.y = Mathf.Clamp(delta.y, _yOffset.x, _yOffset.y);
-			position = Vector3.SmoothDamp(position, destination, ref _velocity, _dampTime);
-			_transform.localPosition = position;
+			destination.z = cameraZ;
+			destination.x = Mathf.Clamp(delta.x, xOffset.x, xOffset.y);
+			destination.y = Mathf.Clamp(delta.y, yOffset.x, yOffset.y);
+			position = Vector3.SmoothDamp(position, destination, ref velocity, dampTime);
+			cachedTransform.localPosition = position;
 		}
 	}
 }

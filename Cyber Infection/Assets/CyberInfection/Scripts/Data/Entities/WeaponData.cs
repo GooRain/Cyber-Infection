@@ -11,6 +11,10 @@ namespace CyberInfection.Data.Entities
 		public int startAmmunitionSize;// mb
 		
 		public float shootRate;
+
+		[Header("Sounds")] 
+		
+		public WeaponSounds sounds;
 		
 		[Header("Prefabs")]
 		

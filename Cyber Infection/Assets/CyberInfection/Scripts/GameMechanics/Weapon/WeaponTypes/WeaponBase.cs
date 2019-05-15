@@ -15,15 +15,15 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
         
         protected ShootBehaviour shootBehaviour;
 
-        protected float _lastShootTime;
+        protected float lastShootTime;
         
-        public AmmunitionContainer ammoContainer { get; protected set; }
+        public AmmunitionContainer AmmoContainer { get; protected set; }
         
         public virtual void Initialize(WeaponData data)
         {
             weaponData = data;
             
-            ammoContainer = new AmmunitionContainer(weaponData.maxAmmoInMagazine, weaponData.startAmmunitionSize);
+            AmmoContainer = new AmmunitionContainer(weaponData.maxAmmoInMagazine, weaponData.startAmmunitionSize);
             shootBehaviour = new ShootBehaviour(muzzle, data.bulletData);
         }
         
@@ -39,7 +39,7 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
         
         public void TryToReload()
         {
-            if (ammoContainer.CanRestore())
+            if (AmmoContainer.CanRestore())
             {
                 Reload();
             }

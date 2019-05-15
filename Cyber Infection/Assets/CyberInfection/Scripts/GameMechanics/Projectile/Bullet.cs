@@ -9,27 +9,27 @@ namespace CyberInfection.GameMechanics.Projectile
 {
 	public class Bullet : PoolableMonoBehaviour
 	{
-		private SpriteRenderer m_SpriteRenderer;
-		private Rigidbody2D m_Rigidbody;
-		private Collider2D m_Collider;
+		private SpriteRenderer spriteRenderer;
+		private Rigidbody2D myRigidbody;
+		private Collider2D myCollider;
 		
-		private float m_Speed;
-		private int m_Damage;
-		private float m_Lifetime = 5f;
-		private Vector2 m_Direction;
+		private float speed;
+		private int damage;
+		private float lifetime = 5f;
+		private Vector2 direction;
 		
 		protected override void Awake()
 		{
 			base.Awake();
-			m_SpriteRenderer = GetComponent<SpriteRenderer>();
-			m_Rigidbody = GetComponent<Rigidbody2D>();
-			m_Collider = GetComponent<Collider2D>();
+			spriteRenderer = GetComponent<SpriteRenderer>();
+			myRigidbody = GetComponent<Rigidbody2D>();
+			myCollider = GetComponent<Collider2D>();
 		}
 
 		public override void OnPop()
 		{
 			enabled = true;
-			m_Collider.enabled = PhotonNetwork.IsMasterClient;
+			myCollider.enabled = PhotonNetwork.IsMasterClient;
 		}
 
 		public override void OnPush()
@@ -39,11 +39,11 @@ namespace CyberInfection.GameMechanics.Projectile
 
 		public virtual void InitializeParameters(BulletData parameters, Vector2 direction)
 		{
-			m_SpriteRenderer.sprite = parameters.sprite;
-			m_Speed = parameters.speed;
-			m_Damage = parameters.damage;
-			m_Lifetime = 5f;
-			m_Direction = direction;
+			spriteRenderer.sprite = parameters.sprite;
+			speed = parameters.speed;
+			damage = parameters.damage;
+			lifetime = 5f;
+			this.direction = direction;
 #if SHOW_DEBUG
 			Debug.Log("<b>Bullet Parameters:</b> Speed = " + m_Speed + "; Damage = " + m_Damage + "; " +
 			          "Direction = " + m_Direction.ToString("F3"));
@@ -52,28 +52,28 @@ namespace CyberInfection.GameMechanics.Projectile
 
 		private void Update()
 		{
-			if (m_Lifetime <= 0f)
+			if (lifetime <= 0f)
 			{
 				Push();
 			}
 
-			m_Lifetime -= Time.deltaTime;
+			lifetime -= Time.deltaTime;
 		}
 
 		private void FixedUpdate()
 		{
-			m_Rigidbody.MovePosition(m_Rigidbody.position + m_Direction * Time.deltaTime * m_Speed);
+			myRigidbody.MovePosition(myRigidbody.position + Time.deltaTime * speed * direction);
 		}
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{
-			other.GetComponent<IAlive>()?.GetDamage(m_Damage);
+			other.GetComponent<IAlive>()?.GetDamage(damage);
 			Push();
 		}
 
 		private void OnCollisionEnter2D(Collision2D other)
 		{
-			other.gameObject.GetComponent<IAlive>()?.GetDamage(m_Damage);
+			other.gameObject.GetComponent<IAlive>()?.GetDamage(damage);
 			Push();
 		}
 	}

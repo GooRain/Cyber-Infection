@@ -40,8 +40,8 @@ namespace CyberInfection.GameMechanics.Input
             var input = new Vector2(UnityEngine.Input.GetAxisRaw("Horizontal"),
                 UnityEngine.Input.GetAxisRaw("Vertical"));
 
-            m_Animator.SetFloat(AnimatorHash.Horizontal, input.x);
-            m_Animator.SetFloat(AnimatorHash.Vertical, input.y);
+            //m_Animator.SetFloat(AnimatorHash.Horizontal, input.x);
+            //m_Animator.SetFloat(AnimatorHash.Vertical, input.y);
             m_Animator.SetFloat(AnimatorHash.Magnitude, input.magnitude);
             Move(input.normalized);
         }

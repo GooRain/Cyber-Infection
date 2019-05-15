@@ -25,8 +25,6 @@ namespace CyberInfection.Generation.Room
 	}
 	public class RoomController : MonoBehaviour
 	{
-		private readonly List<Vector3Int> _floorTiles = new List<Vector3Int>();
-		private readonly List<Vector3Int> _wallTiles = new List<Vector3Int>();
 		private readonly List<Door> _myDoors = new List<Door>();
 
 		private Transform _transform;
@@ -35,8 +33,8 @@ namespace CyberInfection.Generation.Room
 
 		private List<Enemy> _enemies;
 
-		public List<Vector3Int> floorTiles => _floorTiles;
-		public List<Vector3Int> wallTiles => _wallTiles;
+		public List<Vector3Int> FloorTiles { get; } = new List<Vector3Int>();
+		public List<Vector3Int> WallTiles { get; } = new List<Vector3Int>();
 
 		private void Awake()
 		{
@@ -106,12 +104,12 @@ namespace CyberInfection.Generation.Room
 		{
 			_currentColor = color;
 			
-			foreach (var pos in _floorTiles)
+			foreach (var pos in FloorTiles)
 			{
 				ColorTile(MapGenerator.instance.floorTilemap, pos, color);
 			}
 
-			foreach (var pos in _wallTiles)
+			foreach (var pos in WallTiles)
 			{
 				ColorTile(MapGenerator.instance.WallTilemap, pos, color);
 			}
