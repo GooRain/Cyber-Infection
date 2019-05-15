@@ -2,97 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bba103e-8942-48b6-b774-94ecc63c91f7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Materials/Tiles/mat_Floor0.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Materials/Tiles/mat_Floor0.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/BulletData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/BulletData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/VectorExt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/VectorExt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/Bullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/Entities/Projectiles/Player_Bullet.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/Entities/Projectiles/Player_Bullet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/Entities/Projectiles/Player_Bullet.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/Entities/Projectiles/Player_Bullet.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/SpriteAtlas_Entities.spriteatlas" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/SpriteAtlas_Entities.spriteatlas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_05.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/dirt_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/dirt_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/dirt_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/dirt_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/dirt_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/dirt_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/fire_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/fire_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/fire_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/fire_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_05.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_06.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flare_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flare_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/light_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/light_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/light_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/light_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/light_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/light_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_05.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_05.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scorch_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scorch_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scorch_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scorch_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scorch_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scorch_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scratch_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scratch_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_05.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_06.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_07.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_07.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_08.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_08.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_09.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_09.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_10.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_10.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_05.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_06.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_07.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_07.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_05.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_06.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_07.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_07.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_08.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_08.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_09.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_09.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/symbol_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/symbol_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/symbol_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/symbol_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_05.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_06.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_07.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_07.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/twirl_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/twirl_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/twirl_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/twirl_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/twirl_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/twirl_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/FloorMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/FloorMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Bullets/defaultBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Bullets/defaultBullet.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Units/Players/Player2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Units/Players/Player2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Weapons/LaserPistol.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Weapons/LaserPistol.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/VectorExt.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <marker date="1557950780304" expanded="true" signature="54:548" ph="{...}" />
                 <marker date="1557950780304" expanded="true" signature="90:546" ph="{...}" />
@@ -564,7 +478,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="105" />
     <option name="width" value="1699" />
-    <option name="height" value="1095" />
+    <option name="height" value="1087" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -892,12 +806,12 @@
       <workItem from="1557939526923" duration="84000" />
       <workItem from="1557939630503" duration="127000" />
       <workItem from="1557939780337" duration="874000" />
-      <workItem from="1557940690748" duration="4403000" />
+      <workItem from="1557940690748" duration="4527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228224000" />
+    <option name="totallyTimeSpent" value="228348000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -909,8 +823,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="105" y="0" width="1699" height="1095" extended-state="0" />
-    <editor active="true" />
+    <frame x="105" y="0" width="1699" height="1087" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22269677" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -2292,7 +2205,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/VectorExt.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <marker date="1557950780304" expanded="true" signature="54:548" ph="{...}" />
             <marker date="1557950780304" expanded="true" signature="90:546" ph="{...}" />
