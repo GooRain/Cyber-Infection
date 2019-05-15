@@ -1,6 +1,7 @@
 ﻿//#define SHOW_DEBUG
 
 using CyberInfection.Data.Entities;
+using CyberInfection.Extension;
 using CyberInfection.Extension.Pool;
 using Photon.Pun;
 using UnityEngine;
@@ -9,7 +10,6 @@ namespace CyberInfection.GameMechanics.Projectile
 {
 	public class Bullet : PoolableMonoBehaviour
 	{
-		private SpriteRenderer spriteRenderer;
 		private Rigidbody2D myRigidbody;
 		private Collider2D myCollider;
 		
@@ -21,7 +21,6 @@ namespace CyberInfection.GameMechanics.Projectile
 		protected override void Awake()
 		{
 			base.Awake();
-			spriteRenderer = GetComponent<SpriteRenderer>();
 			myRigidbody = GetComponent<Rigidbody2D>();
 			myCollider = GetComponent<Collider2D>();
 		}
@@ -37,13 +36,13 @@ namespace CyberInfection.GameMechanics.Projectile
 			enabled = false;
 		}
 
-		public virtual void InitializeParameters(BulletData parameters, Vector2 direction)
+		public virtual void InitializeParameters(BulletData parameters, Vector2 shootDirection)
 		{
-			spriteRenderer.sprite = parameters.sprite;
 			speed = parameters.speed;
 			damage = parameters.damage;
 			lifetime = 5f;
-			this.direction = direction;
+			direction = shootDirection;
+			transform.rotation = shootDirection.DirectionToRotation();
 #if SHOW_DEBUG
 			Debug.Log("<b>Bullet Parameters:</b> Speed = " + m_Speed + "; Damage = " + m_Damage + "; " +
 			          "Direction = " + m_Direction.ToString("F3"));
@@ -62,7 +61,7 @@ namespace CyberInfection.GameMechanics.Projectile
 
 		private void FixedUpdate()
 		{
-			myRigidbody.MovePosition(myRigidbody.position + Time.deltaTime * speed * direction);
+			myRigidbody.MovePosition(myRigidbody.position + Time.fixedDeltaTime * speed * direction);
 		}
 
 		private void OnTriggerEnter2D(Collider2D other)

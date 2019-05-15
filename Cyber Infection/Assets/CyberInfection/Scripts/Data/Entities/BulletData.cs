@@ -7,6 +7,5 @@ namespace CyberInfection.Data.Entities
     {
         public float speed;
         public int damage;
-        public Sprite sprite;
     }
 }

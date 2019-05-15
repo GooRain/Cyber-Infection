@@ -13,5 +13,10 @@ namespace CyberInfection.Extension
         {
             return new Vector2(vec.x, vec.y);
         }
+
+        public static Quaternion DirectionToRotation(this Vector2 dir)
+        {
+            return Quaternion.AngleAxis(Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg, Vector3.forward);
+        }
     }
 }

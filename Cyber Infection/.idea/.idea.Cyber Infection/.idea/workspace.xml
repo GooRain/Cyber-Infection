@@ -2,44 +2,97 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bba103e-8942-48b6-b774-94ecc63c91f7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/WeaponSounds.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/WeaponSounds.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtskillZ Store/Free SciFi Textures/FloorTech08-Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtskillZ Store/Free SciFi Textures/FloorTech08-Normal.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtskillZ Store/Free SciFi Textures/Wall02c-Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtskillZ Store/Free SciFi Textures/Wall02c-Normal.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtskillZ Store/Free SciFi Textures/Wall02c.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtskillZ Store/Free SciFi Textures/Wall02c.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scenes/PlayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scenes/PlayScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/WeaponData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/WeaponData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Isometry/IsometricSorter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Isometry/IsometricSorter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Camera/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Input/LocalInputComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Input/LocalInputComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Level.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Level.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Materials/Tiles/mat_Floor0.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Materials/Tiles/mat_Floor0.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/BulletData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/BulletData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/VectorExt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/VectorExt.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/Bullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponTypes/FireableWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponTypes/FireableWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponTypes/WeaponBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponTypes/WeaponBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/DoorPlacer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/DoorPlacer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/PlayerHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/PlayerHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/Entities/Units/Player/V2/main_hand.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/Entities/Units/Player/V2/main_hand.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/Entities/Weapons/weapon_m9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/Entities/Weapons/weapon_m9.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/Entities/Projectiles/Player_Bullet.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/Entities/Projectiles/Player_Bullet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/Entities/Projectiles/Player_Bullet.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/Entities/Projectiles/Player_Bullet.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/SpriteAtlas_Entities.spriteatlas" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Sprites/SpriteAtlas_Entities.spriteatlas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Player/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Player/Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Generation/Tiles/Type0/Tile_floor0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Generation/Tiles/Type0/Tile_floor0.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Generation/Tiles/Type0/Tile_wall0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Generation/Tiles/Type0/Tile_wall0.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Weapons/weapon_data M9.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Weapons/weapon_data M9.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/circle_05.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/dirt_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/dirt_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/dirt_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/dirt_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/dirt_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/dirt_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/fire_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/fire_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/fire_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/fire_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_05.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flame_06.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flare_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/flare_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/light_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/light_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/light_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/light_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/light_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/light_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/magic_05.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/muzzle_05.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scorch_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scorch_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scorch_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scorch_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scorch_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scorch_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scratch_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/scratch_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/slash_04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_05.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_06.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_07.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_07.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_08.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_08.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_09.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_09.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_10.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/smoke_10.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_05.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_06.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_07.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/spark_07.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_05.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_06.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_07.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_07.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_08.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_08.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_09.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/star_09.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/symbol_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/symbol_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/symbol_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/symbol_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_05.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_06.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_07.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/trace_07.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/twirl_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/twirl_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/twirl_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/twirl_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/twirl_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/twirl_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyNL/kenney_particlePack/PNG/window_04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/FloorMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/FloorMaterial.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Bullets/defaultBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Bullets/defaultBullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Units/Players/Player0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Units/Players/Player0.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Weapons/M9.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Weapons/M9.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player Camera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/SpriteAtlas_Map.spriteatlas" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/SpriteAtlas_Map.spriteatlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Units/Players/Player2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Units/Players/Player2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Weapons/LaserPistol.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Entities/Weapons/LaserPistol.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,92 +116,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-50">
-              <caret line="169" column="31" selection-start-line="169" selection-start-column="31" selection-end-line="169" selection-end-column="31" />
-              <folding>
-                <marker date="1557940937054" expanded="false" signature="6:300" ph="..." />
-                <marker date="1557940937054" expanded="true" signature="342:3317" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="372:451" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="496:3315" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="826:861" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="895:926" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="963:997" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="1036:1164" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="1054:1102" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="1110:1160" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="1262:1327" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="1354:1493" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="1435:1489" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="1542:1681" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="1747:1780" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="1823:2076" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="1892:1965" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="2000:2072" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="2150:2246" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="2286:2362" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="2324:2358" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="2391:2434" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="2459:2471" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="2498:2510" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="2541:2900" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="2583:2605" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="2726:2896" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="2942:3001" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="3036:3099" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="3062:3095" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="3129:3167" ph="{...}" />
-                <marker date="1557940937054" expanded="true" signature="3205:3312" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Camera/CameraController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-              <folding>
-                <marker date="1557940320563" expanded="false" signature="6:186" ph="..." />
-                <marker date="1557940320563" expanded="true" signature="233:3356" ph="{...}" />
-                <marker date="1557940320563" expanded="true" signature="282:3354" ph="{...}" />
-                <marker date="1557940320563" expanded="true" signature="1022:1209" ph="/* что то типа такого пока что, пока других размеров комнат нет. ... */" />
-                <marker date="1557940320563" expanded="true" signature="1311:1345" ph="{...}" />
-                <marker date="1557940320563" expanded="true" signature="1385:1432" ph="{...}" />
-                <marker date="1557940320563" expanded="true" signature="1456:1913" ph="{...}" />
-                <marker date="1557940320563" expanded="true" signature="1937:1980" ph="{...}" />
-                <marker date="1557940320563" expanded="true" signature="2009:2036" ph="{...}" />
-                <marker date="1557940320563" expanded="true" signature="2090:2449" ph="{...}" />
-                <marker date="1557940320563" expanded="true" signature="2308:2348" ph="{...}" />
-                <marker date="1557940320563" expanded="true" signature="2451:2724" ph="/* private void CalculateBorders() ... */" />
-                <marker date="1557940320563" expanded="true" signature="2755:3351" ph="{...}" />
-                <marker date="1557940320563" expanded="true" signature="2794:2920" ph="/* var delta = _playerTransform.position - ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/Bullet.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-920">
-              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+            <state relative-caret-position="216">
+              <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
               <folding>
-                <marker date="1557946375067" expanded="true" signature="28:131" ph="..." />
-                <marker date="1557946375067" expanded="true" signature="182:1752" ph="{...}" />
-                <marker date="1557946375067" expanded="true" signature="229:1750" ph="{...}" />
-                <marker date="1557946375067" expanded="true" signature="486:653" ph="{...}" />
-                <marker date="1557946375067" expanded="true" signature="685:766" ph="{...}" />
-                <marker date="1557946375067" expanded="true" signature="799:827" ph="{...}" />
-                <marker date="1557946375067" expanded="true" signature="913:1253" ph="{...}" />
-                <marker date="1557946375067" expanded="true" signature="1278:1363" ph="{...}" />
-                <marker date="1557946375067" expanded="true" signature="1305:1327" ph="{...}" />
-                <marker date="1557946375067" expanded="true" signature="1393:1489" ph="{...}" />
-                <marker date="1557946375067" expanded="true" signature="1540:1611" ph="{...}" />
-                <marker date="1557946375067" expanded="true" signature="1665:1747" ph="{...}" />
+                <marker date="1557950780288" expanded="true" signature="28:163" ph="..." />
+                <marker date="1557950780288" expanded="true" signature="214:1717" ph="{...}" />
+                <marker date="1557950780288" expanded="true" signature="261:1715" ph="{...}" />
+                <marker date="1557950780288" expanded="true" signature="477:592" ph="{...}" />
+                <marker date="1557950780288" expanded="true" signature="624:705" ph="{...}" />
+                <marker date="1557950780288" expanded="true" signature="738:766" ph="{...}" />
+                <marker date="1557950780288" expanded="true" signature="857:1213" ph="{...}" />
+                <marker date="1557950780288" expanded="true" signature="1238:1323" ph="{...}" />
+                <marker date="1557950780288" expanded="true" signature="1265:1287" ph="{...}" />
+                <marker date="1557950780288" expanded="true" signature="1353:1454" ph="{...}" />
+                <marker date="1557950780288" expanded="true" signature="1505:1576" ph="{...}" />
+                <marker date="1557950780288" expanded="true" signature="1630:1712" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/OctaRotationHelper.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+              <folding>
+                <marker date="1552822254874" expanded="false" signature="6:32" ph="..." />
+                <marker date="1552822254874" expanded="true" signature="68:1345" ph="{...}" />
+                <marker date="1552822254874" expanded="true" signature="120:291" ph="{...}" />
+                <marker date="1552822254874" expanded="true" signature="339:1343" ph="{...}" />
+                <marker date="1552822254874" expanded="true" signature="408:717" ph="{...}" />
+                <marker date="1552822254874" expanded="true" signature="608:673" ph="{...}" />
+                <marker date="1552822254874" expanded="true" signature="726:926" ph="/// Rotating 8 Ways and returning frame index ... " />
+                <marker date="1552822254874" expanded="true" signature="990:1337" ph="{...}" />
+                <marker date="1552822254874" expanded="true" signature="1216:1281" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/VectorExt.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <marker date="1557950780304" expanded="true" signature="54:548" ph="{...}" />
+                <marker date="1557950780304" expanded="true" signature="90:546" ph="{...}" />
+                <marker date="1557950780304" expanded="true" signature="151:217" ph="{...}" />
+                <marker date="1557950780304" expanded="true" signature="281:347" ph="{...}" />
+                <marker date="1557950780304" expanded="true" signature="419:540" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -228,7 +249,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Isometry/IsometricSorter.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="92">
@@ -247,13 +268,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/WeaponSounds.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/Door.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+            <state relative-caret-position="80">
+              <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
               <folding>
-                <marker date="1557946464115" expanded="true" signature="58:161" ph="{...}" />
-                <marker date="1557946464115" expanded="true" signature="116:159" ph="{...}" />
+                <marker date="1557949003440" expanded="false" signature="6:174" ph="..." />
+                <marker date="1557949003440" expanded="true" signature="216:2948" ph="{...}" />
+                <marker date="1557949003440" expanded="true" signature="256:2946" ph="{...}" />
+                <marker date="1557949003440" expanded="true" signature="291:356" ph="{...}" />
+                <marker date="1557949003440" expanded="true" signature="629:863" ph="{...}" />
+                <marker date="1557949003440" expanded="true" signature="655:853" ph="{...}" />
+                <marker date="1557949003440" expanded="true" signature="708:804" ph="{...}" />
+                <marker date="1557949003440" expanded="true" signature="893:1001" ph="{...}" />
+                <marker date="1557949003440" expanded="true" signature="1084:1257" ph="{...}" />
+                <marker date="1557949003440" expanded="true" signature="1314:1519" ph="{...}" />
+                <marker date="1557949003440" expanded="true" signature="1380:1509" ph="{...}" />
+                <marker date="1557949003440" expanded="true" signature="1579:2713" ph="{...}" />
+                <marker date="1557949003440" expanded="true" signature="1779:2558" ph="{...}" />
+                <marker date="1557949003440" expanded="true" signature="2753:2813" ph="{...}" />
+                <marker date="1557949003440" expanded="true" signature="2847:2940" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -262,11 +296,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/BulletData.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            <state relative-caret-position="184">
+              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
               <folding>
-                <marker date="1557400736927" expanded="true" signature="58:278" ph="{...}" />
-                <marker date="1557400736927" expanded="true" signature="179:276" ph="{...}" />
+                <marker date="1557950394339" expanded="true" signature="58:248" ph="{...}" />
+                <marker date="1557950394339" expanded="true" signature="179:246" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -293,6 +327,7 @@
       <find>keycode.g</find>
       <find>SceneManager.LoadScene(SceneName.Menu);</find>
       <find>tryto</find>
+      <find>player</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -386,6 +421,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Entity/Units/ShootingEnemy/ShootingEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Main/IInstantiator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Entity/Units/ShootingEnemy/EnemyBulletController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Main/DiContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/UI/Game/GameCanvas.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -466,13 +502,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Entity/Enemy/EnemyController.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Factory/EnemyFactory/EnemyFactoryBase.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/PlayerHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/IAlive.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/DamageData.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Entity/DamageHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/BulletData.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Entity/Units/ShootingEnemy/EnemyBulletController.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Entity/UnitsManager.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Settings/Generation/MapSettingsData.cs" />
@@ -499,7 +533,6 @@
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/LevelController.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Entity/Units/Enemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/Door.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/DoorPlacer.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Standard-Cull.shader" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Level.cs" />
@@ -510,13 +543,16 @@
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapController.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Camera/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomController.cs" />
-        <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/WeaponSounds.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/WeaponData.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponTypes/WeaponBase.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponTypes/FireableWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Input/LocalInputComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/Isometry/IsometricSorter.cs" />
+        <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/Door.cs" />
+        <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/BulletData.cs" />
+        <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/VectorExt.cs" />
       </list>
     </option>
   </component>
@@ -692,6 +728,41 @@
               <item name="Generation" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Room" type="24d0babc:SolutionExplorerModelNode" />
             </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Cyber Infection" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="PhotonRealtime" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Cyber Infection" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="PhotonRealtime" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Cyber Infection" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="PhotonRealtime" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Photon" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Cyber Infection" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="PhotonRealtime" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Photon" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="PhotonRealtime" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Cyber Infection" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="PhotonRealtime" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Photon" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="PhotonRealtime" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Code" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -821,12 +892,12 @@
       <workItem from="1557939526923" duration="84000" />
       <workItem from="1557939630503" duration="127000" />
       <workItem from="1557939780337" duration="874000" />
-      <workItem from="1557940690748" duration="2618000" />
+      <workItem from="1557940690748" duration="3922000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226439000" />
+    <option name="totallyTimeSpent" value="227743000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -904,45 +975,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07ACD42A-4D06-4CBD-AC11-856405CD71FB/43/2acdc0d5/ExecuteAlways.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Entity/Units/Player.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="41" column="46" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-          <folding>
-            <marker date="1557828067448" expanded="false" signature="6:161" ph="..." />
-            <marker date="1557828067448" expanded="true" signature="214:1285" ph="{...}" />
-            <marker date="1557828067448" expanded="true" signature="247:1283" ph="{...}" />
-            <marker date="1557828067448" expanded="true" signature="491:858" ph="{...}" />
-            <marker date="1557828067448" expanded="true" signature="916:1009" ph="{...}" />
-            <marker date="1557828067448" expanded="true" signature="1049:1142" ph="{...}" />
-            <marker date="1557828067448" expanded="true" signature="1178:1277" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/UI/Game/GameCanvas.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding>
-            <marker date="1557828062815" expanded="false" signature="6:118" ph="..." />
-            <marker date="1557828062815" expanded="true" signature="174:811" ph="{...}" />
-            <marker date="1557828062815" expanded="true" signature="220:809" ph="{...}" />
-            <marker date="1557828062815" expanded="true" signature="378:427" ph="{...}" />
-            <marker date="1557828062815" expanded="true" signature="488:562" ph="{...}" />
-            <marker date="1557828062815" expanded="true" signature="594:720" ph="{...}" />
-            <marker date="1557828062815" expanded="true" signature="754:803" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Tilemap/Brushes/Tint Brush Smooth/Shaders/TintedTilemap.shader">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1603,30 +1635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/Door.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-          <folding>
-            <marker date="1557837549163" expanded="false" signature="6:174" ph="..." />
-            <marker date="1557837549163" expanded="true" signature="216:2895" ph="{...}" />
-            <marker date="1557837549163" expanded="true" signature="256:2893" ph="{...}" />
-            <marker date="1557837549163" expanded="true" signature="291:356" ph="{...}" />
-            <marker date="1557837549163" expanded="true" signature="629:863" ph="{...}" />
-            <marker date="1557837549163" expanded="true" signature="655:853" ph="{...}" />
-            <marker date="1557837549163" expanded="true" signature="708:804" ph="{...}" />
-            <marker date="1557837549163" expanded="true" signature="893:1001" ph="{...}" />
-            <marker date="1557837549163" expanded="true" signature="1084:1257" ph="{...}" />
-            <marker date="1557837549163" expanded="true" signature="1314:1519" ph="{...}" />
-            <marker date="1557837549163" expanded="true" signature="1380:1509" ph="{...}" />
-            <marker date="1557837549163" expanded="true" signature="1579:2660" ph="{...}" />
-            <marker date="1557837549163" expanded="true" signature="1726:2505" ph="{...}" />
-            <marker date="1557837549163" expanded="true" signature="2700:2760" ph="{...}" />
-            <marker date="1557837549163" expanded="true" signature="2794:2887" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/LevelController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -2069,38 +2077,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/Bullet.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-920">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding>
-            <marker date="1557946375067" expanded="true" signature="28:131" ph="..." />
-            <marker date="1557946375067" expanded="true" signature="182:1752" ph="{...}" />
-            <marker date="1557946375067" expanded="true" signature="229:1750" ph="{...}" />
-            <marker date="1557946375067" expanded="true" signature="486:653" ph="{...}" />
-            <marker date="1557946375067" expanded="true" signature="685:766" ph="{...}" />
-            <marker date="1557946375067" expanded="true" signature="799:827" ph="{...}" />
-            <marker date="1557946375067" expanded="true" signature="913:1253" ph="{...}" />
-            <marker date="1557946375067" expanded="true" signature="1278:1363" ph="{...}" />
-            <marker date="1557946375067" expanded="true" signature="1305:1327" ph="{...}" />
-            <marker date="1557946375067" expanded="true" signature="1393:1489" ph="{...}" />
-            <marker date="1557946375067" expanded="true" signature="1540:1611" ph="{...}" />
-            <marker date="1557946375067" expanded="true" signature="1665:1747" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/BulletData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <marker date="1557400736927" expanded="true" signature="58:278" ph="{...}" />
-            <marker date="1557400736927" expanded="true" signature="179:276" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/WeaponSounds.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -2190,6 +2166,139 @@
             <marker date="1557948917777" expanded="true" signature="478:568" ph="{...}" />
             <marker date="1557948917777" expanded="true" signature="609:813" ph="{...}" />
             <marker date="1557948917777" expanded="true" signature="744:803" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/Door.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+          <folding>
+            <marker date="1557949003440" expanded="false" signature="6:174" ph="..." />
+            <marker date="1557949003440" expanded="true" signature="216:2948" ph="{...}" />
+            <marker date="1557949003440" expanded="true" signature="256:2946" ph="{...}" />
+            <marker date="1557949003440" expanded="true" signature="291:356" ph="{...}" />
+            <marker date="1557949003440" expanded="true" signature="629:863" ph="{...}" />
+            <marker date="1557949003440" expanded="true" signature="655:853" ph="{...}" />
+            <marker date="1557949003440" expanded="true" signature="708:804" ph="{...}" />
+            <marker date="1557949003440" expanded="true" signature="893:1001" ph="{...}" />
+            <marker date="1557949003440" expanded="true" signature="1084:1257" ph="{...}" />
+            <marker date="1557949003440" expanded="true" signature="1314:1519" ph="{...}" />
+            <marker date="1557949003440" expanded="true" signature="1380:1509" ph="{...}" />
+            <marker date="1557949003440" expanded="true" signature="1579:2713" ph="{...}" />
+            <marker date="1557949003440" expanded="true" signature="1779:2558" ph="{...}" />
+            <marker date="1557949003440" expanded="true" signature="2753:2813" ph="{...}" />
+            <marker date="1557949003440" expanded="true" signature="2847:2940" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Entities/BulletData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding>
+            <marker date="1557950394339" expanded="true" signature="58:248" ph="{...}" />
+            <marker date="1557950394339" expanded="true" signature="179:246" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/Extensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding>
+            <marker date="1548431819000" expanded="true" signature="0:442" ph="/*   Provides some helpful methods and extensions for Hashtables, etc. ... */" />
+            <marker date="1548431819000" expanded="true" signature="549:7253" ph="{...}" />
+            <marker date="1548431819000" expanded="false" signature="562:905" ph="..." />
+            <marker date="1548431819000" expanded="true" signature="923:1082" ph="/// This static class defines some useful extension methods for several existing classes (e.g. Vector3, float and ... " />
+            <marker date="1548431819000" expanded="true" signature="1117:7251" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="1132:1455" ph="/// Merges all keys from addHash into the target. Adds new keys and updates the values of existing keys in target ... " />
+            <marker date="1548431819000" expanded="true" signature="1534:1787" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="1603:1655" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="1705:1777" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="1797:2273" ph="/// Merges keys of type string to target Hashtable. ... " />
+            <marker date="1548431819000" expanded="true" signature="2362:2740" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="2431:2483" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="2533:2730" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="2632:2716" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="2750:3105" ph="///Helper method for debugging of IDictionary content, inlcuding type-information. Using this is not performant. ... " />
+            <marker date="1548431819000" expanded="true" signature="3172:3259" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="3263:3599" ph="///Helper method for debugging of List&lt;T&gt; content. Using this is not performant. ... " />
+            <marker date="1548431819000" expanded="true" signature="3657:3900" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="3779:3862" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="3910:4235" ph="///Helper method for debugging of object[] content. Using this is not performant. ... " />
+            <marker date="1548431819000" expanded="true" signature="4297:4632" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="4454:4579" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="4643:5140" ph="/// This method copies all string-typed keys of the original into a new Hashtable. ... " />
+            <marker date="1548431819000" expanded="true" signature="5217:5601" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="5309:5563" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="5377:5549" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="5434:5531" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="5611:5950" ph="/// This removes all key-value pairs that have a null-reference as value. ... " />
+            <marker date="1548431819000" expanded="true" signature="6028:6398" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="6200:6388" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="6296:6374" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="6408:6842" ph="/// Checks if a particular integer value is in an int-array. ... " />
+            <marker date="1548431819000" expanded="true" signature="6905:7245" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="6947:7005" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="7070:7208" ph="{...}" />
+            <marker date="1548431819000" expanded="true" signature="7125:7194" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/OctaRotationHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <marker date="1552822254874" expanded="false" signature="6:32" ph="..." />
+            <marker date="1552822254874" expanded="true" signature="68:1345" ph="{...}" />
+            <marker date="1552822254874" expanded="true" signature="120:291" ph="{...}" />
+            <marker date="1552822254874" expanded="true" signature="339:1343" ph="{...}" />
+            <marker date="1552822254874" expanded="true" signature="408:717" ph="{...}" />
+            <marker date="1552822254874" expanded="true" signature="608:673" ph="{...}" />
+            <marker date="1552822254874" expanded="true" signature="726:926" ph="/// Rotating 8 Ways and returning frame index ... " />
+            <marker date="1552822254874" expanded="true" signature="990:1337" ph="{...}" />
+            <marker date="1552822254874" expanded="true" signature="1216:1281" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Extension/VectorExt.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <marker date="1557950780304" expanded="true" signature="54:548" ph="{...}" />
+            <marker date="1557950780304" expanded="true" signature="90:546" ph="{...}" />
+            <marker date="1557950780304" expanded="true" signature="151:217" ph="{...}" />
+            <marker date="1557950780304" expanded="true" signature="281:347" ph="{...}" />
+            <marker date="1557950780304" expanded="true" signature="419:540" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Projectile/Bullet.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+          <folding>
+            <marker date="1557950780288" expanded="true" signature="28:163" ph="..." />
+            <marker date="1557950780288" expanded="true" signature="214:1717" ph="{...}" />
+            <marker date="1557950780288" expanded="true" signature="261:1715" ph="{...}" />
+            <marker date="1557950780288" expanded="true" signature="477:592" ph="{...}" />
+            <marker date="1557950780288" expanded="true" signature="624:705" ph="{...}" />
+            <marker date="1557950780288" expanded="true" signature="738:766" ph="{...}" />
+            <marker date="1557950780288" expanded="true" signature="857:1213" ph="{...}" />
+            <marker date="1557950780288" expanded="true" signature="1238:1323" ph="{...}" />
+            <marker date="1557950780288" expanded="true" signature="1265:1287" ph="{...}" />
+            <marker date="1557950780288" expanded="true" signature="1353:1454" ph="{...}" />
+            <marker date="1557950780288" expanded="true" signature="1505:1576" ph="{...}" />
+            <marker date="1557950780288" expanded="true" signature="1630:1712" ph="{...}" />
           </folding>
         </state>
       </provider>
