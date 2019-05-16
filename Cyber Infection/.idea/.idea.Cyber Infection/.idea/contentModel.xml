@@ -200,6 +200,9 @@
             <e p="SceneManagers" t="Include">
               <e p="LoadSceneManager.cs" t="Include" />
             </e>
+            <e p="Sound" t="Include">
+              <e p="StartLoopMusic.cs" t="Include" />
+            </e>
             <e p="UI" t="Include">
               <e p="Game" t="Include">
                 <e p="GameCanvas.cs" t="Include" />
