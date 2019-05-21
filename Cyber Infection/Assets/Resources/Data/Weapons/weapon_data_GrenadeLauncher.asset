@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c21e9afdc77044e49463e93bc0cfa590, type: 3}
-  m_Name: weapon_data_LaserPistol
+  m_Name: weapon_data_GrenadeLauncher
   m_EditorClassIdentifier: 
   maxAmmoInMagazine: 12
   startAmmunitionSize: 144

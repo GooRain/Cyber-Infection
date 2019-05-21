@@ -201,6 +201,7 @@
               <e p="LoadSceneManager.cs" t="Include" />
             </e>
             <e p="Sound" t="Include">
+              <e p="SoundManager.cs" t="Include" />
               <e p="StartLoopMusic.cs" t="Include" />
             </e>
             <e p="UI" t="Include">
