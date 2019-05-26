@@ -219,6 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb14468aa0f301843b189d8ba55f2188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  blockers: []
   _data: {fileID: 11400000, guid: 87381b924134a7442ab0c392b8f241b8, type: 2}
 --- !u!114 &114860657085519826
 MonoBehaviour:

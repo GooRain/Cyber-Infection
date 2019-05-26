@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96a01ac4a6342b6973d83fe70598e08, type: 3}
-  m_Name: Grenade Data
+  m_Script: {fileID: 11500000, guid: dcb45dab1841e1745b2b5e8f1327ac22, type: 3}
+  m_Name: ItemAsset
   m_EditorClassIdentifier: 
-  speed: 20
-  damage: 25
+  items:
+  - id: 123health
+    name: healthPotion
+    icon: {fileID: 21300000, guid: 166ddd04288aef94aa869154894add0a, type: 3}
