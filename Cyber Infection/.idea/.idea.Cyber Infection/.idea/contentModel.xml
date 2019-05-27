@@ -110,6 +110,7 @@
               </e>
               <e p="IAlive.cs" t="Include" />
               <e p="IControllable.cs" t="Include" />
+              <e p="IDamagable.cs" t="Include" />
               <e p="Improvements" t="Include">
                 <e p="HealthPotion" t="Include">
                   <e p="HealthAmountData.cs" t="Include" />
@@ -150,8 +151,12 @@
                 <e p="WeaponController.cs" t="Include" />
                 <e p="WeaponTypes" t="Include">
                   <e p="FireableWeapon.cs" t="Include" />
+                  <e p="IDamager.cs" t="Include" />
+                  <e p="IReloadable.cs" t="Include" />
+                  <e p="IShooter.cs" t="Include" />
                   <e p="IWeapon.cs" t="Include" />
                   <e p="WeaponBase.cs" t="Include" />
+                  <e p="WeaponComponent.cs" t="Include" />
                 </e>
               </e>
             </e>

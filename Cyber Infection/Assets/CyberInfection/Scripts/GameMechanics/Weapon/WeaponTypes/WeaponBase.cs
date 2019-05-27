@@ -9,7 +9,6 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
     [System.Serializable]
     public abstract class WeaponBase : MonoBehaviour, IWeapon
     {
-        
         public WeaponData weaponData;
         public Transform muzzle;
         
