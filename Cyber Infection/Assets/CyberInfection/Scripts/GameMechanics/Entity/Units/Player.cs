@@ -4,11 +4,17 @@ using CyberInfection.UI.Game;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
+using InventorySystem;
+using System.Collections.Generic;
 
 namespace CyberInfection.GameMechanics.Entity.Units
 {
     public class Player : Unit
     {
+        public static Player instance;
+        public Inventory inventory;
+        public List<string> blockers;
+        public bool controlBlocked { get { return blockers.Count > 0; } }
         [SerializeField] private PlayerData _data;
         
         private int _maxHP;
@@ -17,10 +23,11 @@ namespace CyberInfection.GameMechanics.Entity.Units
 
         public float healthPercentage => (float) health / _maxHP;
 
+
         protected override void Awake()
         {
             base.Awake();
-
+            inventory = GetComponent<Inventory>();
             m_PhotonView = GetComponent<PhotonView>();
             gameObject.tag = m_PhotonView.IsMine ? TagManager.PlayerTag : TagManager.OtherPlayerTag;
 
