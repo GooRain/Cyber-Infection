@@ -41,7 +41,7 @@ namespace CyberInfection.Generation
             map.Clear();
         }
 
-        public void PlaceRooms(Tilemap floorTileMap, Tilemap wallTileMap, Tilemap shadowTileMap)
+        public void PlaceRooms(MapTilemaps tilemaps)
         {
             var roomIndex = 0;
             var roomControllersHolder = new GameObject("RoomControllers Holder");
@@ -68,17 +68,17 @@ namespace CyberInfection.Generation
                     _roomControllers.Add(newRoomController);
                     _roomControllersMatrix[x, y] = newRoomController;
 
-                    newRoomController.FloorTiles.AddRange(SetFloor(floorTileMap, currentPosition, _mapSettingsData.roomSizeInfo));
-                    newRoomController.WallTiles.AddRange(SetWalls(wallTileMap, currentPosition, _mapSettingsData.roomSizeInfo,
+                    newRoomController.FloorTiles.AddRange(SetFloor(tilemaps, currentPosition, _mapSettingsData.roomSizeInfo));
+                    newRoomController.WallTiles.AddRange(SetWalls(tilemaps, currentPosition, _mapSettingsData.roomSizeInfo,
                         _mapSettingsData.GetWallTile()));
                     //SetWall(shadowTileMap, currentPosition, _mapSettingsData.roomSizeInfo, _mapSettingsData.GetShadowTile());
                 }
             }
 
-            PlaceDoors(floorTileMap, wallTileMap, shadowTileMap);
+            PlaceDoors(tilemaps);
         }
 
-        private void PlaceDoors(Tilemap floorTileMap, Tilemap wallTileMap, Tilemap shadowTileMap)
+        private void PlaceDoors(MapTilemaps tilemaps)
         {
             _doorPlacer = new DoorPlacer(map, _mapSettingsData, _mapHolder, _roomControllersMatrix);
 
@@ -94,13 +94,13 @@ namespace CyberInfection.Generation
 
                     if ((map.roomMatrix[x, y] | RoomType.None) == 0) continue;
 
-                    _doorPlacer.SetDoors(wallTileMap, shadowTileMap, floorTileMap, x, y, currentPosition,
+                    _doorPlacer.SetDoors(tilemaps, x, y, currentPosition,
                         _mapSettingsData.roomSizeInfo, map.roomMatrix);
                 }
             }
         }
 
-        private IEnumerable<Vector3Int> SetWalls(Tilemap tilemap, Vector3Int center, RoomSizeInfo roomSizeInfo, TileBase tile)
+        private IEnumerable<Vector3Int> SetWalls(MapTilemaps tilemaps, Vector3Int center, RoomSizeInfo roomSizeInfo, TileBase tile)
         {
             var tiles = new List<Vector3Int>();
             var start = new Vector3Int(center.x - roomSizeInfo.roomWidth / 2, center.y - roomSizeInfo.roomHeight / 2,
@@ -110,8 +110,8 @@ namespace CyberInfection.Generation
                 var bottom = start + new Vector3Int(x, 0, 0);
                 var top = start + new Vector3Int(x, roomSizeInfo.roomHeight - 1, 0);
                 
-                tilemap.SetTile(bottom, tile);
-                tilemap.SetTile(top, tile);
+                tilemaps.WallTilemap.SetTile(bottom, tile);
+                tilemaps.WallTilemap.SetTile(top, tile);
 
                 tiles.Add(bottom);
                 tiles.Add(top);
@@ -122,8 +122,8 @@ namespace CyberInfection.Generation
                 var left = start + new Vector3Int(0, y, 0);
                 var right = start + new Vector3Int(roomSizeInfo.roomWidth - 1, y, 0);
                 
-                tilemap.SetTile(left, tile);
-                tilemap.SetTile(right, tile);
+                tilemaps.WallTilemap.SetTile(left, tile);
+                tilemaps.WallTilemap.SetTile(right, tile);
                 
                 tiles.Add(left);
                 tiles.Add(right);
@@ -132,7 +132,7 @@ namespace CyberInfection.Generation
             return tiles;
         }
 
-        private IEnumerable<Vector3Int> SetFloor(Tilemap tilemap, Vector3Int center, RoomSizeInfo roomSizeInfo)
+        private IEnumerable<Vector3Int> SetFloor(MapTilemaps tilemaps, Vector3Int center, RoomSizeInfo roomSizeInfo)
         {
             var tiles = new List<Vector3Int>();
             var start = new Vector3Int(center.x - roomSizeInfo.roomWidth / 2, center.y - roomSizeInfo.roomHeight / 2,
@@ -144,7 +144,7 @@ namespace CyberInfection.Generation
                     //Debug.Log("Set floor tile at: " + (start + new Vector3Int(x, y, 0)));
                     var pos = start + new Vector3Int(x, y, 0);
                     var newTile = _mapSettingsData.GetFloorTile();
-                    tilemap.SetTile(pos, newTile);
+                    tilemaps.FloorTilemap.SetTile(pos, newTile);
                     tiles.Add(pos);
                 }
             }

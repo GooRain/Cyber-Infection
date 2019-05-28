@@ -34,9 +34,11 @@
                 </e>
                 <e p="GameSettingsData.cs" t="Include" />
                 <e p="Generation" t="Include">
+                  <e p="ColorTileTypeData.cs" t="Include" />
                   <e p="EnemySpawnData.cs" t="Include" />
                   <e p="GeneratingScenesData.cs" t="Include" />
                   <e p="MapSettingsData.cs" t="Include" />
+                  <e p="RoomTypeTemplatesData.cs" t="Include" />
                 </e>
                 <e p="InputSettingsData.cs" t="Include" />
               </e>
@@ -167,24 +169,37 @@
                 <e p="MapController.cs" t="Include" />
                 <e p="MapGenerator.cs" t="Include" />
                 <e p="MapGraph.cs" t="Include" />
+                <e p="MapTilemaps.cs" t="Include" />
               </e>
               <e p="Room" t="Include">
+                <e p="ColorToTileType.cs" t="Include" />
                 <e p="Door.cs" t="Include" />
                 <e p="DoorPlacer.cs" t="Include" />
                 <e p="Room.cs" t="Include" />
                 <e p="RoomController.cs" t="Include" />
                 <e p="RoomGenerator.cs" t="Include" />
                 <e p="RoomType.cs" t="Include" />
+                <e p="RoomTypeTemplatesDictionary.cs" t="Include" />
               </e>
               <e p="Tiles" t="Include">
                 <e p="FloorTile.cs" t="Include" />
                 <e p="MapTile.cs" t="Include" />
+                <e p="TileType.cs" t="Include" />
                 <e p="WallTile.cs" t="Include" />
               </e>
             </e>
             <e p="Installers" t="Include">
               <e p="GameInstaller.cs" t="Include" />
               <e p="MapGenerationInstaller.cs" t="Include" />
+            </e>
+            <e p="InventorySystem" t="Include">
+              <e p="Inventory.cs" t="Include" />
+              <e p="InventoryItem.cs" t="Include" />
+              <e p="InventoryUI.cs" t="Include" />
+              <e p="ItemAsset.cs" t="Include" />
+              <e p="ItemModel.cs" t="Include" />
+              <e p="IUsable.cs" t="Include" />
+              <e p="NewItemWindow.cs" t="Include" />
             </e>
             <e p="Networking" t="Include">
               <e p="CyberClient.cs" t="Include" />

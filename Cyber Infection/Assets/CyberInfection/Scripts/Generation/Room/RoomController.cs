@@ -67,7 +67,7 @@ namespace CyberInfection.Generation.Room
 			}
 		}
 
-		private TweenerCore<Color, Color, ColorOptions> _coloringTween;
+		private TweenerCore<Color, Color, ColorOptions> coloringTween;
 		
 		private void Deactivate()
 		{
@@ -89,9 +89,9 @@ namespace CyberInfection.Generation.Room
 
 		private void StartAnimateRoom(Color endValue)
 		{
-			_coloringTween.Pause();
-			_coloringTween = DOTween.To(GetCurrentColor, ColorAllTiles, endValue, 2f);
-			_coloringTween.Play();
+			coloringTween.Pause();
+			coloringTween = DOTween.To(GetCurrentColor, ColorAllTiles, endValue, 2f);
+			coloringTween.Play();
 		}
 
 		private Color _currentColor;
@@ -106,7 +106,7 @@ namespace CyberInfection.Generation.Room
 			
 			foreach (var pos in FloorTiles)
 			{
-				ColorTile(MapGenerator.instance.floorTilemap, pos, color);
+				ColorTile(MapGenerator.instance.FloorTilemap, pos, color);
 			}
 
 			foreach (var pos in WallTiles)

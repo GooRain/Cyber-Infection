@@ -68,9 +68,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mapHolder: {fileID: 5116835342568053144}
-  _floorTilemap: {fileID: 8195094280177370900}
-  _wallTilemap: {fileID: 8195094280216123864}
-  _shadowTilemap: {fileID: 6465156779237956986}
+  tilemaps:
+    floorTilemap: {fileID: 8195094280177370900}
+    wallTilemap: {fileID: 8195094280216123864}
+    shadowTilemap: {fileID: 6465156779237956986}
+  colorTileTypeData: {fileID: 11400000, guid: c7a5a511929f51a4ba5ff243e436213f, type: 2}
+  roomTypeTemplatesData: {fileID: 11400000, guid: ea32e4690093a0846a062b69fa3cba4b,
+    type: 2}
 --- !u!1 &1052798644205430
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +367,7 @@ TilemapCollider2D:
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!50 &50312228458777632
 Rigidbody2D:
   serializedVersion: 4
@@ -407,6 +412,7 @@ CompositeCollider2D:
   m_CompositePaths:
     m_Paths: []
   m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005
 --- !u!1 &4778467184435849416
 GameObject:
   m_ObjectHideFlags: 0

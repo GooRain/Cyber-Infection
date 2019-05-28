@@ -6,9 +6,11 @@ using CyberInfection.Data.Settings.Generation;
 using CyberInfection.Extension;
 using CyberInfection.GameMechanics;
 using CyberInfection.Generation.Room;
+using CyberInfection.Generation.Tiles;
 using Photon.Pun;
 using UnityEngine;
 using CyberInfection.UI.Radar;
+using RotaryHeart.Lib.SerializableDictionary;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using Zenject;
@@ -25,12 +27,12 @@ namespace CyberInfection.Generation
     {
         public static MapGenerator instance;
         
-        private PhotonView m_PhotonView;
+        private PhotonView photonView;
 
         [SerializeField] private Transform _mapHolder;
-        [SerializeField] private Tilemap _floorTilemap;
-        [SerializeField] private Tilemap _wallTilemap;
-        [SerializeField] private Tilemap _shadowTilemap;
+        [SerializeField] private MapTilemaps tilemaps;
+        [SerializeField] private ColorTileTypeData colorTileTypeData;
+        [SerializeField] private RoomTypeTemplatesData roomTypeTemplatesData;
 
         /* 0000000
          * 0001100
@@ -39,20 +41,20 @@ namespace CyberInfection.Generation
          * 0031000
          */
 
-        private MapSettingsData _mapSettingsData;
-        private MapController _mapController;
-        private int m_Seed;
+        private MapSettingsData mapSettingsData;
+        private MapController mapController;
+        private int seed;
 
-        public Vector3 offset { get; private set; }
+        public Vector3 Offset { get; private set; }
 
-        public Tilemap floorTilemap => _floorTilemap;
-        public Tilemap WallTilemap => _wallTilemap;
-        public Tilemap ShadowTilemap => _shadowTilemap;
+        public Tilemap FloorTilemap => tilemaps.FloorTilemap;
+        public Tilemap WallTilemap => tilemaps.WallTilemap;
+        public Tilemap ShadowTilemap => tilemaps.ShadowTilemap;
 
         [Inject]
-        private void Construct(MapSettingsData mapSettingsData)
+        private void Construct(MapSettingsData data)
         {
-            _mapSettingsData = mapSettingsData;
+            mapSettingsData = data;
         }
 
         private void Awake()
@@ -64,8 +66,8 @@ namespace CyberInfection.Generation
             }
             
             instance = this;
-            m_PhotonView = GetComponent<PhotonView>();
-            _mapController = gameObject.AddComponent<MapController>();
+            photonView = GetComponent<PhotonView>();
+            mapController = gameObject.AddComponent<MapController>();
             InitSeed();
         }
 
@@ -73,11 +75,11 @@ namespace CyberInfection.Generation
         {
             if (PhotonNetwork.OfflineMode)
             {
-                GenerateWithSeed(m_Seed);
+                GenerateWithSeed(seed);
             }
             else if (PhotonNetwork.IsMasterClient)
             {
-                m_PhotonView.RPC("GenerateWithSeed", RpcTarget.AllBufferedViaServer, m_Seed);
+                photonView.RPC("GenerateWithSeed", RpcTarget.AllBufferedViaServer, seed);
             }
         }
 
@@ -87,7 +89,7 @@ namespace CyberInfection.Generation
             Random.InitState(seed);
             if (TryToGenerate())
             {
-                _mapController.OnEndGenerate();
+                mapController.OnEndGenerate();
             }
             else
             {
@@ -99,12 +101,12 @@ namespace CyberInfection.Generation
         {
             // Задаем семя для генерации ПСЧ
             var seedString = Guid.NewGuid();
-            m_Seed = seedString.GetHashCode();
+            seed = seedString.GetHashCode();
             //_mapSettingsData.seed.GetHashCode();
             // SystemInfo.deviceModel + SystemInfo.deviceName;
-            Random.InitState(m_Seed);
+            Random.InitState(seed);
 
-            Debug.Log(seedString + " => " + m_Seed);
+            Debug.Log(seedString + " => " + seed);
         }
 
         private void Update()
@@ -118,10 +120,8 @@ namespace CyberInfection.Generation
 
         private void Clear()
         {
-            _mapController.Clear();
-            _floorTilemap.ClearAllTiles();
-            _wallTilemap.ClearAllTiles();
-            ShadowTilemap.ClearAllTiles();
+            mapController.Clear();
+            tilemaps.Clear();
         }
 
         private bool TryToGenerate()
@@ -133,7 +133,7 @@ namespace CyberInfection.Generation
 
         private void GenerateGraph()
         {
-            var maxRoomsAmount = (int) Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
+            var maxRoomsAmount = (int) Random.Range(mapSettingsData.roomsRange.x, mapSettingsData.roomsRange.y);
             var mapGraph = new MapGraph(maxRoomsAmount);
         }
 
@@ -142,32 +142,32 @@ namespace CyberInfection.Generation
         {
 //			Debug.Log("Generating...");
 
-            var maxRoomsAmount = (int) Random.Range(_mapSettingsData.roomsRange.x, _mapSettingsData.roomsRange.y);
+            var maxRoomsAmount = (int) Random.Range(mapSettingsData.roomsRange.x, mapSettingsData.roomsRange.y);
             var roomTypes = Enum.GetValues(typeof(RoomType));
 //			for (var i = 0; i < roomTypes.Length; i++)
 //			{
 //				Debug.Log($"[{i}] = {roomTypes.GetValue(i)}");
 //			}
 
-            var generatingEntitiesCount = maxRoomsAmount / _mapSettingsData.roomsRange.x;
+            var generatingEntitiesCount = maxRoomsAmount / mapSettingsData.roomsRange.x;
 
-            offset = new Vector3(
-                -_mapSettingsData.mapSize.width * .5f * (_mapSettingsData.roomSizeInfo.roomWidth - 1) - .5f,
-                -_mapSettingsData.mapSize.height * .5f * (_mapSettingsData.roomSizeInfo.roomHeight - 1) - .5f);
+            Offset = new Vector3(
+                -mapSettingsData.mapSize.width * .5f * (mapSettingsData.roomSizeInfo.roomWidth - 1) - .5f,
+                -mapSettingsData.mapSize.height * .5f * (mapSettingsData.roomSizeInfo.roomHeight - 1) - .5f);
 
-            _mapController.Initialize(_mapSettingsData, offset, _mapHolder);
+            mapController.Initialize(mapSettingsData, Offset, _mapHolder);
 
 //			_tilemap.transform.position = offset;
 //			_collisionTileMap.transform.position = offset;
-            _mapHolder.position = offset;
+            _mapHolder.position = Offset;
 
             var generatingEntities = new List<GeneratingEntity>();
 
             for (var i = 0; i < generatingEntitiesCount; i++)
             {
-                generatingEntities.Add(new GeneratingEntity(ref _mapController.map, new PointInt(
-                    _mapSettingsData.mapSize.width / 2,
-                    _mapSettingsData.mapSize.height / 2
+                generatingEntities.Add(new GeneratingEntity(ref mapController.map, new PointInt(
+                    mapSettingsData.mapSize.width / 2,
+                    mapSettingsData.mapSize.height / 2
                 )));
             }
 
@@ -184,7 +184,7 @@ namespace CyberInfection.Generation
                     if (!generatingEntity.CanPlace()) continue;
 
                     var roomType = (RoomType) roomTypes.GetValue(Random.Range(2, roomTypes.Length));
-                    if (_mapController.map.HasEnd())
+                    if (mapController.map.HasEnd())
                     {
                         while (((roomType & ~RoomType.End & ~RoomType.Start) | RoomType.None) == 0)
                         {
@@ -213,11 +213,9 @@ namespace CyberInfection.Generation
 
             //}
 
-            _mapController.PlaceRooms(_floorTilemap, _wallTilemap, _shadowTilemap);
+            mapController.PlaceRooms(tilemaps);
 
-            _floorTilemap.RefreshAllTiles();
-            _wallTilemap.RefreshAllTiles();
-            _shadowTilemap.RefreshAllTiles();
+            tilemaps.RefreshAllTiles();
         }
 
         private void OnDestroy()

@@ -17,8 +17,8 @@ MonoBehaviour:
     x: 8
     y: 16
   roomSizeInfo:
-    roomWidth: 15
-    roomHeight: 11
+    roomWidth: 17
+    roomHeight: 9
   mapSize:
     width: 12
     height: 12
