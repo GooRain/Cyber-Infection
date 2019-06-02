@@ -72,6 +72,8 @@ MonoBehaviour:
     floorTilemap: {fileID: 8195094280177370900}
     wallTilemap: {fileID: 8195094280216123864}
     shadowTilemap: {fileID: 6465156779237956986}
+    doorPrefab: {fileID: 4465500360447345847, guid: c8c721cd392be1e4cb0ff8090e46e0c8,
+      type: 3}
   colorTileTypeData: {fileID: 11400000, guid: c7a5a511929f51a4ba5ff243e436213f, type: 2}
   roomTypeTemplatesData: {fileID: 11400000, guid: ea32e4690093a0846a062b69fa3cba4b,
     type: 2}
@@ -403,7 +405,7 @@ CompositeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:

@@ -29,30 +29,30 @@ namespace CyberInfection.Generation.Room
             if (x > 0 && mapRoomMatrix[x - 1, y] != RoomType.None)
             {
                 SetDoor(tilemaps, x - 1, y, x, y,
-                    center - new Vector3Int(roomSizeInfo.roomWidth / 2, 0, 0), Door.DoorType.Horizontal);
+                    center - new Vector3Int(roomSizeInfo.roomWidth / 2, 0, 0), DoorController.DoorType.Horizontal);
             }
 
             if (x < _map.width - 1 && mapRoomMatrix[x + 1, y] != RoomType.None)
             {
                 SetDoor(tilemaps, x, y, x + 1, y,
-                    center + new Vector3Int(roomSizeInfo.roomWidth / 2, 0, 0), Door.DoorType.Horizontal);
+                    center + new Vector3Int(roomSizeInfo.roomWidth / 2, 0, 0), DoorController.DoorType.Horizontal);
             }
 
             if (y > 0 && mapRoomMatrix[x, y - 1] != RoomType.None)
             {
                 SetDoor(tilemaps, x, y - 1, x, y,
-                    center - new Vector3Int(0, roomSizeInfo.roomHeight / 2, 0), Door.DoorType.Vertical);
+                    center - new Vector3Int(0, roomSizeInfo.roomHeight / 2, 0), DoorController.DoorType.Vertical);
             }
 
             if (y < _map.height - 1 && mapRoomMatrix[x, y + 1] != RoomType.None)
             {
                 SetDoor(tilemaps, x, y, x, y + 1,
-                    center + new Vector3Int(0, roomSizeInfo.roomHeight / 2, 0), Door.DoorType.Vertical);
+                    center + new Vector3Int(0, roomSizeInfo.roomHeight / 2, 0), DoorController.DoorType.Vertical);
             }
         }
 
         private void SetDoor(MapTilemaps tilemaps,
-            int x1, int y1, int x2, int y2, Vector3Int pos, Door.DoorType type)
+            int x1, int y1, int x2, int y2, Vector3Int pos, DoorController.DoorType type)
         {
             tilemaps.WallTilemap.SetTile(pos, null);
             tilemaps.ShadowTilemap.SetTile(pos, null);
@@ -60,7 +60,7 @@ namespace CyberInfection.Generation.Room
             PlaceDoor(tilemaps, type, pos, x1, y1, x2, y2);
         }
 
-        private void PlaceDoor(MapTilemaps tilemaps, Door.DoorType doorType, Vector3Int pos,
+        private void PlaceDoor(MapTilemaps tilemaps, DoorController.DoorType doorType, Vector3Int pos,
             int x1, int y1, int x2, int y2)
         {
             if (HasDoor(x1, y1, x2, y2))
@@ -68,20 +68,39 @@ namespace CyberInfection.Generation.Room
                 return;
             }
 
-            tilemaps.FloorTilemap.SetTile(pos, _mapSettingsData.GetFloorTile());
+            //tilemaps.FloorTilemap.SetTile(pos, _mapSettingsData.GetDoorTile());
 
-            var doorGo = new GameObject($"HorizontalDoor[{GetDoorID(x1, y1, x2, y2)}]");
-            doorGo.transform.SetParent(_mapHolder);
-            doorGo.transform.localPosition = pos + Vector3.one * 0.5f;
-            var door = doorGo.AddComponent<Door>();
-            var doorTrigger = doorGo.AddComponent<BoxCollider2D>();
-            doorTrigger.isTrigger = true;
+//            var doorGo = new GameObject($"HorizontalDoor[{GetDoorID(x1, y1, x2, y2)}]");
+//            doorGo.transform.SetParent(_mapHolder);
+//            doorGo.transform.localPosition = pos + Vector3.one * 0.5f;
+//            var door = doorGo.AddComponent<DoorController>();
+//            var doorTrigger = doorGo.AddComponent<BoxCollider2D>();
+//            doorTrigger.isTrigger = true;
+            
+            //var doorGO = tilemaps.FloorTilemap.GetInstantiatedObject(pos);
+            var doorGO = Object.Instantiate(tilemaps.DoorPrefab, _mapHolder);
+            doorGO.name = $"HorizontalDoor[{GetDoorID(x1, y1, x2, y2)}]";
+            doorGO.transform.localPosition = pos;
+            
+            if (doorGO == null)
+            {
+                Debug.Log(pos + " = DOOR GO IS NULL");
+                return;
+            }
+            
+            var door = doorGO.GetComponent<DoorController>();
+            if (door == null)
+            {
+                Debug.Log("DOOR CONTROLLER IS NULL");
+                return;
+            }
 
             var firstRoomController = _roomControllersMatrix[x1, y1];
             var secondRoomController = _roomControllersMatrix[x2, y2];
-
+            
             door.Initialize(doorType, firstRoomController, secondRoomController);
-
+            door.Toggle(true);
+                
             firstRoomController.FloorTiles.Add(pos);
             secondRoomController.FloorTiles.Add(pos);
 

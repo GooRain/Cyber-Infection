@@ -9,10 +9,13 @@ namespace CyberInfection.Generation
         [SerializeField] private Tilemap floorTilemap;
         [SerializeField] private Tilemap wallTilemap;
         [SerializeField] private Tilemap shadowTilemap;
+        [SerializeField] private GameObject doorPrefab;
 
         public Tilemap ShadowTilemap => shadowTilemap;
         public Tilemap WallTilemap => wallTilemap;
         public Tilemap FloorTilemap => floorTilemap;
+
+		public GameObject DoorPrefab => doorPrefab;
 
         public void Clear()
         {

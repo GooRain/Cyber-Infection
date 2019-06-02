@@ -26,7 +26,7 @@ namespace CyberInfection.Generation.Room
 	}
 	public class RoomController : MonoBehaviour
 	{
-		private readonly List<Door> _myDoors = new List<Door>();
+		private readonly List<DoorController> _myDoors = new List<DoorController>();
 
 		private Transform _transform;
 
@@ -42,14 +42,14 @@ namespace CyberInfection.Generation.Room
 			_transform = transform;
 		}
 
-		public void AddDoor(Door door)
+		public void AddDoor(DoorController doorController)
 		{
-			_myDoors.Add(door);
+			_myDoors.Add(doorController);
 		}
 
-		public void RemoveDoor(Door door)
+		public void RemoveDoor(DoorController doorController)
 		{
-			_myDoors.Remove(door);
+			_myDoors.Remove(doorController);
 		}
 
 		public void TryToToggle(bool value)
@@ -83,11 +83,13 @@ namespace CyberInfection.Generation.Room
 
 			if (isCompleted)
 			{
+				ToggleDoors(true);
 				return;
 			}
 
 			if ((room.type & RoomType.Start) != 0)
 			{
+				ToggleDoors(true);
 				return;
 			}
 			
@@ -102,17 +104,17 @@ namespace CyberInfection.Generation.Room
 			coloringTween.Play();
 		}
 
-		private Color _currentColor;
+		private Color currentColor;
 		public bool isCompleted;
 
 		private Color GetCurrentColor()
 		{
-			return _currentColor;
+			return currentColor;
 		}
 
 		private void ColorAllTiles(Color color)
 		{
-			_currentColor = color;
+			currentColor = color;
 			
 			foreach (var pos in FloorTiles)
 			{

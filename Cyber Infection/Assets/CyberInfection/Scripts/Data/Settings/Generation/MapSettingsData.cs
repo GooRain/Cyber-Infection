@@ -25,23 +25,29 @@ namespace CyberInfection.Data.Settings.Generation
 
 		[Space(10), Header("Visual Settings")] 
 		
-		[SerializeField] private TileBase _floorTile;
-		[SerializeField] private TileBase _wallTile;
-		[SerializeField] private TileBase _shadowTile;
+		[SerializeField] private TileBase floorTile;
+		[SerializeField] private TileBase wallTile;
+		[SerializeField] private TileBase doorTile;
+		[SerializeField] private TileBase shadowTile;
 		
 		public TileBase GetFloorTile()
 		{
-			return _floorTile;
+			return floorTile;
 		}
 
 		public TileBase GetWallTile()
 		{
-			return _wallTile;
+			return wallTile;
+		}
+
+		public TileBase GetDoorTile()
+		{
+			return doorTile;
 		}
 
 		public TileBase GetShadowTile()
 		{
-			return _shadowTile;
+			return shadowTile;
 		}
 	}
 

@@ -108,6 +108,18 @@ namespace CyberInfection.Generation
                         _mapSettingsData.roomSizeInfo, map.roomMatrix);
                 }
             }
+            
+            var bounds = new BoundsInt(tilemaps.FloorTilemap.origin, tilemaps.FloorTilemap.size);
+            foreach (var position in bounds.allPositionsWithin)
+            {
+                var go = tilemaps.FloorTilemap.GetInstantiatedObject(position);
+                if (go == null)
+                {
+                    continue;
+                }
+                
+                Debug.Log(go.name + " !!!");
+            }
         }
 
         private IEnumerable<Vector3Int> SetWalls(MapTilemaps tilemaps, Vector3Int center, RoomSizeInfo roomSizeInfo, TileBase tile)

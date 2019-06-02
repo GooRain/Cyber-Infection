@@ -22,6 +22,7 @@ MonoBehaviour:
   mapSize:
     width: 12
     height: 12
-  _floorTile: {fileID: 11400000, guid: 5cc4bfa05b809594183ba750c90c086e, type: 2}
-  _wallTile: {fileID: 11400000, guid: 14dc612e558fa084aa8896d65a5b7078, type: 2}
-  _shadowTile: {fileID: 11400000, guid: f7b91b0a3fa041042ba0f4585fc55b37, type: 2}
+  floorTile: {fileID: 11400000, guid: 5cc4bfa05b809594183ba750c90c086e, type: 2}
+  wallTile: {fileID: 11400000, guid: 14dc612e558fa084aa8896d65a5b7078, type: 2}
+  doorTile: {fileID: 11400000, guid: edb92e136bf8dcb44bbce2491bf076dd, type: 2}
+  shadowTile: {fileID: 11400000, guid: f7b91b0a3fa041042ba0f4585fc55b37, type: 2}
