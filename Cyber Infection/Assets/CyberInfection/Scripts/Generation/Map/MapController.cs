@@ -59,15 +59,14 @@ namespace CyberInfection.Generation
 
                     if ((map.roomMatrix[x, y] | RoomType.None) == 0) continue;
 
-                    var roomGameObject = new GameObject($"RoomController#{roomIndex++}");
-                    var newRoomController = roomGameObject.AddComponent<RoomController>();
-                    newRoomController.room = new Room.Room(map.roomMatrix[x, y]);
+                    var newRoomController = CreateRoom(roomIndex++, map.roomMatrix[x,y]);
+                    _roomControllersMatrix[x, y] = newRoomController;
+                    _roomControllers.Add(newRoomController);
+                    
                     var roomControllerTransform = newRoomController.transform;
                     roomControllerTransform.SetParent(roomControllersHolder.transform);
                     roomControllerTransform.localPosition = currentPosition + _offset + Vector3.one * 0.5f;
-                    _roomControllers.Add(newRoomController);
-                    _roomControllersMatrix[x, y] = newRoomController;
-
+                    
                     newRoomController.FloorTiles.AddRange(SetFloor(tilemaps, currentPosition, _mapSettingsData.roomSizeInfo));
                     newRoomController.WallTiles.AddRange(SetWalls(tilemaps, currentPosition, _mapSettingsData.roomSizeInfo,
                         _mapSettingsData.GetWallTile()));
@@ -76,6 +75,17 @@ namespace CyberInfection.Generation
             }
 
             PlaceDoors(tilemaps);
+        }
+
+        private RoomController CreateRoom(int roomIndex, RoomType roomType)
+        {
+            var roomGameObject = new GameObject($"RoomController#{roomIndex}");
+            var newRoomController = roomGameObject.AddComponent<RoomController>();
+            newRoomController.room = new Room.Room(roomType);
+
+            LevelController.instance.level.AddRoom(newRoomController);
+            
+            return newRoomController;
         }
 
         private void PlaceDoors(MapTilemaps tilemaps)

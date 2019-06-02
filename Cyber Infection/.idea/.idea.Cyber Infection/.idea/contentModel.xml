@@ -110,6 +110,7 @@
                 </e>
                 <e p="UnitsManager.cs" t="Include" />
               </e>
+              <e p="GameCycle.cs" t="Include" />
               <e p="IAlive.cs" t="Include" />
               <e p="IControllable.cs" t="Include" />
               <e p="IDamagable.cs" t="Include" />

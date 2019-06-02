@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using CyberInfection.GameMechanics;
 using CyberInfection.GameMechanics.Entity.Units;
 using DG.Tweening;
 using DG.Tweening.Core;
@@ -80,11 +81,18 @@ namespace CyberInfection.Generation.Room
 		{
 			StartAnimateRoom(Color.white);
 
-			if ((room.type & RoomType.Start) == 0)
+			if (isCompleted)
 			{
-				ToggleDoors(false);
-				SpawnEnemies();
+				return;
 			}
+
+			if ((room.type & RoomType.Start) != 0)
+			{
+				return;
+			}
+			
+			ToggleDoors(false);
+			SpawnEnemies();
 		}
 
 		private void StartAnimateRoom(Color endValue)
@@ -95,6 +103,8 @@ namespace CyberInfection.Generation.Room
 		}
 
 		private Color _currentColor;
+		public bool isCompleted;
+
 		private Color GetCurrentColor()
 		{
 			return _currentColor;
@@ -174,8 +184,15 @@ namespace CyberInfection.Generation.Room
 		{
 			if (IsRoomClear())
 			{
-				ToggleDoors(true);
+				CompleteRoom();
 			}
+		}
+
+		private void CompleteRoom()
+		{
+			LevelController.instance.RoomIsCompleted(this);
+			isCompleted = true;
+			ToggleDoors(true);
 		}
 
 		private bool IsRoomClear()

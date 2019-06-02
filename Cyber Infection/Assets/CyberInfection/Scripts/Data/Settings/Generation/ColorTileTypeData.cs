@@ -1,4 +1,5 @@
 using CyberInfection.Generation.Room;
+using CyberInfection.Generation.Tiles;
 using UnityEngine;
 
 namespace CyberInfection.Data.Settings.Generation
@@ -8,6 +9,9 @@ namespace CyberInfection.Data.Settings.Generation
     {
         [SerializeField] private ColorTileTypeDictionary colorTileTypeDictionary;
         
-        public ColorTileTypeDictionary ColorTileTypeDictionary => colorTileTypeDictionary;
+        public TileType GetTileType(Color color)
+        {
+            return colorTileTypeDictionary.ContainsKey(color) ? colorTileTypeDictionary[color] : TileType.Empty;
+        }
     }
 }
