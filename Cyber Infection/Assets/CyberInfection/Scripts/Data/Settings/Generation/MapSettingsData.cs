@@ -15,13 +15,17 @@ namespace CyberInfection.Data.Settings.Generation
 			return Instantiate(TryToLoad(AssetPath));
 		}
 
-		public string seed;
+		//public string seed;
 		
 		[Space(10)]
 		
 		public Point roomsRange;
 		public RoomSizeInfo roomSizeInfo;
 		public Rectangle mapSize;
+
+		[Space(10)] 
+		
+		public AnimationCurve difficultyCurve;
 
 		[Space(10), Header("Visual Settings")] 
 		

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5e7a15e23e81b4eaab375a8aea6d52, type: 3}
   m_Name: MapSettingsData
   m_EditorClassIdentifier: 
-  seed: "\u0421\u0442\u0430\u0440\u0442\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
   roomsRange:
     x: 8
     y: 16
@@ -22,6 +21,39 @@ MonoBehaviour:
   mapSize:
     width: 12
     height: 12
+  difficultyCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.25
+      inSlope: 0.454768
+      outSlope: 0.454768
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.62525505
+      value: 0.534346
+      inSlope: 0.75
+      outSlope: 0.75
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.2425891
+      outSlope: 1.2425891
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   floorTile: {fileID: 11400000, guid: 5cc4bfa05b809594183ba750c90c086e, type: 2}
   wallTile: {fileID: 11400000, guid: 14dc612e558fa084aa8896d65a5b7078, type: 2}
   doorTile: {fileID: 11400000, guid: edb92e136bf8dcb44bbce2491bf076dd, type: 2}

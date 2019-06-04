@@ -126,30 +126,16 @@ namespace CyberInfection.Generation
 
         private bool TryToGenerate()
         {
-            GenerateGraph();
-            GenerateOld();
+            Generate();
             return true;
         }
 
-        private void GenerateGraph()
+        private void Generate()
         {
-            var maxRoomsAmount = (int) Random.Range(mapSettingsData.roomsRange.x, mapSettingsData.roomsRange.y);
-            var mapGraph = new MapGraph(maxRoomsAmount);
-        }
-
-        [Obsolete]
-        private void GenerateOld()
-        {
-//			Debug.Log("Generating...");
-
             var maxRoomsAmount = (int) Random.Range(mapSettingsData.roomsRange.x, mapSettingsData.roomsRange.y);
             var roomTypes = Enum.GetValues(typeof(RoomType));
-//			for (var i = 0; i < roomTypes.Length; i++)
-//			{
-//				Debug.Log($"[{i}] = {roomTypes.GetValue(i)}");
-//			}
 
-            var generatingEntitiesCount = maxRoomsAmount / mapSettingsData.roomsRange.x;
+            var generatingEntitiesCount = Mathf.Sqrt(maxRoomsAmount);
 
             Offset = new Vector3(
                 -mapSettingsData.mapSize.width * .5f * (mapSettingsData.roomSizeInfo.roomWidth - 1) - .5f,
@@ -157,8 +143,6 @@ namespace CyberInfection.Generation
 
             mapController.Initialize(mapSettingsData, Offset, _mapHolder);
 
-//			_tilemap.transform.position = offset;
-//			_collisionTileMap.transform.position = offset;
             _mapHolder.position = Offset;
 
             var generatingEntities = new List<GeneratingEntity>();
@@ -170,6 +154,8 @@ namespace CyberInfection.Generation
                     mapSettingsData.mapSize.height / 2
                 )));
             }
+            
+            Debug.Log("Entities count = " + generatingEntities.Count);
 
             var currentRoomsCount = 0;
 
