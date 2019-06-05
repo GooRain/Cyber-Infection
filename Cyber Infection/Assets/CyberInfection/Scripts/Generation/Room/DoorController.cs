@@ -99,7 +99,7 @@ namespace CyberInfection.Generation.Room
 
         public void Toggle(bool value)
         {
-            Debug.Log(name + ".Toggle("+value+");");
+            //Debug.Log(name + ".Toggle("+value+");");
             openedDoor.Toggle(value);
             closedDoor.Toggle(!value);
         }

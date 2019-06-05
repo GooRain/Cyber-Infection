@@ -2,6 +2,7 @@ using System;
 using CyberInfection.Constants;
 using CyberInfection.Generation.Room;
 using Photon.Pun;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace CyberInfection.GameMechanics
@@ -55,7 +56,9 @@ namespace CyberInfection.GameMechanics
 
         public void RoomIsCompleted(RoomController roomController)
         {
+            Debug.Log(roomController.name + " is completed!");
             RoomCompleteEvent.Invoke(roomController);
+            CheckLevelCompleteness();
         }
     }
 }

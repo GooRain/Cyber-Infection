@@ -1,6 +1,5 @@
 using CyberInfection.Constants;
 using Photon.Pun;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace CyberInfection.GameMechanics

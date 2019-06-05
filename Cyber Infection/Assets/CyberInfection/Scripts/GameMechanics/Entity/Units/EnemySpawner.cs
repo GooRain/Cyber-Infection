@@ -26,7 +26,7 @@ namespace CyberInfection.GameMechanics.Entity.Units
         private Enemy SpawnEnemy(EnemyDifficulty difficulty, Vector3 pos)
         {
             var path = _enemiesPrefabPrefix + _spawnData.enemiesDictionary[difficulty].GetRandomPrefab().name;
-            Debug.Log("Difficulty = " + difficulty + " ::: Enemy Prefab Path = " + path);
+            //Debug.Log("Difficulty = " + difficulty + " ::: Enemy Prefab Path = " + path);
             return PhotonNetwork.Instantiate(path, pos, Quaternion.identity)
                 .GetComponent<Enemy>();
         }

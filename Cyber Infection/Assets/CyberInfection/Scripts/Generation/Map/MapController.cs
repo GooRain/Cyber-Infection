@@ -81,10 +81,15 @@ namespace CyberInfection.Generation
         {
             var roomGameObject = new GameObject($"RoomController#{roomIndex}");
             var newRoomController = roomGameObject.AddComponent<RoomController>();
-            newRoomController.room = new Room.Room(roomType);
+            newRoomController.Room = new Room.Room(roomType);
 
-            LevelController.instance.level.AddRoom(newRoomController);
+            if (roomType == RoomType.Start)
+            {
+                newRoomController.isCompleted = true;
+            }
             
+            LevelController.instance.level.AddRoom(newRoomController);
+
             return newRoomController;
         }
 
@@ -183,7 +188,7 @@ namespace CyberInfection.Generation
             
             foreach (var roomController in _roomControllers)
             {
-                if ((roomController.room.type & RoomType.Start) == RoomType.Start)
+                if ((roomController.Room.type & RoomType.Start) == RoomType.Start)
                 {
                     LevelController.instance.level.SelectRoomController(roomController);
                     break;

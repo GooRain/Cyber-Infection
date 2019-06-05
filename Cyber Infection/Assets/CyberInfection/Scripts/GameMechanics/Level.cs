@@ -9,31 +9,33 @@ namespace CyberInfection.GameMechanics
     public class Level : MonoBehaviour
     {
 
-        private List<RoomController> roomControllers = new List<RoomController>();
+        private readonly List<RoomController> roomControllers = new List<RoomController>();
         
         public bool IsComplete
         {
             get
             {
+                //roomControllers.ForEach(
+                //    r => Debug.Log("<color=red>" + r.name + " is completed = " + r.isCompleted + "</color>"));
                 return roomControllers.All(r => r.isCompleted);
             }
         }
         
-        public RoomController currentRoomController { get; private set; }
+        public RoomController CurrentRoomController { get; private set; }
         
         public void SelectRoomController(RoomController roomController)
         {
-            if (currentRoomController != null)
+            if (CurrentRoomController != null)
             {
-                currentRoomController.TryToToggle(false);
-                Debug.Log("Hiding -> " + currentRoomController.name);
+                CurrentRoomController.TryToToggle(false);
+                //Debug.Log("Hiding -> " + currentRoomController.name);
             }
             
-            currentRoomController = roomController;
-            Debug.Log("Selecting -> " + roomController.name);
-            currentRoomController.TryToToggle(true);
+            CurrentRoomController = roomController;
+            //Debug.Log("Selecting -> " + roomController.name);
+            CurrentRoomController.TryToToggle(true);
             
-            CameraController.Instance.SetRoom(currentRoomController);
+            CameraController.Instance.SetRoom(CurrentRoomController);
         }
 
         public void AddRoom(RoomController newRoomController)

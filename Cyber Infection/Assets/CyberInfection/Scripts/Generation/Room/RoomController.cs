@@ -26,30 +26,34 @@ namespace CyberInfection.Generation.Room
 	}
 	public class RoomController : MonoBehaviour
 	{
-		private readonly List<DoorController> _myDoors = new List<DoorController>();
+		private readonly List<DoorController> myDoors = new List<DoorController>();
 
-		private Transform _transform;
+		private Transform cachedTransform;
 
-		public Room room { get; set; }
+		private Color currentColor;
 
-		private List<Enemy> _enemies;
+		private List<Enemy> enemies;
+		
+		public bool isCompleted;
 
+		public Room Room { get; set; }
+		
 		public List<Vector3Int> FloorTiles { get; } = new List<Vector3Int>();
 		public List<Vector3Int> WallTiles { get; } = new List<Vector3Int>();
 
 		private void Awake()
 		{
-			_transform = transform;
+			cachedTransform = transform;
 		}
 
 		public void AddDoor(DoorController doorController)
 		{
-			_myDoors.Add(doorController);
+			myDoors.Add(doorController);
 		}
 
 		public void RemoveDoor(DoorController doorController)
 		{
-			_myDoors.Remove(doorController);
+			myDoors.Remove(doorController);
 		}
 
 		public void TryToToggle(bool value)
@@ -87,7 +91,7 @@ namespace CyberInfection.Generation.Room
 				return;
 			}
 
-			if ((room.type & RoomType.Start) != 0)
+			if ((Room.type & RoomType.Start) != 0)
 			{
 				ToggleDoors(true);
 				return;
@@ -103,9 +107,6 @@ namespace CyberInfection.Generation.Room
 			coloringTween = DOTween.To(GetCurrentColor, ColorAllTiles, endValue, 2f);
 			coloringTween.Play();
 		}
-
-		private Color currentColor;
-		public bool isCompleted;
 
 		private Color GetCurrentColor()
 		{
@@ -135,7 +136,7 @@ namespace CyberInfection.Generation.Room
 
 		private void ToggleDoors(bool value)
 		{
-			foreach (var door in _myDoors)
+			foreach (var door in myDoors)
 			{
 				door.Toggle(value);
 			}
@@ -163,21 +164,21 @@ namespace CyberInfection.Generation.Room
 				return;
 			}
 			
-			_enemies = new List<Enemy>();
+			enemies = new List<Enemy>();
 			
 			var enemyCount = Random.Range(1, 3);
 			for (var i = 0; i < enemyCount; i++)
 			{
-				Debug.Log("Enemy #" + i);
+				//Debug.Log("Enemy #" + i);
 				var enemy = EnemySpawner.instance.SpawnEnemy(GetEnemySpawnPos());
-				_enemies.Add(enemy);
+				enemies.Add(enemy);
 				enemy.OnDeath += OnEnemyDeath;
 			}
 		}
 
 		private void OnEnemyDeath(Enemy enemy)
 		{
-			_enemies.Remove(enemy);
+			enemies.Remove(enemy);
 
 			CheckForRoomPass();
 		}
@@ -192,19 +193,20 @@ namespace CyberInfection.Generation.Room
 
 		private void CompleteRoom()
 		{
-			LevelController.instance.RoomIsCompleted(this);
 			isCompleted = true;
+			
+			LevelController.instance.RoomIsCompleted(this);
 			ToggleDoors(true);
 		}
 
 		private bool IsRoomClear()
 		{
-			return _enemies.Count < 1;
+			return enemies.Count < 1;
 		}
 
 		private Vector3 GetEnemySpawnPos()
 		{
-			var spawnPos = _transform.position;
+			var spawnPos = cachedTransform.position;
 			spawnPos.x += FiftyFifty() ? -5 : 5;
 			return spawnPos;
 		}
