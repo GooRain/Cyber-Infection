@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bba103e-8942-48b6-b774-94ecc63c91f7" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/statistic.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CyberInfection/CiUML.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyber Infection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Settings/Generation/MapSettingsData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Settings/Generation/MapSettingsData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/InventorySystem/Inventory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CyberInfection/Scripts/InventorySystem/Inventory.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Map/Tiles/Floors/Floor1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Map/Tiles/Floors/Floor1.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,65 +29,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomController.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/CiUML.puml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="116" column="19" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
-              <folding>
-                <marker date="1559660507490" expanded="false" signature="6:336" ph="..." />
-                <marker date="1559660507490" expanded="true" signature="378:3700" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="408:487" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="532:3698" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="882:917" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="971:1012" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="1069:1113" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="1152:1280" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="1170:1218" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="1226:1276" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="1377:1442" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="1469:1711" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="1528:1573" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="1616:1661" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="1760:1896" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="1989:2021" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="2064:2327" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="2143:2216" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="2251:2323" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="2401:2497" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="2537:2613" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="2575:2609" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="2642:2685" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="2710:2722" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="2749:2761" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="2792:3151" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="2834:2856" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="2977:3147" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="3193:3252" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="3287:3347" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="3313:3343" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="3378:3482" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="3512:3550" ph="{...}" />
-                <marker date="1559660507490" expanded="true" signature="3588:3695" ph="{...}" />
-              </folding>
+            <state relative-caret-position="46">
+              <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Settings/Generation/MapSettingsData.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/PlayerHandler.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+            <state>
               <folding>
-                <marker date="1559599154257" expanded="false" signature="6:152" ph="..." />
-                <marker date="1559599154257" expanded="true" signature="203:1389" ph="{...}" />
-                <marker date="1559599154257" expanded="true" signature="349:1201" ph="{...}" />
-                <marker date="1559599154257" expanded="true" signature="464:517" ph="{...}" />
-                <marker date="1559599154257" expanded="true" signature="982:1011" ph="{...}" />
-                <marker date="1559599154257" expanded="true" signature="1044:1072" ph="{...}" />
-                <marker date="1559599154257" expanded="true" signature="1105:1133" ph="{...}" />
-                <marker date="1559599154257" expanded="true" signature="1168:1198" ph="{...}" />
-                <marker date="1559599154257" expanded="true" signature="1253:1387" ph="{...}" />
+                <marker date="1557940288983" expanded="false" signature="6:162" ph="..." />
+                <marker date="1557940288983" expanded="true" signature="188:1960" ph="{...}" />
+                <marker date="1557940288983" expanded="true" signature="247:1958" ph="{...}" />
+                <marker date="1557940288983" expanded="true" signature="545:777" ph="{...}" />
+                <marker date="1557940288983" expanded="true" signature="671:767" ph="{...}" />
+                <marker date="1557940288983" expanded="true" signature="841:1323" ph="{...}" />
+                <marker date="1557940288983" expanded="true" signature="917:1117" ph="{...}" />
+                <marker date="1557940288983" expanded="true" signature="1410:1952" ph="{...}" />
+                <marker date="1557940288983" expanded="true" signature="1542:1790" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -99,7 +59,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/DoorController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2116">
+            <state relative-caret-position="2162">
               <caret line="108" selection-start-line="108" selection-end-line="108" />
               <folding>
                 <marker date="1559499723670" expanded="false" signature="6:174" ph="..." />
@@ -227,7 +187,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapGenerator.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2760">
+            <state relative-caret-position="2806">
               <caret line="152" column="54" selection-start-line="152" selection-start-column="54" selection-end-line="152" selection-end-column="54" />
               <folding>
                 <marker date="1559598495201" expanded="false" signature="6:517" ph="..." />
@@ -270,7 +230,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomType.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="92">
-              <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
               <folding>
                 <marker date="1549106133849" expanded="true" signature="55:246" ph="{...}" />
                 <marker date="1549106133849" expanded="true" signature="97:244" ph="{...}" />
@@ -296,6 +256,13 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="UML Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -337,6 +304,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnStartDelete.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Settings/Generation/RoomTypeTemplatesData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/001BD588-FBD4-4634-8FC3-B3E7396784FF/4b/183622eb/TileBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///C# Console" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Factories/Pooling/PoolableMemoryPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/MoveByKeys.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Factories/Pooling/Util/ListPool.cs" root0="FORCE_HIGHLIGHTING" />
@@ -529,7 +497,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapGraph.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Entity/Units/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Entity/Units/EnemySpawner.cs" />
@@ -580,6 +547,7 @@
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Settings/Generation/MapSettingsData.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomType.cs" />
         <option value="$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomController.cs" />
+        <option value="$PROJECT_DIR$/Assets/CyberInfection/CiUML.puml" />
       </list>
     </option>
   </component>
@@ -588,7 +556,7 @@
       <facet id="riderModule/invalid/Default Android Facet" />
     </ignored-facets>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="513" />
     <option name="width" value="1699" />
     <option name="height" value="1087" />
@@ -603,8 +571,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AssemblyExplorer" />
-      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -638,25 +604,6 @@
               <item name="CyberInfection" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Scripts" type="24d0babc:SolutionExplorerModelNode" />
             </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Cyber Infection" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="CyberInfection" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Scripts" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Generation" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Cyber Infection" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="CyberInfection" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Scripts" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Generation" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Room" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -666,21 +613,24 @@
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
       </pane>
+      <pane id="AssemblyExplorer" />
+      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultPlantUmlFileTemplate" value="UML Class" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="RoomContr&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Generation/Room/RoomController.cs&#10;generationin&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Installers/MapGenerationInstaller.cs&#10;mapgenerat&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Generation/Map/MapGenerator.cs&#10;mapsettingsda&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Data/Settings/Generation/MapSettingsData.cs&#10;mapge&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Generation/Map/MapGenerator.cs&#10;gameset&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Persistent/Settings/GameSettings.cs&#10;Mapge&#9;null&#9;null&#10;mapset&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Data/Generation/MapSettingsData.cs&#10;Data.Generation&#9;null&#9;null&#10;GameSEt&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Persistent/Settings/GameSettings.cs&#10;BLOCK&#9;null&#9;null&#10;block&#9;null&#9;null&#10;scriptabl&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Data/SingletonScriptableObject.cs&#10;input&#9;FILE&#9;file://C:/Users/G/Documents/Cyber-Infection/Cyber Infection/Assets/Scripts/Controllers/InputController.cs&#10;UnitContr&#9;FILE&#9;file://C:/Users/G/Documents/Cyber-Infection/Cyber Infection/Assets/Scripts/PlayerScripts/Controllers/UnitController.cs&#10;unit&#9;FILE&#9;file://C:/Users/G/Documents/Cyber-Infection/Cyber Infection/Assets/Scripts/PlayerScripts/Unit.cs&#10;Unit&#9;FILE&#9;file://C:/Users/G/Documents/Cyber-Infection/Cyber Infection/Assets/Scripts/Entities/IUnit.cs&#10;singleton&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Persistent/Singleton.cs&#10;scripta&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Data/ScriptableSingleton.cs&#10;si&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Persistent/Singleton.cs&#10;ii&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Persistent/IInitializable.cs&#10;singlet&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Persistent/Singleton.cs&#10;maps&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Settings/MapSettings.cs&#10;utility&#9;null&#9;null&#10;ma&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Settings/MapSettings.cs&#10;map&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Settings/MapSettings.cs&#10;Weapondata&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Scriptable/WeaponData.cs&#10;inputset&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Data/Settings/InputSettingsData.cs&#10;blockda&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Scriptable/BlockData.cs&#10;weapondata&#9;FILE&#9;file://C:/Projects/Cyber-Infection/Cyber Infection/Assets/Scripts/Scriptable/WeaponData.cs&#10;Player&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Assets/Scripts/Data/Settings/Base" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -796,11 +746,12 @@
       <workItem from="1559461441800" duration="20882000" />
       <workItem from="1559606415335" duration="1541000" />
       <workItem from="1559617525519" duration="1671000" />
+      <workItem from="1559715577330" duration="617000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276584000" />
+    <option name="totallyTimeSpent" value="277201000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -812,18 +763,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="513" y="0" width="1699" height="1087" extended-state="1" />
+    <frame x="513" y="0" width="1699" height="1087" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24649176" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2495424" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Captures" order="5" weight="0.32917705" />
-      <window_info anchor="bottom" id="Statistic" sideWeight="0.4990848" visible="true" weight="0.32985386" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49960256" weight="0.33194155" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32985386" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3197065" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -838,11 +789,12 @@
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50091517" side_tool="true" weight="0.32985386" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32939914" />
       <window_info anchor="bottom" id="Android Profiler" order="16" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Performance Profiler" order="17" />
+      <window_info anchor="bottom" id="Performance Profiler" order="17" weight="0.32985386" />
       <window_info anchor="bottom" id="Logcat" order="18" />
       <window_info anchor="bottom" id="Change Signature" order="19" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="20" />
       <window_info anchor="bottom" id="Build" order="21" visible="true" weight="0.32881" />
+      <window_info anchor="bottom" id="Statistic" order="22" sideWeight="0.4990848" weight="0.65344465" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24984765" />
@@ -851,7 +803,7 @@
       <window_info anchor="right" id="Database" order="5" weight="0.3298351" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Device File Explorer" order="7" side_tool="true" />
-      <window_info anchor="right" id="PlantUML" order="8" />
+      <window_info anchor="right" id="PlantUML" order="8" visible="true" weight="0.32946917" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -880,24 +832,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/de/6999d5c7/IObservable`1.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponTypes/IWeapon.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding>
-            <marker date="1553166453983" expanded="true" signature="77:195" ph="{...}" />
-            <marker date="1553166453983" expanded="true" signature="105:193" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/GameMechanics/Weapon/WeaponTypes/WeaponBase.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -2288,6 +2222,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-299">
+          <caret line="116" column="19" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
+          <folding>
+            <marker date="1559663007049" expanded="false" signature="6:336" ph="..." />
+            <marker date="1559663007049" expanded="true" signature="378:3689" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="408:487" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="532:3687" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="882:917" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="971:1012" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="1069:1113" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="1152:1280" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="1170:1218" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="1226:1276" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="1377:1442" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="1469:1711" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="1528:1573" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="1616:1661" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="1760:1896" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="1989:2021" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="2064:2316" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="2132:2205" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="2240:2312" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="2390:2486" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="2526:2602" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="2564:2598" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="2631:2674" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="2699:2711" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="2738:2750" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="2781:3140" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="2823:2845" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="2966:3136" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="3182:3241" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="3276:3336" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="3302:3332" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="3367:3471" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="3501:3539" ph="{...}" />
+            <marker date="1559663007049" expanded="true" signature="3577:3684" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Data/Settings/Generation/MapSettingsData.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -2308,7 +2285,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/DoorController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2116">
+        <state relative-caret-position="2162">
           <caret line="108" selection-start-line="108" selection-end-line="108" />
           <folding>
             <marker date="1559499723670" expanded="false" signature="6:174" ph="..." />
@@ -2426,7 +2403,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapGenerator.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2760">
+        <state relative-caret-position="2806">
           <caret line="152" column="54" selection-start-line="152" selection-start-column="54" selection-end-line="152" selection-end-column="54" />
           <folding>
             <marker date="1559598495201" expanded="false" signature="6:517" ph="..." />
@@ -2464,6 +2441,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomType.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <folding>
+            <marker date="1549106133849" expanded="true" signature="55:246" ph="{...}" />
+            <marker date="1549106133849" expanded="true" signature="97:244" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Map/MapTilemaps.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -2478,57 +2466,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomType.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/PlayerHandler.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        <state>
           <folding>
-            <marker date="1549106133849" expanded="true" signature="55:246" ph="{...}" />
-            <marker date="1549106133849" expanded="true" signature="97:244" ph="{...}" />
+            <marker date="1557940288983" expanded="false" signature="6:162" ph="..." />
+            <marker date="1557940288983" expanded="true" signature="188:1960" ph="{...}" />
+            <marker date="1557940288983" expanded="true" signature="247:1958" ph="{...}" />
+            <marker date="1557940288983" expanded="true" signature="545:777" ph="{...}" />
+            <marker date="1557940288983" expanded="true" signature="671:767" ph="{...}" />
+            <marker date="1557940288983" expanded="true" signature="841:1323" ph="{...}" />
+            <marker date="1557940288983" expanded="true" signature="917:1117" ph="{...}" />
+            <marker date="1557940288983" expanded="true" signature="1410:1952" ph="{...}" />
+            <marker date="1557940288983" expanded="true" signature="1542:1790" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/Scripts/Generation/Room/RoomController.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/CyberInfection/CiUML.puml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="116" column="19" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
-          <folding>
-            <marker date="1559660507490" expanded="false" signature="6:336" ph="..." />
-            <marker date="1559660507490" expanded="true" signature="378:3700" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="408:487" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="532:3698" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="882:917" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="971:1012" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="1069:1113" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="1152:1280" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="1170:1218" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="1226:1276" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="1377:1442" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="1469:1711" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="1528:1573" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="1616:1661" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="1760:1896" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="1989:2021" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="2064:2327" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="2143:2216" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="2251:2323" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="2401:2497" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="2537:2613" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="2575:2609" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="2642:2685" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="2710:2722" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="2749:2761" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="2792:3151" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="2834:2856" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="2977:3147" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="3193:3252" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="3287:3347" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="3313:3343" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="3378:3482" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="3512:3550" ph="{...}" />
-            <marker date="1559660507490" expanded="true" signature="3588:3695" ph="{...}" />
-          </folding>
+        <state relative-caret-position="46">
+          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
