@@ -199,9 +199,54 @@ namespace CyberInfection.Generation
 
             //}
 
-            mapController.PlaceRooms(tilemaps);
+            //mapController.PlaceRooms(tilemaps);
+            PlaceRooms();
 
             tilemaps.RefreshAllTiles();
+        }
+
+        public void PlaceRooms()
+        {
+            var roomIndex = 0;
+            var roomControllersHolder = new GameObject("RoomControllers Holder");
+            roomControllersHolder.transform.SetParent(_mapHolder);
+
+            for (var x = 0; x < mapController.map.width; x++)
+            {
+                for (var y = 0; y < mapController.map.height; y++)
+                {
+                    var currentPosition = new Vector3Int(
+                        x * (mapSettingsData.roomSizeInfo.roomWidth - 1),
+                        y * (mapSettingsData.roomSizeInfo.roomHeight - 1),
+                        0
+                    );
+
+                    var roomType = mapController.map.roomMatrix[x, y];
+
+                    if ((roomType | RoomType.None) == 0) continue;
+
+                    var roomTemplate = GetRoomTemplate(roomType);
+                    PlaceRoom(currentPosition + new Vector3Int(roomTemplate.width, roomTemplate.height, 0), roomTemplate);
+                }
+            }
+        }
+        
+        private void PlaceRoom(Vector3Int startPos, RoomTemplate template)
+        {
+            for (var x = 0; x < template.width; x++)
+            {
+                for (var y = 0; y < template.height; y++)
+                {
+                    var tile = template.tiles[x, y];
+                    var tilePos = new Vector3Int(startPos.x + x, startPos.y + y, startPos.z);
+                    tilemaps.TypeTilemap[tile].SetTile(tilePos, mapSettingsData.TileTypeTileDictionary[tile]);
+                }
+            }
+        }
+        
+        private RoomTemplate GetRoomTemplate(RoomType roomType)
+        {
+            return new RoomTemplate(roomTypeTemplatesData.GetRandom(roomType), colorTileTypeData);
         }
 
         private void OnDestroy()

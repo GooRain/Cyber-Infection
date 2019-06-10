@@ -74,6 +74,36 @@ MonoBehaviour:
     shadowTilemap: {fileID: 6465156779237956986}
     doorPrefab: {fileID: 4465500360447345847, guid: c8c721cd392be1e4cb0ff8090e46e0c8,
       type: 3}
+    tileTypeTilemap:
+      reorderableList:
+        canAdd: 1
+        canRemove: 1
+        draggable: 1
+        expandable: 1
+        multipleSelection: 1
+        isExpanded: 1
+        label:
+          m_Text: Keys
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+        headerHeight: 18
+        footerHeight: 13
+        slideEasing: 0.15
+        verticalSpacing: 2
+        showDefaultBackground: 1
+        elementDisplayType: 0
+        elementNameProperty: 
+        elementNameOverride: 
+        elementIcon: {fileID: 0}
+      reqReferences: {fileID: 0}
+      isExpanded: 1
+      _keyValues: 00000000010000000200000003000000
+      _keys: 00000000010000000200000003000000
+      _values:
+      - {fileID: 8195094280177370900}
+      - {fileID: 8195094280216123864}
+      - {fileID: 8195094280216123864}
+      - {fileID: 8195094280177370900}
   colorTileTypeData: {fileID: 11400000, guid: c7a5a511929f51a4ba5ff243e436213f, type: 2}
   roomTypeTemplatesData: {fileID: 11400000, guid: ea32e4690093a0846a062b69fa3cba4b,
     type: 2}

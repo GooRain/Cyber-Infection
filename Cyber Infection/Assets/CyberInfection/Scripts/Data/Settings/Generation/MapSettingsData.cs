@@ -1,5 +1,7 @@
 ﻿using CyberInfection.Data.Settings.Base;
 using CyberInfection.Extension;
+using CyberInfection.Generation.Tiles;
+using RotaryHeart.Lib.SerializableDictionary;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
@@ -33,6 +35,10 @@ namespace CyberInfection.Data.Settings.Generation
 		[SerializeField] private TileBase wallTile;
 		[SerializeField] private TileBase doorTile;
 		[SerializeField] private TileBase shadowTile;
+        
+		[SerializeField] private TileTypeTileDictionary tileTypeTile;
+        
+		public TileTypeTileDictionary TileTypeTileDictionary => tileTypeTile;
 		
 		public TileBase GetFloorTile()
 		{
@@ -60,5 +66,11 @@ namespace CyberInfection.Data.Settings.Generation
 	{
 		[FormerlySerializedAs("minRoomWidth")] public int roomWidth;
 		[FormerlySerializedAs("minRoomHeight")] public int roomHeight;
+	}
+
+	[System.Serializable]
+	public class TileTypeTileDictionary : SerializableDictionaryBase<TileType, TileBase>
+	{
+        
 	}
 }

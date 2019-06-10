@@ -8,6 +8,9 @@ namespace CyberInfection.Data.Settings.Generation
     {
         [SerializeField] private RoomTypeTemplatesDictionary roomTypeTemplatesDictionary;
         
-        public RoomTypeTemplatesDictionary RoomTypeTemplatesDictionary => roomTypeTemplatesDictionary;
+        public Texture2D GetRandom(RoomType roomType)
+        {
+            return roomTypeTemplatesDictionary.GetRandomTemplate(roomType);
+        }
     }
 }

@@ -4,11 +4,17 @@ namespace CyberInfection.Generation.Room
 {
 	public class Room
 	{
-		public RoomType type { get; set; }
+		private RoomTemplate template;
+		private DoorDirDoorsDictionary doorsDictionary;
+		public RoomType type;
+
+		public DoorDirDoorsDictionary DoorsDictionary => doorsDictionary;
+		public RoomTemplate Template => template;
 		
-		public Room(RoomType type)
+		public Room(RoomTemplate template, RoomType type)
 		{
 			this.type = type;
+			doorsDictionary = new DoorDirDoorsDictionary();
 		}
 	}
 }

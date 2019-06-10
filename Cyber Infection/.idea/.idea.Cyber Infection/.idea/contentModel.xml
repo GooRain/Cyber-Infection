@@ -176,14 +176,17 @@
                 <e p="ColorToTileType.cs" t="Include" />
                 <e p="Door.cs" t="Include" />
                 <e p="DoorController.cs" t="Include" />
+                <e p="DoorDirDoorsDictionary.cs" t="Include" />
                 <e p="DoorPlacer.cs" t="Include" />
                 <e p="Room.cs" t="Include" />
                 <e p="RoomController.cs" t="Include" />
                 <e p="RoomGenerator.cs" t="Include" />
+                <e p="RoomTemplate.cs" t="Include" />
                 <e p="RoomType.cs" t="Include" />
                 <e p="RoomTypeTemplatesDictionary.cs" t="Include" />
               </e>
               <e p="Tiles" t="Include">
+                <e p="DoorDir.cs" t="Include" />
                 <e p="FloorTile.cs" t="Include" />
                 <e p="MapTile.cs" t="Include" />
                 <e p="TileType.cs" t="Include" />

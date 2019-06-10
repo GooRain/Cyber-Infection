@@ -1,3 +1,5 @@
+using CyberInfection.Generation.Tiles;
+using RotaryHeart.Lib.SerializableDictionary;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -11,11 +13,15 @@ namespace CyberInfection.Generation
         [SerializeField] private Tilemap shadowTilemap;
         [SerializeField] private GameObject doorPrefab;
 
+        [SerializeField] private TileTypeTilemap tileTypeTilemap;
+        
         public Tilemap ShadowTilemap => shadowTilemap;
         public Tilemap WallTilemap => wallTilemap;
         public Tilemap FloorTilemap => floorTilemap;
 
 		public GameObject DoorPrefab => doorPrefab;
+
+        public TileTypeTilemap TypeTilemap => tileTypeTilemap;
 
         public void Clear()
         {
@@ -30,5 +36,10 @@ namespace CyberInfection.Generation
             wallTilemap.RefreshAllTiles();
             shadowTilemap.RefreshAllTiles();
         }
+    }
+
+    [System.Serializable]
+    public class TileTypeTilemap : SerializableDictionaryBase<TileType, Tilemap>
+    {
     }
 }

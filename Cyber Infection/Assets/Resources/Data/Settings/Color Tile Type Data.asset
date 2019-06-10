@@ -36,13 +36,13 @@ MonoBehaviour:
     reqReferences: {fileID: 0}
     isExpanded: 1
     _keyValues:
-    - {r: 1, g: 1, b: 1, a: 0}
-    - {r: 0, g: 0, b: 0, a: 0}
-    - {r: 0, g: 0, b: 1, a: 1}
+    - {r: 1, g: 1, b: 1, a: 1}
+    - {r: 0, g: 0, b: 0, a: 1}
+    - {r: 1, g: 1, b: 0, a: 1}
     - {r: 1, g: 0, b: 0, a: 1}
     _keys:
-    - {r: 1, g: 1, b: 1, a: 0}
-    - {r: 0, g: 0, b: 0, a: 0}
-    - {r: 0, g: 0, b: 1, a: 1}
+    - {r: 1, g: 1, b: 1, a: 1}
+    - {r: 0, g: 0, b: 0, a: 1}
+    - {r: 1, g: 1, b: 0, a: 1}
     - {r: 1, g: 0, b: 0, a: 1}
     _values: 00000000010000000200000003000000

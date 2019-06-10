@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MapSettingsData
   m_EditorClassIdentifier: 
   roomsRange:
-    x: 8
-    y: 16
+    x: 4
+    y: 7
   roomSizeInfo:
     roomWidth: 17
     roomHeight: 9
@@ -58,3 +58,33 @@ MonoBehaviour:
   wallTile: {fileID: 11400000, guid: 14dc612e558fa084aa8896d65a5b7078, type: 2}
   doorTile: {fileID: 11400000, guid: edb92e136bf8dcb44bbce2491bf076dd, type: 2}
   shadowTile: {fileID: 11400000, guid: f7b91b0a3fa041042ba0f4585fc55b37, type: 2}
+  tileTypeTile:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues: 00000000010000000200000003000000
+    _keys: 00000000010000000200000003000000
+    _values:
+    - {fileID: 11400000, guid: 5cc4bfa05b809594183ba750c90c086e, type: 2}
+    - {fileID: 11400000, guid: 14dc612e558fa084aa8896d65a5b7078, type: 2}
+    - {fileID: 11400000, guid: 14dc612e558fa084aa8896d65a5b7078, type: 2}
+    - {fileID: 11400000, guid: 14dc612e558fa084aa8896d65a5b7078, type: 2}

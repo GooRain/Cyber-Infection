@@ -11,7 +11,7 @@ namespace CyberInfection.Data.Settings.Generation
         
         public TileType GetTileType(Color color)
         {
-            return colorTileTypeDictionary.ContainsKey(color) ? colorTileTypeDictionary[color] : TileType.Empty;
+            return colorTileTypeDictionary.ContainsKey(color) ? colorTileTypeDictionary[color] : TileType.Floor;
         }
     }
 }
