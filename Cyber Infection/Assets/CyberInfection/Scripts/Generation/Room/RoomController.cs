@@ -91,7 +91,7 @@ namespace CyberInfection.Generation.Room
 				return;
 			}
 
-			if ((Room.type & RoomType.Start) != 0)
+			if ((Room.Type & RoomType.Start) != 0)
 			{
 				ToggleDoors(true);
 				return;

@@ -44,6 +44,7 @@ namespace CyberInfection.Generation
         private MapSettingsData mapSettingsData;
         private MapController mapController;
         private int seed;
+        private RoomTemplate[,] roomTemplates;
 
         public Vector3 Offset { get; private set; }
 
@@ -132,6 +133,15 @@ namespace CyberInfection.Generation
 
         private void Generate()
         {
+            GenerateRoomTypes();
+            GenerateRoomTemplates();
+            PlaceRooms();
+
+            tilemaps.RefreshAllTiles();
+        }
+
+        private void GenerateRoomTypes()
+        {
             var maxRoomsAmount = (int) Random.Range(mapSettingsData.roomsRange.x, mapSettingsData.roomsRange.y);
             var roomTypes = Enum.GetValues(typeof(RoomType));
 
@@ -187,48 +197,67 @@ namespace CyberInfection.Generation
                     currentRoomsCount++;
                 }
             }
-
+            
             if (RadarController.instance != null)
             {
                 RadarController.instance.SetRoomsCount(currentRoomsCount);
             }
-            
-            //if (_mapController.map.HasEnd())
-            //{
-            //    Debug.Log("Map has end!");
+        }
+        
+        private void GenerateRoomTemplates()
+        {
+            var width = mapController.map.Width;
+            var height = mapController.map.Height;
+            roomTemplates = new RoomTemplate[width, height];
 
-            //}
-
-            //mapController.PlaceRooms(tilemaps);
-            PlaceRooms();
-
-            tilemaps.RefreshAllTiles();
+            for (var x = 0; x < width; x++)
+            {
+                for (var y = 0; y < height; y++)
+                {
+                    var roomType = mapController.map[x, y];
+                    if (roomType != RoomType.None)
+                    {
+                        roomTemplates[x, y] = GetRoomTemplate(roomType);
+                    }
+                }
+            }
         }
 
-        public void PlaceRooms()
+        private void PlaceRooms()
         {
-            var roomIndex = 0;
+            var corridorCreator = new CorridorCreator(mapSettingsData);
             var roomControllersHolder = new GameObject("RoomControllers Holder");
             roomControllersHolder.transform.SetParent(_mapHolder);
+            Room.Room previousRoom = null;
+            var currentPosition = Vector3Int.zero;
 
-            for (var x = 0; x < mapController.map.width; x++)
+            var width = mapController.map.Width;
+            var height = mapController.map.Height;
+            
+            for (var x = 0; x < width; x++)
             {
-                for (var y = 0; y < mapController.map.height; y++)
+                for (var y = 0; y < height; y++)
                 {
-                    var currentPosition = new Vector3Int(
-                        x * (mapSettingsData.roomSizeInfo.roomWidth - 1),
-                        y * (mapSettingsData.roomSizeInfo.roomHeight - 1),
-                        0
-                    );
-
                     var roomType = mapController.map.roomMatrix[x, y];
 
                     if ((roomType | RoomType.None) == 0) continue;
 
-                    var roomTemplate = GetRoomTemplate(roomType);
-                    PlaceRoom(currentPosition + new Vector3Int(roomTemplate.width, roomTemplate.height, 0), roomTemplate);
+                    var roomTemplate = roomTemplates[x, y];
+                    var newRoom = new Room.Room(roomTemplate, roomType);
+                    PlaceRoom(, roomTemplate);
+                    previousRoom = newRoom;
+                    if (previousRoom != null)
+                    {
+                        corridorCreator.PlaceCorridor(previousRoom, roomTemplate, mapController, DoorDir.Top);
+                    }
                 }
             }
+        }
+
+        private Vector3Int NextPos(ref Vector3Int pos, RoomTemplate from, RoomTemplate to)
+        {
+            var offset = from == null ? Vector2Int.zero : new Vector2Int(from.width, from.height); 
+            return pos = new Vector3Int(pos.x + offset.x + 3, pos.y + offset.y + 3, pos.z);
         }
         
         private void PlaceRoom(Vector3Int startPos, RoomTemplate template)
@@ -240,6 +269,7 @@ namespace CyberInfection.Generation
                     var tile = template.tiles[x, y];
                     var tilePos = new Vector3Int(startPos.x + x, startPos.y + y, startPos.z);
                     tilemaps.TypeTilemap[tile].SetTile(tilePos, mapSettingsData.TileTypeTileDictionary[tile]);
+//                    Debug.Log("X: " + x + " Y: " + y + " - " + tile);
                 }
             }
         }

@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace CyberInfection.Generation.Room
 {
-    public class DoorDirDoorsDictionary : SerializableDictionaryBase<DoorDir, List<Door>>
+    public class DoorDirDoorsDictionary : SerializableDictionaryBase<DoorDir, List<Vector3Int>>
     {
-        public Door GetRandomDoor(DoorDir dir)
+        public Vector3Int GetRandomDoor(DoorDir dir)
         {
             var list = this[dir];
             return list.Count < 1
-                ? new GameObject("NULL DOOR").AddComponent<Door>()
+                ? Vector3Int.zero 
                 : list[Random.Range(0, list.Count)];
         }
     }

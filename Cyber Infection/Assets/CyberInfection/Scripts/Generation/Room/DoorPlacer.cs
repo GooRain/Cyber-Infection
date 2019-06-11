@@ -32,7 +32,7 @@ namespace CyberInfection.Generation.Room
                     center - new Vector3Int(roomSizeInfo.roomWidth / 2, 0, 0), DoorController.DoorType.Horizontal);
             }
 
-            if (x < _map.width - 1 && mapRoomMatrix[x + 1, y] != RoomType.None)
+            if (x < _map.Width - 1 && mapRoomMatrix[x + 1, y] != RoomType.None)
             {
                 SetDoor(tilemaps, x, y, x + 1, y,
                     center + new Vector3Int(roomSizeInfo.roomWidth / 2, 0, 0), DoorController.DoorType.Horizontal);
@@ -44,7 +44,7 @@ namespace CyberInfection.Generation.Room
                     center - new Vector3Int(0, roomSizeInfo.roomHeight / 2, 0), DoorController.DoorType.Vertical);
             }
 
-            if (y < _map.height - 1 && mapRoomMatrix[x, y + 1] != RoomType.None)
+            if (y < _map.Height - 1 && mapRoomMatrix[x, y + 1] != RoomType.None)
             {
                 SetDoor(tilemaps, x, y, x, y + 1,
                     center + new Vector3Int(0, roomSizeInfo.roomHeight / 2, 0), DoorController.DoorType.Vertical);

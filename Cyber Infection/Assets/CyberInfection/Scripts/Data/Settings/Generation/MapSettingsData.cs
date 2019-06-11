@@ -39,6 +39,11 @@ namespace CyberInfection.Data.Settings.Generation
 		[SerializeField] private TileTypeTileDictionary tileTypeTile;
         
 		public TileTypeTileDictionary TileTypeTileDictionary => tileTypeTile;
+
+		public TileBase GetTile(TileType type)
+		{
+			return tileTypeTile[type];
+		}
 		
 		public TileBase GetFloorTile()
 		{

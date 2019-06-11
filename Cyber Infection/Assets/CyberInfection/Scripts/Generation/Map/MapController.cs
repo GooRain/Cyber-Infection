@@ -47,9 +47,9 @@ namespace CyberInfection.Generation
             var roomControllersHolder = new GameObject("RoomControllers Holder");
             roomControllersHolder.transform.SetParent(_mapHolder);
 
-            for (var x = 0; x < map.width; x++)
+            for (var x = 0; x < map.Width; x++)
             {
-                for (var y = 0; y < map.height; y++)
+                for (var y = 0; y < map.Height; y++)
                 {
                     var currentPosition = new Vector3Int(
                         x * (_mapSettingsData.roomSizeInfo.roomWidth - 1),
@@ -97,9 +97,9 @@ namespace CyberInfection.Generation
         {
             _doorPlacer = new DoorPlacer(map, _mapSettingsData, _mapHolder, _roomControllersMatrix);
 
-            for (var x = 0; x < map.width; x++)
+            for (var x = 0; x < map.Width; x++)
             {
-                for (var y = 0; y < map.height; y++)
+                for (var y = 0; y < map.Height; y++)
                 {
                     var currentPosition = new Vector3Int(
                         x * (_mapSettingsData.roomSizeInfo.roomWidth - 1),
@@ -188,7 +188,7 @@ namespace CyberInfection.Generation
             
             foreach (var roomController in _roomControllers)
             {
-                if ((roomController.Room.type & RoomType.Start) == RoomType.Start)
+                if ((roomController.Room.Type & RoomType.Start) == RoomType.Start)
                 {
                     LevelController.instance.level.SelectRoomController(roomController);
                     break;

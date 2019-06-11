@@ -44,8 +44,8 @@ namespace CyberInfection.Generation
 			
 //			Debug.Log($"[{_debugID}] moving {moveDirection}");
 
-			_currentPosition.x = Mathf.Clamp(_currentPosition.x + offset.x, 0, _map.width - 1);
-			_currentPosition.y = Mathf.Clamp(_currentPosition.y + offset.y, 0, _map.height - 1);
+			_currentPosition.x = Mathf.Clamp(_currentPosition.x + offset.x, 0, _map.Width - 1);
+			_currentPosition.y = Mathf.Clamp(_currentPosition.y + offset.y, 0, _map.Height - 1);
 
 			_directionToPrevious = -offset;
 		}

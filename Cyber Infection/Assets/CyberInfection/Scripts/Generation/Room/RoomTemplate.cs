@@ -10,6 +10,8 @@ namespace CyberInfection.Generation.Room
         public readonly int height;
         public readonly TileType[,] tiles;
 
+        public TileType this[int x, int y] => tiles[x, y];
+
         public RoomTemplate(Texture2D texture2D, ColorTileTypeData colorTileTypeData)
         {
             var pixels = texture2D.GetPixels();
@@ -22,7 +24,7 @@ namespace CyberInfection.Generation.Room
             {
                 for (var y = 0; y < height; y++)
                 {
-                    tiles[x, y] = colorTileTypeData.GetTileType(pixels[x + y]);
+                    tiles[x, y] = colorTileTypeData.GetTileType(pixels[x + width * y]);
                 }
             }
         }

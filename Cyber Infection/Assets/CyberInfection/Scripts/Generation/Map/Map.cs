@@ -5,17 +5,17 @@ namespace CyberInfection.Generation
 {
 	public class Map
 	{
-		public RoomType[,] roomMatrix;
+		public readonly RoomType[,] roomMatrix;
 		
-		public int width { get; }
-		public int height { get; }
+		public int Width { get; }
+		public int Height { get; }
 
 		public Map(int width, int height)
 		{
-			this.width = width;
-			this.height = height;
+			this.Width = width;
+			this.Height = height;
 //			Debug.Log($"{width} / {height}");
-			roomMatrix = new RoomType[this.width, this.height];
+			roomMatrix = new RoomType[this.Width, this.Height];
 		}
 		
 		public bool HasEnd()
@@ -25,13 +25,15 @@ namespace CyberInfection.Generation
 
 		public void Clear()
 		{
-			for (var x = 0; x < width; x++)
+			for (var x = 0; x < Width; x++)
 			{
-				for (var y = 0; y < height; y++)
+				for (var y = 0; y < Height; y++)
 				{
 					roomMatrix[x, y] = RoomType.None;
 				}
 			}
 		}
+
+		public RoomType this[int x, int y] => roomMatrix[x, y];
 	}
 }
