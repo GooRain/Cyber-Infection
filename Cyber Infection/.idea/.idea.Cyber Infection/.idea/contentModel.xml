@@ -178,8 +178,8 @@
                 <e p="DoorController.cs" t="Include" />
                 <e p="DoorDirDoorsDictionary.cs" t="Include" />
                 <e p="DoorPlacer.cs" t="Include" />
-                <e p="Room.cs" t="Include" />
                 <e p="RoomController.cs" t="Include" />
+                <e p="RoomEntity.cs" t="Include" />
                 <e p="RoomGenerator.cs" t="Include" />
                 <e p="RoomTemplate.cs" t="Include" />
                 <e p="RoomType.cs" t="Include" />

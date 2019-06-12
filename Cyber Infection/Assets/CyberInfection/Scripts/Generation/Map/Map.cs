@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using CyberInfection.Generation.Room;
+using UnityEngine;
 
 namespace CyberInfection.Generation
 {
@@ -35,5 +36,6 @@ namespace CyberInfection.Generation
 		}
 
 		public RoomType this[int x, int y] => roomMatrix[x, y];
+		public RoomType this[Vector2Int pos] => roomMatrix[pos.x, pos.y];
 	}
 }

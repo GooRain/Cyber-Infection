@@ -1,20 +1,24 @@
+using System.Collections.Generic;
 using CyberInfection.Generation.Tiles;
 using UnityEngine;
 
 namespace CyberInfection.Generation.Room
 {
-	public class Room
+	public class RoomEntity
 	{
 		private readonly RoomTemplate template;
 		private readonly DoorDirDoorsDictionary doorsDictionary;
 		private readonly RoomType type;
+		
+		public int Width => template.width;
+		public int Height => template.height;
 
 		public DoorDirDoorsDictionary DoorsDictionary => doorsDictionary;
 		public RoomTemplate Template => template;
 
 		public RoomType Type => type;
 
-		public Room(RoomTemplate template, RoomType type)
+		public RoomEntity(RoomTemplate template, RoomType type)
 		{
 			this.template = template;
 			this.type = type;
@@ -47,6 +51,11 @@ namespace CyberInfection.Generation.Room
 
 		private void AddDoor(DoorDir dir, int x, int y)
 		{
+			if (!doorsDictionary.ContainsKey(dir))
+			{
+				doorsDictionary.Add(dir, new List<Vector3Int>());
+			}
+			
 			doorsDictionary[dir].Add(new Vector3Int(x, y, 0));
 		}
 
