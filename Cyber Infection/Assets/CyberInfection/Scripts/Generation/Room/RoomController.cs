@@ -36,7 +36,7 @@ namespace CyberInfection.Generation.Room
 		
 		public bool isCompleted;
 
-		public Room Room { get; set; }
+		public RoomEntity RoomEntity { get; set; }
 		
 		public List<Vector3Int> FloorTiles { get; } = new List<Vector3Int>();
 		public List<Vector3Int> WallTiles { get; } = new List<Vector3Int>();
@@ -91,7 +91,7 @@ namespace CyberInfection.Generation.Room
 				return;
 			}
 
-			if ((Room.Type & RoomType.Start) != 0)
+			if ((RoomEntity.Type & RoomType.Start) != 0)
 			{
 				ToggleDoors(true);
 				return;

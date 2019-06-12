@@ -15,26 +15,44 @@ namespace CyberInfection.Generation.Room
             this.mapSettingsData = mapSettingsData;
         }
 
-        public void PlaceCorridor(Room from, Room to, MapTilemaps mapTilemaps
-        , DoorDir dir)
+        public Vector3Int GetPathToNextDoor(RoomEntity from, RoomEntity to, MapTilemaps mapTilemaps, DoorDir dir)
         {
-            var fromDoor = SelectDoor(dir, from);
-            var toDoor = SelectDoor(dir.Invert(), to);
+            var nextDoorPos = GetNextDoorPos(from, to, mapTilemaps, dir, out var length);
+            PlaceCorridor(nextDoorPos, length, mapTilemaps, dir);
             
+            return 
+        }
+
+        private Vector3Int GetNextDoorPos(RoomEntity from, RoomEntity to, MapTilemaps mapTilemaps, DoorDir dir
+        , out int length)
+        {
+            length = MIN_LENGTH;
+            var fromDoor = SelectDoor(dir, from);
             var moveDir = dir.GetMoveDir();
             var offset = moveDir * MIN_LENGTH;
-            var length = MIN_LENGTH;
             var pos = fromDoor + offset;
             
-            while (!IsCornersEmpty(pos, from.Template.width, from.Template.height, mapTilemaps.TypeTilemap))
+            var roomPos = fromDoor
+
+            while (DoCornersHasTile(pos, from.Template.width, from.Template.height, mapTilemaps.TypeTilemap))
             {
                 pos += moveDir;
                 length++;
             }
 
+            return pos;
+        }
+
+        private void PlaceCorridor(Vector3Int from, int length, MapTilemaps mapTilemaps
+        , DoorDir dir)
+        {
+            var moveDir = dir.GetMoveDir();
+            var pos = from;
+
             for (var i = 0; i < length; i++)
             {
-                PlaceBlock(fromDoor + moveDir * i, moveDir, mapTilemaps);
+                pos += moveDir;
+                PlaceBlock(pos, moveDir, mapTilemaps);
             }
         }
 
@@ -59,14 +77,17 @@ namespace CyberInfection.Generation.Room
             mapTilemaps[TileType.Wall].SetTile(pos + Vector3Int.right, mapSettingsData.GetTile(TileType.Wall));
         }
 
-        private bool IsCornersEmpty(Vector3Int pos, int width, int height, TileTypeTilemap map)
+        private bool DoCornersHasTile(Vector3Int pos, int halfWidth, int halfHeight, TileTypeTilemap map)
         {
-            return map.HasAnyTileAt(fromDoor + offset);
+            return map.HasAnyTileAt(pos + Vector3Int.right * halfWidth + Vector3Int.up * halfHeight) &&
+                   map.HasAnyTileAt(pos + Vector3Int.left * halfWidth + Vector3Int.up * halfHeight) &&
+                   map.HasAnyTileAt(pos + Vector3Int.right * halfWidth + Vector3Int.down * halfHeight) &&
+                   map.HasAnyTileAt(pos + Vector3Int.left * halfWidth + Vector3Int.down * halfHeight);
         }
 
-        private Vector3Int SelectDoor(DoorDir dir, Room room)
+        private Vector3Int SelectDoor(DoorDir dir, RoomEntity roomEntity)
         {
-            return room.DoorsDictionary.GetRandomDoor(dir);
+            return roomEntity.DoorsDictionary.GetRandomDoor(dir);
         }
     }
 }

@@ -188,7 +188,7 @@ namespace CyberInfection.Generation
             
             foreach (var roomController in _roomControllers)
             {
-                if ((roomController.Room.Type & RoomType.Start) == RoomType.Start)
+                if ((roomController.RoomEntity.Type & RoomType.Start) == RoomType.Start)
                 {
                     LevelController.instance.level.SelectRoomController(roomController);
                     break;
