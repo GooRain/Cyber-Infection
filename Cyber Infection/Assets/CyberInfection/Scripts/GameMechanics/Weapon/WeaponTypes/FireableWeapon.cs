@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using CyberInfection.Data.Entities;
 using UnityEngine;
 
@@ -8,8 +9,11 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
     public class FireableWeapon : WeaponBase
     {
         public AudioSource audioSource;
+        public GameObject muzzleFlash;
+        public float muzzleFlashTime = 0.05f;
 
         private WeaponSounds sounds;
+        private IEnumerator muzzleFlashCoroutine;
         
         public override void Initialize(WeaponData data)
         {
@@ -25,6 +29,8 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
             
             audioSource.clip = sounds.fire;
             audioSource.Play();
+
+            ShowMuzzle();
             
             AmmoContainer.Dec();
 
@@ -32,6 +38,19 @@ namespace CyberInfection.GameMechanics.Weapon.WeaponTypes
             {
                 Reload();
             }
+        }
+
+        private void ShowMuzzle()
+        {
+            muzzleFlashCoroutine = ShowMuzzleForTime(muzzleFlashTime);
+            StartCoroutine(muzzleFlashCoroutine);
+        }
+
+        private IEnumerator ShowMuzzleForTime(float time)
+        {
+            muzzleFlash.SetActive(true);
+            yield return new WaitForSeconds(time);
+            muzzleFlash.SetActive(false);
         }
 
         public override bool CanShoot()
