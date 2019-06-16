@@ -18,6 +18,12 @@ namespace CyberInfection.Generation.Room
 
 		public RoomType Type => type;
 
+		public RoomEntity(RoomType type)
+		{
+			this.type = type;
+			doorsDictionary = new DoorDirDoorsDictionary();
+		}
+
 		public RoomEntity(RoomTemplate template, RoomType type)
 		{
 			this.template = template;

@@ -174,6 +174,7 @@
               </e>
               <e p="Room" t="Include">
                 <e p="ColorToTileType.cs" t="Include" />
+                <e p="CorridorCreator.cs" t="Include" />
                 <e p="Door.cs" t="Include" />
                 <e p="DoorController.cs" t="Include" />
                 <e p="DoorDirDoorsDictionary.cs" t="Include" />

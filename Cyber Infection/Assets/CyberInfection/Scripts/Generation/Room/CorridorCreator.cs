@@ -20,7 +20,7 @@ namespace CyberInfection.Generation.Room
             var nextDoorPos = GetNextDoorPos(from, to, mapTilemaps, dir, out var length);
             PlaceCorridor(nextDoorPos, length, mapTilemaps, dir);
             
-            return 
+            return Vector3Int.zero;
         }
 
         private Vector3Int GetNextDoorPos(RoomEntity from, RoomEntity to, MapTilemaps mapTilemaps, DoorDir dir
@@ -31,8 +31,8 @@ namespace CyberInfection.Generation.Room
             var moveDir = dir.GetMoveDir();
             var offset = moveDir * MIN_LENGTH;
             var pos = fromDoor + offset;
-            
-            var roomPos = fromDoor
+
+            var roomPos = fromDoor;
 
             while (DoCornersHasTile(pos, from.Template.width, from.Template.height, mapTilemaps.TypeTilemap))
             {

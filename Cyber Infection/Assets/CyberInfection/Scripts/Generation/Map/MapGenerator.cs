@@ -223,22 +223,25 @@ namespace CyberInfection.Generation
 
         private void PlaceRooms()
         {
-            var corridorCreator = new CorridorCreator(mapSettingsData);
-            var roomControllersHolder = new GameObject("RoomControllers Holder");
-            roomControllersHolder.transform.SetParent(_mapHolder);
-            Room.RoomEntity previousRoomEntity = null;
-            var currentPosition = Vector3Int.zero;
+            mapController.PlaceRooms(tilemaps);
 
-            var map = mapController.map;
-            var width = map.Width;
-            var height = map.Height;
-
-            generatedFlags = new bool[width, height];
-
-            var center = new Vector2Int(width / 2, height / 2);
-            var roomTemplate = roomTemplates[center.x, center.y];
-            var newRoom = new RoomEntity(roomTemplate, map[center]);
-            GenerateRoom(currentPosition, center);
+            tilemaps.RefreshAllTiles();
+//            var corridorCreator = new CorridorCreator(mapSettingsData);
+//            var roomControllersHolder = new GameObject("RoomControllers Holder");
+//            roomControllersHolder.transform.SetParent(_mapHolder);
+//            Room.RoomEntity previousRoomEntity = null;
+//            var currentPosition = Vector3Int.zero;
+//
+//            var map = mapController.map;
+//            var width = map.Width;
+//            var height = map.Height;
+//
+//            generatedFlags = new bool[width, height];
+//
+//            var center = new Vector2Int(width / 2, height / 2);
+//            var roomTemplate = roomTemplates[center.x, center.y];
+//            var newRoom = new RoomEntity(roomTemplate, map[center]);
+//            GenerateRoom(currentPosition, center);
             
 //            for (var x = 0; x < width; x++)
 //            {
@@ -271,7 +274,7 @@ namespace CyberInfection.Generation
 
         private Vector3Int FindFreePosition(Vector3Int fromPos, Vector3Int dir)
         {
-            if(CorridorCreator
+            return Vector3Int.zero;
         }
         
         private void PlaceRoom(Vector3Int startPos, RoomTemplate template)
