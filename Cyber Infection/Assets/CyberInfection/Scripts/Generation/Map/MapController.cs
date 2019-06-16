@@ -2,12 +2,13 @@ using System.Collections.Generic;
 using CyberInfection.Data.Settings.Generation;
 using CyberInfection.GameMechanics;
 using CyberInfection.Generation.Room;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace CyberInfection.Generation
 {
-    public class MapController : MonoBehaviour
+    public class MapController : MonoBehaviourPun
     {
         public Map map;
 
@@ -61,7 +62,6 @@ namespace CyberInfection.Generation
 
                     var newRoomController = CreateRoom(roomIndex++, map.roomMatrix[x,y]);
                     _roomControllersMatrix[x, y] = newRoomController;
-                    _roomControllers.Add(newRoomController);
                     
                     var roomControllerTransform = newRoomController.transform;
                     roomControllerTransform.SetParent(roomControllersHolder.transform);
@@ -82,7 +82,11 @@ namespace CyberInfection.Generation
             var roomGameObject = new GameObject($"RoomController#{roomIndex}");
             var newRoomController = roomGameObject.AddComponent<RoomController>();
             newRoomController.RoomEntity = new RoomEntity(roomType);
+            newRoomController.MapController = this;
+            newRoomController.RoomIndex = roomIndex;
 
+            _roomControllers.Add(newRoomController);
+            
             if (roomType == RoomType.Start)
             {
                 newRoomController.isCompleted = true;
@@ -194,6 +198,17 @@ namespace CyberInfection.Generation
                     break;
                 }
             }
+        }
+
+        public void RPC_CompleteRoom(int index)
+        {
+            photonView.RPC("CompleteRoom", RpcTarget.All, index);
+        }
+
+        [PunRPC]
+        private void CompleteRoom(int index)
+        {
+            _roomControllers[index].CompleteRoom();
         }
     }
 }

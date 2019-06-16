@@ -100,10 +100,7 @@ namespace CyberInfection.Extension.Pool
                 return;
             }
             
-            if (PhotonNetwork.IsMasterClient)
-            {
-                photonView.RPC(CachedRPC.Push, RpcTarget.All, obj.index);
-            }
+            Push(obj.index);
         }
 
         private IPoolable ExtendPool()

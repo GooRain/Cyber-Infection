@@ -40,5 +40,6 @@ MonoBehaviour:
   - RPCShoot
   - Push
   - ReceiveHealth
+  - CompleteRoom
   DisableAutoOpenWizard: 1
   ShowSettings: 1

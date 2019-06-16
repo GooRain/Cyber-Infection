@@ -37,9 +37,10 @@ namespace CyberInfection.Generation.Room
 		public bool isCompleted;
 
 		public RoomEntity RoomEntity { get; set; }
-		
+		public MapController MapController { get; set; }
 		public List<Vector3Int> FloorTiles { get; } = new List<Vector3Int>();
 		public List<Vector3Int> WallTiles { get; } = new List<Vector3Int>();
+		public int RoomIndex { get; set; }
 
 		private void Awake()
 		{
@@ -187,11 +188,11 @@ namespace CyberInfection.Generation.Room
 		{
 			if (IsRoomClear())
 			{
-				CompleteRoom();
+				MapController.RPC_CompleteRoom(RoomIndex);
 			}
 		}
 
-		private void CompleteRoom()
+		public void CompleteRoom()
 		{
 			isCompleted = true;
 			
